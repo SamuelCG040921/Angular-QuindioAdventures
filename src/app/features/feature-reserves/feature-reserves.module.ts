@@ -5,9 +5,10 @@ import { FeatureReservesRoutingModule } from './feature-reserves-routing.module'
 import { FeatureReservesComponent } from './feature-reserves.component';
 
 
+
 @NgModule({
   declarations: [
-    FeatureReservesComponent
+    FeatureReservesComponent,
   ],
   imports: [
     CommonModule,
