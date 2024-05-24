@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProfileImgComponent } from './components/atoms/profile-img/profile-img.component';
-import { RouterModule } from '@angular/router';
 import { ProfileButtonComponent } from './components/atoms/profile-button/profile-button.component';
 import { SearchButtonComponent } from './components/atoms/search-button/search-button.component';
 import { WhatInputComponent } from './components/atoms/what-input/what-input.component';
 import { WhereInputComponent } from './components/atoms/where-input/where-input.component';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
-
+import { ProfileImgComponent } from './components/atoms/profile-img/profile-img.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +14,7 @@ import { FormsModule } from '@angular/forms';
     ProfileImgComponent,
     SearchButtonComponent,
     WhatInputComponent,
-    WhereInputComponent
+    WhereInputComponent,
   ],
   imports: [
     CommonModule,
@@ -25,10 +23,13 @@ import { FormsModule } from '@angular/forms';
     ]),
     FormsModule
   ],
+  
+  
   exports: [
-    ProfileButtonComponent,
-    ProfileImgComponent,
-    WhatInputComponent
-  ]
+    SearchButtonComponent,
+    SearchButtonComponent,
+    WhatInputComponent,
+    WhereInputComponent
+  ],
 })
 export class SharedModule { }
