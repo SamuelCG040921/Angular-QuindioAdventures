@@ -26,6 +26,8 @@ import { ProfileImgComponent } from './components/atoms/profile-img/profile-img.
   
   
   exports: [
+    ProfileButtonComponent,
+    ProfileImgComponent,
     SearchButtonComponent,
     SearchButtonComponent,
     WhatInputComponent,

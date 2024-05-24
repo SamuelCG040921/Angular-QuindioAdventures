@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './where-input.component.scss'
 })
 export class WhereInputComponent {
-
+  searchTerm: string = '';
 }
