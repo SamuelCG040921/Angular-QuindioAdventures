@@ -16,7 +16,10 @@ import { WhereInputComponent } from './components/atoms/where-input/where-input.
     CommonModule
   ],
   exports: [
-    SearchButtonComponent
-  ]
+    SearchButtonComponent,
+    SearchButtonComponent,
+    WhatInputComponent,
+    WhereInputComponent
+  ],
 })
 export class SharedModule { }
