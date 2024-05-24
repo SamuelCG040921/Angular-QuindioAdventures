@@ -30,16 +30,21 @@ import { ButtonComponent } from './components/molecules/button/button.component'
     WhatInputComponent,
     WhereInputComponent,
     LogoComponent,
+
   ],
+
   imports: [
     CommonModule,
     RouterModule.forRoot([
-      { path: 'profile', component: SearchButtonComponent }
+      { path: 'profile', component: SearchButtonComponent },
+      { path: '', component: SearchButtonComponent },
+      { path: 'chalets', component: SearchButtonComponent },
+      { path: 'planes-vacacionales', component: SearchButtonComponent },
+      { path: 'reservas', component: SearchButtonComponent },
     ]),
     FormsModule
   ],
-  
-  
+
   exports: [
     ProfileButtonComponent,
     ProfileImgComponent,
@@ -48,7 +53,9 @@ import { ButtonComponent } from './components/molecules/button/button.component'
     WhatInputComponent,
     WhereInputComponent,
     ButtonProfileComponent,
-    LogoComponent
+    LogoComponent,
+    ButtonComponent,
+    SearchBarComponent
   ],
 })
 export class SharedModule { }

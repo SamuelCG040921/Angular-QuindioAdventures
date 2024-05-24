@@ -1,6 +1,7 @@
 button{
+    
     width: 90px;
-    height: 41px;
+    height: 42.5px;
     background-color: #418E6D;
     cursor: pointer;
     border: none;
@@ -18,6 +19,11 @@ button:disabled{
     background-color: #A5C3B6;
     color: rgba(0, 0, 0, 0.12);
     cursor: not-allowed;
+}
+
+button:disabled:active {
+    background-color: #A5C3B6;
+    box-shadow: none;
 }
 
 button:active{
