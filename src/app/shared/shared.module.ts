@@ -24,7 +24,8 @@ import { WhereInputComponent } from './components/atoms/where-input/where-input.
     ])
   ],
   exports: [
-    ProfileButtonComponent
+    ProfileButtonComponent,
+    ProfileImgComponent
   ]
 })
 export class SharedModule { }
