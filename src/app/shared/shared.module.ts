@@ -26,13 +26,16 @@ import { ProfileImgComponent } from './components/atoms/profile-img/profile-img.
     ProfileImgComponent,
     SearchButtonComponent,
     WhatInputComponent,
-    WhereInputComponent
   ],
 
   imports: [
     CommonModule,
     RouterModule.forRoot([
-      { path: 'profile', component: SearchButtonComponent }
+      { path: 'profile', component: SearchButtonComponent },
+      { path: '', component: SearchButtonComponent },
+      { path: 'chalets', component: SearchButtonComponent },
+      { path: 'planes-vacacionales', component: SearchButtonComponent },
+      { path: 'reservas', component: SearchButtonComponent },
     ]),
     FormsModule
   ],

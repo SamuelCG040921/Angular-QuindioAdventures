@@ -1,0 +1,23 @@
+nav{
+    height: 45px;
+    display: flex;
+    background-color: #418E6D;
+    width: 100vw;
+}
+
+ul{
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    margin: 0;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
