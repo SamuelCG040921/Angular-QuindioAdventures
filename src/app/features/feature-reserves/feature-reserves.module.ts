@@ -13,6 +13,9 @@ import { FeatureReservesComponent } from './feature-reserves.component';
   imports: [
     CommonModule,
     FeatureReservesRoutingModule
+  ],
+  exports: [
+    FeatureReservesComponent
   ]
 })
 export class FeatureReservesModule { }
