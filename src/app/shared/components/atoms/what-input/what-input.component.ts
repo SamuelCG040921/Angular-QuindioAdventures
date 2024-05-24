@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './what-input.component.scss'
 })
 export class WhatInputComponent {
+  searchTerm: string = '';
 
 }
