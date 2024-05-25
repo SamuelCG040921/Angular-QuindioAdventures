@@ -1,1 +1,16 @@
-<p>scoped-table-clients works!</p>
+<div class="table">
+    <h2>Clientes</h2>
+    <div class="clients-table">
+        <p>#</p>
+        <p>Código</p>
+        <p>Cliente</p>
+        <p>Fecha registro</p>
+        <p>Dirección</p>
+        <p>Email</p>
+        <p>Teléfono</p>
+        <p>Monto</p>
+    </div>
+    <div *ngFor="let client of clients;let i = index" class="clients-container">
+        <app-scoped-client [client]="client"></app-scoped-client>
+    </div>
+</div>

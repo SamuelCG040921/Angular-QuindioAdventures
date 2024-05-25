@@ -4,6 +4,8 @@ import { FeatureReservesRoutingModule } from './feature-reserves-routing.module'
 import { FeatureReservesComponent } from './feature-reserves.component';
 import { ScopedReserveComponent } from './components/scoped-reserve/scoped-reserve.component';
 import { ScopedTableReservesComponent } from './components/scoped-table-reserves/scoped-table-reserves.component';
+import { ScopedTableClientsComponent } from './components/scoped-table-clients/scoped-table-clients.component';
+import { ScopedClientComponent } from './components/scoped-client/scoped-client.component';
 
 
 @NgModule({
@@ -11,6 +13,8 @@ import { ScopedTableReservesComponent } from './components/scoped-table-reserves
     FeatureReservesComponent,
     ScopedReserveComponent,
     ScopedTableReservesComponent,
+    ScopedTableClientsComponent,
+    ScopedClientComponent
     
   ],
   imports: [
@@ -20,7 +24,9 @@ import { ScopedTableReservesComponent } from './components/scoped-table-reserves
   exports: [
     FeatureReservesComponent,
     ScopedReserveComponent,
-    ScopedTableReservesComponent
+    ScopedTableReservesComponent,
+    ScopedClientComponent,
+    ScopedTableClientsComponent
   ]
 })
 export class FeatureReservesModule { }
