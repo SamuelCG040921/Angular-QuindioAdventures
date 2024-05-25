@@ -1,8 +1,11 @@
 // src/app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FeaturesModule } from './features/features.module';
+import { FeatureReservesModule } from './features/feature-reserves/feature-reserves.module';
+
+
 
 @NgModule({
   declarations: [
@@ -10,7 +13,8 @@ import { FeaturesModule } from './features/features.module';
   ],
   imports: [
     BrowserModule,
-    FeaturesModule
+    AppRoutingModule,
+    FeatureReservesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
