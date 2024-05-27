@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class SearchButtonComponent {
 
+  estaDeshabilidato = false;
+  habilitarDesabilitarBoton() {
+    this.estaDeshabilidato = !this.estaDeshabilidato;
+  }
+
+  onClick() {
+    
+  }
+
 }
