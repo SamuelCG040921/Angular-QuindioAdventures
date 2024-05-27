@@ -12,7 +12,8 @@ export class ModalComponent {
     checkout: '',
     email: '',
     phone: '',
-    amount: 0
+    amount: 0,
+    paymentmethod:''
   };
 
   @Output() close = new EventEmitter<void>();
@@ -26,3 +27,4 @@ export class ModalComponent {
     console.log("Contacting customer...");
   }
 }
+

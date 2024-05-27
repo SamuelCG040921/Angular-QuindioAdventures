@@ -7,13 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'QuindioAdventuresFront';
-  isModalOpen = false;
-
-  openModal(): void {
-    this.isModalOpen = true;
-  }
-
-  closeModal(): void {
-    this.isModalOpen = false;
-  }
 }
