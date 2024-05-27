@@ -91,25 +91,20 @@ select:focus-visible{
 
 #searchInput {
     background-image: url("../../../../../assets/icons/lupa.png");
-    background-size: 15px 15px; /* Adjust size as needed */
+    background-size: 15px 15px; 
     background-repeat: no-repeat;
-    background-position: 10px center; /* Position icon left of text */
-    padding: 2px 40px; /* Adjust padding to accommodate icon */
+    background-position: 10px center; 
+    padding: 2px 40px; 
     border: 1px solid #418E6D;
     border-radius: 5px;
 }
 
 .background{
+    margin-top: 50px;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    height: 100vh;
-    width: 100%;
+    flex-direction: column;
+}
+.background div img{
+  
 }
 
-.imgBackground{
-    background-image: url("../../../../../assets/images/image.png");
-    background-size: cover;
-    height: 20%;
-    width: 20%;
-}
