@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from './components/templates/modal/modal.component';
+import { HeaderComponent } from './components/organisms/header/header.component';
 import { ProfileButtonComponent } from './components/atoms/profile-button/profile-button.component';
 import { SearchButtonComponent } from './components/atoms/search-button/search-button.component';
 import { WhatInputComponent } from './components/atoms/what-input/what-input.component';
@@ -17,8 +18,10 @@ import { ButtonComponent } from './components/molecules/button/button.component'
 
 
 
+
 @NgModule({
   declarations: [
+    HeaderComponent,
     LogoComponent,
     SearchBarComponent,
     ButtonProfileComponent,
@@ -31,6 +34,7 @@ import { ButtonComponent } from './components/molecules/button/button.component'
     WhatInputComponent,
     WhereInputComponent,
     LogoComponent,
+    ModalComponent
   ],
 
   imports: [
@@ -55,7 +59,8 @@ import { ButtonComponent } from './components/molecules/button/button.component'
     ButtonProfileComponent,
     LogoComponent,
     ButtonComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    HeaderComponent
   ],
 })
 export class SharedModule { }
