@@ -1,1 +1,31 @@
-<p>modal works!</p>
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-container" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <button (click)="closeModal()">X</button>
+      </div>
+      <div class="modal-content">
+        <div class="information-row">
+            <div class="profile-pic">
+                <img src="path-to-your-image.jpg" alt="Profile Picture">
+              </div>
+              <div class="customer-info">
+                <p><strong>Codigo:</strong> {{reservedata.code}}</p>
+                <p><strong>Check in:</strong> {{reservedata.checkin}}</p>
+                <p><strong>Check Out:</strong>{{reservedata.checkout}}</p>
+                <p><strong>Email:</strong> {{reservedata.email}}</p>
+                <p><strong>Teléfono:</strong> {{reservedata.phone}}</p>
+                <p><strong>Monto:</strong> {{reservedata.amount}}</p>
+              </div>
+        </div>
+        
+        <div class="payment-method">
+          <h3>Método de pago:</h3>
+          <div class="nequi-method">
+            <img src="path-to-nequi-logo.png" alt="Nequi Logo">
+          </div>
+        </div>
+          <app-button></app-button>     
+        </div>
+    </div>
+  </div>
+  

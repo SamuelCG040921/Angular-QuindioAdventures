@@ -1,10 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
-  styleUrl: './modal.component.scss'
+  styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
+  @Input() reservedata= {
+    code: '',
+    checkin: '',
+    checkout: '',
+    email: '',
+    phone: '',
+    amount: 0
+  };
 
+  @Output() close = new EventEmitter<void>();
+
+  closeModal(): void {
+    this.close.emit();
+  }
+
+  contactCustomer(): void {
+    // Añade aquí tu lógica de contacto
+    console.log("Contacting customer...");
+  }
 }
