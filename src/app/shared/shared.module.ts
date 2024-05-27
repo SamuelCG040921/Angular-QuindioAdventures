@@ -22,6 +22,7 @@ import { ButtonComponent } from './components/molecules/button/button.component'
 @NgModule({
   declarations: [
     HeaderComponent,
+    ModalComponent,
     LogoComponent,
     SearchBarComponent,
     ButtonProfileComponent,
@@ -60,7 +61,8 @@ import { ButtonComponent } from './components/molecules/button/button.component'
     LogoComponent,
     ButtonComponent,
     SearchBarComponent,
-    HeaderComponent
+    HeaderComponent,
+    ModalComponent
   ],
 })
 export class SharedModule { }

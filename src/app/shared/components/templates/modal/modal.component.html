@@ -1,1 +1,33 @@
-<p>modal works!</p>
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-container" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <button (click)="closeModal()"><img class="iconClose"  src="../../../../../assets/icons/x.svg"></button>
+      </div>
+      <div class="modal-content">
+        <div class="information-row">
+            <div class="profile-pic">
+                <img src="../../../../../assets/icons/profile.svg" alt="Profile Picture">
+              </div>
+              <div class="customer-info">
+                <p><strong>Codigo:</strong> {{reservedata.code}}</p>
+                <p><strong>Check in:</strong> {{reservedata.checkin}}</p>
+                <p><strong>Check Out:</strong>{{reservedata.checkout}}</p>
+                <p><strong>Email:</strong> {{reservedata.email}}</p>
+                <p><strong>Teléfono:</strong> {{reservedata.phone}}</p>
+                <p><strong>Monto:</strong> {{reservedata.amount}}</p>
+              </div>
+        </div>
+        
+        <div class="payment-method">
+          <h3>Método de pago:</h3>
+          <div class="nequi-method">
+            <img src="{{reservedata.paymentmethod}}">
+          </div>
+        </div>
+        <div class="containerButton">
+          <app-button label="Contactar cliente" click="ContactCustomer"></app-button>     
+        </div>
+      </div>
+    </div>
+  </div>
+  

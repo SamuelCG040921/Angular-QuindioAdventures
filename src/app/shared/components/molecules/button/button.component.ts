@@ -13,7 +13,7 @@ export class ButtonComponent {
     this.click.emit();
   }
 
-  estaDeshabilidato = true;
+  estaDeshabilidato = false;
   habilitarDesabilitarBoton() {
     this.estaDeshabilidato = !this.estaDeshabilidato;
   }
