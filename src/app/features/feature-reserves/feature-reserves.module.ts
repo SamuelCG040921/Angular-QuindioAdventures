@@ -6,6 +6,7 @@ import { ScopedReserveComponent } from './components/scoped-reserve/scoped-reser
 import { ScopedTableReservesComponent } from './components/scoped-table-reserves/scoped-table-reserves.component';
 import { ScopedTableClientsComponent } from './components/scoped-table-clients/scoped-table-clients.component';
 import { ScopedClientComponent } from './components/scoped-client/scoped-client.component';
+import { ScopedBackgroundMenuComponent } from './components/scoped-background-menu/scoped-background-menu.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ScopedClientComponent } from './components/scoped-client/scoped-client.
     ScopedReserveComponent,
     ScopedTableReservesComponent,
     ScopedTableClientsComponent,
-    ScopedClientComponent
+    ScopedClientComponent,
+    ScopedBackgroundMenuComponent
     
   ],
   imports: [
@@ -26,7 +28,8 @@ import { ScopedClientComponent } from './components/scoped-client/scoped-client.
     ScopedReserveComponent,
     ScopedTableReservesComponent,
     ScopedClientComponent,
-    ScopedTableClientsComponent
+    ScopedTableClientsComponent,
+    ScopedBackgroundMenuComponent
   ]
 })
 export class FeatureReservesModule { }
