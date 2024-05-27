@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './feature-reserves.component.scss'
 })
 export class FeatureReservesComponent {
-
-}
+  
+  }
+  

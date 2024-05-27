@@ -42,7 +42,6 @@ import { ButtonComponent } from './components/molecules/button/button.component'
     CommonModule,
     RouterModule.forRoot([
       { path: 'profile', component: SearchButtonComponent },
-      { path: '', component: SearchButtonComponent },
       { path: 'chalets', component: SearchButtonComponent },
       { path: 'planes-vacacionales', component: SearchButtonComponent },
       { path: 'reservas', component: SearchButtonComponent },

@@ -1,0 +1,28 @@
+.background{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.emptyState{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.emptyState #ono{
+    font-weight: bold;
+    font-size: 76px;
+    color: #8D8D8D;
+}
+
+.emptyState #noTienesClientes{
+    font-size: 36px;
+    color: #8D8D8D;
+    font-weight: 500;
+}
+
+.emptyState img{
+    width: 300px;
+}

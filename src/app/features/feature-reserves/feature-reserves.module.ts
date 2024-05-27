@@ -7,6 +7,9 @@ import { ScopedTableReservesComponent } from './components/scoped-table-reserves
 import { ScopedTableClientsComponent } from './components/scoped-table-clients/scoped-table-clients.component';
 import { ScopedClientComponent } from './components/scoped-client/scoped-client.component';
 import { ScopedBackgroundMenuComponent } from './components/scoped-background-menu/scoped-background-menu.component';
+import { PageReservesClientsComponent } from './pages/page-reserves-clients/page-reserves-clients.component';
+import { SharedModule } from '../../shared/shared.module';
+import { PageReservesReservesComponent } from './pages/page-reserves-reserves/page-reserves-reserves.component';
 
 
 
@@ -17,11 +20,14 @@ import { ScopedBackgroundMenuComponent } from './components/scoped-background-me
     ScopedTableReservesComponent,
     ScopedTableClientsComponent,
     ScopedClientComponent,
-    ScopedBackgroundMenuComponent
+    ScopedBackgroundMenuComponent,
+    PageReservesClientsComponent,
+    PageReservesReservesComponent,
   ],
   imports: [
     CommonModule,
     FeatureReservesRoutingModule,
+    SharedModule
   ],
   exports: [
     FeatureReservesComponent,
@@ -29,7 +35,9 @@ import { ScopedBackgroundMenuComponent } from './components/scoped-background-me
     ScopedTableReservesComponent,
     ScopedClientComponent,
     ScopedTableClientsComponent,
-    ScopedBackgroundMenuComponent
+    ScopedBackgroundMenuComponent,
+    PageReservesClientsComponent,
+    PageReservesReservesComponent
   ]
 })
 export class FeatureReservesModule { }

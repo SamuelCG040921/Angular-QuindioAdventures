@@ -23,7 +23,7 @@ export class ModalComponent {
   }
 
   contactCustomer(): void {
-    // Añade aquí tu lógica de contacto
+    // Añadir aquí la lógica de contactar
     console.log("Contacting customer...");
   }
 }
