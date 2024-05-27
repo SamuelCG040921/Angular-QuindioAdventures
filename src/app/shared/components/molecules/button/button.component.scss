@@ -1,14 +1,13 @@
-button{
-    
-    width: 90px;
-    height: 42.5px;
+button {
+    height: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
     background-color: #418E6D;
-    cursor: pointer;
-    border: none;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
     color: white;
-    font-size: 14px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 button:hover{
