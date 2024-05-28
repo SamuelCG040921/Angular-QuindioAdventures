@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.162);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,7 +78,8 @@
   }
   
   .payment-method img {
-    width: 120px;
+    width: 30px;
+    margin-right: 20px;
   }
   
   .nequi-method {
@@ -105,4 +106,7 @@
     height: 30px;
   }
 
+.profilepicture{
+  border-radius: 60px;
+}
 

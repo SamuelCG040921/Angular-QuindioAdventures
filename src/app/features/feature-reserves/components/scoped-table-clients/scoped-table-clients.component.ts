@@ -37,7 +37,7 @@ clients = [
   price: 990000
   },
   {
-    id: 1,
+    id: 4,
   code: '000043',
   client: 'Juan Bedoya',
   date: '24/04/24',
@@ -47,7 +47,7 @@ clients = [
   price: 590000
   },
   {
-    id: 1,
+    id: 5,
   code: '000043',
   client: 'Juan Bedoya',
   date: '24/04/24',
@@ -57,4 +57,5 @@ clients = [
   price: 590000
   }
 ]
+
 }

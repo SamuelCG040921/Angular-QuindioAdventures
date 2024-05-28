@@ -6,7 +6,7 @@
       <div class="modal-content">
         <div class="information-row">
             <div class="profile-pic">
-                <img src="../../../../../assets/icons/profile.svg" alt="Profile Picture">
+                <img class="profilepicture" src="{{reservedata.userimg}}" alt="Profile Picture">
               </div>
               <div class="customer-info">
                 <p><strong>Codigo:</strong> {{reservedata.code}}</p>
@@ -21,7 +21,8 @@
         <div class="payment-method">
           <h3>Método de pago:</h3>
           <div class="nequi-method">
-            <img src="{{reservedata.paymentmethod}}">
+            <img src="{{reservedata.paymentmethodimg}}">
+            <p>{{reservedata.paymentmethod}}</p>
           </div>
         </div>
         <div class="containerButton">

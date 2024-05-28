@@ -7,13 +7,15 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
 })
 export class ModalComponent {
   @Input() reservedata= {
+    userimg:'',
     code: '',
     checkin: '',
     checkout: '',
     email: '',
     phone: '',
     amount: 0,
-    paymentmethod:''
+    paymentmethod:'',
+    paymentmethodimg:''
   };
 
   @Output() close = new EventEmitter<void>();

@@ -1,4 +1,4 @@
-<div class="client">  
+<div class="client" (click)="openModal()">  
     <p id="text1">{{client.id}}</p>
     <p id="text2">{{client.code}}</p>
     <p id="text3">{{client.client}}</p>
@@ -8,4 +8,6 @@
     <p id="text7">{{client.phone}}</p>
     <p id="text7">{{client.price}}</p>
 </div>
-
+<div *ngFor="let reserve of reservedata;let i = index" class="clients-container">
+    <app-modal [reservedata]="reserve" *ngIf="isModalOpen" (close)="closeModal()"></app-modal>
+</div>
