@@ -1,5 +1,35 @@
 <app-scoped-background-menu></app-scoped-background-menu>
-<section class="background">
+<section class="emptyState" *ngIf="reserves.length <= 0">
+    <div class="containerChaplanito">
+        <p id="ono">¡Oh no!</p>
+        <img src="../../../../../assets/images/chaplanitoreservas.jpeg" alt="">
+        <div class="contenedorNoTienes">
+            <p id="noTienesClientes">No tienes reservas, te invitamos a hacer una.</p>
+        </div>
+    </div>
+    <div class="containerHacerReserva">
+        <div class="containerChalet">
+            <div class="containerImgChalet">
+                <img src="../../../../../assets/icons/image103.png" alt="">
+            </div>
+            <div class="containerTextChalet">
+                <p>Necesitas un chalet?</p>
+            </div>
+        </div>
+        <div class="containerPlan">
+            <div class="containerImgPlan">
+                <img src="../../../../../assets/icons/image101.png" alt="">
+            </div>
+            <div class="containerTextPlan">
+                <p>Necesitas un plan?</p>
+            </div>
+        </div>
+    </div>
+    <div class="containerLinks">
+        <p>Mira <a routerLink="/chalets">chalets</a> o <a routerLink="/planes-vacacionales">planes vacacionales</a> y realiza tu primera reserva</p>
+    </div>
+</section>
+<section *ngIf="reserves.length > 0" class="background">
     <app-scoped-table-reserves></app-scoped-table-reserves>
     <img src="../../../../../assets/images/fondo.png" alt="">
 </section>

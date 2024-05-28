@@ -3,3 +3,148 @@
     display: flex;
     flex-direction: column;
 }
+
+.emptyState{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.containerChaplanito{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.containerChaplanito #ono{
+    font-weight: bold;
+    font-size: 76px;
+    color: #8D8D8D;
+}
+
+.contenedorNoTienes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contenedorNoTienes #noTienesClientes{
+    display: flex;
+    text-align: center;
+    width: 570px;
+    font-size: 36px;
+    color: #8D8D8D;
+    font-weight: 500;
+}
+
+.containerChaplanito img{
+    width: 300px;
+}
+
+.containerHacerReserva{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.containerChalet{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.containerImgChalet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    width: 200px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #D1E1D8;
+}
+
+.containerChalet img{
+    width: 55px;
+    height: 55px;
+}
+.containerTextChalet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A0C7B6;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 80px;
+    width: 200px;
+}
+
+.containerTextChalet p{
+    font-size: 14px;
+}
+
+.containerPlan{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.containerImgPlan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    width: 200px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #D1E1D8;
+}
+.containerPlan img{
+    width: 55px;
+    height: 55px;
+}
+
+.containerTextPlan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A0C7B6;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 80px;
+    width: 200px;
+}
+
+.containerTextPlan p{
+    font-size: 14px;
+}
+
+.containerLinks{
+    display: flex;
+    width: 250px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.containerLinks p{
+    color: #8C8C8C;
+}
+
+.containerLinks a{
+    color: #418e6d;
+    text-decoration: none;
+}
