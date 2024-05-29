@@ -1,11 +1,10 @@
 <div class="clientTable" (click)="openModal()">  
-        <p id="text1">{{reserve.id}}</p>
-        <p id="text2">{{reserve.code}}</p>
-        <p id="text3">{{reserve.type}}</p>
-        <p id="text4">{{reserve.adress}}</p>
-        <p id="text5">{{reserve.email}}</p>
-        <p id="text6">{{reserve.phone}}</p>
-        <p id="text7">{{reserve.price}}</p>
+        <p class="text1">{{reserve.id}}</p>
+        <p class="text2">{{reserve.code}}</p>
+        <p class="text3">{{reserve.type}}</p>
+        <p class="text4">{{reserve.adress}}</p>
+        <p class="text6">{{reserve.phone}}</p>
+        <p class="text7">{{reserve.price}}</p>
 </div>
 <div *ngFor="let reserve of reservedata;let i = index" class="clients-container">
         <app-modal [reservedata]="reserve" *ngIf="isModalOpen" (close)="closeModal()"></app-modal>

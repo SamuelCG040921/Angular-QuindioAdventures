@@ -7,7 +7,7 @@
 
 h2{
     padding: 10px 0px 45px 70px;
-    width: 1202px;
+    width: 1080px;
     height: 45px;
     border: 1px solid #D9D9D9;
     border-top-left-radius: 15px;
@@ -20,9 +20,41 @@ h2{
     border-left: 1px solid #D9D9D9;
     border-right: 1px solid #D9D9D9;
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    width: 1202px;
+    width: 1080px;
     height: 92px;
+    padding: 20px 0px 20px 60px;
 }
+
+.reserves-table p{
+    margin: 0 20px;
+}
+
+#title1{
+    width: 50px;
+    text-align: center;
+}
+#title2{
+    width: 70px;
+    text-align: center;
+}
+#title3{
+    width: 100px;
+    text-align: center;
+}
+#title4{
+    width: 240px;
+    text-align: center;
+}
+
+#title6{
+    width: 160px;
+    text-align: center;
+}
+#title7{
+    width: 160px;
+    text-align: center;
+}
+
+
 
