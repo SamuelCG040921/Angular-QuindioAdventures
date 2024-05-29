@@ -1,14 +1,12 @@
 <div class="table">
     <h2>Clientes</h2>
     <div class="clients-table">
-        <p>#</p>
-        <p>Código</p>
-        <p>Cliente</p>
-        <p>Fecha registro</p>
-        <p>Dirección</p>
-        <p>Email</p>
-        <p>Teléfono</p>
-        <p>Monto</p>
+        <p id="title1">#</p>
+        <p id="title2">Código</p>
+        <p id="title3">Cliente</p>
+        <p id="title4">Fecha registro</p>
+        <p id="title7">Teléfono</p>
+        <p id="title8">Monto</p>
     </div>
     <div *ngFor="let client of clients;let i = index" class="clients-container">
         <app-scoped-client [client]="client"></app-scoped-client>
