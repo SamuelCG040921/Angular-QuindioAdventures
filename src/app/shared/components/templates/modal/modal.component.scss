@@ -1,112 +1,130 @@
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.162);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .modal-container {
-    background-color: white;
-    border-radius: 12px;
-    padding: 20px;
-    max-width: 600px;
-    width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    border: 2px solid #418E6D;
-  }
-
-  .modal-header {
-    display: flex;
-    width: 100%;
-    justify-content: right;
-    align-items: flex-end;
-  }
-  .modal-header button {
-    background: none;
-    margin: 0px;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: #000;
-  }
-
-  .information-row{
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .profile-pic img {
-    width: 100px;
-    height: 100px;
-    margin-right: 30px;
-  }
-  
-  .customer-info {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola fila */
-    justify-content: space-between; /* Distribuye los elementos horizontalmente */
-    margin: 20px 0 20px 0;
-    max-width: 100%; /* Para asegurar que no exceda el ancho del modal */
-  }
-  
-  .customer-info p {
-    flex-basis: calc(30% - 10px); /* Establece el ancho de cada elemento para que haya dos en una fila */
-    margin: 4px 0; /* Ajusta los márgenes para separar los elementos */
-  }
-  
-  .customer-info strong {
-    display: block; /* Para asegurar que cada etiqueta <strong> se muestre en una línea separada */
-    margin-bottom: 5px;
-  }
-  
-  .payment-method {
-    margin: 20px 0; 
-    border-top: 2px solid #418E6D;
-  }
-  
-  .payment-method h3 {
-    margin: 24px 0 24px 0;
-    text-align: center; 
-    font-size: 16px;
-  }
-  
-  .payment-method img {
-    width: 30px;
-    margin-right: 20px;
-  }
-  
-  .nequi-method {
-    width: min-content;
-    height: 40px;
-    margin: auto;
-    display: flex;
-    align-items: center; 
-    border: 2px solid #418E6D;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 70px;
-  }
-  .btnGeneral{
-    display: block;
-  }
-  .containerButton{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-  .iconClose{
-    width: 30px;
-    height: 30px;
-  }
-
-.profilepicture{
-  border-radius: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.162);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
+.modal-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  border: 2px solid #418E6D;
+}
+
+.modal-header {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  align-items: flex-end;
+}
+.modal-header button {
+  background: none;
+  margin: 0px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #000;
+}
+.detailsReserv{
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.detailsReserv strong{
+display: flex;
+text-align: center;
+width: 40%;
+}
+
+.information{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.profile-pic{
+  margin-top: 28px;
+  border-right: 2px solid #418E6D;
+}
+
+.profile-pic img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  margin-right: 36px;
+}
+
+.customer-info{
+margin-top: 28px;
+padding: 0 32px 0 32px;
+border-right: 2px solid #418E6D;
+}
+
+.customer-info p{
+padding: 4px 0 8px 0;
+}
+
+.method{
+display: flex;
+margin-left: 30px;
+justify-content: center;
+align-items: center;
+}
+.organization{
+display: flex;
+flex-direction: column;
+}
+.payment-method {
+margin: 20px 0; 
+}
+
+.payment-method h3 {
+margin: 24px 0 24px 0;
+text-align: center; 
+font-size: 16px;
+}
+
+.payment-method img {
+width: 30px;
+margin-right: 20px;
+}
+.nequi-method {
+width: min-content;
+height: 40px;
+margin: auto;
+display: flex;
+align-items: center; 
+border: 2px solid #418E6D;
+padding: 10px;
+border-radius: 8px;
+}
+.btnGeneral{
+display: block;
+margin-top: 20px;
+}
+.containerButton{
+display: flex;
+width: 100%;
+justify-content: center;
+}
+.iconClose{
+width: 30px;
+height: 30px;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}

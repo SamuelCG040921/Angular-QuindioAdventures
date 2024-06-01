@@ -15,7 +15,7 @@ export class ModalComponent {
     phone: '',
     amount: 0,
     paymentmethod:'',
-    paymentmethodimg:''
+    paymentmethodimg:'',
   };
 
   @Output() close = new EventEmitter<void>();

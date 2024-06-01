@@ -6,6 +6,4 @@
     <p id="text7">{{client.phone}}</p>
     <p id="text8">{{client.price}}</p>
 </div>
-<div *ngFor="let reserve of reservedata;let i = index" class="clients-container">
-    <app-modal [reservedata]="reserve" *ngIf="isModalOpen" (close)="closeModal()"></app-modal>
-</div>
+    <app-modal *ngIf="isModalOpen" (close)="closeModal()"></app-modal>
