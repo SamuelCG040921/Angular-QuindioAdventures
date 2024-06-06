@@ -1,9 +1,9 @@
 <div class="clientTable" (click)="openModal()">  
-        <p class="text1">{{reserve.id}}</p>
-        <p class="text2">{{reserve.code}}</p>
-        <p class="text3">{{reserve.type}}</p>
-        <p class="text4">{{reserve.adress}}</p>
-        <p class="text6">{{reserve.phone}}</p>
-        <p class="text7">{{reserve.price}}</p>
+        <p class="text1">{{reserve.numero}}</p>
+        <p class="text2">{{reserve.codigo}}</p>
+        <p class="text3">{{reserve.tipo}}</p>
+        <p class="text4">{{reserve.direccion}}</p>
+        <p class="text6">{{reserve.telefono}}</p>
+        <p class="text7">{{reserve.precio}}</p>
 </div>
 <app-modal  *ngIf="isModalOpen" (close)="closeModal()"></app-modal>

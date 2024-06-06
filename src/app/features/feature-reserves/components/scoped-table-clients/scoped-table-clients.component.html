@@ -8,7 +8,7 @@
         <p id="title7">Teléfono</p>
         <p id="title8">Monto</p>
     </div>
-    <div *ngFor="let client of clients;let i = index" class="clients-container">
-        <app-scoped-client [client]="client"></app-scoped-client>
+    <div *ngFor="let reserve of reserves;let i = index" class="clients-container">
+        <app-scoped-client [reserve]="reserve"></app-scoped-client>
     </div>
 </div>
