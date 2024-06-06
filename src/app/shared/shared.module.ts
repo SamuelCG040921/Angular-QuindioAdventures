@@ -15,6 +15,8 @@ import { ButtonProfileComponent } from './components/molecules/button-profile/bu
 import { NavComponent } from './components/molecules/nav/nav.component';
 import { PaymentMethodButtonComponent } from './components/molecules/payment-method-button/payment-method-button.component';
 import { ButtonComponent } from './components/molecules/button/button.component';
+import { EmailInputComponent } from './components/atoms/email-input/email-input.component';
+import { LoginRegisterInputComponent } from './components/atoms/login-register-input/login-register-input.component';
 
 
 
@@ -35,7 +37,9 @@ import { ButtonComponent } from './components/molecules/button/button.component'
     WhatInputComponent,
     WhereInputComponent,
     LogoComponent,
-    ModalComponent
+    ModalComponent,
+    EmailInputComponent,
+    LoginRegisterInputComponent
   ],
 
   imports: [
@@ -61,7 +65,9 @@ import { ButtonComponent } from './components/molecules/button/button.component'
     ButtonComponent,
     SearchBarComponent,
     HeaderComponent,
-    ModalComponent
+    ModalComponent,
+    EmailInputComponent,
+    LoginRegisterInputComponent
   ],
 })
 export class SharedModule { }
