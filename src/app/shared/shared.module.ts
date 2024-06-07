@@ -67,6 +67,8 @@ import { UbicationCardComponent } from './components/atoms/ubication-card/ubicat
     FavoriteIconComponent,
     TitleCardComponent,
     UbicationCardComponent,
+    FavoriteIconComponent,
+    CalificationCardComponent
   ],
 
   imports: [
@@ -97,7 +99,11 @@ import { UbicationCardComponent } from './components/atoms/ubication-card/ubicat
     LoginRegisterInputComponent,
     FooterInputComponent,
     FooterLogoComponent,
-    FooterComponent
+    FooterComponent,
+    TitleCardComponent,
+    UbicationCardComponent,
+    FavoriteIconComponent,
+    CalificationCardComponent
   ],
 })
 export class SharedModule { }

@@ -1,0 +1,36 @@
+.star-container {
+    display: inline-block;
+    position: relative; /* Habilitar posicionamiento relativo para los elementos hijo */
+    width: 40px; /* Establecer un ancho para el contenedor */
+    height: 40px; /* Establecer una altura para el contenedor */
+    border-radius: 50%; /* Crear una forma circular para el contenedor */
+    background-color: transparent; /* Hacer el contenedor transparente */
+    overflow: hidden; /* Evitar que el círculo se desborde del contenedor */
+  }
+  
+  .star {
+    font-size: 30px; /* Ajustar el tamaño de la estrella según sea necesario */
+    color: gray;
+    cursor: pointer;
+    position: absolute; /* Posicionar la estrella absolutamente dentro de su contenedor */
+    top: 50%; /* Centrar la estrella verticalmente dentro del contenedor */
+    left: 50%; /* Centrar la estrella horizontalmente dentro del contenedor */
+    transform: translate(-50%, -50%); /* Aplicar transformaciones para tener en cuenta el posicionamiento absoluto */
+  }
+  
+  .star.yellow {
+    color: #FFE500;
+  }
+  
+  .circle {
+    display: block; /* Asegurar que el círculo llena el contenedor horizontalmente */
+    width: 100%; /* Hacer que el círculo abarque todo el ancho del contenedor */
+    height: 100%; /* Hacer que el círculo abarque toda la altura del contenedor */
+    border-radius: 50%; /* Crear una forma circular */
+    background-color: rgb(221, 221, 221); /* Establecer el color de fondo a gris */
+    position: absolute; /* Posicionar el círculo absolutamente dentro de su contenedor */
+    top: 0; /* Posicionar el círculo en la parte superior del contenedor */
+    left: 0; /* Posicionar el círculo a la izquierda del contenedor */
+    z-index: -1; /* Colocar el círculo detrás de la estrella */
+  }
+  
