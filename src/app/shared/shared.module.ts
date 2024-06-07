@@ -25,6 +25,12 @@ import { BackgroundInfoImageComponent } from './components/atoms/background-info
 import { ButtonPlusMinumComponent } from './components/atoms/button-plus-minum/button-plus-minum.component';
 import { SliderBarComponent } from './components/atoms/slider-bar/slider-bar.component';
 import { FooterComponent } from './components/organisms/footer/footer.component';
+import { CalificationCardComponent } from './components/atoms/calification-card/calification-card.component';
+import { ImgCardComponent } from './components/atoms/img-card/img-card.component';
+import { FavoriteIconComponent } from './components/atoms/favorite-icon/favorite-icon.component';
+import { TitleCardComponent } from './components/atoms/title-card/title-card.component';
+import { UbicationCardComponent } from './components/atoms/ubication-card/ubication-card.component';
+
 
 
 
@@ -55,7 +61,12 @@ import { FooterComponent } from './components/organisms/footer/footer.component'
     BackgroundInfoImageComponent,
     ButtonPlusMinumComponent,
     SliderBarComponent,
-    FooterComponent
+    FooterComponent,
+    CalificationCardComponent,
+    ImgCardComponent,
+    FavoriteIconComponent,
+    TitleCardComponent,
+    UbicationCardComponent,
   ],
 
   imports: [
