@@ -17,6 +17,14 @@ import { PaymentMethodButtonComponent } from './components/molecules/payment-met
 import { ButtonComponent } from './components/molecules/button/button.component';
 import { EmailInputComponent } from './components/atoms/email-input/email-input.component';
 import { LoginRegisterInputComponent } from './components/atoms/login-register-input/login-register-input.component';
+import { FooterLogoComponent } from './components/atoms/footer-logo/footer-logo.component';
+import { FooterInputComponent } from './components/atoms/footer-input/footer-input.component';
+import { CalificationBallsComponent } from './components/atoms/calification-balls/calification-balls.component';
+import { CalificationBarComponent } from './components/atoms/calification-bar/calification-bar.component';
+import { BackgroundInfoImageComponent } from './components/atoms/background-info-image/background-info-image.component';
+import { ButtonPlusMinumComponent } from './components/atoms/button-plus-minum/button-plus-minum.component';
+import { SliderBarComponent } from './components/atoms/slider-bar/slider-bar.component';
+import { FooterComponent } from './components/organisms/footer/footer.component';
 
 
 
@@ -39,14 +47,22 @@ import { LoginRegisterInputComponent } from './components/atoms/login-register-i
     LogoComponent,
     ModalComponent,
     EmailInputComponent,
-    LoginRegisterInputComponent
+    LoginRegisterInputComponent,
+    FooterLogoComponent,
+    FooterInputComponent,
+    CalificationBallsComponent,
+    CalificationBarComponent,
+    BackgroundInfoImageComponent,
+    ButtonPlusMinumComponent,
+    SliderBarComponent,
+    FooterComponent
   ],
 
   imports: [
     CommonModule,
     RouterModule.forRoot([
       { path: 'profile', component: SearchButtonComponent },
-      { path: 'chalets', component: SearchButtonComponent },
+      { path: 'chalets', component: FooterInputComponent },
       { path: 'planes-vacacionales', component: SearchButtonComponent },
       { path: 'reservas', component: SearchButtonComponent },
     ]),
@@ -67,7 +83,10 @@ import { LoginRegisterInputComponent } from './components/atoms/login-register-i
     HeaderComponent,
     ModalComponent,
     EmailInputComponent,
-    LoginRegisterInputComponent
+    LoginRegisterInputComponent,
+    FooterInputComponent,
+    FooterLogoComponent,
+    FooterComponent
   ],
 })
 export class SharedModule { }

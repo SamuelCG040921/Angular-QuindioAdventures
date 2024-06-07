@@ -8,6 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class ButtonComponent {
   @Input() label: string = '';
   @Output() click = new EventEmitter<void>();
+  @Input() color: string = '';
 
   handleClick() {
     this.click.emit();

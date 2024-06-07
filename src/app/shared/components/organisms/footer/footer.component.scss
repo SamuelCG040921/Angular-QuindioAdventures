@@ -1,0 +1,49 @@
+footer{
+    background-color: #418E6D;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.first-part{
+    padding-right: 260px;
+    margin: 40px 80px;
+    border-right: 1px solid white;
+}
+
+.first-part h3{
+    color: white;
+    font-size: 20px;
+    font-weight:500;
+    margin-bottom: 5px;
+    margin-top:10px;
+    margin-left: 30px;
+}
+
+.first-part p{
+    color: white;
+    font-weight:500;
+    font-size: 16px;
+    margin-left: 30px;
+}
+
+.second-part{
+    display: flex;
+    flex-direction: column;
+    margin: 40px 80px;
+    justify-content: center;
+}
+
+.second-part h2{
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.second-part p{
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
