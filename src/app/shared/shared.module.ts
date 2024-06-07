@@ -17,6 +17,12 @@ import { PaymentMethodButtonComponent } from './components/molecules/payment-met
 import { ButtonComponent } from './components/molecules/button/button.component';
 import { EmailInputComponent } from './components/atoms/email-input/email-input.component';
 import { LoginRegisterInputComponent } from './components/atoms/login-register-input/login-register-input.component';
+import { CalificationCardComponent } from './components/atoms/calification-card/calification-card.component';
+import { ImgCardComponent } from './components/atoms/img-card/img-card.component';
+import { FavoriteIconComponent } from './components/atoms/favorite-icon/favorite-icon.component';
+import { TitleCardComponent } from './components/atoms/title-card/title-card.component';
+import { UbicationCardComponent } from './components/atoms/ubication-card/ubication-card.component';
+
 
 
 
@@ -39,7 +45,12 @@ import { LoginRegisterInputComponent } from './components/atoms/login-register-i
     LogoComponent,
     ModalComponent,
     EmailInputComponent,
-    LoginRegisterInputComponent
+    LoginRegisterInputComponent,
+    CalificationCardComponent,
+    ImgCardComponent,
+    FavoriteIconComponent,
+    TitleCardComponent,
+    UbicationCardComponent,
   ],
 
   imports: [
