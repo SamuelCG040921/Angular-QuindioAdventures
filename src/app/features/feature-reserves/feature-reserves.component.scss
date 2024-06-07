@@ -1,11 +1,28 @@
 .background{
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: max-content ;
+    flex-direction: column;
+    margin-top: 45px;
 }
 
 .background p{
-    font-size: 52px;
-    align-self: center;
-    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 48px;
+}
+
+.imgFondo{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: min-content;
+}
+
+.imgFondo img{
+    width: 60%;
+    height: 60%;
 }

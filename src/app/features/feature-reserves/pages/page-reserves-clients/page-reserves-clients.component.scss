@@ -1,7 +1,10 @@
 .background{
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: max-content;
+    flex-direction: column;
+    margin-top: 45px;
 }
 
 .emptyState{
@@ -26,4 +29,16 @@
 
 .emptyState img{
     width: 300px;
+}
+
+.imgFondo{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: min-content;
+}
+
+.imgFondo img{
+    width: 70%;
+    height: 70%;
 }

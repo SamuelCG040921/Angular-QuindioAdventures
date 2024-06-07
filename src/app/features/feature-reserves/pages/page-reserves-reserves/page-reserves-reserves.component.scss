@@ -1,15 +1,22 @@
 .background{
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: max-content;
+    flex-direction: column;
+    margin-top: 45px;
 }
 
-.emptyState{
+.imgFondo{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
     width: 100%;
+    height: min-content;
+}
+
+.imgFondo img{
+    width: 70%;
+    height: 70%;
 }
 
 .containerChaplanito{
