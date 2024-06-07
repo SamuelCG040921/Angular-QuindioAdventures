@@ -181,6 +181,13 @@
         "nombre": "Juan Jose Tovar",
         "fecharegistro": "24-08-2024"
     }
+    ],
+    "chalets":[
+      {
+        "nombre":"Finca Hotel La Dulcera",
+        "descripcion":"Finca Hotel La Dulcera te ofrece confortables habitaciones, con las comodidades y los servicios necesarios para el descanso, lo que hará tu estadía una experiencia inolvidable, rodeada de bienestar y tranquilidad.",
+        "ubicacion":"Armenia,Quindío"
+      }
     ]
 }
 

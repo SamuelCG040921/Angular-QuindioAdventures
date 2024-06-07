@@ -1,0 +1,14 @@
+.calificationCard-container {
+    display: flex; /* Organizar las cartas horizontalmente */
+    flex-wrap: wrap; /* Permitir que las cartas se envuelvan en varias líneas */
+  }
+  
+  .calificationCard {
+    display: inline-block; /* Permitir que las cartas se coloquen una al lado de la otra */
+    margin: 2px; /* Agregar espacio entre cartas */
+    text-align: center; /* Centrar el contenido dentro de las cartas */
+    width: 11px; /* Establecer el ancho de la carta */
+    height: 11px; /* Establecer la altura de la carta */
+    border-radius: 50%; /* Crear una forma circular */
+    background-color: gray; /* Establecer el color de fondo para el círculo */
+  }
