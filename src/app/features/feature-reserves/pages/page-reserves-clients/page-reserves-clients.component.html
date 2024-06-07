@@ -1,10 +1,10 @@
 <app-scoped-background-menu></app-scoped-background-menu>
-<section class="emptyState" *ngIf="clients.length <= 0">
+<section class="emptyState" *ngIf="reserves.length <= 0">
     <p id="ono">¡Oh no!</p>
     <img src="../../../../../assets/images/chaplanitoclientes.jpeg" alt="">
     <p id="noTienesClientes">Aún no tienes clientes</p>
 </section>
-<section *ngIf="clients.length > 0" class="background">
+<section *ngIf="reserves.length > 0" class="background">
     <app-scoped-table-clients></app-scoped-table-clients>
     <img src="../../../../../assets/images/fondo.png" alt="">
 </section>
