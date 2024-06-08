@@ -32,6 +32,10 @@ import { UbicationCardComponent } from './components/atoms/ubication-card/ubicat
 import { CardComponent } from './components/molecules/card/card.component';
 import { ChaletCardsComponent } from './components/organisms/chalet-cards/chalet-cards.component';
 import { SliderComponent } from './components/molecules/slider/slider.component';
+import { RecommendedCardComponent } from './components/molecules/recommended-card/recommended-card.component';
+import { RecommendedsCardsComponent } from './components/organisms/recommendeds-cards/recommendeds-cards.component';
+import { CardPlanComponent } from './components/molecules/card-plan/card-plan.component';
+import { PlanCardsComponent } from './components/organisms/plan-cards/plan-cards.component';
 
 
 
@@ -72,7 +76,11 @@ import { SliderComponent } from './components/molecules/slider/slider.component'
     CalificationCardComponent,
     CardComponent,
     ChaletCardsComponent,
-    SliderComponent
+    SliderComponent,
+    RecommendedCardComponent,
+    RecommendedsCardsComponent,
+    CardPlanComponent,
+    PlanCardsComponent
   ],
 
   imports: [
@@ -110,7 +118,10 @@ import { SliderComponent } from './components/molecules/slider/slider.component'
     CalificationCardComponent,
     CardComponent,
     ChaletCardsComponent,
-    SliderComponent
+    SliderComponent,
+    RecommendedCardComponent,
+    RecommendedsCardsComponent,
+    PlanCardsComponent
   ],
 })
 export class SharedModule { }

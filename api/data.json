@@ -191,7 +191,54 @@
         "img1":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/197748520.jpg?k=29e3bfcf31fda21417a8e258d4183f933690121b7c75e3ee38ae8065f80234ee&o=&hp=1",
         "img2":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/197556405.jpg?k=aedb485cf1745c92d66df80704fde35dad7d26d11220a848fe129bf30e59b5c9&o=&hp=1",
         "img3":"https://asoaturquindio.com/wp-content/uploads/2023/05/finca-hotel-la-dulcera2.jpg"
+      },
+      {
+        "nombre":"Finca Hotel Villa Irene",
+        "descripcion":"Finca Hotel Villa Irene te ofrece confortables habitaciones, con las comodidades y los servicios necesarios para el descanso, lo que hará tu estadía una experiencia inolvidable, rodeada de bienestar y tranquilidad.",
+        "ubicacion":"Pijao,Quindío",
+        "imgPrincipal":"https://asoaturquindio.com/wp-content/uploads/Rancho-Villa-Irene/Rancho-villa-irene-9.jpg",
+        "img1":"https://media-cdn.tripadvisor.com/media/photo-s/1d/8d/9d/ac/ranchovillairene.jpg",
+        "img2":"https://vacacionesquindio.com/wp-content/uploads/Rancho-Villa-Irene/Rancho-villa-irene-7.jpg",
+        "img3":"https://vacacionesquindio.com/wp-content/uploads/Rancho-Villa-Irene/Rancho-villa-irene-17.jpg"
+      },
+      {
+        "nombre":"Finca Hotel El Sendero",
+        "descripcion":"Finca Hotel El Sendero te ofrece confortables habitaciones, con las comodidades y los servicios necesarios para el descanso, lo que hará tu estadía una experiencia inolvidable, rodeada de bienestar y tranquilidad.",
+        "ubicacion":"Quimbaya,Quindío",
+        "imgPrincipal":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/294543537.jpg?k=885414db523398af7414566f34c1036a2b11d2d62e039f35b9fc25b51f9b7d1c&o=&hp=1",
+        "img1":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/174840074.jpg?k=66ee0006465a96ae671dddf2fc522d6aaad458fe1656e60f507d1a6599c6fc58&o=&hp=1",
+        "img2":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/297213586.jpg?k=37d1845490a401529093670a423f214f785d772b316c3918bcf6847e5ae486e2&o=&hp=1",
+        "img3":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/297219285.jpg?k=29a8503c49116992cf74a9c4e935edb88882a9db02c5ffa68d1611fe412941eb&o=&hp=1"
       }
+    ],
+    "planes":[
+        {
+        "nombre":"Pana parque",
+        "descripcion":"Creamos experiencias singulares y memorables a través de la interacción y la conexión con los animales y el campo a través de productos empresariales. En PANACA encuentras diferentes opciones para capacitación, fortalecimiento de la cultura organizacional y las competencias laborales y personales. Construyamos juntos aventuras inéditas para los colaboradores, sus familias y los equipos de trabajo.",
+        "ubicacion":"Quimbaya,Quindío",
+        "imgPrincipal":"https://www.naturalezaydescanso.net/wp-content/uploads/2020/04/13147511_1067944023265041_2579654247864957764_o-scaled.jpg",
+        "img1":"https://asoaturquindio.com/wp-content/uploads/2021/09/parque-panaca-.png",
+        "img2":"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/25/70/77/decameron-panaca.jpg?w=700&h=-1&s=1",
+        "img3":"https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_600,q_auto,w_600//hotelier-images/e0/96/3e3b24aa1b9576bd712859eca891e549db39183c78f1a7136ac8fee85685.jpeg"
+        },
+        {
+        "nombre":"Parque del Café",
+        "descripcion":"Creamos experiencias en el parque del cafe singulares y memorables a través de la interacción y la conexión con los animales y el campo a través de productos empresariales. En PANACA encuentras diferentes opciones para capacitación, fortalecimiento de la cultura organizacional y las competencias laborales y personales. Construyamos juntos aventuras inéditas para los colaboradores, sus familias y los equipos de trabajo.",
+        "ubicacion":"Montenegro,Quindío",
+        "imgPrincipal":"https://cloudfront-us-east-1.images.arcpublishing.com/semana/RIB7A3DSVZHN3GBRYNF7UNNWGQ.jpg",
+        "img1":"https://aerodestinos.com.co/wp-content/uploads/2018/11/Parque-del-Café-13.jpg",
+        "img2":"https://fincaspanacah10.com/wp-content/uploads/2022/12/ROLLER-COASTER.png",
+        "img3":"https://7travel.co/assets/img/packages/parque-del-cafe1.png"
+        },
+        {
+        "nombre":"Parque Las Bailarinas",
+        "descripcion":"Creamos experiencias en el parque las bailarinas singulares y memorables a través de la interacción y la conexión con los animales y el campo a través de productos empresariales. En PANACA encuentras diferentes opciones para capacitación, fortalecimiento de la cultura organizacional y las competencias laborales y personales. Construyamos juntos aventuras inéditas para los colaboradores, sus familias y los equipos de trabajo.",
+        "ubicacion":"Montenegro,Quindío",
+        "imgPrincipal":"https://www.comfamiliar.com/agencia-de-viajes/wp-content/uploads/sites/11/2023/03/IMG_5783.jpg",
+        "img1":"https://i.ytimg.com/vi/2S4GzCrQ_nc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBHSX7BRQHVXHwud2MwEZVskkLfSA",
+        "img2":"https://fincaspanacah10.com/wp-content/uploads/2022/12/ROLLER-COASTER.png",
+        "img3":"https://7travel.co/assets/img/packages/parque-acuatico-las-bailarinas-filandia.png"
+        }   
     ]
 }
 

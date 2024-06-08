@@ -10,6 +10,7 @@ import { ScopedBackgroundMenuComponent } from './components/scoped-background-me
 import { PageReservesClientsComponent } from './pages/page-reserves-clients/page-reserves-clients.component';
 import { SharedModule } from '../../shared/shared.module';
 import { PageReservesReservesComponent } from './pages/page-reserves-reserves/page-reserves-reserves.component';
+import { PageHomeComponent } from './pages/page-home/page-home.component';
 
 
 
@@ -23,6 +24,7 @@ import { PageReservesReservesComponent } from './pages/page-reserves-reserves/pa
     ScopedBackgroundMenuComponent,
     PageReservesClientsComponent,
     PageReservesReservesComponent,
+    PageHomeComponent,
   ],
   imports: [
     CommonModule,

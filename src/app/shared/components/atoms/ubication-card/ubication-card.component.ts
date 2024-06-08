@@ -9,4 +9,7 @@ export class UbicationCardComponent {
   @Input()chalet={
    ubicacion: ""
   }
+  @Input()plan={
+    ubicacion: ""
+   }
 }

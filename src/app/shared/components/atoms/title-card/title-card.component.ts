@@ -9,4 +9,7 @@ export class TitleCardComponent {
   @Input()chalet={
     nombre:""
   }
+  @Input()plan={
+    nombre:""
+  }
 }
