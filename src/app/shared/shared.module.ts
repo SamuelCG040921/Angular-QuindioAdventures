@@ -25,13 +25,19 @@ import { ButtonPlusMinumComponent } from './components/atoms/button-plus-minum/b
 import { SliderBarComponent } from './components/atoms/slider-bar/slider-bar.component';
 import { FooterComponent } from './components/organisms/footer/footer.component';
 import { CalificationCardComponent } from './components/atoms/calification-card/calification-card.component';
-import { ImgCardComponent } from './components/atoms/img-card/img-card.component';
 import { FavoriteIconComponent } from './components/atoms/favorite-icon/favorite-icon.component';
 import { TitleCardComponent } from './components/atoms/title-card/title-card.component';
 import { UbicationCardComponent } from './components/atoms/ubication-card/ubication-card.component';
 import { CardCalificationComponent } from './components/molecules/card-calification/card-calification.component';
 import { MigaDePanComponent } from './components/molecules/miga-de-pan/miga-de-pan.component';
 import { ImgPrincipalChaletComponent } from './components/molecules/img-principal-chalet/img-principal-chalet.component';
+import { CardComponent } from './components/molecules/card/card.component';
+import { ChaletCardsComponent } from './components/organisms/chalet-cards/chalet-cards.component';
+import { SliderComponent } from './components/molecules/slider/slider.component';
+import { RecommendedCardComponent } from './components/molecules/recommended-card/recommended-card.component';
+import { RecommendedsCardsComponent } from './components/organisms/recommendeds-cards/recommendeds-cards.component';
+import { CardPlanComponent } from './components/molecules/card-plan/card-plan.component';
+import { PlanCardsComponent } from './components/organisms/plan-cards/plan-cards.component';
 
 @NgModule({
   declarations: [
@@ -60,14 +66,21 @@ import { ImgPrincipalChaletComponent } from './components/molecules/img-principa
     SliderBarComponent,
     FooterComponent,
     CalificationCardComponent,
-    ImgCardComponent,
     FavoriteIconComponent,
     TitleCardComponent,
     UbicationCardComponent,
     FavoriteIconComponent,
     CardCalificationComponent,
     MigaDePanComponent,
-    ImgPrincipalChaletComponent
+    ImgPrincipalChaletComponent,
+    CalificationCardComponent,
+    CardComponent,
+    ChaletCardsComponent,
+    SliderComponent,
+    RecommendedCardComponent,
+    RecommendedsCardsComponent,
+    CardPlanComponent,
+    PlanCardsComponent
   ],
 
   imports: [
@@ -106,7 +119,13 @@ import { ImgPrincipalChaletComponent } from './components/molecules/img-principa
     ButtonPlusMinumComponent,
     CalificationBarComponent,
     CardCalificationComponent,
-    MigaDePanComponent
+    MigaDePanComponent,
+    CardComponent,
+    ChaletCardsComponent,
+    SliderComponent,
+    RecommendedCardComponent,
+    RecommendedsCardsComponent,
+    PlanCardsComponent
   ],
 })
 export class SharedModule { }

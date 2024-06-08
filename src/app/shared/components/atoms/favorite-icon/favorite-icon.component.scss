@@ -10,7 +10,7 @@
   
   .star {
     font-size: 30px; /* Ajustar el tamaño de la estrella según sea necesario */
-    color: gray;
+    color: #8B8B8B;
     cursor: pointer;
     position: absolute; /* Posicionar la estrella absolutamente dentro de su contenedor */
     top: 50%; /* Centrar la estrella verticalmente dentro del contenedor */
@@ -27,7 +27,7 @@
     width: 100%; /* Hacer que el círculo abarque todo el ancho del contenedor */
     height: 100%; /* Hacer que el círculo abarque toda la altura del contenedor */
     border-radius: 50%; /* Crear una forma circular */
-    background-color: rgb(221, 221, 221); /* Establecer el color de fondo a gris */
+    background-color: rgb(255, 255, 255); /* Establecer el color de fondo a gris */
     position: absolute; /* Posicionar el círculo absolutamente dentro de su contenedor */
     top: 0; /* Posicionar el círculo en la parte superior del contenedor */
     left: 0; /* Posicionar el círculo a la izquierda del contenedor */

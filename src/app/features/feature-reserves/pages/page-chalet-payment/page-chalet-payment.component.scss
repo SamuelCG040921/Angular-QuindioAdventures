@@ -1,0 +1,96 @@
+.principal{
+    display: flex;
+}
+.section1{
+    width: 24%;
+    margin-top: 32px;
+    margin-left: 36px;
+    border-right: 1px solid  #90A3BF;
+    padding-right: 20px;
+}
+.container1 h2{
+   font-size: 20px;
+    font-weight: 500;
+}
+.container1 p{
+    font-size: 16px;
+    color: #C3D4E9;
+}
+.container2{
+    display: flex;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.imgChalet{
+    width: 132px;
+    height: 108px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.reviews{
+    margin-top: 20px;
+}
+.reviews p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.container3{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #90A3BF;
+}
+.organization{
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 12px;
+}
+.organization p{
+    font-size: 16px;
+    color: #90A3BF;
+    margin-right: 70px;
+}
+.organization span{
+    font-size: 16px;
+    font-weight: 500;
+}
+.container4{
+    margin-top: 32px;
+}
+.container4 h2{
+ font-size: 20px;
+ font-weight: 500;
+}
+.priceAll{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.priceAll p{
+    color: #90A3BF;
+    width: 50%;
+}
+.priceAll span{
+    font-size: 24px;
+    font-weight: 500;
+}
+.infopayment{
+    display: flex;
+    margin-left: 80px;
+    margin-top: 32px;
+    justify-content: space-between;
+    width: 100%;
+}
+.infopayment p{
+    font-size: 16px;
+    color: #C3D4E9;
+}
+.container-info h2{
+    font-size: 20px;
+    font-weight: 500;
+}
+.container-info p{
+    font-size: 16px;
+    color: #C3D4E9;
+}
