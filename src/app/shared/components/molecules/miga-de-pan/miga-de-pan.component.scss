@@ -1,0 +1,21 @@
+.containerMiga{
+    display: flex;
+}
+
+.miga{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.miga p{
+    padding-right: 3px;
+}
+
+.miga #verdes{
+    color: #418E6D;
+}
+
+.miga p:focus{
+    color: #418E6D;
+}

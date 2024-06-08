@@ -8,10 +8,9 @@ import { FeatureReservesRoutingModule } from './features/feature-reserves/featur
 import { FeatureReservesModule } from './features/feature-reserves/feature-reserves.module';
 import { SharedModule } from './shared/shared.module';
 
-
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
 
   imports: [

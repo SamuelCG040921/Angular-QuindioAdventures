@@ -1,0 +1,16 @@
+.buttonMinum{
+    width: 35px;
+    height: 35px;
+    background-color: #88B8A3;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.buttonMinum:hover{
+    background-color: #76b599;
+}
+
+.buttonMinum:active{
+    background-color: #689c85;
+    box-shadow: inset 1px 1px 3px rgba(103, 103, 103, 0.093);
+}

@@ -19,7 +19,6 @@ import { EmailInputComponent } from './components/atoms/email-input/email-input.
 import { LoginRegisterInputComponent } from './components/atoms/login-register-input/login-register-input.component';
 import { FooterLogoComponent } from './components/atoms/footer-logo/footer-logo.component';
 import { FooterInputComponent } from './components/atoms/footer-input/footer-input.component';
-import { CalificationBallsComponent } from './components/atoms/calification-balls/calification-balls.component';
 import { CalificationBarComponent } from './components/atoms/calification-bar/calification-bar.component';
 import { BackgroundInfoImageComponent } from './components/atoms/background-info-image/background-info-image.component';
 import { ButtonPlusMinumComponent } from './components/atoms/button-plus-minum/button-plus-minum.component';
@@ -30,10 +29,9 @@ import { ImgCardComponent } from './components/atoms/img-card/img-card.component
 import { FavoriteIconComponent } from './components/atoms/favorite-icon/favorite-icon.component';
 import { TitleCardComponent } from './components/atoms/title-card/title-card.component';
 import { UbicationCardComponent } from './components/atoms/ubication-card/ubication-card.component';
-
-
-
-
+import { CardCalificationComponent } from './components/molecules/card-calification/card-calification.component';
+import { MigaDePanComponent } from './components/molecules/miga-de-pan/miga-de-pan.component';
+import { ImgPrincipalChaletComponent } from './components/molecules/img-principal-chalet/img-principal-chalet.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +54,6 @@ import { UbicationCardComponent } from './components/atoms/ubication-card/ubicat
     LoginRegisterInputComponent,
     FooterLogoComponent,
     FooterInputComponent,
-    CalificationBallsComponent,
     CalificationBarComponent,
     BackgroundInfoImageComponent,
     ButtonPlusMinumComponent,
@@ -68,7 +65,9 @@ import { UbicationCardComponent } from './components/atoms/ubication-card/ubicat
     TitleCardComponent,
     UbicationCardComponent,
     FavoriteIconComponent,
-    CalificationCardComponent
+    CardCalificationComponent,
+    MigaDePanComponent,
+    ImgPrincipalChaletComponent
   ],
 
   imports: [
@@ -103,7 +102,11 @@ import { UbicationCardComponent } from './components/atoms/ubication-card/ubicat
     TitleCardComponent,
     UbicationCardComponent,
     FavoriteIconComponent,
-    CalificationCardComponent
+    CalificationCardComponent,
+    ButtonPlusMinumComponent,
+    CalificationBarComponent,
+    CardCalificationComponent,
+    MigaDePanComponent
   ],
 })
 export class SharedModule { }
