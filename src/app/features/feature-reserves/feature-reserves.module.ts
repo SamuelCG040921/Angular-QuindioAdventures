@@ -11,6 +11,8 @@ import { PageReservesClientsComponent } from './pages/page-reserves-clients/page
 import { SharedModule } from '../../shared/shared.module';
 import { PageReservesReservesComponent } from './pages/page-reserves-reserves/page-reserves-reserves.component';
 import { PageHomeComponent } from './pages/page-home/page-home.component';
+import { PageChaletPaymentComponent } from './pages/page-chalet-payment/page-chalet-payment.component';
+
 
 
 
@@ -25,6 +27,7 @@ import { PageHomeComponent } from './pages/page-home/page-home.component';
     PageReservesClientsComponent,
     PageReservesReservesComponent,
     PageHomeComponent,
+    PageChaletPaymentComponent,
   ],
   imports: [
     CommonModule,
@@ -39,7 +42,8 @@ import { PageHomeComponent } from './pages/page-home/page-home.component';
     ScopedTableClientsComponent,
     ScopedBackgroundMenuComponent,
     PageReservesClientsComponent,
-    PageReservesReservesComponent
+    PageReservesReservesComponent,
+    PageChaletPaymentComponent
   ]
 })
 export class FeatureReservesModule { }
