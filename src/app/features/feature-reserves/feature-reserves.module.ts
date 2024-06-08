@@ -10,6 +10,7 @@ import { ScopedBackgroundMenuComponent } from './components/scoped-background-me
 import { PageReservesClientsComponent } from './pages/page-reserves-clients/page-reserves-clients.component';
 import { SharedModule } from '../../shared/shared.module';
 import { PageReservesReservesComponent } from './pages/page-reserves-reserves/page-reserves-reserves.component';
+import { PageChaletPaymentComponent } from './pages/page-chalet-payment/page-chalet-payment.component';
 
 
 
@@ -23,6 +24,7 @@ import { PageReservesReservesComponent } from './pages/page-reserves-reserves/pa
     ScopedBackgroundMenuComponent,
     PageReservesClientsComponent,
     PageReservesReservesComponent,
+    PageChaletPaymentComponent,
   ],
   imports: [
     CommonModule,
@@ -37,7 +39,8 @@ import { PageReservesReservesComponent } from './pages/page-reserves-reserves/pa
     ScopedTableClientsComponent,
     ScopedBackgroundMenuComponent,
     PageReservesClientsComponent,
-    PageReservesReservesComponent
+    PageReservesReservesComponent,
+    PageChaletPaymentComponent
   ]
 })
 export class FeatureReservesModule { }
