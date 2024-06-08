@@ -26,10 +26,12 @@ import { ButtonPlusMinumComponent } from './components/atoms/button-plus-minum/b
 import { SliderBarComponent } from './components/atoms/slider-bar/slider-bar.component';
 import { FooterComponent } from './components/organisms/footer/footer.component';
 import { CalificationCardComponent } from './components/atoms/calification-card/calification-card.component';
-import { ImgCardComponent } from './components/atoms/img-card/img-card.component';
 import { FavoriteIconComponent } from './components/atoms/favorite-icon/favorite-icon.component';
 import { TitleCardComponent } from './components/atoms/title-card/title-card.component';
 import { UbicationCardComponent } from './components/atoms/ubication-card/ubication-card.component';
+import { CardComponent } from './components/molecules/card/card.component';
+import { ChaletCardsComponent } from './components/organisms/chalet-cards/chalet-cards.component';
+import { SliderComponent } from './components/molecules/slider/slider.component';
 
 
 
@@ -63,12 +65,14 @@ import { UbicationCardComponent } from './components/atoms/ubication-card/ubicat
     SliderBarComponent,
     FooterComponent,
     CalificationCardComponent,
-    ImgCardComponent,
     FavoriteIconComponent,
     TitleCardComponent,
     UbicationCardComponent,
     FavoriteIconComponent,
-    CalificationCardComponent
+    CalificationCardComponent,
+    CardComponent,
+    ChaletCardsComponent,
+    SliderComponent
   ],
 
   imports: [
@@ -103,7 +107,10 @@ import { UbicationCardComponent } from './components/atoms/ubication-card/ubicat
     TitleCardComponent,
     UbicationCardComponent,
     FavoriteIconComponent,
-    CalificationCardComponent
+    CalificationCardComponent,
+    CardComponent,
+    ChaletCardsComponent,
+    SliderComponent
   ],
 })
 export class SharedModule { }

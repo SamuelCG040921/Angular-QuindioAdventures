@@ -186,7 +186,11 @@
       {
         "nombre":"Finca Hotel La Dulcera",
         "descripcion":"Finca Hotel La Dulcera te ofrece confortables habitaciones, con las comodidades y los servicios necesarios para el descanso, lo que hará tu estadía una experiencia inolvidable, rodeada de bienestar y tranquilidad.",
-        "ubicacion":"Armenia,Quindío"
+        "ubicacion":"Armenia,Quindío",
+        "imgPrincipal":"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/82/3c/a0/finca-hotel-la-dulcera.jpg?w=700&h=-1&s=1",
+        "img1":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/197748520.jpg?k=29e3bfcf31fda21417a8e258d4183f933690121b7c75e3ee38ae8065f80234ee&o=&hp=1",
+        "img2":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/197556405.jpg?k=aedb485cf1745c92d66df80704fde35dad7d26d11220a848fe129bf30e59b5c9&o=&hp=1",
+        "img3":"https://asoaturquindio.com/wp-content/uploads/2023/05/finca-hotel-la-dulcera2.jpg"
       }
     ]
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-title-card',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './title-card.component.scss'
 })
 export class TitleCardComponent {
-
+  @Input()chalet={
+    nombre:""
+  }
 }

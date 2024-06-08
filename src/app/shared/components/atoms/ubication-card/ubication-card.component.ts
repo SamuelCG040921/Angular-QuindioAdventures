@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-ubication-card',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './ubication-card.component.scss'
 })
 export class UbicationCardComponent {
-
+  @Input()chalet={
+   ubicacion: ""
+  }
 }
