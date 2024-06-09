@@ -1,7 +1,9 @@
 <div class="button-container">
-    <button class="buttonPayment">
+  <button class="buttonPayment">
+    <app-selector-method-payment class="method"></app-selector-method-payment>
+    <div class="imgMethodPayment">
       <img *ngIf="src" [src]="src" alt="Payment Method">
-      <p *ngIf="metodoPago">{{metodoPago}}</p>
-    </button>
-  </div>
-  
+    </div>
+    <span *ngIf="metodoPago">{{metodoPago}}</span>
+  </button>
+</div>
