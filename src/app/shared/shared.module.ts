@@ -38,6 +38,7 @@ import { RecommendedCardComponent } from './components/molecules/recommended-car
 import { RecommendedsCardsComponent } from './components/organisms/recommendeds-cards/recommendeds-cards.component';
 import { CardPlanComponent } from './components/molecules/card-plan/card-plan.component';
 import { PlanCardsComponent } from './components/organisms/plan-cards/plan-cards.component';
+import { ButtonMethodPaymentComponent } from './components/atoms/button-method-payment/button-method-payment.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { PlanCardsComponent } from './components/organisms/plan-cards/plan-cards
     RecommendedCardComponent,
     RecommendedsCardsComponent,
     CardPlanComponent,
-    PlanCardsComponent
+    PlanCardsComponent,
+    ButtonMethodPaymentComponent
   ],
 
   imports: [
@@ -125,7 +127,8 @@ import { PlanCardsComponent } from './components/organisms/plan-cards/plan-cards
     SliderComponent,
     RecommendedCardComponent,
     RecommendedsCardsComponent,
-    PlanCardsComponent
+    PlanCardsComponent,
+    ButtonMethodPaymentComponent
   ],
 })
 export class SharedModule { }

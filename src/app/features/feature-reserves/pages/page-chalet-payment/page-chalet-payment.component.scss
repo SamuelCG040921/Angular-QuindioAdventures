@@ -4,9 +4,9 @@
 .section1{
     width: 24%;
     margin-top: 32px;
-    margin-left: 36px;
+    margin-left: 90px;
     border-right: 1px solid  #90A3BF;
-    padding-right: 20px;
+    padding-right: 38px;
 }
 .container1 h2{
    font-size: 20px;
@@ -80,7 +80,7 @@
     margin-left: 80px;
     margin-top: 32px;
     justify-content: space-between;
-    width: 100%;
+    width: 70%;
 }
 .infopayment p{
     font-size: 16px;
@@ -93,4 +93,24 @@
 .container-info p{
     font-size: 16px;
     color: #C3D4E9;
+}
+.container-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 70%;
+    margin-left: 80px;
+    margin-top: 30px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 10px); /* To ensure two fields per row */
+}
+
+.field label {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
 }
