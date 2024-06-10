@@ -1,0 +1,50 @@
+.containerCollage{
+    display: flex;
+    flex-direction: column;
+    width: 640px;
+    height: 392px;
+    margin-left: 50px;
+}
+
+.containerImg1{
+    width: 640px;
+    height: 200px;
+    margin-bottom: 14px;
+}
+
+.containerImg1 #img1{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.containerImg{
+    display: flex;
+    width: 100%;
+    height: 178px;
+}
+
+.containerImg2{
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 15px;
+}
+
+.containerImg2 #img2{
+    width: 248px;
+    height: 100%;
+    border-bottom-left-radius: 15px;
+}
+
+.containerImg3{
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 15px;
+}
+
+.containerImg3 #img3{
+    width: 378px;
+    height: 100%;
+    border-bottom-right-radius: 15px;
+}
