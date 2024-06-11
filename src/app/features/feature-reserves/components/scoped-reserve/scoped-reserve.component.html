@@ -1,4 +1,4 @@
-<div class="clientTable" (click)="openModal()">  
+<div class="clientTable" >  
         <p class="text1">{{reserve.numero}}</p>
         <p class="text2">{{reserve.codigo}}</p>
         <p class="text3">{{reserve.tipo}}</p>
@@ -6,4 +6,3 @@
         <p class="text6">{{reserve.telefono}}</p>
         <p class="text7">{{reserve.precio}}</p>
 </div>
-<app-modal  *ngIf="isModalOpen" (close)="closeModal()"></app-modal>

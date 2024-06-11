@@ -12,19 +12,20 @@
     </div>
     <div class="information">
       <div class="profile-pic">
-        <img class="profilepicture" src="{{reservedata.userimg}}" alt="Profile Picture">
+        <img class="profilepicture" src="{{reserve.userimg}}" alt="Profile Picture">
       </div>
       <div class="customer-info">
-        <p><strong>Codigo:</strong> {{reservedata.code}}</p>
-        <p><strong>Check in:</strong> {{reservedata.checkin}}</p>
-        <p><strong>Check Out:</strong>{{reservedata.checkout}}</p>
-        <p><strong>Teléfono:</strong> {{reservedata.phone}}</p>
-        <p><strong>Monto:</strong> {{reservedata.amount}}</p>
-        <p><strong>Email:</strong> {{reservedata.email}}</p>
+        <p><strong>Codigo:</strong> {{reserve.codigo}}</p>
+        <p><strong>Check in:</strong> {{reserve.fechainicio}}</p>
+        <p><strong>Check Out:</strong>{{reserve.fechafin}}</p>
+        <p><strong>Teléfono:</strong> {{reserve.telefono}}</p>
+        <p><strong>Monto:</strong> {{reserve.precio}}</p>
+        <p><strong>Email:</strong> {{reserve.correo}}</p>
       </div>
     </div>
     <div class="button-container">
-      <app-button label="Contactar cliente" click="ContactCustomer"></app-button> 
+      <app-button label="Contactar cliente" click="contactCustomer" class="buttonContact"></app-button> 
+      <app-button label="Cancelar reserva" click="cancelarReserva" color="red"></app-button> 
     </div> 
   </div>
 </div>

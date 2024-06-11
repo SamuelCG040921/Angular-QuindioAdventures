@@ -120,6 +120,7 @@
   ],
   "reserves": [
     {
+      "estado": "activa",
       "userimg": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Foto_Perfil_.jpg",
       "numero": 1,
       "codigo": 33,
@@ -141,6 +142,7 @@
       "id": "1c79"
     },
     {
+      "estado": "activa",
       "userimg": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Foto_Perfil_.jpg",
       "numero": 2,
       "codigo": 34,
@@ -162,6 +164,7 @@
       "id": "bdbe"
     },
     {
+      "estado": "activa",
       "userimg": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Foto_Perfil_.jpg",
       "numero": 3,
       "codigo": 35,
@@ -183,6 +186,7 @@
       "id": "368b"
     },
     {
+      "estado": "activa",
       "userimg": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Foto_Perfil_.jpg",
       "numero": 4,
       "codigo": 36,
@@ -204,6 +208,7 @@
       "id": "90dc"
     },
     {
+      "estado": "activa",
       "userimg": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Foto_Perfil_.jpg",
       "numero": 5,
       "codigo": 37,
@@ -225,6 +230,7 @@
       "id": "293d"
     },
     {
+      "estado": "activa",
       "userimg": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Foto_Perfil_.jpg",
       "numero": 6,
       "codigo": 38,

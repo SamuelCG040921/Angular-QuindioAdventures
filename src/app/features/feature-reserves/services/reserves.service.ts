@@ -18,4 +18,11 @@ export class ReservesService {
   createReservation(reserva: any){
     return this.http.post('http://localhost:8000/reserves', reserva)
   }
+
+  cancelReserve(codigo:any){
+    return this.http.put('http://localhost:8000/reserves', codigo)
+  }
+  getReservebyCode(codigo:any){
+    return this.http.get('http://localhost:8000/reserves/',codigo)
+  }
 }
