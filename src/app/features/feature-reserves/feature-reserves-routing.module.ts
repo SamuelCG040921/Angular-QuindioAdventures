@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PageChaletDetailsComponent } from './pages/page-chalet-details/page-chalet-details.component';
 import { PageReservesClientsComponent } from './pages/page-reserves-clients/page-reserves-clients.component';
 import { PageReservesReservesComponent } from './pages/page-reserves-reserves/page-reserves-reserves.component';
 
 const routes: Routes = [
   {path:'reserves-clients', component: PageReservesClientsComponent},
-  {path:'reserves-reserves', component: PageReservesReservesComponent}
+  {path:'reserves-reserves', component: PageReservesReservesComponent},
+  {path:'chalet-details/:id', component: PageChaletDetailsComponent}
+  
 ];
 
 @NgModule({

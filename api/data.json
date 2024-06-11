@@ -184,6 +184,7 @@
     ],
     "chalets": [
       {
+        "codigo": 1,
         "nombre":"Finca Hotel La Dulcera",
         "descripcion":"Finca Hotel La Dulcera te ofrece confortables habitaciones, con las comodidades y los servicios necesarios para el descanso, lo que hará tu estadía una experiencia inolvidable, rodeada de bienestar y tranquilidad.",
         "ubicacion":"Armenia,Quindío",
@@ -193,6 +194,7 @@
         "img3":"https://asoaturquindio.com/wp-content/uploads/2023/05/finca-hotel-la-dulcera2.jpg"
       },
       {
+        "codigo": 2,
         "nombre":"Finca Hotel Villa Irene",
         "descripcion":"Finca Hotel Villa Irene te ofrece confortables habitaciones, con las comodidades y los servicios necesarios para el descanso, lo que hará tu estadía una experiencia inolvidable, rodeada de bienestar y tranquilidad.",
         "ubicacion":"Pijao,Quindío",
@@ -202,6 +204,7 @@
         "img3":"https://vacacionesquindio.com/wp-content/uploads/Rancho-Villa-Irene/Rancho-villa-irene-17.jpg"
       },
       {
+        "codigo": 3,
         "nombre":"Finca Hotel El Sendero",
         "descripcion":"Finca Hotel El Sendero te ofrece confortables habitaciones, con las comodidades y los servicios necesarios para el descanso, lo que hará tu estadía una experiencia inolvidable, rodeada de bienestar y tranquilidad.",
         "ubicacion":"Quimbaya,Quindío",
@@ -225,7 +228,7 @@
         "nombre":"Parque del Café",
         "descripcion":"Creamos experiencias en el parque del cafe singulares y memorables a través de la interacción y la conexión con los animales y el campo a través de productos empresariales. En PANACA encuentras diferentes opciones para capacitación, fortalecimiento de la cultura organizacional y las competencias laborales y personales. Construyamos juntos aventuras inéditas para los colaboradores, sus familias y los equipos de trabajo.",
         "ubicacion":"Montenegro,Quindío",
-        "imgPrincipal":"https://cloudfront-us-east-1.images.arcpublishing.com/semana/RIB7A3DSVZHN3GBRYNF7UNNWGQ.jpg",
+        "imgPrincipal":"https://regiones.prisamedia.co/wp-content/uploads/2023/07/Parque-del-Cafe-Montenegro-Quindio.-Foto-via-Getty-Images-scaled.jpg",
         "img1":"https://aerodestinos.com.co/wp-content/uploads/2018/11/Parque-del-Café-13.jpg",
         "img2":"https://fincaspanacah10.com/wp-content/uploads/2022/12/ROLLER-COASTER.png",
         "img3":"https://7travel.co/assets/img/packages/parque-del-cafe1.png"

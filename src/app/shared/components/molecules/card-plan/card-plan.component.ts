@@ -11,4 +11,8 @@ export class CardPlanComponent {
     ubicacion:"",
     imgPrincipal:""
    }
+
+   openDetails(){
+    
+   }
 }
