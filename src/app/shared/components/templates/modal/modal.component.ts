@@ -34,7 +34,13 @@ export class ModalComponent implements OnInit{
   }
 
   cancelarReserva(){
-
+    this.reservesService.cancelReserve(33)
+    .subscribe(response => {
+      console.log('Reserva actualizada:', response);
+      // Actualizar la interfaz de usuario o realizar otras acciones
+    }, error => {
+      console.error('Error al actualizar reserva:', error);
+    });
   }
 
   ngOnInit(): void {
