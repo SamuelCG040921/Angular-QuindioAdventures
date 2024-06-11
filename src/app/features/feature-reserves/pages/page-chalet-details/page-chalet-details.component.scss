@@ -1,0 +1,155 @@
+.containerMiga{
+    width: max-content;
+}
+
+#miga{
+    display: flex;
+    padding: 25px 0px 0px 100px;
+    width: min-content;
+}
+
+.primera{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.containerIzq{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#qualify{
+    margin-top: 25px;
+    padding-right: 35px;
+}
+
+#bordeImg{
+    border-right: 1px solid #BEBEBE;
+    padding-right: 35px;
+}
+
+.containerDer{
+    display: flex;
+    flex-direction: column;
+}
+
+.containerText{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+#tittle{
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+#info{
+    width: 600px;
+}
+
+.pricesTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#precios{
+    margin-right: 30px;
+}
+
+#mapa{
+    margin-left: 20px;
+}
+
+.title figure {
+    height: 1px;
+    background-color: #418E6D;
+    margin: 0 10px; /* Añade un margen horizontal para separarlos del título */
+}
+
+.title {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;
+    width: 90%;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.line1 {
+    width: 8%;
+}
+
+.line2 {
+    width: 70%;
+}
+
+.tercera{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.servicios{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.cuarta{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.titleReserva figure{
+    height: 1px;
+    background-color: #418E6D;
+    margin: 0 30px; /* Añade un margen horizontal para separarlos del título */
+}
+
+.titleReserva{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.linech{
+    width: 35%;
+}
+
+.containerPersona{
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.recuadroPrecio{
+    padding-left: 120px;
+}
+
+#persona{
+    margin-bottom: 30px;
+}

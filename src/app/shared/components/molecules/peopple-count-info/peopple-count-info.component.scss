@@ -1,0 +1,35 @@
+.containerCountClient{
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.client{
+    display: flex;
+    width: max-content;
+}
+
+.containerText{
+    padding-left: 18px;
+}
+
+.containerText #tittle{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.containerButtonsCount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 60px;
+}
+
+.buttonMinum{
+    padding-right: 15px;
+}
+
+.buttonMore{
+    padding-left: 15px;
+}

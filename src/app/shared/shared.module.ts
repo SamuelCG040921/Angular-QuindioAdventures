@@ -41,6 +41,16 @@ import { PlanCardsComponent } from './components/organisms/plan-cards/plan-cards
 import { ButtonMethodPaymentComponent } from './components/atoms/button-method-payment/button-method-payment.component';
 import { SelectorMethodPaymentComponent } from './components/atoms/selector-method-payment/selector-method-payment.component';
 import { AlertComponent } from './components/templates/alert/alert.component';
+import { PricesTableComponent } from './components/molecules/prices-table/prices-table.component';
+import { NavegationMapComponent } from './components/molecules/navegation-map/navegation-map.component';
+import { IconServicesComponent } from './components/atoms/icon-services/icon-services.component';
+import { ServiceInComponent } from './components/molecules/service-in/service-in.component';
+import { CountPeoppleComponent } from './components/atoms/count-peopple/count-peopple.component';
+import { PeoppleCountInfoComponent } from './components/molecules/peopple-count-info/peopple-count-info.component';
+import { ButtonPlusMoreComponent } from './components/atoms/button-plus-more/button-plus-more.component';
+import { RecuadroPrecioCalculoComponent } from './components/molecules/recuadro-precio-calculo/recuadro-precio-calculo.component';
+import { ChaletViewImagesComponent } from './components/molecules/chalet-view-images/chalet-view-images.component';
+import { CollageViewComponent } from './components/molecules/collage-view/collage-view.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +82,6 @@ import { AlertComponent } from './components/templates/alert/alert.component';
     FavoriteIconComponent,
     TitleCardComponent,
     UbicationCardComponent,
-    FavoriteIconComponent,
     CardCalificationComponent,
     MigaDePanComponent,
     ImgPrincipalChaletComponent,
@@ -86,7 +95,17 @@ import { AlertComponent } from './components/templates/alert/alert.component';
     PlanCardsComponent,
     ButtonMethodPaymentComponent,
     SelectorMethodPaymentComponent,
-    AlertComponent
+    AlertComponent,
+    PricesTableComponent,
+    NavegationMapComponent,
+    IconServicesComponent,
+    ServiceInComponent,
+    CountPeoppleComponent,
+    PeoppleCountInfoComponent,
+    ButtonPlusMoreComponent,
+    RecuadroPrecioCalculoComponent,
+    ChaletViewImagesComponent,
+    CollageViewComponent
   ],
 
   imports: [
@@ -134,7 +153,16 @@ import { AlertComponent } from './components/templates/alert/alert.component';
     PlanCardsComponent,
     ButtonMethodPaymentComponent,
     SelectorMethodPaymentComponent,
-    AlertComponent
+    AlertComponent,
+    PricesTableComponent,
+    NavegationMapComponent,
+    IconServicesComponent,
+    ServiceInComponent,
+    CountPeoppleComponent,
+    PeoppleCountInfoComponent,
+    RecuadroPrecioCalculoComponent,
+    ChaletViewImagesComponent,
+    CollageViewComponent
   ],
 })
 export class SharedModule { }

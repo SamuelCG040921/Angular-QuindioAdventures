@@ -1,1 +1,43 @@
-<p>page-chalet-details works!</p>
+<app-header></app-header>
+<div class="containerMiga">
+    <app-miga-de-pan id="miga"></app-miga-de-pan>
+</div>
+<div class="primera">
+    <div class="containerIzq">
+        <app-chalet-view-images id="bordeImg"></app-chalet-view-images>
+        <app-card-calification id="qualify"></app-card-calification>
+    </div>
+    <div class="containerDer">
+        <app-collage-view></app-collage-view>
+        <div class="containerText">
+            <p id="tittle">Finca hotel la dulcera</p>
+            <p id="info">Finca Hotel La Dulcera te ofrece confortables habitaciones, con las comodidades y los servicios necesarios para el descanso, lo que hará tu estadía una experiencia inolvidable, rodeada de bienestar y tranquilidad.</p>
+        </div>
+    </div>
+</div>
+<div class="segunda">
+    <div class="pricesTable">
+        <app-prices-table id="precios"></app-prices-table>
+        <app-navegation-map id="mapa"></app-navegation-map>
+    </div>
+</div>
+<div class="tercera">
+    <div class="title"><figure class="line1"></figure><p class="section-title">Ventajas y servicios</p><figure class="line2"></figure></div>
+    <div class="servicios">
+        <app-service-in></app-service-in>
+    </div>
+</div>
+<div class="cuarta">
+    <div class="titleReserva"><figure class="linech"></figure><p class="section-title">Reserva e informacion</p><figure class="linech"></figure></div>
+    <div class="contenido">
+        <div class="containerPersona">
+            <app-peopple-count-info id="persona"></app-peopple-count-info>
+            <app-peopple-count-info id="persona"></app-peopple-count-info>
+            <app-peopple-count-info></app-peopple-count-info>
+        </div>
+        <div class="recuadroPrecio">
+            <app-recuadro-precio-calculo></app-recuadro-precio-calculo>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

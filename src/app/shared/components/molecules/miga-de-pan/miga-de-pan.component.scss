@@ -1,11 +1,13 @@
 .containerMiga{
     display: flex;
+    width: max-content;
 }
 
 .miga{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: max-content;
 }
 
 .miga p{
@@ -13,9 +15,5 @@
 }
 
 .miga #verdes{
-    color: #418E6D;
-}
-
-.miga p:focus{
     color: #418E6D;
 }

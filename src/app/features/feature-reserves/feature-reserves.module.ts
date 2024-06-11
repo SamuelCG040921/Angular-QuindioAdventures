@@ -14,8 +14,6 @@ import { PageChaletDetailsComponent } from './pages/page-chalet-details/page-cha
 import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { PageChaletPaymentComponent } from './pages/page-chalet-payment/page-chalet-payment.component';
 
-
-
 @NgModule({
   declarations: [
     FeatureReservesComponent,
@@ -44,7 +42,8 @@ import { PageChaletPaymentComponent } from './pages/page-chalet-payment/page-cha
     ScopedBackgroundMenuComponent,
     PageReservesClientsComponent,
     PageReservesReservesComponent,
-    PageChaletPaymentComponent
+    PageChaletPaymentComponent,
+    PageChaletDetailsComponent
   ]
 })
 export class FeatureReservesModule { }

@@ -1,4 +1,4 @@
-.buttonMinum{
+.buttonMore{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,17 +19,17 @@
     border-radius: 3px;
 }
 
-.buttonMinum p{
+.buttonMore p{
     width: min-content;
     height: min-content;
     font-size: 16px;
 }
 
-.buttonMinum:hover{
+.buttonMore:hover{
     background-color: #76b599;
 }
 
-.buttonMinum:active{
+.buttonMore:active{
     background-color: #689c85;
     box-shadow: inset 1px 1px 3px rgba(103, 103, 103, 0.093);
 }
