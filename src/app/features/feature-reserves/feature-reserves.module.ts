@@ -13,6 +13,7 @@ import { PageReservesReservesComponent } from './pages/page-reserves-reserves/pa
 import { PageChaletDetailsComponent } from './pages/page-chalet-details/page-chalet-details.component';
 import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { PageChaletPaymentComponent } from './pages/page-chalet-payment/page-chalet-payment.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -33,7 +34,8 @@ import { PageChaletPaymentComponent } from './pages/page-chalet-payment/page-cha
   imports: [
     CommonModule,
     FeatureReservesRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   exports: [
     FeatureReservesComponent,

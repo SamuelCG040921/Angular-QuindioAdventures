@@ -35,48 +35,52 @@
             </div>
             <p>Paso 1 de 2</p>
         </div>
-        <div class="container-form">
+        <form [formGroup]="reservaForm" class="container-form" (ngSubmit)="onSubmit()">
             <div class="field">
                 <label class="documento">Documento</label>
-                <app-login-register-input class="documento" placeholder="Ingresa tu documento"></app-login-register-input>
+                <input formControlName="documento" class="documento" placeholder="Ingresa tu documento" id="documento">
             </div>
             <div class="field">
                 <label class="cantidadNinos">Cantidad de niños</label>
-                <app-login-register-input class="cantidadNinos" placeholder="Ingresa la cantidad de niños"></app-login-register-input>
+                <input formControlName="cantidadNinos" class="cantidadNinos" placeholder="Ingresa la cantidad de niños" id="cantidadNinos">
             </div>
             <div class="field">
                 <label class="cantidadAdultos">Cantidad de adultos</label>
-                <app-login-register-input class="cantidadAdultos" placeholder="Ingresa la cantidad de adultos"></app-login-register-input>
+                <input formControlName="cantidadAdultos" class="cantidadAdultos" placeholder="Ingresa la cantidad de adultos" id="cantidadAdultos">
             </div>
             <div class="field">
                 <label class="nombre">Nombre</label>
-                <app-login-register-input class="nombre" placeholder="Ingresa tu nombre"></app-login-register-input>
+                <input formControlName="nombre" class="nombre" placeholder="Ingresa tu nombre" id="nombre">
             </div>
             <div class="field">
                 <label class="apellido">Apellido</label>
-                <app-login-register-input class="apellido" placeholder="Ingresa tu apellido"></app-login-register-input>
+                <input formControlName="apellido" class="apellido" placeholder="Ingresa tu apellido" id="apellido">
             </div>
             <div class="field">
                 <label class="telefono">Teléfono</label>
-                <app-login-register-input class="telefono" placeholder="Ingresa tu teléfono"></app-login-register-input>
+                <input formControlName="telefono" class="telefono" placeholder="Ingresa tu teléfono" id="telefono">
             </div>
             <div class="field">
                 <label class="correo">Correo</label>
-                <app-login-register-input class="correo" placeholder="Ingresa tu correo"></app-login-register-input>
+                <input formControlName="correo" class="correo" placeholder="Ingresa tu correo" id="correo">
             </div>
             <div class="field">
                 <label class="direccion">Dirección</label>
-                <app-login-register-input class="direccion" placeholder="Ingresa tu dirección"></app-login-register-input>
+                <input formControlName="direccion" class="direccion" placeholder="Ingresa tu dirección" id="direccion">
             </div>
             <div class="field">
                 <label class="fechaInicio">Fecha inicio</label>
-                <app-login-register-input class="fechaInicio" placeholder="Ingresa la fecha de inicio"></app-login-register-input>
+                <input formControlName="fechaInicio" class="fechaInicio" placeholder="Ingresa la fecha de inicio" id="fechainicio">
             </div>
             <div class="field">
                 <label class="fechaFin">Fecha fin</label>
-                <app-login-register-input class="fechaFin" placeholder="Ingresa la fecha fin"></app-login-register-input>
+                <input formControlName="fechaFin" class="fechaFin" placeholder="Ingresa la fecha fin" id="fechafin">
             </div>
-        </div>
+            <div class="buttonProcedPayment">
+                <app-button type="submit" label="Proceder con el pago y la reserva" color="#275843" class="buttonend" (click)="openAlert()"></app-button>
+                <app-alert *ngIf="isAlertOpen" (close)="closeAlert()"></app-alert>
+            </div>
+        </form>
         <div class="infopayment">
             <div class="container-info">
                 <h2>Información de Pago </h2>
@@ -103,10 +107,6 @@
             <div class="field">
                 <app-button-method-payment src="../../../../../assets/images/tarjeta.svg" [metodoPago]="'Debito'"></app-button-method-payment>
             </div>
-        </div>
-        <div class="buttonProcedPayment">
-            <app-button label="Proceder con el pago y la reserva" color="#275843" class="buttonend" (click)="openAlert()"></app-button>
-          </div>
-          <app-alert *ngIf="isAlertOpen" (close)="closeAlert()"></app-alert>          
+        </div>          
     </section>
 </section>
