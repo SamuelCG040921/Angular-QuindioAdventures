@@ -1,19 +1,20 @@
 <div class="alert" (click)="closeAlert()">
     <div class="modal-alert" (click)="$event.stopPropagation()">
-        <div class="modal-header">
-            <button (click)="closeAlert()">
-                <img class="iconClose" src="../../../../../assets/icons/x.svg" alt="Cerrar">
-            </button>
+      <div class="modal-header">
+        <button (click)="closeAlert()">
+          <img class="iconClose" src="../../../../../assets/icons/x.svg" alt="Cerrar">
+        </button>
+      </div>
+      <div class="modal-content">
+        <div class="content img">
+          <img class="imgAlert" src="../../../../../assets/images/sombreroAlerta.svg" alt="Alerta">
         </div>
-        <div class="modal-content">
-            <div class="content img">
-                <img class="imgAlert" src="../../../../../assets/images/sombreroAlerta.svg" alt="Alerta">
-            </div>
-            <div class="selection">
-                <p>¿Estás seguro de proceder con el pago de la reserva?</p>
-                <app-button label="Sí" color="#275843" class="buttonYes"></app-button>
-                <app-button label="No" color="#BF3434" class="buttonNo"></app-button>
-            </div>
+        <div class="selection">
+          <p>¿Estás seguro de proceder con el pago de la reserva?</p>
+          <app-button label="Sí" color="#275843" class="buttonYes"></app-button>
+          <app-button label="No" color="#BF3434" class="buttonNo"></app-button>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  
