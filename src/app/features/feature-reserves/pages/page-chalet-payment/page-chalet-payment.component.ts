@@ -30,6 +30,10 @@ export class PageChaletPaymentComponent{
     this.reservaForm = this.fb.group({
       documento: ['', Validators.required],
       cantidadNinos: ['', Validators.required],
+      tipo: 'Chalet',
+      codigo: 39,
+      numero:7,
+      precio:6000000,
       cantidadAdultos: ['', Validators.required],
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
@@ -38,6 +42,7 @@ export class PageChaletPaymentComponent{
       direccion: ['', Validators.required],
       fechaInicio: ['', Validators.required],
       fechaFin: ['', Validators.required],
+
     });
   }
 
