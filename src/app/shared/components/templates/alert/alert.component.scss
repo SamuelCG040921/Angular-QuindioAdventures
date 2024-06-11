@@ -1,0 +1,56 @@
+.alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.162);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.modal-alert {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border: 2px solid #418E6D;
+}
+
+.modal-header {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.modal-header button {
+    background: none;
+    margin: 0;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.imgAlert {
+    width: 90px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.buttonYes,
+.buttonNo {
+    margin: 10px;
+}
+.selection p{
+    margin-bottom: 20px;
+}
