@@ -70,11 +70,11 @@
             </div>
             <div class="field">
                 <label class="fechaInicio">Fecha inicio</label>
-                <input formControlName="fechaInicio" class="fechaInicio" placeholder="Ingresa la fecha de inicio" id="fechainicio">
+                <input type="date" formControlName="fechaInicio" class="fechaInicio" placeholder="Ingresa la fecha de inicio" id="fechainicio">
             </div>
             <div class="field">
                 <label class="fechaFin">Fecha fin</label>
-                <input formControlName="fechaFin" class="fechaFin" placeholder="Ingresa la fecha fin" id="fechafin">
+                <input type="date" formControlName="fechaFin" class="fechaFin" placeholder="Ingresa la fecha fin" id="fechafin">
             </div>
             <div class="buttonProcedPayment">
                 <app-button type="submit" label="Proceder con el pago y la reserva" color="#275843" class="buttonend" (click)="openAlert()"></app-button>
