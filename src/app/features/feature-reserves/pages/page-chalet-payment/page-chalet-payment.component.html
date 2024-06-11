@@ -105,7 +105,8 @@
             </div>
         </div>
         <div class="buttonProcedPayment">
-            <app-button label="Proceder con el pago y la reserva" color="#275843" class="buttonend" ></app-button>
-        </div>
+            <app-button label="Proceder con el pago y la reserva" color="#275843" class="buttonend" (click)="openAlert()"></app-button>
+          </div>
+          <app-alert *ngIf="isAlertOpen" (close)="closeAlert()"></app-alert>          
     </section>
 </section>
