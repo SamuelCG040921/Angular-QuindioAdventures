@@ -1,0 +1,40 @@
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-container" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <button (click)="closeModal()"><img class="iconClose"  src="../../../../../assets/icons/x.svg"></button>
+      </div>
+      <div class="modal-content">
+        <div class="detailsReserv">
+          <strong>Detalles de la reserva</strong>
+        </div>
+      <div class="organization">
+        
+      </div>
+      <div class="information">
+        <div class="profile-pic">
+          <img class="profilepicture" src="{{reserve.chaletimg}}" alt="Profile Picture">
+        </div>
+        <div class="customer-info">
+            <div class="info1">
+                <p><strong>Codigo:</strong> {{reserve.codigo}}</p>
+                <p><strong>Check in:</strong> {{reserve.checkin}}</p>
+                <p><strong>Check Out:</strong>{{reserve.checkout}}</p>
+            </div>
+            <div class="info2">
+                <p><strong>Tipo:</strong> {{reserve.tipo}}</p>
+                <p><strong>Teléfono:</strong> {{reserve.telefono}}</p>
+                <p><strong>Monto:</strong> {{reserve.precio}}</p>
+            </div>
+          <p><strong>Email:</strong> {{reserve.correo}}</p>
+          <p><strong>Dirección:</strong> {{reserve.direccion}}</p>
+        </div>
+      </div>
+      <div class="button-container">
+        <app-button label="Contactar vendedor" click="contactSeller()" class="buttonContact"></app-button> 
+        <app-button label="Cancelar reserva" click="cancelarReserva()" color="red"></app-button> 
+      </div> 
+      <div class="update-button">
+            <app-button label="Actualizar reserva" click="actualizarReserva()" color="#0F32AC" textcolor="white"></app-button>
+        </div>
+      </div>
+  </div>
