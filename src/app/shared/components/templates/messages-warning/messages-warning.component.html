@@ -1,0 +1,21 @@
+<div class="messages" (click)="closeAlert()">
+    <div class="modal-alert" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+      </div>
+      <div class="modal-content">
+        <div class="title">
+          <app-tittle-messages label="¡Espera!" color="#FFB800"></app-tittle-messages>
+        </div>
+        <div class="content img">
+          <img class="imgWarning" src="../../../../../assets/images/chaplanitoAdvertencia.png" alt="Alerta">
+        </div>
+        <div class="message">
+            <app-paragraph-messages label="¿Estás segur@ de cancelar la reserva?" color="#FFB800"></app-paragraph-messages>
+        </div> 
+        <div class="buttons">
+         <app-button label="Confirmar" color="#275843"></app-button>
+         <app-button label="Rechazar" color="#BF3434"></app-button>
+        </div>
+      </div>
+    </div>
+  </div>

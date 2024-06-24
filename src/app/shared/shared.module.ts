@@ -51,6 +51,11 @@ import { ButtonPlusMoreComponent } from './components/atoms/button-plus-more/but
 import { RecuadroPrecioCalculoComponent } from './components/molecules/recuadro-precio-calculo/recuadro-precio-calculo.component';
 import { ChaletViewImagesComponent } from './components/molecules/chalet-view-images/chalet-view-images.component';
 import { CollageViewComponent } from './components/molecules/collage-view/collage-view.component';
+import { MessagesWarningComponent } from './components/templates/messages-warning/messages-warning.component';
+import { MessagesErrorComponent } from './components/templates/messages-error/messages-error.component';
+import { TittleMessagesComponent } from './components/atoms/tittle-messages/tittle-messages.component';
+import { ParagraphMessagesComponent } from './components/atoms/paragraph-messages/paragraph-messages.component';
+import { MessagesSuccesfulComponent } from './components/templates/messages-succesful/messages-succesful.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +110,12 @@ import { CollageViewComponent } from './components/molecules/collage-view/collag
     ButtonPlusMoreComponent,
     RecuadroPrecioCalculoComponent,
     ChaletViewImagesComponent,
-    CollageViewComponent
+    CollageViewComponent,
+    MessagesWarningComponent,
+    MessagesErrorComponent,
+    TittleMessagesComponent,
+    ParagraphMessagesComponent,
+    MessagesSuccesfulComponent
   ],
 
   imports: [
@@ -162,7 +172,13 @@ import { CollageViewComponent } from './components/molecules/collage-view/collag
     PeoppleCountInfoComponent,
     RecuadroPrecioCalculoComponent,
     ChaletViewImagesComponent,
-    CollageViewComponent
+    CollageViewComponent,
+    MessagesWarningComponent,
+    MessagesErrorComponent,
+    TittleMessagesComponent,
+    ParagraphMessagesComponent,
+    MessagesSuccesfulComponent,
+
   ],
 })
 export class SharedModule { }
