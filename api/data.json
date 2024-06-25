@@ -246,21 +246,21 @@
       "id": "c010"
     },
     {
-      "id": "0570",
-      "documento": "6776767",
+      "id": "5a3a",
+      "documento": "1091884708",
       "cantidadNinos": "2",
       "tipo": "Chalet",
       "codigo": 39,
       "numero": 7,
       "precio": 6000000,
       "cantidadAdultos": "2",
-      "nombre": "Manuela",
-      "apellido": "Garcia",
-      "telefono": "9008089809",
-      "correo": "manuela@gmail.com",
-      "direccion": "sdasdasdasd",
-      "fechaInicio": "2024-06-04",
-      "fechaFin": "2024-06-06"
+      "nombre": "Pedro",
+      "apellido": "Correa",
+      "telefono": "34545643122",
+      "correo": "camilobalsero16@gmail.com",
+      "direccion": "barrio villa del carmen mz b # 19",
+      "fechaInicio": "2024-07-05",
+      "fechaFin": "2024-07-06"
     }
   ],
   "chalets": [

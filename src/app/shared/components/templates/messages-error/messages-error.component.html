@@ -1,19 +1,17 @@
 <div class="messages" (click)="closeAlert()">
-    <div class="modal-alert" (click)="$event.stopPropagation()">
-      <div class="modal-header">
+  <div class="modal-alert" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+    </div>
+    <div class="modal-content">
+      <div class="title">
+        <app-tittle-messages label="¡Hubo un problema!" color="#FF2323"></app-tittle-messages>
       </div>
-      <div class="modal-content">
-        <div class="title">
-          <app-tittle-messages label="¡Hubo un problema!" color="#FF2323"></app-tittle-messages>
-        </div>
-        <div class="content img">
-          <img class="imgError" src="../../../../../assets/images/chaplanitoError.png" alt="Alerta">
-        </div>
-        <div class="message">
-          <app-paragraph-messages label="Los días hábiles para cancelar la reserva ya se terminaron" color="#FF2323"></app-paragraph-messages>
-        </div>
+      <div class="content img">
+        <img class="imgError" src="../../../../../assets/images/chaplanitoError.png" alt="Alerta">
+      </div>
+      <div class="message">
+        <app-paragraph-messages label="Alguno de los datos no es válido" color="#FF2323"></app-paragraph-messages>
       </div>
     </div>
   </div>
-  
-  
+</div>
