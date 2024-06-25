@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ReservesService } from '../../../../features/feature-reserves/services/reserves.service';
 
 @Component({
-  selector: 'app-modal-reserves',
-  templateUrl: './modal-reserves.component.html',
-  styleUrl: './modal-reserves.component.scss'
+  selector: 'app-modal-update',
+  templateUrl: './modal-update.component.html',
+  styleUrl: './modal-update.component.scss'
 })
-export class ModalReservesComponent implements OnInit {
+export class ModalUpdateComponent implements OnInit {
   @Input() reserve:any= {
     chaletimg:'',
     codigo: '',
@@ -20,8 +20,6 @@ export class ModalReservesComponent implements OnInit {
   };
 
   constructor(private reservesService:ReservesService){}
-
-  isModalUpdateOpen = false;
 
   @Output() close = new EventEmitter<void>();
 
@@ -37,12 +35,6 @@ export class ModalReservesComponent implements OnInit {
   cancelarReserva(){
     
   }
-
-  actualizarReserva(){
-    this.isModalUpdateOpen = true;
-  }
-
-  
 
   ngOnInit(): void {
     this.reservesService.getReservebyCode(this.reserve.codigo).

@@ -9,9 +9,9 @@
       <p id="title7">Monto</p>
     </div>
     <div *ngFor="let reserve of reserves; let i = index" class="reserves-container">
-      <app-scoped-reserve (click)="openModal(reserve)" [reserve]="reserve" trackBy="trackById"></app-scoped-reserve>
+      <app-scoped-reserve [reserve]="reserve"></app-scoped-reserve>
     </div>
   </div>
+
   
-  <app-modal *ngIf="isModalOpen" [reserve]="selectedReserve" (close)="closeModal()"></app-modal>
   
