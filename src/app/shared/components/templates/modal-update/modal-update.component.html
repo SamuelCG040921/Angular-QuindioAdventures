@@ -5,7 +5,7 @@
       </div>
       <div class="modal-content">
         <div class="detailsReserv">
-          <strong>Detalles de la reserva</strong>
+          <strong>Actualización de la reserva</strong>
         </div>
       <div class="organization">
         
@@ -30,12 +30,8 @@
         </div>
       </div>
       <div class="button-container">
-        <app-button label="Contactar vendedor" click="contactSeller()" class="buttonContact"></app-button> 
-        <app-button label="Cancelar reserva" click="cancelarReserva()" color="red"></app-button> 
-      </div> 
-      <div class="update-button">
-            <app-button label="Actualizar reserva" (click)="actualizarReserva()" color="#0F32AC" textcolor="white"></app-button>
-        </div>
+        <app-button label="Enviar" click="enviarActualización" class="buttonContact"></app-button> 
+        <app-button label="Cancelar" click="closeModal" color="red"></app-button> 
+      </div>
       </div>
   </div>
-  <app-modal-update *ngIf="isModalUpdateOpen" (close)="closeModal()"></app-modal-update>

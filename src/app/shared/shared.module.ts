@@ -56,6 +56,8 @@ import { MessagesErrorComponent } from './components/templates/messages-error/me
 import { TittleMessagesComponent } from './components/atoms/tittle-messages/tittle-messages.component';
 import { ParagraphMessagesComponent } from './components/atoms/paragraph-messages/paragraph-messages.component';
 import { MessagesSuccesfulComponent } from './components/templates/messages-succesful/messages-succesful.component';
+import { ModalReservesComponent } from './components/templates/modal-reserves/modal-reserves.component';
+import { ModalUpdateComponent } from './components/templates/modal-update/modal-update.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,6 @@ import { MessagesSuccesfulComponent } from './components/templates/messages-succ
     WhatInputComponent,
     WhereInputComponent,
     LogoComponent,
-    ModalComponent,
     EmailInputComponent,
     LoginRegisterInputComponent,
     FooterLogoComponent,
@@ -115,7 +116,9 @@ import { MessagesSuccesfulComponent } from './components/templates/messages-succ
     MessagesErrorComponent,
     TittleMessagesComponent,
     ParagraphMessagesComponent,
-    MessagesSuccesfulComponent
+    MessagesSuccesfulComponent,
+    ModalReservesComponent,
+    ModalUpdateComponent
   ],
 
   imports: [
@@ -178,7 +181,7 @@ import { MessagesSuccesfulComponent } from './components/templates/messages-succ
     TittleMessagesComponent,
     ParagraphMessagesComponent,
     MessagesSuccesfulComponent,
-
+    ModalReservesComponent
   ],
 })
 export class SharedModule { }

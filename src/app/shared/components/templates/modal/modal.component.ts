@@ -11,8 +11,8 @@ export class ModalComponent implements OnInit{
   @Input() reserve:any= {
     userimg:'',
     codigo: '',
-    fechainicio: '',
-    fechafin: '',
+    checkin: '',
+    checkout: '',
     correo: '',
     telefono: '',
     precio: 0,

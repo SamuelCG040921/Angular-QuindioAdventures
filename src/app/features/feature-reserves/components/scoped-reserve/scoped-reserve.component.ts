@@ -26,6 +26,15 @@ export class ScopedReserveComponent implements OnInit {
   }
 
 
+  isModalOpen = false;
 
+  openModal(): void {
+    this.isModalOpen = true;
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+  }
+  
 
 }
