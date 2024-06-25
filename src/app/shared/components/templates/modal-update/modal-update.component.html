@@ -14,7 +14,7 @@
         <div class="profile-pic">
           <img class="profilepicture" src="{{reserve.chaletimg}}" alt="Profile Picture">
         </div>
-        <div class="customer-info">
+        <form class="customer-info">
             <div class="info1">
                 <div class="infoinput">
                     <label>Código</label>
@@ -53,11 +53,11 @@
                 <label for="">Dirección</label>
                 <input type="text" id="direccion" value="{{reserve.direccion}}">
             </div>
-          
-        </div>
+          <app-messages-warning *ngIf="isWarningAlertOpen" (close)="closeWarningAlert()"></app-messages-warning>
+        </form>
       </div>
       <div class="button-container">
-        <app-button label="Enviar" click="enviarActualización" class="buttonContact"></app-button> 
+        <app-button label="Enviar" (click)="openWarningAlert()" class="buttonContact"></app-button> 
         <app-button label="Cancelar" click="closeModal" color="red"></app-button> 
       </div>
       </div>

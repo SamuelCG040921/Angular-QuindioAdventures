@@ -19,6 +19,16 @@ export class ModalUpdateComponent implements OnInit {
     paymentmethodimg:'',
   };
 
+  isWarningAlertOpen = false
+
+  closeWarningAlert(){
+    this.isWarningAlertOpen = false
+  }
+
+  openWarningAlert(){
+    this.isWarningAlertOpen = true
+  }
+
   constructor(private reservesService:ReservesService){}
 
   @Output() close = new EventEmitter<void>();
