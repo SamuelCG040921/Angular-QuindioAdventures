@@ -16,17 +16,44 @@
         </div>
         <div class="customer-info">
             <div class="info1">
-                <p><strong>Codigo:</strong> {{reserve.codigo}}</p>
-                <p><strong>Check in:</strong> {{reserve.checkin}}</p>
-                <p><strong>Check Out:</strong>{{reserve.checkout}}</p>
+                <div class="infoinput">
+                    <label>Código</label>
+                    <input type="text" id="codigo" value="{{reserve.codigo}}">  
+                </div>
+                <div class="infoinput">
+                    <label for="">Check-in</label>
+                    <input type="date" id="checkin" value="{{reserve.checkin}}">
+                </div>
+                <div class="infoinput">
+                    <label for="">Check-out</label>
+                <input type="date" id="checkout" value="{{reserve.checkout}}">
+                </div>
             </div>
             <div class="info2">
-                <p><strong>Tipo:</strong> {{reserve.tipo}}</p>
-                <p><strong>Teléfono:</strong> {{reserve.telefono}}</p>
-                <p><strong>Monto:</strong> {{reserve.precio}}</p>
+                <div class="infoinput">
+                    <label for="">Tipo</label>
+                    <input type="text" id="tipo" value="{{reserve.tipo}}">
+                </div>
+                <div class="infoinput">
+                    <label for="">Teléfono</label>
+                    <input type="tel" id="telefono" value="{{reserve.telefono}}">
+                </div>
+                <div class="infoinput">
+                    <label for="">Monto</label>
+                    <input type="text" id="monto" value="{{reserve.precio}}">
+                </div>
+                
             </div>
-          <p><strong>Email:</strong> {{reserve.correo}}</p>
-          <p><strong>Dirección:</strong> {{reserve.direccion}}</p>
+            <div></div>
+            <div class="inputgroup">
+                <label for="">Correo</label>
+                <input type="email" id="correo" value="{{reserve.correo}}">
+            </div>
+            <div class="inputgroup">
+                <label for="">Dirección</label>
+                <input type="text" id="direccion" value="{{reserve.direccion}}">
+            </div>
+          
         </div>
       </div>
       <div class="button-container">
