@@ -133,3 +133,22 @@ input{
     margin-bottom: 60px;
     margin-left: 130px;
 }
+
+.field {
+    position: relative;
+
+    &.error {
+        input {
+            border-color: red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+    }
+}
+

@@ -36,58 +36,64 @@
             <p>Paso 1 de 2</p>
         </div>
         <form [formGroup]="reservaForm" class="container-form" (ngSubmit)="onSubmit()">
-            <div class="field">
+            <div class="field" [ngClass]="{'error': isFieldInvalid('documento')}">
                 <label class="documento">Documento</label>
                 <input formControlName="documento" class="documento" placeholder="Ingresa tu documento" id="documento">
+                <div *ngIf="isFieldInvalid('documento')" class="error-message">El documento es requerido</div>
             </div>
-            <div class="field">
+            <div class="field" [ngClass]="{'error': isFieldInvalid('cantidadNinos')}">
                 <label class="cantidadNinos">Cantidad de niños</label>
                 <input formControlName="cantidadNinos" class="cantidadNinos" placeholder="Ingresa la cantidad de niños" id="cantidadNinos">
+                <div *ngIf="isFieldInvalid('cantidadNinos')" class="error-message">La cantidad de niños es requerida</div>
             </div>
-            <div class="field">
+            <div class="field" [ngClass]="{'error': isFieldInvalid('cantidadAdultos')}">
                 <label class="cantidadAdultos">Cantidad de adultos</label>
                 <input formControlName="cantidadAdultos" class="cantidadAdultos" placeholder="Ingresa la cantidad de adultos" id="cantidadAdultos">
+                <div *ngIf="isFieldInvalid('cantidadAdultos')" class="error-message">La cantidad de adultos es requerida</div>
             </div>
-            <div class="field">
+            <div class="field" [ngClass]="{'error': isFieldInvalid('nombre')}">
                 <label class="nombre">Nombre</label>
                 <input formControlName="nombre" class="nombre" placeholder="Ingresa tu nombre" id="nombre">
+                <div *ngIf="isFieldInvalid('nombre')" class="error-message">El nombre es requerido</div>
             </div>
-            <div class="field">
+            <div class="field" [ngClass]="{'error': isFieldInvalid('apellido')}">
                 <label class="apellido">Apellido</label>
                 <input formControlName="apellido" class="apellido" placeholder="Ingresa tu apellido" id="apellido">
+                <div *ngIf="isFieldInvalid('apellido')" class="error-message">El apellido es requerido</div>
             </div>
-            <div class="field">
+            <div class="field" [ngClass]="{'error': isFieldInvalid('telefono')}">
                 <label class="telefono">Teléfono</label>
                 <input formControlName="telefono" class="telefono" placeholder="Ingresa tu teléfono" id="telefono">
+                <div *ngIf="isFieldInvalid('telefono')" class="error-message">El teléfono es requerido</div>
             </div>
-            <div class="field">
+            <div class="field" [ngClass]="{'error': isFieldInvalid('correo')}">
                 <label class="correo">Correo</label>
                 <input formControlName="correo" class="correo" placeholder="Ingresa tu correo" id="correo">
+                <div *ngIf="isFieldInvalid('correo')" class="error-message">El correo es requerido</div>
             </div>
-            <div class="field">
+            <div class="field" [ngClass]="{'error': isFieldInvalid('direccion')}">
                 <label class="direccion">Dirección</label>
                 <input formControlName="direccion" class="direccion" placeholder="Ingresa tu dirección" id="direccion">
+                <div *ngIf="isFieldInvalid('direccion')" class="error-message">La dirección es requerida</div>
             </div>
-            <div class="field">
+            <div class="field" [ngClass]="{'error': isFieldInvalid('fechaInicio')}">
                 <label class="fechaInicio">Fecha inicio</label>
                 <input type="date" formControlName="fechaInicio" class="fechaInicio" placeholder="Ingresa la fecha de inicio" id="fechainicio">
+                <div *ngIf="isFieldInvalid('fechaInicio')" class="error-message">La fecha de inicio es requerida</div>
             </div>
-            <div class="field">
+            <div class="field" [ngClass]="{'error': isFieldInvalid('fechaFin')}">
                 <label class="fechaFin">Fecha fin</label>
                 <input type="date" formControlName="fechaFin" class="fechaFin" placeholder="Ingresa la fecha fin" id="fechafin">
+                <div *ngIf="isFieldInvalid('fechaFin')" class="error-message">La fecha fin es requerida</div>
             </div>
             <div class="buttonProcedPayment">
-                <app-button type="submit" label="Proceder con el pago y la reserva" color="#275843" class="buttonend" (click)="openAlert()"></app-button>
-                <app-alert *ngIf="isAlertOpen" (close)="closeAlert()"></app-alert>
-            </div>
+                <app-button type="submit" label="Proceder con el pago y la reserva" color="#275843" class="buttonend"></app-button>
+                <app-messages-succesful *ngIf="isAlertOpen" (close)="closeAlert()"></app-messages-succesful>
+                <app-messages-error *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+              </div>
         </form>
-        <div class="infopayment">
-            <div class="container-info">
-                <h2>Información de Pago </h2>
-                <p>Elige tu medio de pago y llena los datos necesarios para el mismo</p>
-            </div>
-            <p>Paso 2 de 2</p>
-        </div>
+        
+          
         <div class="container-form">
             <div class="field">
                 <app-button-method-payment src="../../../../../assets/images/nequi.svg"  [metodoPago]="'Nequi'" ></app-button-method-payment>
