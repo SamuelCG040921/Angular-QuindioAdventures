@@ -4,34 +4,38 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.162);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .modal-container {
-  background-color: white;
+  background-color: #fff;
   border-radius: 12px;
   padding: 20px;
-  width: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   position: relative;
-
-  height: auto;
-
+  overflow-y: auto;
+  max-height: 90vh;
+  font-family: 'Arial', sans-serif;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  border-bottom: 2px solid #418E6D;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
 }
 
-.modal-header strong {
- margin-left: 16px;
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
 }
 
 .modal-header button {
@@ -43,101 +47,68 @@
   color: #000;
 }
 
+.modal-header .iconClose {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
 
-.information{
+.modal-content {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.profile-section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.profile-pic{
-  margin-top: 28px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.profile-pic img {
-  width: 150px;
-  height: 150px;
-  border-radius: 15px;
+.profilepicture {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
 }
 
-.customer-info{
-margin-top: 28px;
-padding: 0 32px 0 32px;
+.customer-info {
+  font-size: 16px;
+  color: #555;
+  text-align: left;
+  margin: 0 auto;
+  width: fit-content;
 }
 
-.customer-info p{
+.customer-info p {
+  margin: 10px 0;
   display: flex;
-  flex-direction: column;
-  padding: 8px 0 8px 0;
-  border-bottom: 1px solid #418e6d67;
-  width: auto;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
 }
 
-.method{
-display: flex;
-margin-left: 30px;
-justify-content: center;
-align-items: center;
-}
-.organization{
-display: flex;
-flex-direction: column;
-}
-.payment-method {
-margin: 20px 0; 
+.customer-info p strong {
+  color: #333;
 }
 
-.payment-method h3 {
-margin: 24px 0 24px 0;
-text-align: center; 
-font-size: 16px;
-}
-
-.payment-method img {
-width: 30px;
-margin-right: 20px;
-}
-.nequi-method {
-width: min-content;
-height: 40px;
-margin: auto;
-display: flex;
-align-items: center; 
-border: 2px solid #418E6D;
-padding: 10px;
-border-radius: 8px;
-}
-.btnGeneral{
-display: block;
-margin-top: 20px;
-}
-.containerButton{
-display: flex;
-width: 100%;
-justify-content: center;
-}
-.iconClose{
-width: 30px;
-height: 30px;
-}
-
-.button-container{
+.button-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
 }
 
-.buttonContact{
-  margin-right: 20px;
-}
-.modal-container2 {
-  background-color: white;
-  border-radius: 12px;
-  padding: 20px;
-  width: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: relative;
-  margin-top: 50px;
-  margin-left: 10px;
+.contact-button {
+  padding: 10px 20px;
+  background-color: #418E6D;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
+.contact-button:hover {
+  background-color: #356a53;
+}
