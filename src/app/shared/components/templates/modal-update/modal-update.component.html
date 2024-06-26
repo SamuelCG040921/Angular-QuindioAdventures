@@ -53,7 +53,7 @@
                 <label for="">Dirección</label>
                 <input type="text" id="direccion" value="{{reserve.direccion}}">
             </div>
-          <app-messages-warning *ngIf="isWarningAlertOpen" (close)="closeWarningAlert()"></app-messages-warning>
+          <app-messages-warning title="¡Espera!" paragraph="¿Estás seguro de realizar esta acción con la reserva Nº{{reserve.codigo}}?" *ngIf="isWarningAlertOpen" (close)="closeWarningAlert()"></app-messages-warning>
         </form>
       </div>
       <div class="button-container">

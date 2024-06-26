@@ -88,8 +88,8 @@
             </div>
             <div class="buttonProcedPayment">
                 <app-button type="submit" label="Proceder con el pago y la reserva" color="#275843" class="buttonend"></app-button>
-                <app-messages-succesful *ngIf="isAlertOpen" (close)="closeAlert()"></app-messages-succesful>
-                <app-messages-error *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+                <app-messages-succesful title="Su reserva ha sido registrada exitosamente" *ngIf="isAlertOpen" (close)="closeAlert()"></app-messages-succesful>
+                <app-messages-error title="¡Hubo un problema!" paragraph="Alguno de los datos no es valido" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
               </div>
         </form>
         

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-messages-succesful',
@@ -7,7 +7,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class MessagesSuccesfulComponent {
   @Output() close = new EventEmitter<void>();
-
+  @Input() title:string = '';
   closeAlert(): void {
     this.close.emit();
   }

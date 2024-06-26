@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-messages-error',
@@ -7,6 +7,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class MessagesErrorComponent {
   @Output() close = new EventEmitter<void>();
+  @Input() paragraph:string='';
+  @Input() title:string='';
 
   closeAlert(): void {
     this.close.emit();
