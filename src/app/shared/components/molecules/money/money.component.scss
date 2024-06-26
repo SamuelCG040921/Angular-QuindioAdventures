@@ -1,0 +1,25 @@
+.containerMoneda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a4c3b284;
+    border-radius: 15px;
+    width: min-content;
+    height: min-content;
+    padding: 14px 18px 14px 18px;
+}
+
+.containerMoneda p{
+    padding-right: 12px;
+    border-right: 1px solid rgba(0, 0, 0, 0.857);
+    height: min-content;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.containerMoneda img{
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    margin-left: 12px;
+}

@@ -1,8 +1,7 @@
 button{
-    
     width: 90px;
     height: 40px;
-    background-color: #418E6D;
+    background-color: #275843;
     cursor: pointer;
     border: none;
     border-top-right-radius: 10px;
@@ -12,7 +11,7 @@ button{
 }
 
 button:hover{
-    background-color: #2D6E54;
+    background-color: #204937;
 }
 
 button:disabled{
@@ -27,7 +26,7 @@ button:disabled:active {
 }
 
 button:active{
-    background-color: #245844;
+    background-color: #153729;
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 

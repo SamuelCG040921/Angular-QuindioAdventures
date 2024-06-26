@@ -1,18 +1,19 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
+  width: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
   
-  button {
-    cursor: pointer;
-  }
-  
-  .modal-overlay {
-    display: none;
-  }
-  
-  :host ::ng-deep .modal-overlay {
-    display: flex;
-  }
+button {
+  cursor: pointer;
+}
+
+.modal-overlay {
+  display: none;
+}
+
+:host ::ng-deep .modal-overlay {
+  display: flex;
+}
   
   

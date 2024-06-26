@@ -58,6 +58,7 @@ import { ParagraphMessagesComponent } from './components/atoms/paragraph-message
 import { MessagesSuccesfulComponent } from './components/templates/messages-succesful/messages-succesful.component';
 import { ModalReservesComponent } from './components/templates/modal-reserves/modal-reserves.component';
 import { ModalUpdateComponent } from './components/templates/modal-update/modal-update.component';
+import { MoneyComponent } from './components/molecules/money/money.component';
 
 @NgModule({
   declarations: [
@@ -118,7 +119,8 @@ import { ModalUpdateComponent } from './components/templates/modal-update/modal-
     ParagraphMessagesComponent,
     MessagesSuccesfulComponent,
     ModalReservesComponent,
-    ModalUpdateComponent
+    ModalUpdateComponent,
+    MoneyComponent
   ],
 
   imports: [

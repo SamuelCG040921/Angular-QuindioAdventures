@@ -1,10 +1,27 @@
 <header>
-    <div class="first-part">
-        <app-logo></app-logo>
-        <app-search-bar></app-search-bar>
-        <app-profile-button></app-profile-button>
+    <div class="containerFirst">
+        <div class="first-part">
+            <div class="containerLogo">
+                <app-logo></app-logo>
+            </div>
+            <div class="containerOpc">
+                <div class="containerLinks">
+                    <a routerLink="queHacer" id="primero">¿Que hacer?</a>
+                    <a routerLink="regitrarChalet" id="segundo">Registra tu chalet o plan</a>
+                </div>
+                <div class="containerMoneda">
+                    <app-money></app-money>
+                </div>
+            </div>
+            <div class="containerProfile">
+                <app-profile-button></app-profile-button>
+            </div>
+        </div>
     </div>
-    <div>
+    <div class="searchBar">
+        <app-search-bar></app-search-bar>
+    </div>
+    <div class="nav">
         <app-nav></app-nav>
     </div>
 </header>
