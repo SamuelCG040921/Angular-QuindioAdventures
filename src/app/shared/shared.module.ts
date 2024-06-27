@@ -22,7 +22,6 @@ import { FooterInputComponent } from './components/atoms/footer-input/footer-inp
 import { CalificationBarComponent } from './components/atoms/calification-bar/calification-bar.component';
 import { BackgroundInfoImageComponent } from './components/atoms/background-info-image/background-info-image.component';
 import { ButtonPlusMinumComponent } from './components/atoms/button-plus-minum/button-plus-minum.component';
-import { SliderBarComponent } from './components/atoms/slider-bar/slider-bar.component';
 import { FooterComponent } from './components/organisms/footer/footer.component';
 import { CalificationCardComponent } from './components/atoms/calification-card/calification-card.component';
 import { FavoriteIconComponent } from './components/atoms/favorite-icon/favorite-icon.component';
@@ -83,7 +82,6 @@ import { MoneyComponent } from './components/molecules/money/money.component';
     CalificationBarComponent,
     BackgroundInfoImageComponent,
     ButtonPlusMinumComponent,
-    SliderBarComponent,
     FooterComponent,
     CalificationCardComponent,
     FavoriteIconComponent,

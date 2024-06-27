@@ -1,11 +1,34 @@
 <div class="slider">
-    <img class="arrow" src="../../../../../assets/icons/flecha-izquierda.png" alt="">
-    <img class="slider-image" src="../../../../../assets/images/slider-image.png" alt="">
-    <img class="arrow" src="../../../../../assets/icons/flecha-derecha.png" alt="">
+    <div class="container-slider">
+        <div class="container-arrow-izq">
+            <img class="arrow" src="../../../../../assets/icons/flecha-izquierda.png" alt="">
+        </div>
+        <img class="slider-image" src="../../../../../assets/images/slider-image.png" alt="">
+        <div class="container-arrow-der">
+            <img class="arrow" src="../../../../../assets/icons/flecha-derecha.png" alt="">
+        </div>
+    </div>
 </div>
 <div class="container-buttons">
-    <button class="slider-button"></button>
-    <button class="slider-button"></button>
-    <button class="slider-button"></button>
-    <button class="slider-button"></button>
-</div>
+    <button 
+      class="slider-button" 
+      [ngClass]="{'active': activeButtonIndex === 0}" 
+      (click)="setActiveButton(0)">
+    </button>
+    <button 
+      class="slider-button" 
+      [ngClass]="{'active': activeButtonIndex === 1}" 
+      (click)="setActiveButton(1)">
+    </button>
+    <button 
+      class="slider-button" 
+      [ngClass]="{'active': activeButtonIndex === 2}" 
+      (click)="setActiveButton(2)">
+    </button>
+    <button 
+      class="slider-button" 
+      [ngClass]="{'active': activeButtonIndex === 3}" 
+      (click)="setActiveButton(3)">
+    </button>
+  </div>
+  

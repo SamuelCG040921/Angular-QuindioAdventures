@@ -1,10 +1,25 @@
 .slider{
     display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 55px;
+}
+
+.container-slider{
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 60px;
-    margin-right: 60px;
-    margin-top: 50px;
+    width: 90%;
+}
+
+.container-arrow-izq{
+    width: min-content;
+    padding-right: 20px;
+}
+
+.container-arrow-der{
+    width: min-content;
+    padding-left: 20px;
 }
 
 .arrow{
@@ -14,29 +29,30 @@
 }
 
 .slider-image{
-    width: 1100px;
-    height: 274px;
+    width: 90%;
+    height: 320px;
     border-radius: 20px;
 }
 
-.container-buttons{
+.container-buttons {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    width: 100vw;
-    margin-bottom: 90px;
-}
-
-.container-buttons button{
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  
+  .slider-button {
     border-radius: 5px;
     width: 33px;
     height: 5px;
+    background-color: #D9D9D9; /* Color gris */
     margin-right: 10px;
-    background-color: #D9D9D9;
     border: none;
     cursor: pointer;
-}
-
-.container-buttons button:focus{
-    background-color: #418E6D;
-}
+  }
+  
+  .slider-button.active {
+    background-color: #418E6D; /* Color verde cuando está activo */
+  }
+  
