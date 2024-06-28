@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './scoped-background-menu.component.scss'
 })
 export class ScopedBackgroundMenuComponent {
+  activeLinkIndex: number = 0;
 
+  setActiveButton(index: number): void {
+    this.activeLinkIndex = index;
+  }
 }

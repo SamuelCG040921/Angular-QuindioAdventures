@@ -1,28 +1,83 @@
-.background{
+.containerFirstText{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: max-content ;
-    flex-direction: column;
-    margin-top: 45px;
-}
-
-.background p{
-    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    font-size: 48px;
+    margin-top: 40px;
 }
 
-.imgFondo{
+.tittle1 p{
+    width: max-content;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.containerInfo{
     display: flex;
-    justify-content: flex-end;
     width: 100%;
-    height: min-content;
+    justify-content: center;
+    margin-top: 14px;
 }
 
-.imgFondo img{
-    width: 60%;
-    height: 60%;
+.containerInfo p{
+    width: 65%;
+    text-align: center;
+}
+
+.containerSecond{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 40px;
+}
+
+.containerLeft{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #a4c3b27e;
+    border-radius: 15px;
+    padding: 25px 30px 20px 30px;
+    width: 32%;
+}
+
+.containerTittleLeft{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.900);
+}
+
+.containerTittleLeft p{
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0px 0px 4px 15px;
+    padding-left: 15px;
+}
+
+.textLeft p{
+    padding-left: 25px;
+    padding-top: 15px;
+    width: 96%;
+}
+
+.containerFinalText{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 45px;
+}
+
+.textLink{
+    width: 40%;
+    text-align: center;
+}
+
+.containerFinalText p{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.containerFinalText span a{
+    color: #418E6D;
+    text-decoration: none;
 }

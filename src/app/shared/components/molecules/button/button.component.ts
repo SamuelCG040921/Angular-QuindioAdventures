@@ -9,6 +9,8 @@ export class ButtonComponent {
   @Input() label: string = '';
   @Output() click = new EventEmitter<void>();
   @Input() color: string = '';
+  @Input() border: string = '';
+  @Input() textColor: string = '';
 
   handleClick() {
     this.click.emit();
