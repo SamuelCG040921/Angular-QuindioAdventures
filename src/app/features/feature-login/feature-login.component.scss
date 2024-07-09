@@ -1,0 +1,92 @@
+.login{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.leftPart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding-top: 60px;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.containerLogo{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.containerLogo img{
+    width: 266px;
+}
+
+.containerText1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.containerP{
+    display: flex;
+    justify-content: flex-start;
+    width: 65%;
+}
+
+.containerText1 p{
+    display: flex;
+    font-size: 16px;
+    border-bottom: 1px solid #418E6D;
+    padding: 0 50px 0 10px;
+}
+
+.form{
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.forgot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.containerForgot{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.containerForgot p{
+    margin-top: 5px;
+}
+
+.forgot a{
+    color: #418E6D;
+}
+
+.forgot span a{
+    margin-left: 5px;
+}
+
+.loginMethod{
+    margin-top: 20px;
+}
+
+.containerBtn{
+    margin-top: 25px;
+}

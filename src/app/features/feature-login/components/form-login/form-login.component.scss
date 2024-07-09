@@ -1,0 +1,19 @@
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form label{
+    font-size: 16px;
+}
+
+.email{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.password{
+    display: flex;
+    flex-direction: column;
+}

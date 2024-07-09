@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { FeatureReservesRoutingModule } from './features/feature-reserves/feature-reserves-routing.module';
 import { FeatureReservesModule } from './features/feature-reserves/feature-reserves.module';
 import { SharedModule } from './shared/shared.module';
+import { FeatureRegisterComponent } from './features/feature-register/feature-register.component';
+import { FeatureRegisterModule } from './features/feature-register/feature-register.module';
+import { FeatureLoginModule } from './features/feature-login/feature-login.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     FeatureReservesModule,
     FeatureReservesRoutingModule,
+    FeatureRegisterModule,
+    FeatureLoginModule,
     SharedModule,
     HttpClientModule
   ],

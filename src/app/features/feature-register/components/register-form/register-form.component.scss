@@ -1,0 +1,29 @@
+.registerForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.containerForm{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+}
+
+.containerCamp{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.containerCamp label{
+    font-size: 14px;
+    padding-left: 8px;
+    padding-bottom: 2px;
+}
