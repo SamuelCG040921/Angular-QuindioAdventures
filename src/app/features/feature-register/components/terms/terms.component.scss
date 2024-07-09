@@ -4,6 +4,12 @@
     align-items: center;
 }
 
+.check{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .terms a{
     color: #418E6D;
     margin-right: 3px;
@@ -51,7 +57,7 @@
   .custom-checkbox input[type="checkbox"]:checked + .checkmark::before {
     color: #fff;
     padding-top: 1px;
-    font-size: 2px;
+    font-size: 10px;
   }
   
   .custom-checkbox:hover {

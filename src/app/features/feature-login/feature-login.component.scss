@@ -7,7 +7,7 @@
 .leftPart{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
     width: 100%;
     height: 100vh;
     padding-top: 50px;
@@ -66,22 +66,18 @@ h1{
 
 .form{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     width: 50%;
 }
 
 .forgot{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 25px;
-}
-
-.containerForgot{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+    margin-top: 35px;
 }
 
 .containerForgot p{
