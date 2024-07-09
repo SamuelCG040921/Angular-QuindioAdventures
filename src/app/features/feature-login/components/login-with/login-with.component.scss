@@ -1,43 +1,56 @@
-ul {
-    list-style: none;
-  }
-  
-  .example-1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .example-1 .icon-content {
-    margin: 0 10px;
-    position: relative;
-  }
-  .example-1 .icon-content .link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    color: #4d4d4d;
-    background-color: #fff;
-    transition: all 0.3s ease-in-out;
-  }
-  .example-1 .icon-content .link:hover {
-    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
-  }
-  .example-1 .icon-content .link svg {
-    width: 30px;
-    height: 30px;
-  }
-  .example-1 .icon-content .link[data-social="spotify"]:hover {
-    color: #1db954;
-  }
-  .example-1 .icon-content .link[data-social="pinterest"]:hover {
-    color: #bd081c;
-  }
-  .example-1 .icon-content .link[data-social="dribbble"]:hover {
-    color: #ea4c89;
-  }
-  .example-1 .icon-content .link[data-social="telegram"]:hover {
-    color: #0088cc;
-  }
+.example-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.example-1 .icon-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+  padding: 0 20px;
+  position: relative;
+} 
+
+.example-1 .icon-content .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+#google{
+  cursor: pointer;
+}
+
+#facebook{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: blue;
+  border: 1px solid white;
+  border-radius: 100px;
+  width: 37px;
+  height: 37px;
+}
+
+#facebookPath{
+  padding-left: 10px;
+}
+
+#iCloud{
+  width: 37px;
+  height: 38px;
+}
+
+.example-1 .icon-content .link svg {
+  width: 30px;
+  height: 30px;
+}
