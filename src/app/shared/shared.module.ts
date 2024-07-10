@@ -8,6 +8,7 @@ import { WhatInputComponent } from './components/atoms/what-input/what-input.com
 import { WhereInputComponent } from './components/atoms/where-input/where-input.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileImgComponent } from './components/atoms/profile-img/profile-img.component';
 import { LogoComponent } from './components/molecules/logo/logo.component';
 import { SearchBarComponent } from './components/molecules/search-bar/search-bar.component';
@@ -107,6 +108,7 @@ import { RegisterButtonComponent } from './components/molecules/register-button/
     IconServicesComponent,
     ServiceInComponent,
     CountPeoppleComponent,
+    ButtonComponent,
     PeoppleCountInfoComponent,
     ButtonPlusMoreComponent,
     RecuadroPrecioCalculoComponent,
@@ -120,7 +122,7 @@ import { RegisterButtonComponent } from './components/molecules/register-button/
     ModalReservesComponent,
     ModalUpdateComponent,
     MoneyComponent,
-    RegisterButtonComponent
+    RegisterButtonComponent,
   ],
 
   imports: [
@@ -131,15 +133,21 @@ import { RegisterButtonComponent } from './components/molecules/register-button/
       { path: 'planes-vacacionales', component: SearchButtonComponent },
       { path: 'reservas', component: SearchButtonComponent },
     ]),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
 
   exports: [
     ProfileButtonComponent,
     ProfileImgComponent,
+    ReactiveFormsModule,
     SearchButtonComponent,
     SearchButtonComponent,
     WhatInputComponent,
+    CommonModule,
+    ReactiveFormsModule,
+    ButtonComponent,
+    LoginRegisterInputComponent,
     WhereInputComponent,
     ButtonProfileComponent,
     LogoComponent,
@@ -148,7 +156,6 @@ import { RegisterButtonComponent } from './components/molecules/register-button/
     HeaderComponent,
     ModalComponent,
     EmailInputComponent,
-    LoginRegisterInputComponent,
     FooterInputComponent,
     FooterLogoComponent,
     FooterComponent,

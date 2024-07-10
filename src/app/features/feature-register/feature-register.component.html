@@ -10,16 +10,70 @@
                 <p>Registrarse</p>
             </div>
             <div class="form">
-                <app-register-form></app-register-form>
-            </div>
-            <div class="containerTerms">
-                <app-terms></app-terms>
-            </div>
-            <div class="containerBtn">
-                <app-button label="Registrarse"></app-button>
-            </div>
+                <form [formGroup]="registroForm" class="containerForm" (ngSubmit)="onSubmit()">
+                    <div class="containerFirst">
+                        <div class="left">
+                            <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('name')}">
+                                <label for="name">Nombres</label>
+                                <input type="text" placeholder="Ingresa tu nombre" formControlName="name" class="name" id="formInput">
+                                <div *ngIf="isFieldInvalid('name')" class="error-message">El nombre es requerido</div>
+                            </div>
+                            <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('age')}">
+                                <label for="age">Edad</label>
+                                <input type="number" placeholder="Ingresa tu edad" formControlName="age" class="age" id="formInput">
+                                <div *ngIf="isFieldInvalid('age')" class="error-message">La edad es requerida</div>
+                            </div>
+                            <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('address')}">
+                                <label for="address">Dirección</label>
+                                <input type="text" id="formInput" placeholder="Ingresa tu dirección" formControlName="address" class="address">
+                                <div *ngIf="isFieldInvalid('address')" class="error-message">La dirección es requerida</div>
+                            </div>
+                        </div>
+                        <div class="center">
+                            <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('lastName')}">
+                                <label for="lastName">Apellidos</label>
+                                <input type="text" id="formInput" placeholder="Ingresa tu apellido" formControlName="lastName" class="lastName">
+                                <div *ngIf="isFieldInvalid('lastName')" class="error-message">Los apellidos son requeridos</div>
+                            </div>
+                            <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('phoneNumber')}">
+                                <label for="phoneNumber">Teléfono</label>
+                                <input type="text" id="formInput" placeholder="Ingresa tu teléfono" formControlName="phoneNumber" class="phoneNumber">
+                                <div *ngIf="isFieldInvalid('phoneNumber')" class="error-message">El telefono es requerido</div>
+                            </div>
+                            <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('document')}">
+                                <label for="document">Documento</label>
+                                <input type="text" id="formInput" placeholder="Ingresa tu documento" formControlName="document" class="document">
+                                <div *ngIf="isFieldInvalid('document')" class="error-message">El documento es requerido</div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('email')}">
+                                <label for="email">Email</label>
+                                <input type="text" id="formInput" placeholder="Ingresa tu email" formControlName="email" class="email">
+                                <div *ngIf="isFieldInvalid('email')" class="error-message">El correo es requerido</div>
+                            </div>
+                            <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('password')}">
+                                <label for="password">Contraseña</label>
+                                <input type="text" placeholder="Ingresa tu contraseña" formControlName="password" class="password" id="formInput">
+                                <div *ngIf="isFieldInvalid('password')" class="error-message">La contraseña es requerida</div>
+                            </div>
+                            <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('confirmPassword')}">
+                                <label>Confirmar contraseña</label>
+                                <input type="text" placeholder="Ingresa nuevamente tu contraseña" id="formInput" formControlName="confirmPassword">
+                                <div *ngIf="isFieldInvalid('confirmPassword')" class="error-message">La contraseña es requerida</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="containerTerms">
+                        <app-terms></app-terms>
+                    </div>
+                    <div class="containerBtn">
+                        <button type="submit" [disabled]="isSubmitting">Registrarse</button>
+                    </div>
+                </form>
+              </div>
             <div class="txtTienes">
-                <p>Ya tienes una cuenta? <a routerLink="/login">Iniciar sesión</a></p>
+                <p>Ya tienes una cuenta? <a href="#">Iniciar sesión</a></p>
             </div>
         </div>
     </div>
