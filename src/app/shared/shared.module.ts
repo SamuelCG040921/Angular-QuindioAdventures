@@ -61,6 +61,8 @@ import { MoneyComponent } from './components/molecules/money/money.component';
 import { ReservationPaintingsComponent } from './components/molecules/reservation-paintings/reservation-paintings.component';
 import { InputPaintingsComponent } from './components/atoms/input-paintings/input-paintings.component';
 import { InputDatePComponent } from './components/atoms/input-date-p/input-date-p.component';
+import { ReserveRecommendedPageComponent } from './components/molecules/reserve-recommended-page/reserve-recommended-page.component';
+import { PageRecommendComponent } from './components/organisms/page-recommend/page-recommend.component';
 
 
 @NgModule({
@@ -125,16 +127,15 @@ import { InputDatePComponent } from './components/atoms/input-date-p/input-date-
     MoneyComponent,
     ReservationPaintingsComponent,
     InputPaintingsComponent ,
-    InputDatePComponent 
+    InputDatePComponent,
+    ReserveRecommendedPageComponent,
+    PageRecommendComponent 
   ],
 
   imports: [
     CommonModule,
     RouterModule.forRoot([
       { path: 'profile', component: SearchButtonComponent },
-      { path: 'chalets', component: FooterInputComponent },
-      { path: 'planes-vacacionales', component: SearchButtonComponent },
-      { path: 'reservas', component: SearchButtonComponent },
     ]),
     FormsModule
   ],
@@ -191,7 +192,9 @@ import { InputDatePComponent } from './components/atoms/input-date-p/input-date-
     ModalReservesComponent,
     ReservationPaintingsComponent,
     InputPaintingsComponent,
-    InputDatePComponent 
+    InputDatePComponent,
+    ReserveRecommendedPageComponent,
+    PageRecommendComponent 
   ],
 })
 export class SharedModule { }

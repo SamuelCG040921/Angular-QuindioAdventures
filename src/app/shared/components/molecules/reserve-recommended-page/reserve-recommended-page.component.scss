@@ -1,0 +1,29 @@
+.recommended-card {
+    border-radius: 10px;
+    border: 1px solid #A4C3B2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+    width: 280px;
+    cursor: pointer;
+    overflow: hidden;
+
+}
+
+.img-container {
+    position: relative;
+}
+
+.imgRecommended {
+    width: 100%;
+    height: 170px;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+app-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    z-index: 1;
+    cursor: pointer;
+    text-align: center;
+}

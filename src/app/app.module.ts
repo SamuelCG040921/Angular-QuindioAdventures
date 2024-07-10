@@ -7,14 +7,13 @@ import { AppComponent } from './app.component';
 import { FeatureReservesRoutingModule } from './features/feature-reserves/feature-reserves-routing.module';
 import { FeatureReservesModule } from './features/feature-reserves/feature-reserves.module';
 import { SharedModule } from './shared/shared.module';
-import { PageMainChaletComponent } from './features/pages/page-main-chalet/page-main-chalet.component';
-import { FeatureChaletsComponent } from './features/feature-chalets/feature-chalets.component';
+import { FeatureChaletsRoutingModule } from './features/feature-chalets/feature-chalets-routing.module';
+import { FeatureChaletsModule } from './features/feature-chalets/feature-chalets.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PageMainChaletComponent,
-    FeatureChaletsComponent,
+    AppComponent
+    
   ],
 
   imports: [
@@ -22,6 +21,8 @@ import { FeatureChaletsComponent } from './features/feature-chalets/feature-chal
     AppRoutingModule,
     FeatureReservesModule,
     FeatureReservesRoutingModule,
+    FeatureChaletsModule,
+    FeatureChaletsRoutingModule,
     SharedModule,
     HttpClientModule
   ],

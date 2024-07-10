@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { FeatureChaletsRoutingModule } from './feature-chalets-routing.module';
 import { FeatureChaletsComponent } from './feature-chalets.component';
+import { PageChaletComponent } from './pages/page-chalet/page-chalet.component';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    FeatureChaletsComponent
+    FeatureChaletsComponent,
+    PageChaletComponent
   ],
   imports: [
     CommonModule,
-    FeatureChaletsRoutingModule
+    FeatureChaletsRoutingModule,
+    SharedModule
   ]
 })
 export class FeatureChaletsModule { }
