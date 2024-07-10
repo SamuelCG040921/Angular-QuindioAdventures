@@ -5,7 +5,8 @@ import { PageHomeComponent } from './features/feature-reserves/pages/page-home/p
 
 const routes: Routes = [
   {path:'reservas', component: FeatureReservesComponent},
-  {path:'', component: PageHomeComponent}
+  {path:'', component: PageHomeComponent},
+  
 ];
 
 @NgModule({
