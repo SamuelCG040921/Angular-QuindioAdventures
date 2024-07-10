@@ -58,6 +58,10 @@ import { MessagesSuccesfulComponent } from './components/templates/messages-succ
 import { ModalReservesComponent } from './components/templates/modal-reserves/modal-reserves.component';
 import { ModalUpdateComponent } from './components/templates/modal-update/modal-update.component';
 import { MoneyComponent } from './components/molecules/money/money.component';
+import { ReservationPaintingsComponent } from './components/molecules/reservation-paintings/reservation-paintings.component';
+import { InputPaintingsComponent } from './components/atoms/input-paintings/input-paintings.component';
+import { InputDatePComponent } from './components/atoms/input-date-p/input-date-p.component';
+
 
 @NgModule({
   declarations: [
@@ -118,7 +122,10 @@ import { MoneyComponent } from './components/molecules/money/money.component';
     MessagesSuccesfulComponent,
     ModalReservesComponent,
     ModalUpdateComponent,
-    MoneyComponent
+    MoneyComponent,
+    ReservationPaintingsComponent,
+    InputPaintingsComponent ,
+    InputDatePComponent 
   ],
 
   imports: [
@@ -181,7 +188,10 @@ import { MoneyComponent } from './components/molecules/money/money.component';
     TittleMessagesComponent,
     ParagraphMessagesComponent,
     MessagesSuccesfulComponent,
-    ModalReservesComponent
+    ModalReservesComponent,
+    ReservationPaintingsComponent,
+    InputPaintingsComponent,
+    InputDatePComponent 
   ],
 })
 export class SharedModule { }
