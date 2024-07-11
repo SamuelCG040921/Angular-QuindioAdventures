@@ -12,8 +12,22 @@
                 <p>Inicia sesión</p>
             </div>
         </div>
-        <div class="form">
-            <app-form-login></app-form-login>
+        <div>
+            <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="email" class="containerCamp" [ngClass]="{'error': isFieldInvalid('email')}">
+                    <label for="">Correo</label>
+                    <input id="input" placeholder="Ingresa tu correo" formControlName="email" type="text" width="350px">
+                    <div *ngIf="isFieldInvalid('email')" class="error-message">El email es requerido</div>
+                </div>
+                <div class="password" class="containerCamp" [ngClass]="{'error': isFieldInvalid('password')}">
+                    <label for="">Contraseña</label>
+                    <input id="input1" placeholder="Ingresa tu contraseña" formControlName="password" type="password" width="350px">
+                    <div *ngIf="isFieldInvalid('password')" class="error-message">La contraseña es requerida</div>
+                </div>
+                <div class="containerBtn">
+                    <button type="submit">Ingresar</button>
+                </div>
+            </form>
         </div>
         <div class="forgot">
             <div class="containerForgot">
@@ -23,9 +37,6 @@
         </div>
         <div class="loginMethod">
             <app-login-with></app-login-with>
-        </div>
-        <div class="containerBtn">
-            <app-button label="Ingresar"></app-button>
         </div>
     </div>
     <div class="rightPart">

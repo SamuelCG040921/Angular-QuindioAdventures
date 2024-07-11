@@ -106,3 +106,96 @@ h1{
 .containerBtn{
     margin-top: 25px;
 }
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form label{
+    font-size: 16px;
+}
+
+.email{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.password{
+    display: flex;
+    flex-direction: column;
+}
+
+#input{
+    border: 2px solid #275843;
+    width: 250px;
+    height: 40px; 
+    border-radius: 8px;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+#input1{
+    border: 2px solid #275843;
+    width: 250px;
+    height: 40px; 
+    border-radius: 8px;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.containerCamp {
+    position: relative;
+
+    &.error {
+        input {
+            border-color: red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+    }
+}
+
+button {
+    height: 45px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #418E6D;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #2D6E54;
+}
+
+button:disabled{
+    background-color: #A5C3B6;
+    color: rgba(0, 0, 0, 0.12);
+    cursor: not-allowed;
+}
+
+button:disabled:active {
+    background-color: #A5C3B6;
+    box-shadow: none;
+}
+
+button:active{
+    background-color: #245844;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+button:focus-visible{
+    outline: 2px solid #1E4433;
+}
