@@ -69,6 +69,8 @@
                     </div>
                     <div class="containerBtn">
                         <app-button label="Registrarme" type="submit" [disabled]="isSubmitting">Registrarse</app-button>
+                        <app-messages-succesful title="Se ha registrado correctamente" *ngIf="isAlertOpen" (close)="closeAlert()"></app-messages-succesful>
+                <app-messages-error title="¡Hubo un problema!" paragraph="No se puedo registrar" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
                     </div>
                 </form>
               </div>
