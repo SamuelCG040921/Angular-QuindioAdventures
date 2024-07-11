@@ -68,12 +68,12 @@
                         <app-terms></app-terms>
                     </div>
                     <div class="containerBtn">
-                        <button type="submit" [disabled]="isSubmitting">Registrarse</button>
+                        <app-button label="Registrarme" type="submit" [disabled]="isSubmitting">Registrarse</app-button>
                     </div>
                 </form>
               </div>
             <div class="txtTienes">
-                <p>Ya tienes una cuenta? <a href="#">Iniciar sesión</a></p>
+                <p>Ya tienes una cuenta? <a routerLink="/login">Iniciar sesión</a></p>
             </div>
         </div>
     </div>
