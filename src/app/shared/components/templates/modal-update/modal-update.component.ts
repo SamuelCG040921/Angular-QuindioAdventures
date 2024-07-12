@@ -6,7 +6,7 @@ import { ReservesService } from '../../../../features/feature-reserves/services/
   templateUrl: './modal-update.component.html',
   styleUrl: './modal-update.component.scss'
 })
-export class ModalUpdateComponent implements OnInit {
+export class ModalUpdateComponent{
   @Input() reserve:any= {
     chaletimg:'',
     codigo: '',
@@ -44,12 +44,5 @@ export class ModalUpdateComponent implements OnInit {
 
   cancelarReserva(){
     
-  }
-
-  ngOnInit(): void {
-    this.reservesService.getReservebyCode(this.reserve.codigo).
-    subscribe((res=>{
-       this.reserve = res
-    }))
   }
 }

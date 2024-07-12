@@ -6,19 +6,13 @@ import { ReservesService } from '../../services/reserves.service';
   templateUrl: './scoped-table-reserves.component.html',
   styleUrl: './scoped-table-reserves.component.scss'
 })
-export class ScopedTableReservesComponent implements OnInit {
+export class ScopedTableReservesComponent{
   reserves: any;
   selectedReserve: any = null;
   isModalOpen = false;
 
   constructor(private reservesService: ReservesService) { }
 
-  ngOnInit() {
-    this.reservesService.getReserves()
-      .subscribe(res => {
-        this.reserves = res;
-      });
-  }
 
   openModal(reserve: any): void {
     this.selectedReserve = reserve;

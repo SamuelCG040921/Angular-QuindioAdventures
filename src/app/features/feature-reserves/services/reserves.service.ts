@@ -1,35 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
+import { Reserva } from '../models/reserva.model';
+import axios from 'axios';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservesService {
-  
-  private reservesUrl = 'http://localhost:8000/reserves';
+  private apiUrl = 'http://localhost:10101/reserva'; // Asegúrate de que esta URL sea correcta
 
-  constructor(private http: HttpClient) { }
+  constructor() {}
+  registerReserva(newReserva: Reserva) {
+    console.log('Sending user data to backend:', newReserva);
 
-  getReserves(){
-    return this.http.get('http://localhost:8000/reserves')
-  }
-
-  createReservation(reserva: any){
-    return this.http.post('http://localhost:8000/reserves', reserva)
-  }
-
-  
-  getReservebyCode(codigo:any){
-    return this.http.get('http://localhost:8000/reserves')
-    .pipe(
-      map((data: any) => {
-        const reserves = data;
-        const activeUserDocument = 33;
-        return reserves.find((reserve: { codigo: number; }) => reserve.codigo === activeUserDocument);
+    return axios.post(this.apiUrl, newReserva)
+      .then(response => {
+        console.log('Backend response:', response.data);
+        return response.data; // Puedes devolver los datos de respuesta si es necesario
       })
-    );
-
-
-}
+      .catch(error => {
+        console.error('Error registering user:', error);
+        throw error;
+      });
+  }
 }
