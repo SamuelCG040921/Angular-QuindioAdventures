@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PageChaletPaymentComponent {
 
+  reserves: any
   isAlertOpen = false;
   isErrorAlertOpen = false;
 
@@ -77,4 +78,11 @@ export class PageChaletPaymentComponent {
     const control = this.reservaForm.get(field);
     return control ? !control.valid && (control.dirty || control.touched) : false;
   }
+
+  ngOnInit() {
+    this.reservesService.getReserves()
+    .subscribe(res=>{
+      this.reserves = res
+    })
+}
 }

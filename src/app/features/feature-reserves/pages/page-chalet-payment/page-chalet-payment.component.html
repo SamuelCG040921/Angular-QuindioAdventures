@@ -56,26 +56,6 @@
                 <input formControlName="nombre" class="nombre" placeholder="Ingresa tu nombre" id="nombre">
                 <div *ngIf="isFieldInvalid('nombre')" class="error-message">El nombre es requerido</div>
             </div>
-            <div class="field" [ngClass]="{'error': isFieldInvalid('apellido')}">
-                <label class="apellido">Apellido</label>
-                <input formControlName="apellido" class="apellido" placeholder="Ingresa tu apellido" id="apellido">
-                <div *ngIf="isFieldInvalid('apellido')" class="error-message">El apellido es requerido</div>
-            </div>
-            <div class="field" [ngClass]="{'error': isFieldInvalid('telefono')}">
-                <label class="telefono">Teléfono</label>
-                <input formControlName="telefono" class="telefono" placeholder="Ingresa tu teléfono" id="telefono">
-                <div *ngIf="isFieldInvalid('telefono')" class="error-message">El teléfono es requerido</div>
-            </div>
-            <div class="field" [ngClass]="{'error': isFieldInvalid('correo')}">
-                <label class="correo">Correo</label>
-                <input formControlName="correo" class="correo" placeholder="Ingresa tu correo" id="correo">
-                <div *ngIf="isFieldInvalid('correo')" class="error-message">El correo es requerido</div>
-            </div>
-            <div class="field" [ngClass]="{'error': isFieldInvalid('direccion')}">
-                <label class="direccion">Dirección</label>
-                <input formControlName="direccion" class="direccion" placeholder="Ingresa tu dirección" id="direccion">
-                <div *ngIf="isFieldInvalid('direccion')" class="error-message">La dirección es requerida</div>
-            </div>
             <div class="field" [ngClass]="{'error': isFieldInvalid('fechaInicio')}">
                 <label class="fechaInicio">Fecha inicio</label>
                 <input type="date" formControlName="fechaInicio" class="fechaInicio" placeholder="Ingresa la fecha de inicio" id="fechainicio">
