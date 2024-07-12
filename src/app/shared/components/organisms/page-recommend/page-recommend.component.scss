@@ -1,29 +1,30 @@
-.container{
+.container {
     display: flex;
     justify-content: center;
+    align-items: center; 
     width: 100%;
     margin-top: 55px;
 }
-.recommended-container{
+
+.recommended-container {
     display: flex;
-    justify-content: space-around;
-    margin-left: 80px;
-    margin-right: 80px;
-    flex-wrap: wrap;
-    margin-bottom: 76px;
- }
- .container-arrow-izq{
-    width: min-content;
-    padding-right: 20px;
+    justify-content: center; 
+    gap: 90px;
+    flex-wrap: nowrap; 
+    align-items: center; 
 }
 
-.container-arrow-der{
-    width: min-content;
-    padding-left: 20px;
+.container-arrow-izq,
+.container-arrow-der {
+    display: flex;
+    align-items: center; 
+    width: 28px; 
+    height: 170px; 
+    margin: 20px;
 }
 
-.arrow{
+.arrow {
     width: 28px;
-    height: 24x;
+    height: 24px;
     cursor: pointer;
 }
