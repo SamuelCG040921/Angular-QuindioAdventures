@@ -49,17 +49,17 @@
                         <div class="right">
                             <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('email')}">
                                 <label for="email">Email</label>
-                                <input type="text" id="formInput" placeholder="Ingresa tu email" formControlName="email" class="email">
+                                <input type="email" id="formInput" placeholder="Ingresa tu email" formControlName="email" class="email">
                                 <div *ngIf="isFieldInvalid('email')" class="error-message">El correo es requerido</div>
                             </div>
                             <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('password')}">
                                 <label for="password">Contraseña</label>
-                                <input type="text" placeholder="Ingresa tu contraseña" formControlName="password" class="password" id="formInput">
+                                <input type="password" placeholder="Ingresa tu contraseña" formControlName="password" class="password" id="formInput">
                                 <div *ngIf="isFieldInvalid('password')" class="error-message">La contraseña es requerida</div>
                             </div>
                             <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('confirmPassword')}">
                                 <label>Confirmar contraseña</label>
-                                <input type="text" placeholder="Ingresa nuevamente tu contraseña" id="formInput" formControlName="confirmPassword">
+                                <input type="password" placeholder="Ingresa nuevamente tu contraseña" id="formInput" formControlName="confirmPassword">
                                 <div *ngIf="isFieldInvalid('confirmPassword')" class="error-message">La contraseña es requerida</div>
                             </div>
                         </div>
