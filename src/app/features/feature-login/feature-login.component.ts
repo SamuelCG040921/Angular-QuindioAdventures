@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { Auth } from './models/auth.model';
@@ -6,9 +6,9 @@ import { Auth } from './models/auth.model';
 @Component({
   selector: 'app-feature-login',
   templateUrl: './feature-login.component.html',
-  styleUrl: './feature-login.component.scss'
+  styleUrls: ['./feature-login.component.scss']
 })
-export class FeatureLoginComponent {
+export class FeatureLoginComponent implements OnInit {
   loginForm!: FormGroup;
   isSubmitting: boolean = false;
 
@@ -25,20 +25,21 @@ export class FeatureLoginComponent {
     if (this.loginForm.valid) {
       this.isSubmitting = true; // Deshabilitar el botón al enviar
 
-      const newAuth = new Auth(
+      const authData = new Auth(
         this.loginForm.value.email,
         this.loginForm.value.password
       );
 
-      this.authService.register(newAuth).then(
+      this.authService.register(authData).then(
         response => {
           this.isSubmitting = false; // Habilitar el botón después de la respuesta
-          // Manejar la respuesta exitosa aquí
+          console.log('Login exitoso:', response);
+          // Manejar la respuesta exitosa aquí (p.ej., redirigir al usuario)
         }
       ).catch(
         error => {
           this.isSubmitting = false; // Habilitar el botón después de un error
-          console.error('Registration error:', error);
+          console.error('Login error:', error);
         }
       );
     } else {
