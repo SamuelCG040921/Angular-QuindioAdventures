@@ -1,22 +1,21 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { FeatureRegisterComponent } from './feature-register.component';
 import { SharedModule } from '../../shared/shared.module';
+import { FeatureRegisterRoutingModule } from './feature-register-routing.module';
 
 @NgModule({
   declarations: [
-    RegisterFormComponent,
     FeatureRegisterComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    FeatureRegisterRoutingModule
   ],
   exports: [
-    RegisterFormComponent,
     FeatureRegisterComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

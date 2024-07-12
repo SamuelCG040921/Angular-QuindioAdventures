@@ -9,6 +9,8 @@ import { RegisterService } from './services/register.service';
   styleUrls: ['./feature-register.component.scss']
 })
 export class FeatureRegisterComponent implements OnInit {
+  isAlertOpen = false;
+  isErrorAlertOpen = false;
   registroForm!: FormGroup;
   isSubmitting: boolean = false;
 
@@ -26,6 +28,21 @@ export class FeatureRegisterComponent implements OnInit {
       phoneNumber: ['', Validators.required],
       address: ['', Validators.required]
     });
+  }
+  openAlert(): void {
+    this.isAlertOpen = true;
+  }
+
+  closeAlert(): void {
+    this.isAlertOpen = false;
+  }
+
+  openErrorAlert(): void {
+    this.isErrorAlertOpen = true;
+  }
+
+  closeErrorAlert(): void {
+    this.isErrorAlertOpen = false;
   }
 
   onSubmit() {
@@ -47,16 +64,19 @@ export class FeatureRegisterComponent implements OnInit {
         response => {
           this.isSubmitting = false; // Habilitar el botón después de la respuesta
           // Manejar la respuesta exitosa aquí
+          this.openAlert();
         }
       ).catch(
         error => {
           this.isSubmitting = false; // Habilitar el botón después de un error
           console.error('Registration error:', error);
+          this.openErrorAlert();
         }
       );
     } else {
       console.error('Form is not valid');
       this.registroForm.markAllAsTouched(); // Marcar todos los campos como tocados para mostrar errores
+      this.openErrorAlert();
     }
   }
 

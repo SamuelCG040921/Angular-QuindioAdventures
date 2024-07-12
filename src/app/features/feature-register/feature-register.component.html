@@ -68,12 +68,14 @@
                         <app-terms></app-terms>
                     </div>
                     <div class="containerBtn">
-                        <button type="submit" [disabled]="isSubmitting">Registrarse</button>
+                        <app-button label="Registrarme" type="submit" [disabled]="isSubmitting">Registrarse</app-button>
+                        <app-messages-succesful title="Se ha registrado correctamente" *ngIf="isAlertOpen" (close)="closeAlert()"></app-messages-succesful>
+                <app-messages-error title="¡Hubo un problema!" paragraph="No se puedo registrar" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
                     </div>
                 </form>
               </div>
             <div class="txtTienes">
-                <p>Ya tienes una cuenta? <a href="#">Iniciar sesión</a></p>
+                <p>Ya tienes una cuenta? <a routerLink="/login">Iniciar sesión</a></p>
             </div>
         </div>
     </div>
