@@ -31,14 +31,23 @@
     <div class="titleReserva"><figure class="linech"></figure><p class="section-title">Reserva e informacion</p><figure class="linech"></figure></div>
     <div class="contenido">
         <div class="containerPersona">
-            <app-peopple-count-info id="persona"></app-peopple-count-info>
-            <app-peopple-count-info id="persona"></app-peopple-count-info>
-            <app-peopple-count-info></app-peopple-count-info>
+            <app-peopple-count-info imageUrl="../../../../../assets/icons/hombre 1.png" title="Adultos" description="Personas mayores a 14 años empiezan a pagar precio de adulto" id="persona"></app-peopple-count-info>
+            <app-peopple-count-info imageUrl="../../../../../assets/icons/nino.png" title="Niños" description="Personas menores a 14 años pueden pagar precio de niño" id="persona"></app-peopple-count-info>
+            <app-hab-type-selector></app-hab-type-selector>
         </div>
         <div class="recuadroPrecio">
             <app-recuadro-precio-calculo></app-recuadro-precio-calculo>
             <app-button class="button" label="Continuar con la reserva" color="#275843" routerLink="/paymentform"></app-button>
         </div>
+    </div>
+</div>
+<div class="quinta">
+    <div class="encargado">
+        <p class="titlequinta">Conoce al encargado del chalet</p>
+        <app-chalet-plan-attendant></app-chalet-plan-attendant>
+    </div>
+    <div class="comunicacion">
+       <app-communication-attendant></app-communication-attendant>
     </div>
 </div>
 <app-footer></app-footer>

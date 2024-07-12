@@ -1,6 +1,7 @@
 .containerCountClient{
     display: flex;
     width: auto;
+    justify-content: center;
     align-items: center;
 }
 
@@ -22,7 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 60px;
+    padding-left: 20px;
 }
 
 .buttonMinum{
@@ -33,8 +34,29 @@
     padding-left: 15px;
 }
 
+.arrow1{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.arrow2{
+    width: 15px;
+    height: 15px; 
+    margin-left: 10px;
+}
+
+span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #88B8A3;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 #description{
-    width: 560px;
+    width: 550px;
 }
 
 .containerIcon{

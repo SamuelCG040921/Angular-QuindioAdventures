@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CountPeoppleComponent } from './count-peopple.component';
+import { HabTypeSelectorComponent } from './hab-type-selector.component';
 
-describe('CountPeoppleComponent', () => {
-  let component: CountPeoppleComponent;
-  let fixture: ComponentFixture<CountPeoppleComponent>;
+describe('HabTypeSelectorComponent', () => {
+  let component: HabTypeSelectorComponent;
+  let fixture: ComponentFixture<HabTypeSelectorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CountPeoppleComponent]
+      declarations: [HabTypeSelectorComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CountPeoppleComponent);
+    fixture = TestBed.createComponent(HabTypeSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

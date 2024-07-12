@@ -44,7 +44,6 @@ import { PricesTableComponent } from './components/molecules/prices-table/prices
 import { NavegationMapComponent } from './components/molecules/navegation-map/navegation-map.component';
 import { IconServicesComponent } from './components/atoms/icon-services/icon-services.component';
 import { ServiceInComponent } from './components/molecules/service-in/service-in.component';
-import { CountPeoppleComponent } from './components/atoms/count-peopple/count-peopple.component';
 import { PeoppleCountInfoComponent } from './components/molecules/peopple-count-info/peopple-count-info.component';
 import { ButtonPlusMoreComponent } from './components/atoms/button-plus-more/button-plus-more.component';
 import { RecuadroPrecioCalculoComponent } from './components/molecules/recuadro-precio-calculo/recuadro-precio-calculo.component';
@@ -58,6 +57,9 @@ import { MessagesSuccesfulComponent } from './components/templates/messages-succ
 import { ModalReservesComponent } from './components/templates/modal-reserves/modal-reserves.component';
 import { ModalUpdateComponent } from './components/templates/modal-update/modal-update.component';
 import { MoneyComponent } from './components/molecules/money/money.component';
+import { HabTypeSelectorComponent } from './components/molecules/hab-type-selector/hab-type-selector.component';
+import { ChaletPlanAttendantComponent } from './components/molecules/chalet-plan-attendant/chalet-plan-attendant.component';
+import { CommunicationAttendantComponent } from './components/molecules/communication-attendant/communication-attendant.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +107,6 @@ import { MoneyComponent } from './components/molecules/money/money.component';
     NavegationMapComponent,
     IconServicesComponent,
     ServiceInComponent,
-    CountPeoppleComponent,
     PeoppleCountInfoComponent,
     ButtonPlusMoreComponent,
     RecuadroPrecioCalculoComponent,
@@ -118,7 +119,10 @@ import { MoneyComponent } from './components/molecules/money/money.component';
     MessagesSuccesfulComponent,
     ModalReservesComponent,
     ModalUpdateComponent,
-    MoneyComponent
+    MoneyComponent,
+    HabTypeSelectorComponent,
+    ChaletPlanAttendantComponent,
+    CommunicationAttendantComponent
   ],
 
   imports: [
@@ -171,7 +175,6 @@ import { MoneyComponent } from './components/molecules/money/money.component';
     NavegationMapComponent,
     IconServicesComponent,
     ServiceInComponent,
-    CountPeoppleComponent,
     PeoppleCountInfoComponent,
     RecuadroPrecioCalculoComponent,
     ChaletViewImagesComponent,
@@ -181,7 +184,10 @@ import { MoneyComponent } from './components/molecules/money/money.component';
     TittleMessagesComponent,
     ParagraphMessagesComponent,
     MessagesSuccesfulComponent,
-    ModalReservesComponent
+    ModalReservesComponent,
+    HabTypeSelectorComponent,
+    ChaletPlanAttendantComponent,
+    CommunicationAttendantComponent
   ],
 })
 export class SharedModule { }

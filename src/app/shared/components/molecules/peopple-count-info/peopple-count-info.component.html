@@ -1,16 +1,18 @@
 <div class="containerCountClient">
-    <app-count-peopple></app-count-peopple>
+    <div class="containerIcon">
+        <img id="imgIcon" src="{{imageUrl}}" alt="">
+    </div>
     <div class="containerText">
-        <p id="tittle">adultos</p>
-        <p>Personas mayores a 14 años empiezan a pagar precio de aulto</p>
+        <p id="tittle">{{title}}</p>
+        <p id="description">{{description}}</p>
     </div>
     <div class="containerButtonsCount">
         <div class="buttonMinum">
-            <app-button-plus-minum></app-button-plus-minum>
+            <app-button-plus-minum (click)="removePerson()"></app-button-plus-minum>
         </div>
-        <p>2</p>
+        <p>{{personCounter}}</p>
         <div class="buttonMore">
-            <app-button-plus-more></app-button-plus-more>
+            <app-button-plus-more (click)="addPerson()"></app-button-plus-more>
         </div>
     </div>
 </div>
