@@ -12,16 +12,16 @@
                 <p>Inicia sesión</p>
             </div>
         </div>
-        <div>
+        <div class="containerForm">
             <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                <div class="email" class="containerCamp" [ngClass]="{'error': isFieldInvalid('email')}">
+                <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('email')}">
                     <label for="">Correo</label>
-                    <input id="input" placeholder="Ingresa tu correo" formControlName="email" type="text" width="350px">
+                    <input id="input1" placeholder="Ingresa tu correo" formControlName="email" type="text">
                     <div *ngIf="isFieldInvalid('email')" class="error-message">El email es requerido</div>
                 </div>
-                <div class="password" class="containerCamp" [ngClass]="{'error': isFieldInvalid('password')}">
+                <div id="containerInput2" class="containerCamp" [ngClass]="{'error': isFieldInvalid('password')}">
                     <label for="">Contraseña</label>
-                    <input id="input1" placeholder="Ingresa tu contraseña" formControlName="password" type="password" width="350px">
+                    <input id="input2" placeholder="Ingresa tu contraseña" formControlName="password" type="password">
                     <div *ngIf="isFieldInvalid('password')" class="error-message">La contraseña es requerida</div>
                 </div>
                 <div class="containerBtn">
