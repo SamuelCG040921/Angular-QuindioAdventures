@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserService } from '../../../../features/feature-reserves/services/user.service';
 
 @Component({
@@ -7,6 +7,10 @@ import { UserService } from '../../../../features/feature-reserves/services/user
   styleUrl: './profile-img.component.scss'
 })
 export class ProfileImgComponent implements OnInit {
+
+  @Input() width = '';
+  @Input() height = '';
+
   user:any
 
     constructor(private userService: UserService) {}

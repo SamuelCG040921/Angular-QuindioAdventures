@@ -60,6 +60,8 @@ import { ModalReservesComponent } from './components/templates/modal-reserves/mo
 import { ModalUpdateComponent } from './components/templates/modal-update/modal-update.component';
 import { MoneyComponent } from './components/molecules/money/money.component';
 import { RegisterButtonComponent } from './components/molecules/register-button/register-button.component';
+import { FeatureProfileComponent } from '../features/feature-profile/feature-profile.component';
+import { ProfileHeaderComponent } from '../features/feature-profile/components/profile-header/profile-header.component';
 
 @NgModule({
   declarations: [
@@ -123,12 +125,13 @@ import { RegisterButtonComponent } from './components/molecules/register-button/
     ModalUpdateComponent,
     MoneyComponent,
     RegisterButtonComponent,
+    ProfileHeaderComponent
   ],
 
   imports: [
     CommonModule,
     RouterModule.forRoot([
-      { path: 'profile', component: SearchButtonComponent },
+      { path: 'profile', component: FeatureProfileComponent },
       { path: 'chalets', component: FooterInputComponent },
       { path: 'planes-vacacionales', component: SearchButtonComponent },
       { path: 'reservas', component: SearchButtonComponent },
@@ -190,7 +193,8 @@ import { RegisterButtonComponent } from './components/molecules/register-button/
     TittleMessagesComponent,
     ParagraphMessagesComponent,
     MessagesSuccesfulComponent,
-    ModalReservesComponent
+    ModalReservesComponent,
+    ProfileHeaderComponent
   ],
 })
 export class SharedModule { }

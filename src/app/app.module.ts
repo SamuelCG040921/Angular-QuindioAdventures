@@ -4,16 +4,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';  // Importa ReactiveFormsModule
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FeatureRegisterComponent } from './features/feature-register/feature-register.component';
 import { FeatureReservesModule } from './features/feature-reserves/feature-reserves.module';
 import { FeatureReservesRoutingModule } from './features/feature-reserves/feature-reserves-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { FeatureRegisterModule } from './features/feature-register/feature-register.module';
 import { FeatureLoginModule } from './features/feature-login/feature-login.module';
+import { FeatureProfileModule } from './features/feature-profile/feature-profile.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +25,7 @@ import { FeatureLoginModule } from './features/feature-login/feature-login.modul
     FeatureReservesRoutingModule,
     FeatureRegisterModule,
     FeatureLoginModule,
+    FeatureProfileModule,
     SharedModule
   ],
   providers: [],
