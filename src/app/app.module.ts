@@ -9,6 +9,8 @@ import { FeatureReservesModule } from './features/feature-reserves/feature-reser
 import { SharedModule } from './shared/shared.module';
 import { FeatureChaletsRoutingModule } from './features/feature-chalets/feature-chalets-routing.module';
 import { FeatureChaletsModule } from './features/feature-chalets/feature-chalets.module';
+import { FeaturePlansModule } from './features/feature-plans/feature-plans.module';
+import { FeaturePlansRoutingModule } from './features/feature-plans/feature-plans-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { FeatureChaletsModule } from './features/feature-chalets/feature-chalets
     FeatureReservesRoutingModule,
     FeatureChaletsModule,
     FeatureChaletsRoutingModule,
+    FeaturePlansModule,
+    FeaturePlansRoutingModule,
     SharedModule,
     HttpClientModule
   ],

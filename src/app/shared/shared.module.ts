@@ -63,6 +63,7 @@ import { InputPaintingsComponent } from './components/atoms/input-paintings/inpu
 import { InputDatePComponent } from './components/atoms/input-date-p/input-date-p.component';
 import { ReserveRecommendedPageComponent } from './components/molecules/reserve-recommended-page/reserve-recommended-page.component';
 import { PageRecommendComponent } from './components/organisms/page-recommend/page-recommend.component';
+import { ReservationPaintingsPlansComponent } from './components/molecules/reservation-paintings-plans/reservation-paintings-plans.component';
 
 
 @NgModule({
@@ -129,7 +130,8 @@ import { PageRecommendComponent } from './components/organisms/page-recommend/pa
     InputPaintingsComponent ,
     InputDatePComponent,
     ReserveRecommendedPageComponent,
-    PageRecommendComponent 
+    PageRecommendComponent,
+    ReservationPaintingsPlansComponent 
   ],
 
   imports: [
@@ -194,7 +196,8 @@ import { PageRecommendComponent } from './components/organisms/page-recommend/pa
     InputPaintingsComponent,
     InputDatePComponent,
     ReserveRecommendedPageComponent,
-    PageRecommendComponent 
+    PageRecommendComponent,
+    ReservationPaintingsPlansComponent 
   ],
 })
 export class SharedModule { }
