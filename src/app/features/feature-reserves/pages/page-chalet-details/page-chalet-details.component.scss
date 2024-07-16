@@ -184,3 +184,103 @@
     border-right: 1px solid black;
 }
 
+.titlecom{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-top: 60px;
+}
+
+.titlecom figure{
+    border: 1px solid #418E6D;
+    width: 400px;
+}
+
+.titlecom h2{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#filtercomments{
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 70px;
+    margin-bottom: 50px;
+}
+
+.profilecomment{
+    width: 64px;
+    height: 64px;
+    background-color: black;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.commentheader{
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    width: max-content;
+    width: 100%;
+}
+
+.commentheader p{
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    margin-right: 20px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.bordername{
+    border: 1px solid lightgray;
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+input{
+    margin-left: 10px;
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #88B8A3;
+    padding-left: 20px;
+}
+
+form{
+   width: 90%;
+}
+
+.containerform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+#publish{
+    margin-right: 20px;
+}
+
+.todoscomentarios{
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.calificacion{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 220px;
+}
+
+

@@ -60,6 +60,7 @@ import { MoneyComponent } from './components/molecules/money/money.component';
 import { HabTypeSelectorComponent } from './components/molecules/hab-type-selector/hab-type-selector.component';
 import { ChaletPlanAttendantComponent } from './components/molecules/chalet-plan-attendant/chalet-plan-attendant.component';
 import { CommunicationAttendantComponent } from './components/molecules/communication-attendant/communication-attendant.component';
+import { CommentComponent } from './components/organisms/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -122,7 +123,8 @@ import { CommunicationAttendantComponent } from './components/molecules/communic
     MoneyComponent,
     HabTypeSelectorComponent,
     ChaletPlanAttendantComponent,
-    CommunicationAttendantComponent
+    CommunicationAttendantComponent,
+    CommentComponent
   ],
 
   imports: [
@@ -187,7 +189,8 @@ import { CommunicationAttendantComponent } from './components/molecules/communic
     ModalReservesComponent,
     HabTypeSelectorComponent,
     ChaletPlanAttendantComponent,
-    CommunicationAttendantComponent
+    CommunicationAttendantComponent,
+    CommentComponent
   ],
 })
 export class SharedModule { }

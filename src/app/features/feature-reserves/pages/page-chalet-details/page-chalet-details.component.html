@@ -50,4 +50,38 @@
        <app-communication-attendant></app-communication-attendant>
     </div>
 </div>
+<section class="comentarios">
+   <div class="titlecom"> <figure></figure><h2>Comentarios y calificaciones</h2><figure></figure></div>
+   <section class="containerform">
+        <form action="" formGruoup="comment">
+            <div class="commentheader">
+                <img class="profilecomment" src="../../../../../assets/images/erling-haaland 1.png" alt="">
+                <div>
+                    <p>Juan Bedoya</p>
+                </div>
+                <div class="bordername"></div>
+                <input type="text" id="comment" placeholder="Agrega un comentario..." (click)="mostrarBotones()" >
+                
+            </div>
+            
+            <div class="calificacion">
+                <app-calification-card *ngIf="botones === true"></app-calification-card>
+            </div>
+            <div class="buttons">
+                <app-button id="publish" *ngIf="botones === true" label="Publicar"></app-button>
+                <app-button *ngIf="botones === true" label="Cancelar" color="red" (click)="ocultarBotones()"></app-button>
+            </div>
+        </form>
+    </section>
+        <div class="filter">
+            <select name="filtrocomentarios" id="filtercomments">
+                <option value="value1">Todos los comentarios</option>
+                <option value="value2">Comentarios positivos</option>
+                <option value="value3">Comentarios negativos</option>
+            </select>
+        </div>
+        <div class="todoscomentarios">
+             <app-comment></app-comment>
+        </div>
+</section>
 <app-footer></app-footer>
