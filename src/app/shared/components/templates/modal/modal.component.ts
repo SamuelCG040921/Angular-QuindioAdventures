@@ -7,7 +7,7 @@ import { compileClassDebugInfo } from '@angular/compiler';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent implements OnInit{
+export class ModalComponent{
   @Input() reserve:any= {
     userimg:'',
     codigo: '',
@@ -35,13 +35,6 @@ export class ModalComponent implements OnInit{
 
   cancelarReserva(){
     
-  }
-
-  ngOnInit(): void {
-    this.reservesService.getReservebyCode(this.reserve.codigo).
-    subscribe((res=>{
-       this.reserve = res
-    }))
   }
 }
 

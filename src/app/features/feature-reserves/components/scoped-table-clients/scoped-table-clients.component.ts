@@ -6,15 +6,9 @@ import { ReservesService } from '../../services/reserves.service';
   templateUrl: './scoped-table-clients.component.html',
   styleUrl: './scoped-table-clients.component.scss'
 })
-export class ScopedTableClientsComponent implements OnInit {
+export class ScopedTableClientsComponent{
 reserves: any
 
 constructor(private reservesService:ReservesService){}
 
-ngOnInit() {
-    this.reservesService.getReserves()
-    .subscribe(res=>{
-      this.reserves = res
-    })
-}
 }
