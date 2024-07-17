@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../feature-reserves/services/user.service';
 
 @Component({
   selector: 'app-feature-profile',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrl: './feature-profile.component.scss'
 })
 export class FeatureProfileComponent {
+
+  user:any
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit() {
+    this.userService.getUserbyID() // Llamar al método del servicio
+    .subscribe((data: any) => {
+      this.user = data; // Almacenar el usuario activo
+    });
+  }
 
 }

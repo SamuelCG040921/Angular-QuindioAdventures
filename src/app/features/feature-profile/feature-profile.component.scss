@@ -1,0 +1,161 @@
+.profile{
+    display: flex;
+    width: 100vw;
+}
+
+.profileAside{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 25vw;
+    height: 90vh;
+}
+
+.containerProfile{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    width: 88%;
+    height: 70px;
+    border-radius: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.containerProfile p{
+    margin-left: 16px;
+}
+
+.containerBorde{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 87%;
+}
+
+.containerInicio{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    height: 70px;
+    border-radius: 15px;
+    width: 88%;
+    margin-top: 14px;
+    cursor: pointer;
+}
+
+.containerInicio img{
+    width: 35px;
+    height: 35px;
+}
+
+.containerInicio p{
+    margin-left: 16px;
+}
+
+#borde{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+    border-bottom: 1px solid #418E6D;
+    width: 92%;
+}
+
+#borde2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+    margin-top: 14px;
+    border-bottom: 1px solid #418E6D;
+    width: 92%;
+}
+
+.logOut{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logOut button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 70px;
+    border-radius: 15px;
+    border: 1px solid #275843;
+    background-color: #275843;
+    color: white;
+    margin-top: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.logOut button img{
+    width: 20px;
+    margin-right: 8px;
+}
+
+.infoProfile{
+    display: flex;
+    justify-content: center;
+    width: 75vw;
+}
+
+.leftPart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.containerFormLeft{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 40px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.containerInfo{
+    width: 70%;
+    margin-bottom: 15px;
+}
+
+.containerInfo label{
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.containerInfo p{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    padding-left: 15px;
+    background-color: #D1E1D8;
+    border-radius: 10px;
+
+}
+
+.rightPart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.containerImgProfile img{
+    border-radius: 100px;
+    width: 180px;
+    height: 180px;
+}

@@ -1,2 +1,85 @@
 <app-profile-header></app-profile-header>
-<app-profile-aside></app-profile-aside>
+<div class="profile">
+	<aside class="profileAside">
+		<div class="containerProfile">
+			<app-profile-img width="50px" height="50px"></app-profile-img>
+			<p id="userName">{{user.nombres}}</p>
+		</div>
+		<div class="containerBorde">
+			<div id="borde"></div>
+		</div>
+		<div class="containerInicio">
+			<img src="../../../../../assets/icons/usuario.png" alt="">
+			<p>Mi cuenta</p>
+		</div>
+		<div class="containerBorde">
+			<div id="borde2"></div>
+		</div>
+		<div class="containerInicio">
+			<img src="../../../../../assets/icons/verano.png" alt="">
+			<p>Mis planes vacacionales</p>
+		</div>
+		<div class="containerBorde">
+			<div id="borde2"></div>
+		</div>
+		<div class="containerInicio">
+			<img src="../../../../../assets/icons/alojamiento.png" alt="">
+			<p>Mis chalets</p>
+		</div>
+		<div class="containerBorde">
+			<div id="borde2"></div>
+		</div>
+		<div class="containerInicio">
+			<img src="../../../../../assets/icons/chats.png" alt="">
+			<p>Mis chats</p>
+		</div>
+		<div class="containerBorde">
+			<div id="borde2"></div>
+		</div>
+		<div class="logOut">
+			<button><img src="../../../../../assets/icons/salida-de-emergencia.png" alt="">Cerrar sesion</button>
+		</div>
+	</aside>
+	<div class="infoProfile">
+		<div class="leftPart">
+			<h3>Detalles del perfil</h3>
+			<div class="containerFormLeft">
+				<div class="containerInfo">
+					<label>Nombre</label>
+					<p>{{user.nombres}}</p>
+				</div>
+				<div class="containerInfo">
+					<label>Apellido</label>
+					<p>{{user.apellidos}}</p>
+				</div>
+				<div class="containerInfo">
+					<label>Edad</label>
+					<p>{{user.edad}}</p>
+				</div>
+				<div class="containerInfo">
+					<label>Telefono</label>
+					<p>{{user.telefono}}</p>
+				</div>
+				<div class="containerInfo">
+					<label>Direccion</label>
+					<p>{{user.direccion}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="rightPart">
+			<div class="containerImgProfile">
+				<img src="{{user.image}}" alt="">
+			</div>
+			<div class="containerFormRight">
+				<div class="containerInfo">
+					<label>Correo</label>
+					<p>{{user.email}}</p>
+				</div>
+				<div class="containerInfo">
+					<label>Contraseña</label>
+					<p>{{user.password}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
