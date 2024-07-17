@@ -4,12 +4,12 @@ import { CommonModule } from '@angular/common';
 import { FeatureProfileRoutingModule } from './feature-profile-routing.module';
 import { FeatureProfileComponent } from './feature-profile.component';
 import { SharedModule } from '../../shared/shared.module';
-import { PlansProfileComponent } from './pages/plans-profile/plans-profile.component';
+import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 
 @NgModule({
   declarations: [
     FeatureProfileComponent,
-    PlansProfileComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     CommonModule,

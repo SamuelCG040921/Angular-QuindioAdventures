@@ -7,8 +7,12 @@ import { UserService } from '../feature-reserves/services/user.service';
   styleUrl: './feature-profile.component.scss'
 })
 export class FeatureProfileComponent {
-
   user:any
+  isInputDisabled = true;
+
+  habilitarInput() {
+    this.isInputDisabled = false;
+  } 
 
   constructor(private userService: UserService) {}
 

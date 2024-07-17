@@ -52,4 +52,15 @@ export class FeatureLoginComponent implements OnInit {
     const control = this.loginForm.get(field);
     return control ? !control.valid && (control.dirty || control.touched) : false;
   }
+
+  
+  isModalOpen = false;
+
+  openModal(): void {
+    this.isModalOpen = true;
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+  }
 }

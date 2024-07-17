@@ -31,7 +31,7 @@
         </div>
         <div class="forgot">
             <div class="containerForgot">
-                <a href="#">¿Olvidaste tu contraseña?</a>
+                <a (click)="openModal()">¿Olvidaste tu contraseña?</a>
                 <p>No tienes una cuenta?<span><a routerLink="/register">Crea una aquí</a></span></p>
             </div>
         </div>
@@ -43,3 +43,4 @@
         <app-img-login></app-img-login>
     </div>
 </div>
+<app-modal-email *ngIf="isModalOpen" (close)="closeModal()"></app-modal-email>
