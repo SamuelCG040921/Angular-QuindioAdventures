@@ -62,6 +62,7 @@ import { MoneyComponent } from './components/molecules/money/money.component';
 import { RegisterButtonComponent } from './components/molecules/register-button/register-button.component';
 import { FeatureProfileComponent } from '../features/feature-profile/feature-profile.component';
 import { ProfileHeaderComponent } from '../features/feature-profile/components/profile-header/profile-header.component';
+import { VentajaServicioComponent } from './components/molecules/ventaja-servicio/ventaja-servicio.component';
 
 @NgModule({
   declarations: [
@@ -125,7 +126,8 @@ import { ProfileHeaderComponent } from '../features/feature-profile/components/p
     ModalUpdateComponent,
     MoneyComponent,
     RegisterButtonComponent,
-    ProfileHeaderComponent
+    ProfileHeaderComponent,
+    VentajaServicioComponent
   ],
 
   imports: [
@@ -194,7 +196,8 @@ import { ProfileHeaderComponent } from '../features/feature-profile/components/p
     ParagraphMessagesComponent,
     MessagesSuccesfulComponent,
     ModalReservesComponent,
-    ProfileHeaderComponent
+    ProfileHeaderComponent,
+    VentajaServicioComponent
   ],
 })
 export class SharedModule { }
