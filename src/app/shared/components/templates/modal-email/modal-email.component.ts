@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-modal-email',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './modal-email.component.scss'
 })
 export class ModalEmailComponent {
+  @Output() close = new EventEmitter<void>();
+
+  closeModal(): void {
+    this.close.emit();
+  }
 
 }

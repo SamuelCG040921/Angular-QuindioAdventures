@@ -256,6 +256,24 @@
       "paymentmethodimg": "https://mir-s3-cdn-cf.behance.net/projects/404/43a39c151928953.Y3JvcCwxODQ0LDE0NDMsMzYsMA.png",
       "id": "c010",
       "estado": "Activo"
+    },
+    {
+      "id": "2a15",
+      "documento": "sasd",
+      "cantidadNinos": "adsdasd",
+      "tipo": "Chalet",
+      "codigo": 39,
+      "numero": 7,
+      "precio": 6000000,
+      "cantidadAdultos": "dasdasd",
+      "nombre": "adsdasd",
+      "apellido": "adsdasd",
+      "telefono": "asdasdasd",
+      "correo": "dasdasasdasd@gmail.com",
+      "direccion": "asdasdasd",
+      "checkin": "2024-07-17",
+      "checkout": "2024-07-19",
+      "estado": "Activa"
     }
   ],
   "chalets": [

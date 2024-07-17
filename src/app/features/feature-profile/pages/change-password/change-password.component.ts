@@ -10,22 +10,15 @@ import { ChangePasswordService } from '../../services/changepassword.service';
 export class ChangePasswordComponent {
   isAlertOpen = false;
   isErrorAlertOpen = false;
-  registroForm!: FormGroup;
+  changeForm!: FormGroup;
   isSubmitting: boolean = false;
 
   constructor(private fb: FormBuilder, private changePasswordServices: ChangePasswordService) {}
 
   ngOnInit() {
-    this.registroForm = this.fb.group({
-      document: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+    this.changeForm = this.fb.group({
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
-      name: ['', Validators.required],
-      lastName: ['', Validators.required],
-      age: ['', [Validators.required, Validators.min(0)]],
-      phoneNumber: ['', Validators.required],
-      address: ['', Validators.required]
     });
   }
   openAlert(): void {
@@ -45,7 +38,18 @@ export class ChangePasswordComponent {
   }
 
   isFieldInvalid(field: string): boolean {
-    const control = this.registroForm.get(field);
+    const control = this.changeForm.get(field);
     return control ? !control.valid && (control.dirty || control.touched) : false;
   }
+
+  isWarningAlertOpen = false
+
+  closeWarningAlert(){
+    this.isWarningAlertOpen = false
+  }
+
+  openWarningAlert(){
+    this.isWarningAlertOpen = true
+  }
+
 }

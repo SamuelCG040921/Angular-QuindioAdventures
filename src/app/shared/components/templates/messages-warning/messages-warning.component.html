@@ -13,8 +13,8 @@
             <p class="paragraph">{{paragraph}}</p>
         </div> 
         <div class="buttons">
-         <app-button label="Confirmar" color="#275843"></app-button>
-         <app-button label="Rechazar" color="#BF3434"></app-button>
+         <app-button type="submit" label="Confirmar" color="#275843"></app-button>
+         <app-button (click)="closeAlert()" label="Rechazar" color="#BF3434"></app-button>
         </div>
       </div>
     </div>
