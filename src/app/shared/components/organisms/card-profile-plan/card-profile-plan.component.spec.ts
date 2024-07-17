@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileAsideComponent } from './profile-aside.component';
+import { CardProfilePlanComponent } from './card-profile-plan.component';
 
-describe('ProfileAsideComponent', () => {
-  let component: ProfileAsideComponent;
-  let fixture: ComponentFixture<ProfileAsideComponent>;
+describe('CardProfilePlanComponent', () => {
+  let component: CardProfilePlanComponent;
+  let fixture: ComponentFixture<CardProfilePlanComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProfileAsideComponent]
+      declarations: [CardProfilePlanComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ProfileAsideComponent);
+    fixture = TestBed.createComponent(CardProfilePlanComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

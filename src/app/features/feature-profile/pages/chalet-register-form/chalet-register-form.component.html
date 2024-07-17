@@ -1,6 +1,45 @@
 <app-header></app-header>
 <section class="formulario">
-<app-profile-aside class="aside"></app-profile-aside>
+    <aside class="profileAside">
+		<div class="containerProfile">
+			<app-profile-img width="50px" height="50px"></app-profile-img>
+			<p id="userName">{{user.nombres}}</p>
+		</div>
+		<div class="containerBorde">
+			<div id="borde"></div>
+		</div>
+		<div class="containerInicio">
+			<img src="../../../../../assets/icons/usuario.png" alt="">
+			<p>Mi cuenta</p>
+		</div>
+		<div class="containerBorde">
+			<div id="borde2"></div>
+		</div>
+		<div class="containerInicio">
+			<img src="../../../../../assets/icons/verano.png" alt="">
+			<p>Mis planes vacacionales</p>
+		</div>
+		<div class="containerBorde">
+			<div id="borde2"></div>
+		</div>
+		<div class="containerInicio">
+			<img src="../../../../../assets/icons/alojamiento.png" alt="">
+			<p>Mis chalets</p>
+		</div>
+		<div class="containerBorde">
+			<div id="borde2"></div>
+		</div>
+		<div class="containerInicio">
+			<img src="../../../../../assets/icons/chats.png" alt="">
+			<p>Mis chats</p>
+		</div>
+		<div class="containerBorde">
+			<div id="borde2"></div>
+		</div>
+		<div class="logOut">
+			<button><img src="../../../../../assets/icons/salida-de-emergencia.png" alt="">Cerrar sesion</button>
+		</div>
+	</aside>
 <div class="containerFormulario">
     <h2 class="title">Registrar chalet</h2>
     <div class="parte1">

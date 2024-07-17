@@ -63,6 +63,7 @@ import { RegisterButtonComponent } from './components/molecules/register-button/
 import { FeatureProfileComponent } from '../features/feature-profile/feature-profile.component';
 import { ProfileHeaderComponent } from '../features/feature-profile/components/profile-header/profile-header.component';
 import { VentajaServicioComponent } from './components/molecules/ventaja-servicio/ventaja-servicio.component';
+import { ModalEmailComponent } from './components/templates/modal-email/modal-email.component';
 
 @NgModule({
   declarations: [
@@ -127,7 +128,8 @@ import { VentajaServicioComponent } from './components/molecules/ventaja-servici
     MoneyComponent,
     RegisterButtonComponent,
     ProfileHeaderComponent,
-    VentajaServicioComponent
+    VentajaServicioComponent,
+    ModalEmailComponent
   ],
 
   imports: [
@@ -197,7 +199,8 @@ import { VentajaServicioComponent } from './components/molecules/ventaja-servici
     MessagesSuccesfulComponent,
     ModalReservesComponent,
     ProfileHeaderComponent,
-    VentajaServicioComponent
+    VentajaServicioComponent,
+    ModalEmailComponent
   ],
 })
 export class SharedModule { }

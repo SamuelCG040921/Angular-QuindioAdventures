@@ -5,13 +5,16 @@ import { PageHomeComponent } from './features/feature-reserves/pages/page-home/p
 import { FeatureLoginComponent } from './features/feature-login/feature-login.component';
 import { FeatureRegisterComponent } from './features/feature-register/feature-register.component';
 import { ChaletRegisterFormComponent } from './features/feature-profile/pages/chalet-register-form/chalet-register-form.component';
+import { ChangePasswordComponent } from './features/feature-profile/pages/change-password/change-password.component';
+
 
 const routes: Routes = [
   {path:'reservas', component: FeatureReservesComponent},
   {path:'', component: PageHomeComponent},
   {path:'login', component: FeatureLoginComponent},
   {path: 'register', component: FeatureRegisterComponent},
-  {path: 'create-chalet', component: ChaletRegisterFormComponent}
+  {path: 'create-chalet', component: ChaletRegisterFormComponent},
+  {path: 'cambiar-contraseña', component: ChangePasswordComponent}
 ];
 
 @NgModule({
@@ -19,5 +22,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { 
-  
+
 }
