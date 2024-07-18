@@ -4,4 +4,3 @@ export class Auth {
       public password: string
     ) {}
   }
-  

@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ChangePasswordService } from '../../services/changepassword.service';
+import { ChangePassword } from '../../models/change-password.model';
 
 @Component({
   selector: 'app-change-password',
   templateUrl: './change-password.component.html',
   styleUrl: './change-password.component.scss'
 })
-export class ChangePasswordComponent {
+export class ChangePasswordComponent implements OnInit{
   isAlertOpen = false;
   isErrorAlertOpen = false;
   changeForm!: FormGroup;
@@ -50,6 +51,30 @@ export class ChangePasswordComponent {
 
   openWarningAlert(){
     this.isWarningAlertOpen = true
+  }
+
+  onSubmit() {
+    if(this.changeForm.valid){
+      
+      const changeData = new ChangePassword(
+        this.changeForm.value.password,
+        this.changeForm.value.confirmPassword
+      );
+
+      this.changePasswordServices.change(changeData).then(
+        response =>{
+          console.log('Cambio exitoso:', response);
+        } 
+      ).catch(
+        error => {
+          console.log('Cambio fallido:', error);
+          
+        }
+      )
+    }else{
+      console.error('Form is not valid');
+      this.changeForm.markAllAsTouched();
+    }
   }
 
 }
