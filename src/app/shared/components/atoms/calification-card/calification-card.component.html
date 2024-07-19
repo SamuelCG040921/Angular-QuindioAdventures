@@ -1,5 +1,7 @@
-<div class="calificationCard-container">
-    <div class="calificationCard" *ngFor="let _ of circleArray">
-      <span class="circle"></span>
-    </div>
+<div class="rating-container">
+  <div *ngFor="let circle of circles; let i = index"
+       class="circle"
+       [ngClass]="{'empty': i >= rating}"
+       (click)="setRating(i + 1)">
   </div>
+</div>

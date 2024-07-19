@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-calification-card',
   templateUrl: './calification-card.component.html',
-  styleUrl: './calification-card.component.scss'
+  styleUrls: ['./calification-card.component.scss']
 })
-export class CalificationCardComponent implements OnInit {
-  count: number = 5; // Number of circles to generate
-  circleArray: number[] = []; // Array to hold circle elements
-  
+export class CalificationCardComponent {
+  @Input() rating: number = 0;
+  @Input() maxRating: number = 5;
+  circles: number[] = [];
+
   ngOnInit(): void {
-    // Fill the circleArray with the desired number of elements
-    for (let i = 0; i < this.count; i++) {
-      this.circleArray.push(i); // Push an element for each circle
-    }
-}
+    this.circles = Array(this.maxRating).fill(0);
+  }
+
+  setRating(rating: number): void {
+    this.rating = rating;
+  }
 }
