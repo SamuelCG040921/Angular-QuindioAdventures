@@ -64,6 +64,7 @@ import { FeatureProfileComponent } from '../features/feature-profile/feature-pro
 import { ProfileHeaderComponent } from '../features/feature-profile/components/profile-header/profile-header.component';
 import { VentajaServicioComponent } from './components/molecules/ventaja-servicio/ventaja-servicio.component';
 import { ModalEmailComponent } from './components/templates/modal-email/modal-email.component';
+import { InfoCardProfileComponent } from './components/molecules/info-card-profile/info-card-profile.component';
 
 @NgModule({
   declarations: [
@@ -129,7 +130,8 @@ import { ModalEmailComponent } from './components/templates/modal-email/modal-em
     RegisterButtonComponent,
     ProfileHeaderComponent,
     VentajaServicioComponent,
-    ModalEmailComponent
+    ModalEmailComponent,
+    InfoCardProfileComponent,
   ],
 
   imports: [
@@ -200,7 +202,8 @@ import { ModalEmailComponent } from './components/templates/modal-email/modal-em
     ModalReservesComponent,
     ProfileHeaderComponent,
     VentajaServicioComponent,
-    ModalEmailComponent
+    ModalEmailComponent,
+    InfoCardProfileComponent
   ],
 })
 export class SharedModule { }
