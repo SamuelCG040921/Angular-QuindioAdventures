@@ -5,12 +5,14 @@ import { FeatureProfileComponent } from './feature-profile.component';
 import { SharedModule } from '../../shared/shared.module';
 import { ChaletRegisterFormComponent } from './pages/chalet-register-form/chalet-register-form.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
+import { CardPlanComponent } from './components/card-plan/card-plan.component';
 
 @NgModule({
   declarations: [
     FeatureProfileComponent,
     ChaletRegisterFormComponent,
     ChangePasswordComponent,
+    CardPlanComponent,
   ],
   imports: [
     CommonModule,
