@@ -44,7 +44,7 @@ export class FeatureLoginComponent implements OnInit {
           console.error('Login error:', error);
         }
       );
-      this.router.navigate(['/', 'home-user']);
+      this.router.navigate(['']);
 
     } else {
       console.error('Form is not valid');

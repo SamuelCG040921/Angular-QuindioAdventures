@@ -64,12 +64,9 @@ import { FeatureProfileComponent } from '../features/feature-profile/feature-pro
 import { ProfileHeaderComponent } from '../features/feature-profile/components/profile-header/profile-header.component';
 import { VentajaServicioComponent } from './components/molecules/ventaja-servicio/ventaja-servicio.component';
 import { ModalEmailComponent } from './components/templates/modal-email/modal-email.component';
-<<<<<<< HEAD
 import { HeaderLogueadoComponent } from './components/organisms/header-logueado/header-logueado.component';
 import { NavLogueadoComponent } from './components/molecules/nav-logueado/nav-logueado.component';
-=======
 import { InfoCardProfileComponent } from './components/molecules/info-card-profile/info-card-profile.component';
->>>>>>> d8162729bb48492a1f77971e3f46d3f103cf30ea
 
 @NgModule({
   declarations: [
@@ -136,12 +133,9 @@ import { InfoCardProfileComponent } from './components/molecules/info-card-profi
     ProfileHeaderComponent,
     VentajaServicioComponent,
     ModalEmailComponent,
-<<<<<<< HEAD
     HeaderLogueadoComponent,
-    NavLogueadoComponent
-=======
-    InfoCardProfileComponent,
->>>>>>> d8162729bb48492a1f77971e3f46d3f103cf30ea
+    NavLogueadoComponent,
+    InfoCardProfileComponent
   ],
 
   imports: [
@@ -213,11 +207,8 @@ import { InfoCardProfileComponent } from './components/molecules/info-card-profi
     ProfileHeaderComponent,
     VentajaServicioComponent,
     ModalEmailComponent,
-<<<<<<< HEAD
-    HeaderLogueadoComponent
-=======
+    HeaderLogueadoComponent,
     InfoCardProfileComponent
->>>>>>> d8162729bb48492a1f77971e3f46d3f103cf30ea
   ],
 })
 export class SharedModule { }
