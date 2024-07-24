@@ -37,13 +37,9 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  estaActivo():any {
+  estaActivo(): any {
     let token = this.getToken();
-    if(token === null){
-      return false
-    }else{
-      return true
-    }
+    return token !== null;
   }
 
   // Método para cerrar sesión
