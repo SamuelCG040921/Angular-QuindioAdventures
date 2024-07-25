@@ -1,0 +1,54 @@
+<app-nav></app-nav>
+<div class="chat-container">
+  <div class="part1">
+    <div class="sidebar">
+      <div class="search-bar">
+        <img class="arrowleft" src="../../../../../assets/icons/flecha-izquierda.png" alt="back">
+        <input type="text" placeholder="Buscar">
+        <img class="profilepic" [src]="user.image" alt="profile">
+      </div>
+    </div>
+    <div class="users">
+      <div class="user">
+        <img class="profilepic" [src]="user.image" alt="profile">
+        <div class="user-info">
+          <span class="username">{{user?.nombres}}</span>
+          <span class="message">El plan vacacional sería..</span>
+        </div>
+        <span class="time">9:20 a. m.</span>
+      </div>
+      <div class="user">
+        <img class="profilepic" [src]="user.image" alt="profile">
+        <div class="user-info">
+          <span class="username">{{user?.nombres}}</span>
+          <span class="message">Tú: Gracias por la información</span>
+        </div>
+        <span class="time">9:00 a. m.</span>
+      </div>
+    </div>
+  </div>
+  <div class="chat-window">
+    <div class="header">
+      <img class="profilepic" [src]="user.image" alt="profile">
+      {{user?.nombres}}
+    </div>
+    <div class="messages">
+      <div class="user1">
+        <p>
+          Hola, buenas tardes. El plan Vacacional solo seríamos tres personas
+        </p>
+      </div>
+      <div class="user2">
+        <p>
+          El plan Vacacional sería por los tres 160.000
+        </p>
+      </div>
+    </div>
+    <div class="input-bar">
+      <input type="text" placeholder="Escribe un mensaje...">
+      <button>
+        <img src="../../../../../assets/icons/sendChat.svg" alt="send">
+      </button>
+    </div>
+  </div>
+</div>

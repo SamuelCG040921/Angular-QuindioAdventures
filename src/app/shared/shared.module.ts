@@ -203,7 +203,8 @@ import { InfoCardProfileComponent } from './components/molecules/info-card-profi
     ProfileHeaderComponent,
     VentajaServicioComponent,
     ModalEmailComponent,
-    InfoCardProfileComponent
+    InfoCardProfileComponent,
+    NavComponent
   ],
 })
 export class SharedModule { }

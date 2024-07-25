@@ -6,6 +6,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { ChaletRegisterFormComponent } from './pages/chalet-register-form/chalet-register-form.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { CardPlanComponent } from './components/card-plan/card-plan.component';
+import { ChatsComponent } from './pages/chats/chats.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { CardPlanComponent } from './components/card-plan/card-plan.component';
     ChaletRegisterFormComponent,
     ChangePasswordComponent,
     CardPlanComponent,
+    ChatsComponent,
   ],
   imports: [
     CommonModule,
