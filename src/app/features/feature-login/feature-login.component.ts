@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { Auth } from './models/auth.model';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-feature-login',
@@ -12,7 +14,7 @@ export class FeatureLoginComponent implements OnInit {
   loginForm!: FormGroup;
   isSubmitting: boolean = false;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
+  constructor(private fb: FormBuilder, private authService: AuthService, private router:Router) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -42,6 +44,8 @@ export class FeatureLoginComponent implements OnInit {
           console.error('Login error:', error);
         }
       );
+      this.router.navigate(['']);
+
     } else {
       console.error('Form is not valid');
       this.loginForm.markAllAsTouched(); // Marcar todos los campos como tocados para mostrar errores

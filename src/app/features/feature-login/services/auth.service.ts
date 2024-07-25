@@ -37,6 +37,11 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
+  estaActivo(): any {
+    let token = this.getToken();
+    return token !== null;
+  }
+
   // Método para cerrar sesión
   logout(): void {
     localStorage.removeItem('token');

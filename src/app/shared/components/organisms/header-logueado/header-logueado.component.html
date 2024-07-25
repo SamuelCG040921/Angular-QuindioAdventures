@@ -10,7 +10,7 @@
                         <a routerLink="queHacer" id="primero">¿Que hacer?</a>
                     </div>
                     <div class="containerSegundo">
-                        <p id="segundo">Registra tu <a id="chalet" routerLink="/create-chalet">chalet</a> o <a id="plan" routerLink="/create-plan"> plan</a></p>
+                        <p>Registra tu <a id="chalet" routerLink="/create-chalet">chalet</a>o<a id="plan" routerLink="/create-plan"> plan</a></p>
                     </div>
                 </div>
                 <div class="containerMoneda">
@@ -18,8 +18,7 @@
                 </div>
             </div>
             <div class="containerProfile">
-                <a routerLink="/login">Iniciar sesión</a>
-                <app-register-button></app-register-button>
+                <app-profile-button></app-profile-button>
             </div>
         </div>
     </div>
@@ -27,6 +26,6 @@
         <app-search-bar></app-search-bar>
     </div>
     <div class="nav">
-        <app-nav></app-nav>
+       <app-nav-logueado></app-nav-logueado>
     </div>
 </header>
