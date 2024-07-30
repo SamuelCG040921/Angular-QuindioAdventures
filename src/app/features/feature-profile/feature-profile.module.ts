@@ -7,6 +7,8 @@ import { ChaletRegisterFormComponent } from './pages/chalet-register-form/chalet
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { CardPlanComponent } from './components/card-plan/card-plan.component';
 import { ChatsComponent } from './pages/chats/chats.component';
+import { ProfileWelcomeComponent } from './components/profile-welcome/profile-welcome.component';
+import { ProfileDataComponent } from './pages/profile-data/profile-data.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { ChatsComponent } from './pages/chats/chats.component';
     ChangePasswordComponent,
     CardPlanComponent,
     ChatsComponent,
+    ProfileWelcomeComponent,
+    ProfileDataComponent,
   ],
   imports: [
     CommonModule,

@@ -8,19 +8,5 @@ import { AuthService } from '../feature-login/services/auth.service';
   styleUrl: './feature-profile.component.scss'
 })
 export class FeatureProfileComponent {
-  user: any;
-  isInputDisabled = true;
 
-  habilitarInput() {
-    this.isInputDisabled = false;
-  }
-
-  constructor(private userService: UserService, public authService: AuthService) {}
-
-  ngOnInit() {
-    this.userService.getUserbyID() // Llamar al método del servicio
-      .subscribe((data: any) => {
-        this.user = data; // Almacenar el usuario activo
-      });
-  }
 }

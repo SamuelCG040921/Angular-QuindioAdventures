@@ -1,28 +1,2 @@
 <app-profile-header></app-profile-header>
-<div class="containerFirst">
-	<app-profile-img width="200px" height="200px"></app-profile-img>
-	<div class="welcome">
-		<h2>Hola, {{user.nombres}}</h2>
-		<p>te damos la bienvenida a tu perfil</p>
-	</div>
-	<div class="logOut">
-		<button (click)="authService.logout()"><img src="../../../assets/icons/out.svg" alt="">Cerrar sesion</button>
-	</div>
-</div>
-<div class="profile">
-	<div class="profilediv">
-		<div class="containerInicio">
-			<p>Datos personales</p>
-		</div>
-		<div class="containerInicio">
-			<p>Mis planes vacacionales</p>
-		</div>
-		<div class="containerInicio">
-			<p>Mis chalets</p>
-		</div>
-		<div class="containerInicio">
-			<p routerLink="/mischats">Mis chats</p>
-		</div>
-	</div>
-</div> 
-
+<app-profile-welcome></app-profile-welcome>
