@@ -13,10 +13,11 @@ import { Router } from '@angular/router';
 export class FeatureLoginComponent implements OnInit {
   loginForm!: FormGroup;
   isSubmitting: boolean = false;
+  user:any
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router:Router) {}
 
-  ngOnInit() {
+  ngOnInit() : void {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
@@ -32,7 +33,7 @@ export class FeatureLoginComponent implements OnInit {
         this.loginForm.value.password
       );
 
-      this.authService.register(authData).then(
+      this.authService.auth(authData).then(
         response => {
           this.isSubmitting = false; // Habilitar el botón después de la respuesta
           console.log('Login exitoso:', response);
@@ -46,6 +47,11 @@ export class FeatureLoginComponent implements OnInit {
       );
       this.router.navigate(['']);
 
+      this.authService.getUserProfile().then(
+        data => this.user = data,
+        err => console.error(err)
+      );
+      
     } else {
       console.error('Form is not valid');
       this.loginForm.markAllAsTouched(); // Marcar todos los campos como tocados para mostrar errores

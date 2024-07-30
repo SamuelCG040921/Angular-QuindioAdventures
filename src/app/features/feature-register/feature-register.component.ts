@@ -65,6 +65,8 @@ export class FeatureRegisterComponent implements OnInit {
           this.isSubmitting = false; // Habilitar el botón después de la respuesta
           // Manejar la respuesta exitosa aquí
           this.openAlert();
+          console.log(response);
+          
         }
       ).catch(
         error => {

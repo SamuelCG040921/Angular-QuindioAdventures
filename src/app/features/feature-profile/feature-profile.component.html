@@ -1,2 +1,52 @@
 <app-profile-header></app-profile-header>
 <app-profile-welcome></app-profile-welcome>
+<div class="profile">
+	<form class="infoProfile" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+		<div class="leftPart">
+			<div class="containerTitle">
+				<h3>Detalles del perfil</h3>
+			</div>
+			<div class="containerFormLeft">
+				<div class="containerInfo">
+					<label>Nombre</label>
+					<input type="text" [formControlName]="'name'" value="{{user?.name}}">
+				</div>
+				<div class="containerInfo">
+					<label>Apellido</label>
+					<input type="text" [formControlName]="'lastName'">
+				</div>
+				<div class="containerInfo">
+					<label>Edad</label>
+					<input type="text" [formControlName]="'age'">
+				</div>
+				<div class="containerInfo">
+					<label>Telefono</label>
+					<input type="text" [formControlName]="'phoneNumber'">
+				</div>
+				<div class="containerInfo">
+					<label>Direccion</label>
+					<input type="text" [formControlName]="'address'">
+				</div>
+			</div>
+			<div class="containerBtnLeft">
+				<app-button *ngIf="button1Visible" (click)="cambiarEstadoBotones()" label="Editar datos" (click)="habilitarInput()"></app-button>
+				<div class="containerButtons">
+					<app-button *ngIf="button2y3Visible" label="Enviar"></app-button>
+					<app-button *ngIf="button2y3Visible" (click)="cancelarBotones()" label="Cancelar" color="red"></app-button>
+				</div>
+			</div>
+		</div>
+		<div class="rightPart">
+		
+			<div class="containerFormRight">
+				<div class="containerInfo">
+					<label>Correo</label>
+					<input type="text" disabled >
+				</div>
+			</div>
+			<div class="containerButton">
+				<app-button label="Cambiar contraseña" routerLink="/cambiar-contraseña"></app-button>
+			</div>
+		</div>
+	</form>
+</div>

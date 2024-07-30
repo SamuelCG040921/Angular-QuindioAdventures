@@ -1,49 +1,75 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 import { Auth } from '../models/auth.model';
+import { UserProfile } from '../../feature-profile/models/user-profile';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   
-  private apiUrl = 'http://localhost:10101/auth'; // Asegúrate de que esta URL sea correcta
+  private apiUrl = 'http://localhost:10101/auth';
+  private profileUrl = 'http://localhost:10101/user';
 
   constructor() {}
 
-  register(newUser: Auth) {
-    console.log('Sending user data to backend:', newUser);
-
+  auth(newUser: Auth) {
     return axios.post(this.apiUrl, newUser)
       .then(response => {
-        console.log('Backend response:', response.data);
-
-        // Verifica si la respuesta contiene un token
         if (response.data && response.data.token) {
-          // Guarda el token en localStorage
           localStorage.setItem('token', response.data.token);
         }
-
-        return response.data; // Puedes devolver los datos de respuesta si es necesario
+        return response.data;
       })
       .catch(error => {
-        console.error('Error registering user:', error);
         throw error;
       });
   }
 
-  // Método para obtener el token desde el localStorage
   getToken(): string | null {
     return localStorage.getItem('token');
   }
 
-  estaActivo(): any {
+  estaActivo():any {
     let token = this.getToken();
-    return token !== null;
+    if(token === null){
+      return false
+    }else{
+      return true
+    }
   }
 
-  // Método para cerrar sesión
   logout(): void {
     localStorage.removeItem('token');
+  }
+
+  getUserProfile(): Promise<UserProfile> {
+    const token = this.getToken();
+    return axios.get(this.profileUrl, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    })
+    .then(response => {
+      const data = response.data;
+      console.log(data);
+      
+      const user = new UserProfile(
+        data.document,
+        data.email,
+        data.password,
+        data.nombres,
+        data.apellidos,
+        data.edad,
+        data.image,
+        data.telefono,
+        data.direccion
+      ); 
+
+      console.log(user);
+      return user;
+      
+    })
+    .catch(error => {
+      throw error;
+    });
   }
 }

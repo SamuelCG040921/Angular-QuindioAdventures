@@ -1,11 +1,11 @@
 <div class="containerFirst">
 	<app-profile-img width="200px" height="200px"></app-profile-img>
 	<div class="welcome">
-		<p id="tittle">Hola, {{user.nombres}}</p>
+		<p id="tittle">Hola, {{user?.name}}</p>
 		<p id="tittleWelcome">te damos la bienvenida a tu perfil</p>
 	</div>
 	<div class="logOut">
-		<button (click)="authService.logout()"><img src="../../../assets/icons/out.svg" alt="">Cerrar sesion</button>
+		<button routerLink="/" (click)="authService.logout()"><img src="../../../assets/icons/out.svg" alt="">Cerrar sesion</button>
 	</div>
 </div>
 <div class="profile">
