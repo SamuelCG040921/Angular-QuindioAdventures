@@ -10,7 +10,6 @@ import { UpdateService } from './services/update-profile.service';
   templateUrl: './feature-profile.component.html',
   styleUrls: ['./feature-profile.component.scss']
 })
-
 export class FeatureProfileComponent implements OnInit {
   user: any;
   button1Visible = true;
@@ -30,24 +29,31 @@ export class FeatureProfileComponent implements OnInit {
     );
 
     this.updateForm = this.fb.group({
-      name: [''],
-      lastName: [''],
-      age: [''],
-      phoneNumber: [''],
-      address: [''],
+      name: ['', Validators.required],
+      lastName: ['', Validators.required],
+      document: ['', Validators.required],
+      age: ['', Validators.required],
+      phoneNumber: ['', Validators.required],
+      address: ['', Validators.required],
+      email: ['', Validators.required]
     });
   }
 
   habilitarInput() {
-    this.updateForm.enable();
+    Object.keys(this.updateForm.controls).forEach(field => {
+      if (field !== 'document' && field !== 'email') {
+        this.updateForm.get(field)?.enable();
+      }
+    });
+    this.cambiarEstadoBotones();
   }
 
-  cambiarEstadoBotones(){
+  cambiarEstadoBotones() {
     this.button1Visible = false;
     this.button2y3Visible = true;
   }
 
-  cancelarBotones(){
+  cancelarBotones() {
     this.button1Visible = true;
     this.button2y3Visible = false;
     this.updateForm.disable();
@@ -58,31 +64,33 @@ export class FeatureProfileComponent implements OnInit {
     if (this.updateForm.valid) {
       const updateData = new UpdateProfile(
         this.updateForm.value.name,
+        this.updateForm.value.document,
         this.updateForm.value.lastName,
         this.updateForm.value.age,
         this.updateForm.value.phoneNumber,
-        this.updateForm.value.address
+        this.updateForm.value.address,
+        this.updateForm.value.email
       );
 
       this.updateService.update(updateData).then(
         response => {
           console.log('Actualizacion exitosa:', response);
-          // Manejar la respuesta exitosa aquí (p.ej., redirigir al usuario)
+          this.authService.getUserProfile().then(
+            data => {
+              this.user = data;
+              this.updateForm.patchValue(this.user);
+              this.updateForm.disable();
+              this.button1Visible = true;
+              this.button2y3Visible = false;
+            },
+            err => console.error(err)
+          );
         }
       ).catch(
         error => {
           console.error('Update error:', error);
-      
         }
       );
-  
-      
-
-      this.authService.getUserProfile().then(
-        data => this.user = data,
-        err => console.error(err)
-      );
-      
     } else {
       console.error('Form is not valid');
       this.updateForm.markAllAsTouched(); // Marcar todos los campos como tocados para mostrar errores

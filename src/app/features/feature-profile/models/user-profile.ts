@@ -8,6 +8,6 @@ export class UserProfile {
         public age: number,
         public image: Blob,
         public phoneNumber: string,
-        public address: string
+        public address: string,
     ) {}
 }

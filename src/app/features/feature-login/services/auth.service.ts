@@ -53,7 +53,7 @@ export class AuthService {
       console.log(data);
       
       const user = new UserProfile(
-        data.document,
+        data.documento,
         data.email,
         data.password,
         data.nombres,
