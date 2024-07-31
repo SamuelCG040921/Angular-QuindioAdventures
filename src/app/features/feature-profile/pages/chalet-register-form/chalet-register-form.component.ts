@@ -10,9 +10,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class ChaletRegisterFormComponent {
   user:any
   isInputDisabled = true;
-  public previsualizacion:string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s'
+  public previsualizacion:string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s';
   public archivos: any = []
- 
+  public archivos2: any = [];
+  public previsualizacion2:string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s';
+  public archivos3: any = [];
+  public previsualizacion3:string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s';
+  public archivos4:any = [];
+  public previsualizacion4:string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s'
 
   habilitarInput() {
     this.isInputDisabled = false;
@@ -37,6 +42,32 @@ export class ChaletRegisterFormComponent {
     })
     //this.archivos.push(archivoCapturado)
   }
+
+capturarFile2(event:any): any{
+  const archivoCapturado2 = event.target.files[0];
+  this.extraerBase64(archivoCapturado2).then((imagen2:any) =>{
+    this.previsualizacion2 = imagen2.base;
+    console.log(imagen2)
+  })
+}
+
+capturarFile3(event:any): any{
+  const archivoCapturado3 = event.target.files[0];
+  this.extraerBase64(archivoCapturado3).then((imagen3:any) =>{
+    this.previsualizacion3 = imagen3.base;
+    console.log(imagen3)
+  })
+}
+
+capturarFile4(event:any): any{
+  const archivoCapturado4 = event.target.files[0];
+  this.extraerBase64(archivoCapturado4).then((imagen4:any) =>{
+    this.previsualizacion3 = imagen4.base;
+    console.log(imagen4)
+  })
+}
+
+
 
   extraerBase64 = async ($event: any): Promise<any> => {
     return new Promise((resolve, reject) => {
