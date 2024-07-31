@@ -60,8 +60,8 @@ export class AuthService {
         data.apellidos,
         data.edad,
         data.image,
-        data.telefono,
-        data.direccion
+        data.numero_telefono,
+        data.direccion_usuario
       ); 
 
       console.log(user);
