@@ -7,11 +7,10 @@
 }
 
 .containerFormulario{
-    width: 75vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: scroll;
 }
 
 .title{
@@ -219,29 +218,71 @@
     margin-right: 8px;
 }
 
+.img1{
+    position: relative;
+    display: inline-block;
+}
+
 .image1{
     width: 640px;
     height: 185px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     margin-bottom: 20px;
+    display: block;
+}
+
+.img1 label{
+    position: absolute;
+    top: 40%;
+    left: 37%;
 }
 
 .img2y3{
     display: flex;
 }
 
+.img2y3 label{
+    position: absolute;
+}
+
 .img2{
+    position: relative;
+    display: inline-block;
+}
+
+.img2 label{
+    top: 40%;
+    left: 23%;
+}
+
+.img3{
+    position: relative;
+    display: inline-block;
+}
+
+.img3 label{
+    top: 40%;
+    left: 23%;
+}
+
+#file-2{
+    top: 10%;
+}
+
+.image2{
     width: 310px;
     height: 170px;
     margin-right: 20px;
     border-bottom-left-radius: 15px;
+    display: block;
 }
 
-.img3{
+.image3{
     width: 310px;
     height: 170px;
     border-bottom-right-radius: 15px;
+    display: block;
 }
 
 .headerfield{
@@ -307,6 +348,7 @@
 .columnaImagen{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .columnaImagen img{
@@ -351,9 +393,12 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     cursor: pointer;
-    display: inline-block;
     overflow: hidden;
     padding: 0.625rem 1.25rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .inputfile + label svg {
@@ -366,7 +411,7 @@
 }
 
 .iborrainputfile {
-	font-size:16px; 
+	font-size:12px; 
 	font-weight:normal;
-	font-family: 'Lato';
 }
+
