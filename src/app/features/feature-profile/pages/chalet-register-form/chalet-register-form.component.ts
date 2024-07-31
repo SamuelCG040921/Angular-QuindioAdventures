@@ -62,7 +62,7 @@ capturarFile3(event:any): any{
 capturarFile4(event:any): any{
   const archivoCapturado4 = event.target.files[0];
   this.extraerBase64(archivoCapturado4).then((imagen4:any) =>{
-    this.previsualizacion3 = imagen4.base;
+    this.previsualizacion4 = imagen4.base;
     console.log(imagen4)
   })
 }
