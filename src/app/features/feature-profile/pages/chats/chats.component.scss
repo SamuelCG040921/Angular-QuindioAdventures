@@ -1,15 +1,13 @@
 .chat-container {
   display: flex;
   height: 100vh;
-  font-family: Arial, sans-serif;
-  margin-top: 20px;
-
 }
 .part1 {
   width: 30%;
   display: flex;
   flex-direction: column;
   padding: 10px;
+  padding-top: 10px;
 }
 .sidebar {
   display: flex;
@@ -21,6 +19,7 @@
 .search-bar {
   display: flex;
   align-items: center;
+
   width: 100%;
 }
 .search-bar input {
@@ -37,9 +36,15 @@
   border-radius: 50%;
   object-fit: cover;
 }
-.arrowleft {
-  width: 26px;
-  height: 26px;
+.form-header{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form-header img{
+  width: 35px;
+  height: 35px;
   cursor: pointer;
 }
 .users {
@@ -78,7 +83,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  font-family: Arial, sans-serif;
+
 }
 .header {
   display: flex;

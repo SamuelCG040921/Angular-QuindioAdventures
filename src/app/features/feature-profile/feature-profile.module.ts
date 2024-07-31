@@ -9,6 +9,8 @@ import { CardPlanComponent } from './components/card-plan/card-plan.component';
 import { ChatsComponent } from './pages/chats/chats.component';
 import { ProfileWelcomeComponent } from './components/profile-welcome/profile-welcome.component';
 import { ProfileDataComponent } from './pages/profile-data/profile-data.component';
+import { PlansProfileComponent } from './pages/plans-profile/plans-profile.component';
+import { ChaletsProfileComponent } from './pages/chalets-profile/chalets-profile.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ProfileDataComponent } from './pages/profile-data/profile-data.componen
     ChatsComponent,
     ProfileWelcomeComponent,
     ProfileDataComponent,
+    PlansProfileComponent,
+    ChaletsProfileComponent
   ],
   imports: [
     CommonModule,
