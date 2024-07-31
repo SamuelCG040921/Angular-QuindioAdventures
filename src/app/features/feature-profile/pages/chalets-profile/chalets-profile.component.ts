@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-plans-profile',
-  templateUrl: './plans-profile.component.html',
-  styleUrl: './plans-profile.component.scss'
+  selector: 'app-chalets-profile',
+  templateUrl: './chalets-profile.component.html',
+  styleUrl: './chalets-profile.component.scss'
 })
-export class PlansProfileComponent {
+export class ChaletsProfileComponent {
   @Output() click = new EventEmitter<void>();
   handleClick() {
     this.click.emit();

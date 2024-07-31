@@ -10,6 +10,8 @@ import { ChatsComponent } from './pages/chats/chats.component';
 import { ProfileWelcomeComponent } from './components/profile-welcome/profile-welcome.component';
 import { ProfileDataComponent } from './pages/profile-data/profile-data.component';
 import { ProfileWelcomeEditComponent } from './components/profile-welcome-edit/profile-welcome-edit.component';
+import { PlansProfileComponent } from './pages/plans-profile/plans-profile.component';
+import { ChaletsProfileComponent } from './pages/chalets-profile/chalets-profile.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { ProfileWelcomeEditComponent } from './components/profile-welcome-edit/p
     ProfileWelcomeComponent,
     ProfileDataComponent,
     ProfileWelcomeEditComponent,
+    PlansProfileComponent,
+    ChaletsProfileComponent
   ],
   imports: [
     CommonModule,
