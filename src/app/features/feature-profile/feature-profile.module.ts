@@ -9,6 +9,7 @@ import { CardPlanComponent } from './components/card-plan/card-plan.component';
 import { ChatsComponent } from './pages/chats/chats.component';
 import { ProfileWelcomeComponent } from './components/profile-welcome/profile-welcome.component';
 import { ProfileDataComponent } from './pages/profile-data/profile-data.component';
+import { ProfileWelcomeEditComponent } from './components/profile-welcome-edit/profile-welcome-edit.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ProfileDataComponent } from './pages/profile-data/profile-data.componen
     ChatsComponent,
     ProfileWelcomeComponent,
     ProfileDataComponent,
+    ProfileWelcomeEditComponent,
   ],
   imports: [
     CommonModule,

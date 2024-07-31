@@ -12,8 +12,8 @@ import { UpdateService } from './services/update-profile.service';
 })
 export class FeatureProfileComponent implements OnInit {
   user: any;
-  button1Visible = true;
-  button2y3Visible = false;
+  button1Visible: boolean = true;
+  button2y3Visible: boolean = false;
   updateForm!: FormGroup;
 
   constructor(public authService: AuthService, private fb: FormBuilder, public updateService: UpdateService) {}
