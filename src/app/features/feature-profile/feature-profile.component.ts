@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../feature-login/services/auth.service';
-import { User } from '../feature-register/models/user.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UpdateProfile } from './models/update-profile';
 import { UpdateService } from './services/update-profile.service';
+import { UserProfile } from './models/user-profile';
 
 @Component({
   selector: 'app-feature-profile',
@@ -11,7 +11,7 @@ import { UpdateService } from './services/update-profile.service';
   styleUrls: ['./feature-profile.component.scss']
 })
 export class FeatureProfileComponent implements OnInit {
-  user: any;
+  user!: UserProfile;
   button1Visible: boolean = true;
   button2y3Visible: boolean = false;
   updateForm!: FormGroup;
@@ -20,7 +20,7 @@ export class FeatureProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.getUserProfile().then(
-      (data: User) => {
+      (data: UserProfile) => {
         this.user = data;
         this.updateForm.patchValue(this.user);
         this.updateForm.disable();
