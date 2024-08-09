@@ -21,7 +21,9 @@ import { SharedModule } from '../../shared/shared.module';
     SharedModule
   ],
   exports: [
-    FeatureLoginComponent
+    FeatureLoginComponent,
+    LoginWithComponent,
+    ImgLoginComponent
   ]
 })
 export class FeatureLoginModule { }
