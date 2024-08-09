@@ -14,12 +14,16 @@ export class LoginAdminComponent {
   isSubmitting: boolean = false;
   user:any
 
+  emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
   constructor(private fb: FormBuilder, private authService: AuthService, private router:Router) {}
 
   ngOnInit() : void {
-    this.loginAdminForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+    this.loginAdminForm   
+ = this.fb.group({
+      email: ['', [Validators.required, Validators.pattern(this.emailRegex)]],
+      password: ['', [Validators.required, Validators.minLength(8)]]   
+
     });
   }
 
@@ -62,6 +66,23 @@ export class LoginAdminComponent {
     return control ? !control.valid && (control.dirty || control.touched) : false;
   }
 
+  getErrorMessage(controlName: string): string {
+    const control = this.loginAdminForm.get(controlName);
+  
+    if (!control) {
+      return 'Error inesperado';
+    }
+  
+    if (control.hasError('required')) {
+      return 'Este campo es obligatorio';
+    } else if (control.hasError('pattern')) {
+      return 'Por favor, ingresa un correo electrónico válido';
+    } else if (control.hasError('minlength')) {
+      return 'La contraseña debe tener al menos 8 caracteres';
+    }
+  
+    return '';
+  }
   
   isModalOpen = false;
 
