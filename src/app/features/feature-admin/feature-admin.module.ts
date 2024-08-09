@@ -4,13 +4,13 @@ import { CommonModule } from '@angular/common';
 import { FeatureAdminRoutingModule } from './feature-admin-routing.module';
 import { FeatureAdminComponent } from './feature-admin.component';
 import { SharedModule } from '../../shared/shared.module';
-import { AdminSearchBarComponent } from './components/admin-search-bar/admin-search-bar.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 
 
 @NgModule({
   declarations: [
     FeatureAdminComponent,
-    AdminSearchBarComponent,
+    AdminProfileComponent,
   ],
   imports: [
     CommonModule,

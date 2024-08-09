@@ -16,7 +16,8 @@ const routes: Routes = [
   {path: 'register', component: FeatureRegisterComponent},
   {path: 'create-chalet', component: ChaletRegisterFormComponent},
   {path: 'cambiar-contraseña', component: ChangePasswordComponent},
-  {path: 'home-user', component: PageHomeUserComponent}
+  {path: 'home-user', component: PageHomeUserComponent},
+  {path: 'usuarios', component: PageHomeComponent}
 ];
 
 @NgModule({
