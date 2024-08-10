@@ -7,6 +7,10 @@ import { FeatureRegisterComponent } from './features/feature-register/feature-re
 import { ChaletRegisterFormComponent } from './features/feature-profile/pages/chalet-register-form/chalet-register-form.component';
 import { ChangePasswordComponent } from './features/feature-profile/pages/change-password/change-password.component';
 import { PageHomeUserComponent } from './features/feature-reserves/pages/page-home-user/page-home-user.component';
+import { LoginAdminComponent } from './features/feature-admin/pages/login-admin/login-admin.component';
+import { UsersAdminComponent } from './features/feature-admin/pages/users-admin/users-admin.component';
+import { FeatureAdminComponent } from './features/feature-admin/feature-admin.component';
+import { AdminChaletsComponent } from './features/feature-admin/pages/admin-chalets/admin-chalets.component';
 
 
 const routes: Routes = [
@@ -17,7 +21,7 @@ const routes: Routes = [
   {path: 'create-chalet', component: ChaletRegisterFormComponent},
   {path: 'cambiar-contraseña', component: ChangePasswordComponent},
   {path: 'home-user', component: PageHomeUserComponent},
-  {path: 'usuarios', component: PageHomeComponent}
+  {path: 'loginadminSamuelManuelaSantiagoJuanBalsero1234241316&_', component: LoginAdminComponent},
 ];
 
 @NgModule({

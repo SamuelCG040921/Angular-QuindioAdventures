@@ -115,49 +115,6 @@ nav a{
     overflow-y: scroll;
 }
 
-.adminHeader{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-width: 550px;
-}
-
-.containerHeader{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 85%;
-    height: 110px;
-}
-
-.search{
-    display: flex;
-    width: 70%;
-    min-width: 50%;
-}
-
-.search input{
-    width: 100%;
-    min-width: 250px;
-    height: 45px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border: 1px solid #d1e1d8;
-    background-color: #d1e1d8;
-    padding-left: 20px;
-}
-
-.search button{
-    border: 1px solid #275843;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background-color: #275843;
-    color: white;
-    width: 25%;
-    min-width: 70px;
-}
-
 .containerProfile{
     display: flex;
     justify-content: flex-end;
@@ -168,20 +125,21 @@ nav a{
     display: flex;
     justify-content: center;
     position: relative;
+    height: 230px;
 }
 
 .imgInicio img{
     border-radius: 15px;
     width: 85%;
-    height: 80%;
+    height: 100%;
 }
 
 .imgInicio p{
     position: absolute; /* Posiciona el texto de forma absoluta dentro del contenedor */
-    top: 40%; /* Centra verticalmente el texto */
+    top: 45%; /* Centra verticalmente el texto */
     left: 50%; /* Centra horizontalmente el texto */
     transform: translate(-50%, -50%); /* Ajusta la posición para centrar perfectamente */
-    color: white; /* Color del texto */
+    color: rgb(255, 255, 255); /* Color del texto */
     font-size: 250%;
     width: max-content;
 }
@@ -196,6 +154,7 @@ nav a{
 .contentModifi{
     display: flex;
     justify-content: space-between;
+    margin-top: 30px;
     width: 85%;
 }
 
@@ -209,14 +168,16 @@ nav a{
     border: none;
     border-radius: 15px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2), -2px -2px 2px rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
 }
 
 .headerUsers{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     width: 90%;
-    height: 55px;
+    height: 43px;
+    margin-bottom: 5px;
 }
 
 .headerUsers img{
@@ -229,6 +190,31 @@ nav a{
 .headerUsers p{
     font-size: 18px;
     font-weight: 500;
+}
+
+.users{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.userContainer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 8px 0px 8px 12px;
+    border-radius: 10px;
+}
+
+.userContainer:hover{
+    background-color: #418E6D;
+}
+
+.userContainer p{
+    font-size: 15px;
+    margin-left: 10px;
 }
 
 .catalogueChalets{
@@ -246,6 +232,7 @@ nav a{
     border-radius: 15px;
     width: 90%;
     height: 85px;
+    margin-bottom: 15px;
 }
 
 .chalet img{

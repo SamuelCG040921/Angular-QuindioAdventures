@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { UserService } from '../../../feature-reserves/services/user.service';
 
 @Component({
-  selector: 'app-admin-profile',
-  templateUrl: './admin-profile.component.html',
-  styleUrl: './admin-profile.component.scss'
+  selector: 'app-admin-header',
+  templateUrl: './admin-header.component.html',
+  styleUrl: './admin-header.component.scss'
 })
-export class AdminProfileComponent {
+export class AdminHeaderComponent {
   user:any
 
     constructor(private userService: UserService) {}

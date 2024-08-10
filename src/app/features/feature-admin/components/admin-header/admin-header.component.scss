@@ -1,0 +1,58 @@
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+.contentHeader{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+}
+
+.profile-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px 5px 10px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+app-profile-img{
+    height: 32px;
+    width: 32px;
+    margin-right: 10px;
+}
+
+.search{
+    display: flex;
+    width: 70%;
+    min-width: 50%;
+}
+
+.search input{
+    width: 100%;
+    min-width: 250px;
+    height: 45px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #d1e1d8;
+    background-color: #d1e1d8;
+    padding-left: 20px;
+}
+
+.search button{
+    border: 1px solid #275843;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #275843;
+    color: white;
+    width: 25%;
+    min-width: 70px;
+}

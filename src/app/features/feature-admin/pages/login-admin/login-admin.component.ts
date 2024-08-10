@@ -1,17 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from './services/auth.service';
-import { Auth } from './models/auth.model';
 import { Router } from '@angular/router';
-
+import { Auth } from '../../../feature-login/models/auth.model';
+import { AuthService } from '../../../feature-login/services/auth.service';
 
 @Component({
-  selector: 'app-feature-login',
-  templateUrl: './feature-login.component.html',
-  styleUrls: ['./feature-login.component.scss']
+  selector: 'app-login-admin',
+  templateUrl: './login-admin.component.html',
+  styleUrl: './login-admin.component.scss'
 })
-export class FeatureLoginComponent implements OnInit {
-  loginForm!: FormGroup;
+export class LoginAdminComponent {
+  loginAdminForm!: FormGroup;
   isSubmitting: boolean = false;
   user:any
 
@@ -20,7 +19,7 @@ export class FeatureLoginComponent implements OnInit {
   constructor(private fb: FormBuilder, private authService: AuthService, private router:Router) {}
 
   ngOnInit() : void {
-     this.loginForm   
+    this.loginAdminForm   
  = this.fb.group({
       email: ['', [Validators.required, Validators.pattern(this.emailRegex)]],
       password: ['', [Validators.required, Validators.minLength(8)]]   
@@ -29,12 +28,12 @@ export class FeatureLoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.loginForm.valid) {
+    if (this.loginAdminForm.valid) {
       this.isSubmitting = true; // Deshabilitar el botón al enviar
 
       const authData = new Auth(
-        this.loginForm.value.email,
-        this.loginForm.value.password
+        this.loginAdminForm.value.email,
+        this.loginAdminForm.value.password
       );
 
       this.authService.auth(authData).then(
@@ -58,17 +57,17 @@ export class FeatureLoginComponent implements OnInit {
       
     } else {
       console.error('Form is not valid');
-      this.loginForm.markAllAsTouched(); // Marcar todos los campos como tocados para mostrar errores
+      this.loginAdminForm.markAllAsTouched(); // Marcar todos los campos como tocados para mostrar errores
     }
   }
 
   isFieldInvalid(field: string): boolean {
-    const control = this.loginForm.get(field);
+    const control = this.loginAdminForm.get(field);
     return control ? !control.valid && (control.dirty || control.touched) : false;
   }
 
   getErrorMessage(controlName: string): string {
-    const control = this.loginForm.get(controlName);
+    const control = this.loginAdminForm.get(controlName);
   
     if (!control) {
       return 'Error inesperado';
