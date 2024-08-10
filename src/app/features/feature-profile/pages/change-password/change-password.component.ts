@@ -7,11 +7,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-change-password',
   templateUrl: './change-password.component.html',
-  styleUrl: './change-password.component.scss'
+  styleUrls: ['./change-password.component.scss']
 })
 export class ChangePasswordComponent implements OnInit {
   isAlertOpen = false;
   isErrorAlertOpen = false;
+  isWarningAlertOpen = false;
   changeForm!: FormGroup;
   isSubmitting: boolean = false;
   token!: string | null;
@@ -38,35 +39,17 @@ export class ChangePasswordComponent implements OnInit {
     }
   }
 
-  openAlert(): void {
-    this.isAlertOpen = true;
+  openWarningAlert(): void {
+    this.isWarningAlertOpen = true;
   }
 
-  closeAlert(): void {
-    this.isAlertOpen = false;
-  }
-
-  openErrorAlert(): void {
-    this.isErrorAlertOpen = true;
-  }
-
-  closeErrorAlert(): void {
-    this.isErrorAlertOpen = false;
+  closeWarningAlert(): void {
+    this.isWarningAlertOpen = false;
   }
 
   isFieldInvalid(field: string): boolean {
     const control = this.changeForm.get(field);
     return control ? !control.valid && (control.dirty || control.touched) : false;
-  }
-
-  isWarningAlertOpen = false;
-
-  closeWarningAlert(){
-    this.isWarningAlertOpen = false;
-  }
-
-  openWarningAlert(){
-    this.isWarningAlertOpen = true;
   }
 
   async onSubmit() {
@@ -78,7 +61,6 @@ export class ChangePasswordComponent implements OnInit {
 
       try {
         const response = await this.changePasswordService.change(changeData, this.token);
-        
         console.log('Cambio exitoso:', response);
         this.openAlert();
       } catch (error) {
@@ -86,9 +68,30 @@ export class ChangePasswordComponent implements OnInit {
         this.openErrorAlert();
       }
     } else {
-      console.error('Form is not valid');
+      console.error('Formulario no es válido');
       this.changeForm.markAllAsTouched();
       this.openWarningAlert();
     }
+  }
+
+  // Método para manejar la confirmación del modal
+  onConfirmModal() {
+    this.onSubmit(); // Llama a la función onSubmit() cuando se confirma el modal
+  }
+
+  openErrorAlert(): void {
+    this.isErrorAlertOpen = true;
+  }
+
+  closeErrorAlert(): void {
+    this.isErrorAlertOpen = false;
+  }
+
+  openAlert(): void {
+    this.isAlertOpen = true;
+  }
+
+  closeAlert(): void {
+    this.isAlertOpen = false;
   }
 }

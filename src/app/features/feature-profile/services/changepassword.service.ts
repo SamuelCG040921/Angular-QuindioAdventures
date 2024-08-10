@@ -4,6 +4,7 @@ import axios from 'axios';
 import { HttpClient } from '@angular/common/http';
 import { Change } from '../../feature-login/models/change';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -37,4 +38,25 @@ export class ChangePasswordService {
   solicitarRestablecimiento(newChange: Change) {
     return axios.post(this.apiUrl2, newChange);
   }
+
+  getEmailFromToken(): string | null {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const payloadBase64 = token.split('.')[1];
+      const payload = atob(payloadBase64); // Decodifica Base64
+      const parsedPayload = JSON.parse(payload); // Parsea el JSON
+      return parsedPayload.email; // Obtiene el email del payload
+    }
+    return null;
+  }
+
+  solicitarRestablecimientoAutenticado() {
+    const email = this.getEmailFromToken();
+    if (email) {
+      return axios.post(this.apiUrl2, { email });
+    } else {
+      throw new Error('No se pudo obtener el email del token');
+    }
+  }
+  
 }

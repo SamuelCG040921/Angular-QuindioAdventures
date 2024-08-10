@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UpdateProfile } from './models/update-profile';
 import { UpdateService } from './services/update-profile.service';
 import { UserProfile } from './models/user-profile';
+import { ChangePasswordService } from './services/changepassword.service';
 
 @Component({
   selector: 'app-feature-profile',
@@ -15,8 +16,9 @@ export class FeatureProfileComponent implements OnInit {
   button1Visible: boolean = true;
   button2y3Visible: boolean = false;
   updateForm!: FormGroup;
+  isSendingEmail: boolean = false;
 
-  constructor(public authService: AuthService, private fb: FormBuilder, public updateService: UpdateService) {}
+  constructor(public authService: AuthService, private fb: FormBuilder, public updateService: UpdateService, private changeService: ChangePasswordService) {}
 
   ngOnInit(): void {
     this.authService.getUserProfile().then(
@@ -100,5 +102,22 @@ export class FeatureProfileComponent implements OnInit {
   isFieldInvalid(field: string): boolean {
     const control = this.updateForm.get(field);
     return control ? !control.valid && (control.dirty || control.touched) : false;
+  }
+
+  enviarCorreo() {
+    if (this.isSendingEmail) return; // Evita que se llame múltiples veces
+    this.isSendingEmail = true;
+    
+    this.changeService.solicitarRestablecimientoAutenticado().then(
+      response => {
+        console.log('Envio exitoso:', response);
+        this.isSendingEmail = false;
+      }
+    ).catch(
+      error => {
+        console.error('Error:', error);
+        this.isSendingEmail = false;
+      }
+    );
   }
 }

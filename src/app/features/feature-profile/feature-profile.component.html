@@ -37,7 +37,7 @@
 					<label>Correo</label>
 					<input type="text" [formControlName]="'email'">
                     <div class="containerCambiar">
-                        <app-button label="Cambiar contraseña" routerLink="/cambiar-contraseña"></app-button>
+                        <app-button label="Cambiar contraseña" (click)="enviarCorreo()" type="button"></app-button>
                     </div>
 				</div>
             </div>
