@@ -67,6 +67,7 @@ import { ModalEmailComponent } from './components/templates/modal-email/modal-em
 import { HeaderLogueadoComponent } from './components/organisms/header-logueado/header-logueado.component';
 import { NavLogueadoComponent } from './components/molecules/nav-logueado/nav-logueado.component';
 import { InfoCardProfileComponent } from './components/molecules/info-card-profile/info-card-profile.component';
+import { ChatbotComponent } from './components/organisms/chatbot/chatbot.component';
 
 @NgModule({
   declarations: [
@@ -135,7 +136,8 @@ import { InfoCardProfileComponent } from './components/molecules/info-card-profi
     ModalEmailComponent,
     HeaderLogueadoComponent,
     NavLogueadoComponent,
-    InfoCardProfileComponent
+    InfoCardProfileComponent,
+    ChatbotComponent
   ],
 
   imports: [
@@ -210,7 +212,8 @@ import { InfoCardProfileComponent } from './components/molecules/info-card-profi
     InfoCardProfileComponent,
     NavComponent,
     HeaderLogueadoComponent,
-    InfoCardProfileComponent
+    InfoCardProfileComponent,
+    ChatbotComponent
   ],
 })
 export class SharedModule { }
