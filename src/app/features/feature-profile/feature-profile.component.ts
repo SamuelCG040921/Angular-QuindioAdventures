@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../feature-login/services/auth.service';
-import { User } from '../feature-register/models/user.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UpdateProfile } from './models/update-profile';
 import { UpdateService } from './services/update-profile.service';
+import { UserProfile } from './models/user-profile';
+import { ChangePasswordService } from './services/changepassword.service';
 
 @Component({
   selector: 'app-feature-profile',
@@ -11,16 +12,17 @@ import { UpdateService } from './services/update-profile.service';
   styleUrls: ['./feature-profile.component.scss']
 })
 export class FeatureProfileComponent implements OnInit {
-  user: any;
+  user!: UserProfile;
   button1Visible: boolean = true;
   button2y3Visible: boolean = false;
   updateForm!: FormGroup;
+  isSendingEmail: boolean = false;
 
-  constructor(public authService: AuthService, private fb: FormBuilder, public updateService: UpdateService) {}
+  constructor(public authService: AuthService, private fb: FormBuilder, public updateService: UpdateService, private changeService: ChangePasswordService) {}
 
   ngOnInit(): void {
     this.authService.getUserProfile().then(
-      (data: User) => {
+      (data: UserProfile) => {
         this.user = data;
         this.updateForm.patchValue(this.user);
         this.updateForm.disable();
@@ -100,5 +102,22 @@ export class FeatureProfileComponent implements OnInit {
   isFieldInvalid(field: string): boolean {
     const control = this.updateForm.get(field);
     return control ? !control.valid && (control.dirty || control.touched) : false;
+  }
+
+  enviarCorreo() {
+    if (this.isSendingEmail) return; // Evita que se llame múltiples veces
+    this.isSendingEmail = true;
+    
+    this.changeService.solicitarRestablecimientoAutenticado().then(
+      response => {
+        console.log('Envio exitoso:', response);
+        this.isSendingEmail = false;
+      }
+    ).catch(
+      error => {
+        console.error('Error:', error);
+        this.isSendingEmail = false;
+      }
+    );
   }
 }
