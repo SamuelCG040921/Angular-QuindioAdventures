@@ -22,4 +22,6 @@ export class ChaletService {
   getUserbyID(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/user`);
   }
+
+  
 }

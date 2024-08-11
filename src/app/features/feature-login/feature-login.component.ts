@@ -14,6 +14,8 @@ export class FeatureLoginComponent implements OnInit {
   loginForm!: FormGroup;
   isSubmitting: boolean = false;
   user:any
+  isAlertOpen = false;
+  isErrorAlertOpen = false;
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router:Router) {}
 
@@ -38,14 +40,21 @@ export class FeatureLoginComponent implements OnInit {
           this.isSubmitting = false; // Habilitar el botón después de la respuesta
           console.log('Login exitoso:', response);
           // Manejar la respuesta exitosa aquí (p.ej., redirigir al usuario)
+          this.openAlert();
+
+          setTimeout(() => {
+            this.router.navigate(['']); // Redirigir al home después de 2 segundos
+          }, 2000);
         }
+        
       ).catch(
         error => {
           this.isSubmitting = false; // Habilitar el botón después de un error
           console.error('Login error:', error);
+          this.openErrorAlert();
         }
       );
-      this.router.navigate(['']);
+      
 
       this.authService.getUserProfile().then(
         data => this.user = data,
@@ -54,6 +63,7 @@ export class FeatureLoginComponent implements OnInit {
       
     } else {
       console.error('Form is not valid');
+      this.openErrorAlert();
       this.loginForm.markAllAsTouched(); // Marcar todos los campos como tocados para mostrar errores
     }
   }
@@ -72,5 +82,21 @@ export class FeatureLoginComponent implements OnInit {
 
   closeModal(): void {
     this.isModalOpen = false;
+  }
+
+  openAlert(): void {
+    this.isAlertOpen = true;
+  }
+
+  closeAlert(): void {
+    this.isAlertOpen = false;
+  }
+
+  openErrorAlert(): void {
+    this.isErrorAlertOpen = true;
+  }
+
+  closeErrorAlert(): void {
+    this.isErrorAlertOpen = false;
   }
 }

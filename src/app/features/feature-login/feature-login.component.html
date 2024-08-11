@@ -25,7 +25,9 @@
                     <div *ngIf="isFieldInvalid('password')" class="error-message">La contraseña es requerida</div>
                 </div>
                 <div class="containerBtn">
-                    <button type="submit" [disabled]="isSubmitting">Ingresar</button>
+                    <button type="submit" >Ingresar</button>
+                    <app-messages-succesful title="Autenticación exitosa" *ngIf="isAlertOpen" (close)="closeAlert()"></app-messages-succesful>
+						<app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar el inicio de sesión, verifique su correo y contraseña" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
                 </div>
             </form>
         </div>

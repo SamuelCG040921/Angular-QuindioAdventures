@@ -1,63 +1,69 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../../../feature-login/services/auth.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ChaletService } from '../../services/chalet.service';
+import { UpdateService } from '../../services/update-profile.service';
 
 @Component({
   selector: 'app-profile-welcome-edit',
   templateUrl: './profile-welcome-edit.component.html',
-  styleUrl: './profile-welcome-edit.component.scss'
+  styleUrls: ['./profile-welcome-edit.component.scss']
 })
 export class ProfileWelcomeEditComponent {
   @Input() buttonVisible: boolean = false;
+  @Output() imageUrlUpdated = new EventEmitter<string>(); // Agrega un EventEmitter para enviar la URL de la imagen
   user: any;
   isInputDisabled = true;
-  public previsualizacion:string = '../../../../../assets/images/profile-default.webp';
-  public archivos: any = []
+  public previsualizacion: string = '../../../../../assets/images/profile-default.webp';
+  public archivoCapturado: File | null = null;
 
-  habilitarInput() {
-    this.isInputDisabled = false;
-  }
-
-  constructor(public authService: AuthService, private sanitizer: DomSanitizer, private chaletService: ChaletService) {}
+  constructor(public authService: AuthService, private sanitizer: DomSanitizer, private chaletService: ChaletService, private updateService: UpdateService) {}
 
   ngOnInit() {
     this.authService.getUserProfile().then(
-      data => this.user = data,
+      data => {
+        this.user = data;
+        if (this.user.image) {
+          this.previsualizacion = this.user.image;
+        }
+      },
       err => console.error(err)
     );
   }
 
   capturarFile(event: Event): void {
     const input = event.target as HTMLInputElement;
-    const archivoCapturado = input.files?.[0];
-    if (archivoCapturado) {
-      console.log('Nombre del archivo:', archivoCapturado.name);
-      console.log('Tamaño del archivo:', archivoCapturado.size);
-      console.log('Tipo de archivo:', archivoCapturado.type);
+    const archivo = input.files?.[0];
+    if (archivo) {
+      this.archivoCapturado = archivo;
 
       const reader = new FileReader();
       reader.onload = (e) => {
-        const fileContent = e.target?.result;
-        console.log('Contenido del archivo:', fileContent);
-        // Aquí puedes enviar el contenido del archivo a tu backend
+        this.previsualizacion = e.target?.result as string;
       };
-      reader.readAsText(archivoCapturado)
-      this.chaletService.uploadFiles(archivoCapturado).subscribe({
-        next: (response) => {
+      reader.readAsDataURL(archivo);
 
-          console.log('Archivo subido exitosamente:', response);
-          this.user.image = response.url;
-        },
-        error: (error) => {
-          console.error('Error al subir archivo:', error)
-        }
-      })
+      this.subirArchivo();
     } else {
       console.log('No se ha seleccionado ningún archivo');
     }
   }
-  
 
-
+  subirArchivo(): void {
+    if (this.archivoCapturado) {
+      this.chaletService.uploadFiles(this.archivoCapturado).subscribe({
+        next: (response) => {
+          console.log('Archivo subido exitosamente:', response);
+          this.user.image = response.url; // Actualiza la imagen en el perfil localmente
+          this.previsualizacion = response.url;
+          this.imageUrlUpdated.emit(response.url); // Emitir la URL de la imagen
+        },
+        error: (error) => {
+          console.error('Error al subir archivo:', error);
+        }
+      });
+    } else {
+      console.log('No se ha seleccionado ningún archivo para subir');
+    }
+  }
 }
