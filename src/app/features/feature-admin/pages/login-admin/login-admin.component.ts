@@ -40,9 +40,14 @@ export class LoginAdminComponent implements OnInit {
           this.isSubmitting = false;
           console.log('Login exitoso:', response);
 
-          // Redirigir al panel de administración
-          this.router.navigate(['/administration-home']);
+          
+          this.openAlert();
+
+          setTimeout(() => {
+            this.router.navigate(['/administration-home']); // Redirigir al home después de 2 segundos
+          }, 1000);
         }
+        
       ).catch(
         error => {
           // Mostrar el mensaje de error de inmediato

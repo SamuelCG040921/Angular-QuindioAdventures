@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../../features/feature-reserves/services/user.service';
-import { User } from '../../../../features/feature-register/models/user.model';
 import { AuthService } from '../../../../features/feature-login/services/auth.service';
 import { UserProfile } from '../../../../features/feature-profile/models/user-profile';
 
