@@ -14,14 +14,13 @@ import { UserProfile } from '../../../../features/feature-profile/models/user-pr
 export class ProfileButtonComponent implements OnInit {
   user!: UserProfile
 
-    constructor(private userService: UserService, private authService:AuthService) {}
-
+    constructor(private userService: UserService, private authService: AuthService) {}
+    
     ngOnInit() {
       this.authService.getUserProfile().then(
-        (data: UserProfile) => {
-          this.user = data;
-        },
+        data => this.user = data,
         err => console.error(err)
       );
-  }
+    }
 }
+

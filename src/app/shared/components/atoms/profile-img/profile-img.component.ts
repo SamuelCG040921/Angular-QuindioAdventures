@@ -15,15 +15,14 @@ export class ProfileImgComponent implements OnInit {
 
   user:any
 
-    constructor(private userService: UserService, private authService:AuthService) {}
+
+    constructor(private userService: UserService, private authService: AuthService) {}
 
     ngOnInit() {
       this.authService.getUserProfile().then(
-        (data: UserProfile) => {
-          this.user = data;
-        },
+        data => this.user = data,
         err => console.error(err)
       );
-  }
+    }
 }
 

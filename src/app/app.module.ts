@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { FeatureRegisterModule } from './features/feature-register/feature-register.module';
 import { FeatureLoginModule } from './features/feature-login/feature-login.module';
 import { FeatureProfileModule } from './features/feature-profile/feature-profile.module';
+import { FeatureAdminModule } from './features/feature-admin/feature-admin.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FeatureProfileModule } from './features/feature-profile/feature-profile
     FeatureRegisterModule,
     FeatureLoginModule,
     FeatureProfileModule,
-    SharedModule
+    SharedModule,
+    FeatureAdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

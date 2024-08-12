@@ -1,0 +1,106 @@
+.admin{
+    display: flex;
+    width: 100%;
+}
+
+aside{
+    display: flex;
+    position: sticky;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex: 0 0 auto;
+    width: 18%;
+    min-width: 280px;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-right: 1px solid #418E6D;
+    height: 96vh;
+    width: 100%;
+    min-width: 280px;
+}
+
+figure{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 35%;
+    min-height: 260px;
+    min-width: 70%;
+}
+
+nav a{
+    width: max-content;
+    text-decoration: none;
+    color: black;
+}
+
+.link{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 75%;
+    min-width: 200px;
+    height: 20%;
+    min-height: 58px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.link img{
+    padding-left: 18px;
+    width: 43px;
+    height: 25px;
+}
+
+.link p{
+    padding-left: 10px;
+}
+
+#planes{
+    background-color: #d1e1d8;
+    cursor: pointer;
+}
+
+.logOut{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+}
+
+.logOut button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    min-width: 50%;
+    height: 70px;
+    border-radius: 15px;
+    border: 1px solid #275843;
+    background-color: #275843;
+    color: white;
+    margin-top: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.logOut button img{
+    width: 23px;
+    height: 23px;
+    margin-right: 8px;
+}
