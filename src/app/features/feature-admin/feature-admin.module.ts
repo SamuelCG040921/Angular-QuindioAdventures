@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { FeatureAdminRoutingModule } from './feature-admin-routing.module';
 import { FeatureAdminComponent } from './feature-admin.component';
 import { SharedModule } from '../../shared/shared.module';
@@ -10,6 +9,7 @@ import { UsersAdminComponent } from './pages/users-admin/users-admin.component';
 import { AdminChaletsComponent } from './pages/admin-chalets/admin-chalets.component';
 import { AdminPlanesComponent } from './pages/admin-planes/admin-planes.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
+import { UserRowComponent } from './components/user-row/user-row.component';
 
 
 @NgModule({
@@ -20,6 +20,7 @@ import { AdminHeaderComponent } from './components/admin-header/admin-header.com
     AdminChaletsComponent,
     AdminPlanesComponent,
     AdminHeaderComponent,
+    UserRowComponent,
   ],
   imports: [
     CommonModule,

@@ -45,18 +45,7 @@
                         <img routerLink="/administration-usuarios" src="../../../assets/icons/next 1.png" alt="">
                     </div>
                     <div class="users">
-                        <div class="userContainer">
-                            <app-profile-img width="55px" height="55px" ></app-profile-img>
-                            <div class="userName">
-                                <p>Guiller gustav</p>
-                            </div>
-                        </div>
-                        <div class="userContainer">
-                            <app-profile-img width="55px" height="55px" ></app-profile-img>
-                            <div class="userName">
-                                <p>Guiller gustav</p>
-                            </div>
-                        </div>
+                        <app-user-row *ngFor="let user of users;let i = index"></app-user-row>
                     </div>
                 </div>
                 <div class="catalogueChalets">
