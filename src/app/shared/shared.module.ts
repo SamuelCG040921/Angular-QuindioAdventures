@@ -68,6 +68,7 @@ import { HeaderLogueadoComponent } from './components/organisms/header-logueado/
 import { NavLogueadoComponent } from './components/molecules/nav-logueado/nav-logueado.component';
 import { InfoCardProfileComponent } from './components/molecules/info-card-profile/info-card-profile.component';
 import { ChatbotComponent } from './components/organisms/chatbot/chatbot.component';
+import { LoaderComponent } from './components/organisms/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -137,7 +138,8 @@ import { ChatbotComponent } from './components/organisms/chatbot/chatbot.compone
     HeaderLogueadoComponent,
     NavLogueadoComponent,
     InfoCardProfileComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    LoaderComponent
   ],
 
   imports: [
@@ -213,7 +215,8 @@ import { ChatbotComponent } from './components/organisms/chatbot/chatbot.compone
     NavComponent,
     HeaderLogueadoComponent,
     InfoCardProfileComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    LoaderComponent
   ],
 })
 export class SharedModule { }
