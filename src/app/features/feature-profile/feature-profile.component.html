@@ -1,0 +1,59 @@
+<app-profile-header></app-profile-header>
+<app-profile-welcome-edit [buttonVisible]="button2y3Visible"></app-profile-welcome-edit>
+<div class="profile">
+	<form class="infoProfile" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+		<div class="leftPart">
+            <div class="partesUnidas">
+			<div class="parte1">
+				<div class="containerInfo">
+					<label>Nombre</label>
+					<input type="text" [formControlName]="'name'">
+				</div>
+                <div class="containerInfo">
+					<label>Documento</label>
+					<input type="text" [formControlName]="'document'">
+				</div>
+				<div class="containerInfo">
+					<label>Apellido</label>
+					<input type="text" [formControlName]="'lastName'">
+				</div>
+            </div>
+            <div class="parte2">
+				<div class="containerInfo">
+					<label>Edad</label>
+					<input type="text" [formControlName]="'age'">
+				</div>
+				<div class="containerInfo">
+					<label>Telefono</label>
+					<input type="text" [formControlName]="'phoneNumber'">
+				</div>
+				<div class="containerInfo">
+					<label>Direccion</label>
+					<input type="text" [formControlName]="'address'">
+				</div>
+			</div>
+            <div class="parte3">
+                <div class="containerInfo">
+					<label>Correo</label>
+					<input type="text" [formControlName]="'email'">
+                    <div class="containerCambiar">
+                        <app-button label="Cambiar contraseña" (click)="enviarCorreo()" type="button"></app-button>
+						<app-messages-succesful title="A su correo se envió el link para el cambio de contraseña" *ngIf="isAlertOpen" (close)="closeAlert()"></app-messages-succesful>
+						<app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar el envío, verifique el correo" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+                    </div>
+				</div>
+            </div>
+        </div>
+			<div class="containerBtnLeft">
+				<app-button type="button" *ngIf="button1Visible" (click)="cambiarEstadoBotones()" label="Editar datos" (click)="habilitarInput()"></app-button>
+				<div class="containerButtons">
+					<app-button type="button" *ngIf="button2y3Visible" label="Enviar" (click)="openWarningAlert()"></app-button>
+					<app-messages-succesful title="La actualizacion se realizo correctamente" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
+					<app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar la actualizacion verifique bien los datos" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+					<app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de actualizar los datos?" *ngIf="isWarningAlertOpen" (confirm)="onConfirmModal()" (close)="closeWarningAlert()"></app-messages-warning>
+					<app-button *ngIf="button2y3Visible" (click)="cancelarBotones()" label="Cancelar" color="red"></app-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

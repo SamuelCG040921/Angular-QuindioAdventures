@@ -1,0 +1,31 @@
+<header>
+    <div class="containerFirst">
+        <div class="first-part">
+            <div class="containerLogo">
+                <app-logo></app-logo>
+            </div>
+            <div class="containerOpc">
+                <div class="containerLinks">
+                    <div class="containerPrimero">
+                        <a routerLink="queHacer" id="primero">¿Que hacer?</a>
+                    </div>
+                    <div class="containerSegundo">
+                        <p id="segundo">Registra tu <a id="chalet" routerLink="/create-chalet">chalet</a> o <a id="plan" routerLink="/create-plan"> plan</a></p>
+                    </div>
+                </div>
+                <div class="containerMoneda">
+                    <app-money></app-money>
+                </div>
+            </div>
+            <div class="containerProfile">
+                <app-profile-button></app-profile-button>
+            </div>
+        </div>
+    </div>
+    <div class="searchBar">
+        <app-search-bar></app-search-bar>
+    </div>
+    <div class="nav">
+       <app-nav-logueado></app-nav-logueado>
+    </div>
+</header>

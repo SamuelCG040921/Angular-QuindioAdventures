@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ReservesService } from '../../services/reserves.service';
 
 @Component({
@@ -10,6 +10,18 @@ export class ScopedTableReservesComponent implements OnInit {
   reserves: any;
   selectedReserve: any = null;
   isModalOpen = false;
+
+  @Input() reserve = {
+    numero: 0,
+    codigo: 0,
+    tipo: "",
+    precio: 0,
+    direccion: '',
+    telefono: '',
+    checkin:'',
+    checkout:'',
+    estado:''
+   };
 
   constructor(private reservesService: ReservesService) { }
 

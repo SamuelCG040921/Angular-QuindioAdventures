@@ -1,3 +1,5 @@
+<app-header *ngIf="!authService.estaActivo()"></app-header>
+<app-header-logueado *ngIf="authService.estaActivo()"></app-header-logueado>
 <div class="planContainer">
     <app-reservation-paintings-plans class="reservationPlan"></app-reservation-paintings-plans>
     <img src="../../../../../assets/images/background-plan.png" class="imgplan">

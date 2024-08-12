@@ -1,3 +1,4 @@
+<app-header></app-header>
 <app-scoped-background-menu></app-scoped-background-menu>
 <section class="emptyState" *ngIf="reserves.length <= 0">
     <p id="ono">¡Oh no!</p>
@@ -6,7 +7,4 @@
 </section>
 <section *ngIf="reserves.length > 0" class="background">
     <app-scoped-table-clients></app-scoped-table-clients>
-    <div class="imgFondo">
-        <img src="../../../../../assets/images/fondo.png" alt="">
-    </div>
 </section>

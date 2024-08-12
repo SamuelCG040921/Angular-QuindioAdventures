@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class LoginRegisterInputComponent {
   @Input() placeholder: string = '';
+  @Input() width: string = '';
 }

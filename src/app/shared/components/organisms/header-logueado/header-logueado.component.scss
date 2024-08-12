@@ -1,0 +1,106 @@
+header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: min-content;
+}
+
+.containerFirst{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: min-content;
+    padding-top: 35px;
+}
+
+.first-part{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 88%;
+    height: min-content;
+}
+
+.containerOpc{
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    align-items: center;
+}
+
+.containerLinks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: max-content;
+}
+
+.containerLinks a{
+    width: max-content;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.containerPrimero{
+    margin-right: 25px;
+    padding: 6px 20px;
+    border-radius: 15px;
+}
+
+#primero{
+    text-decoration: none;
+}
+
+.containerPrimero:hover{
+    background-color: rgba(128, 128, 128, 0.200);
+}
+
+.containerSegundo{
+    padding: 6px 20px;
+    border-radius: 15px;
+}
+
+#segundo{
+    text-decoration: none;
+}
+
+.containerMoneda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    padding-left: 32px;
+}
+
+.containerProfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerProfile a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.searchBar{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#chalet{
+    color: #275843;
+}
+
+#plan{
+    color: #275843;
+}

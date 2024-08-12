@@ -6,15 +6,20 @@
             </div>
             <div class="containerOpc">
                 <div class="containerLinks">
-                    <a routerLink="queHacer" id="primero">¿Que hacer?</a>
-                    <a routerLink="regitrarChalet" id="segundo">Registra tu chalet o plan</a>
+                    <div class="containerPrimero">
+                        <a routerLink="queHacer" id="primero">¿Que hacer?</a>
+                    </div>
+                    <div class="containerSegundo">
+                        <p id="segundo">Registra tu <a id="chalet" routerLink="/create-chalet">chalet</a> o <a id="plan" routerLink="/create-plan"> plan</a></p>
+                    </div>
                 </div>
                 <div class="containerMoneda">
                     <app-money></app-money>
                 </div>
             </div>
             <div class="containerProfile">
-                <app-profile-button></app-profile-button>
+                <a routerLink="/login">Iniciar sesión</a>
+                <app-register-button></app-register-button>
             </div>
         </div>
     </div>
