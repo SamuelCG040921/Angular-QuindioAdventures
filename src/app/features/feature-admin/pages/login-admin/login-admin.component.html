@@ -25,7 +25,7 @@
                     <div *ngIf="isFieldInvalid('password')" class="error-message">{{ getErrorMessage('password') }}</div>
                 </div>
                 <div class="containerBtn">
-                    <button type="submit" [disabled]="isSubmitting">Ingresar</button>
+                    <button routerLink="/administration-home" type="submit" [disabled]="isSubmitting">Ingresar</button>
                 </div>
             </form>
         </div>

@@ -22,4 +22,3 @@ export class ProfileImgComponent implements OnInit {
       });
   }
 }
-

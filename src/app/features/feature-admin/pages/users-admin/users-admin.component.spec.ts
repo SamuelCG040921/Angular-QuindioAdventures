@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminSearchBarComponent } from './admin-search-bar.component';
+import { UsersAdminComponent } from './users-admin.component';
 
-describe('AdminSearchBarComponent', () => {
-  let component: AdminSearchBarComponent;
-  let fixture: ComponentFixture<AdminSearchBarComponent>;
+describe('UsersAdminComponent', () => {
+  let component: UsersAdminComponent;
+  let fixture: ComponentFixture<UsersAdminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AdminSearchBarComponent]
+      declarations: [UsersAdminComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(AdminSearchBarComponent);
+    fixture = TestBed.createComponent(UsersAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

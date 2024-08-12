@@ -5,19 +5,19 @@
                 <app-logo></app-logo>
             </figure>
             <nav>
-                <div routerLink="/inicio" id="inicio" class="link">
+                <div id="inicio" class="link">
                     <img src="../../../../../assets/icons/home 1.png" alt="">
                     <p>Inicio</p>
                 </div>
-                <div routerLink="/chalets" class="link">
+                <div routerLink="/administration-chalets" class="link">
                     <img src="../../../../../assets/icons/image101.png" alt="">
                     <p>Chalets</p>
                 </div>
-                <div routerLink="/planes" class="link">
+                <div routerLink="/administration-planes" class="link">
                     <img src="../../../../../assets/icons/image103.png" alt="">
                     <p>Planes</p>
                 </div>
-                <div routerLink="users" class="link">
+                <div routerLink="/administration-usuarios" class="link">
                     <img src="../../../../../assets/icons/usuario (1).png" alt="">
                     <p>Usuarios</p>
                 </div>
@@ -27,4 +27,49 @@
             </div>
         </div>
     </aside>
+    <div class="rightContent">
+        <div class="adminHeader">
+            <div class="containerHeader">
+                <app-admin-header></app-admin-header>
+            </div>
+        </div>
+        <div class="imgInicio">
+            <p>¡Bienvenido administrador!</p>
+            <img src="../../../assets/images/destination_eje_cafetero.jpg" alt="">
+        </div>
+        <div class="info">
+            <div class="contentModifi">
+                <div class="containerUsers">
+                    <div class="headerUsers">
+                        <p>Usuarios</p>
+                        <img routerLink="/administration-usuarios" src="../../../assets/icons/next 1.png" alt="">
+                    </div>
+                    <div class="users">
+                        <div class="userContainer">
+                            <app-profile-img width="55px" height="55px" ></app-profile-img>
+                            <div class="userName">
+                                <p>Guiller gustav</p>
+                            </div>
+                        </div>
+                        <div class="userContainer">
+                            <app-profile-img width="55px" height="55px" ></app-profile-img>
+                            <div class="userName">
+                                <p>Guiller gustav</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalogueChalets">
+                    <div class="chalet">
+                        <img src="../../../assets/images/imgPrincipalChalet.jpg" alt="">
+                        <app-button label="Ver chalet" color="#275843" border="#275843"></app-button>
+                    </div>
+                    <div class="chalet">
+                        <img src="../../../assets/images/img1.jpg" alt="">
+                        <app-button label="Ver chalet" color="#275843" border="#275843"></app-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
