@@ -1,3 +1,5 @@
+<app-header *ngIf="!authService.estaActivo()"></app-header>
+<app-header-logueado *ngIf="authService.estaActivo()"></app-header-logueado>
 <app-scoped-background-menu></app-scoped-background-menu>
 <section>
     <div class="containerFirstText">

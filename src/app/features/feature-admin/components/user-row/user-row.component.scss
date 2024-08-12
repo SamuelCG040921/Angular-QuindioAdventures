@@ -1,0 +1,24 @@
+.users{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.userContainer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 8px 0px 8px 12px;
+    border-radius: 10px;
+}
+
+.userContainer:hover{
+    background-color: #418E6D;
+}
+
+.userContainer p{
+    font-size: 15px;
+    margin-left: 10px;
+}

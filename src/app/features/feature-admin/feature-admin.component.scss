@@ -1,0 +1,243 @@
+.admin{
+    display: flex;
+    width: 100%;
+}
+
+aside{
+    display: flex;
+    position: sticky;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex: 0 0 auto;
+    width: 18%;
+    min-width: 280px;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-right: 1px solid #418E6D;
+    height: 96vh;
+    width: 100%;
+    min-width: 280px;
+}
+
+figure{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 35%;
+    min-height: 260px;
+    min-width: 70%;
+}
+
+nav a{
+    width: max-content;
+    text-decoration: none;
+    color: black;
+}
+
+.link{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 75%;
+    min-width: 200px;
+    height: 20%;
+    min-height: 58px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.link img{
+    padding-left: 18px;
+    width: 43px;
+    height: 25px;
+}
+
+.link p{
+    padding-left: 10px;
+}
+
+#inicio{
+    background-color: #d1e1d8;
+    cursor: pointer;
+}
+
+.logOut{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+}
+
+.logOut button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    min-width: 50%;
+    height: 70px;
+    border-radius: 15px;
+    border: 1px solid #275843;
+    background-color: #275843;
+    color: white;
+    margin-top: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.logOut button img{
+    width: 23px;
+    height: 23px;
+    margin-right: 8px;
+}
+
+.rightContent{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 82%;
+    min-width: 550px;
+    flex: 1;
+    overflow-y: scroll;
+}
+
+.containerProfile{
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+}
+
+.imgInicio{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 230px;
+}
+
+.imgInicio img{
+    border-radius: 15px;
+    width: 85%;
+    height: 100%;
+}
+
+.imgInicio p{
+    position: absolute; /* Posiciona el texto de forma absoluta dentro del contenedor */
+    top: 45%; /* Centra verticalmente el texto */
+    left: 50%; /* Centra horizontalmente el texto */
+    transform: translate(-50%, -50%); /* Ajusta la posición para centrar perfectamente */
+    color: rgb(255, 255, 255); /* Color del texto */
+    font-size: 250%;
+    width: max-content;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contentModifi{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 85%;
+}
+
+.containerUsers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    height: max-content;
+    background-color: #dfdddd;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2), -2px -2px 2px rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+.headerUsers{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 90%;
+    height: 43px;
+    margin-bottom: 5px;
+}
+
+.headerUsers img{
+    width: 7%;
+    height: max-content;
+    min-width: 20px;
+    cursor: pointer;
+}
+
+.headerUsers p{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.users{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.userContainer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 8px 0px 8px 12px;
+    border-radius: 10px;
+}
+
+.userContainer:hover{
+    background-color: #418E6D;
+}
+
+.userContainer p{
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.catalogueChalets{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 40%;
+}
+
+.chalet{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #d1e1d8;
+    border-radius: 15px;
+    width: 90%;
+    height: 85px;
+    margin-bottom: 15px;
+}
+
+.chalet img{
+    border-radius: 10px;
+    width: 38%;
+    height: 80%;
+    margin-right: 20px;
+}

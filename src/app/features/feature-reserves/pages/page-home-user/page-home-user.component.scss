@@ -1,0 +1,45 @@
+.section-title {
+    font-weight: 600;
+    font-size: 22px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center; /* Centra el título */
+}
+
+.title figure {
+    height: 1px;
+    background-color: #418E6D;
+    margin: 0 10px; /* Añade un margen horizontal para separarlos del título */
+}
+
+.title {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;
+    margin-bottom: 36px;
+}
+
+.line1 {
+    width: 75px;
+}
+
+.line2 {
+    width: 525px;
+}
+
+.titlechalets figure{
+    height: 1px;
+    background-color: #418E6D;
+    margin: 0 10px; /* Añade un margen horizontal para separarlos del título */
+}
+
+.titlechalets{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 86px;
+}
+
+.linech{
+    width: 306px;
+}

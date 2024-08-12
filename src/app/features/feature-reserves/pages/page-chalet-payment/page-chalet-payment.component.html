@@ -76,15 +76,15 @@
                 <input formControlName="direccion" class="direccion" placeholder="Ingresa tu dirección" id="direccion">
                 <div *ngIf="isFieldInvalid('direccion')" class="error-message">La dirección es requerida</div>
             </div>
-            <div class="field" [ngClass]="{'error': isFieldInvalid('fechaInicio')}">
-                <label class="fechaInicio">Fecha inicio</label>
-                <input type="date" formControlName="fechaInicio" class="fechaInicio" placeholder="Ingresa la fecha de inicio" id="fechainicio">
-                <div *ngIf="isFieldInvalid('fechaInicio')" class="error-message">La fecha de inicio es requerida</div>
+            <div class="field" [ngClass]="{'error': isFieldInvalid('checkin')}">
+                <label class="checkin">Fecha inicio</label>
+                <input type="date" formControlName="checkin" class="checkin" placeholder="Ingresa la fecha de inicio" id="fechainicio">
+                <div *ngIf="isFieldInvalid('checkin')" class="error-message">La fecha de inicio es requerida</div>
             </div>
-            <div class="field" [ngClass]="{'error': isFieldInvalid('fechaFin')}">
-                <label class="fechaFin">Fecha fin</label>
-                <input type="date" formControlName="fechaFin" class="fechaFin" placeholder="Ingresa la fecha fin" id="fechafin">
-                <div *ngIf="isFieldInvalid('fechaFin')" class="error-message">La fecha fin es requerida</div>
+            <div class="field" [ngClass]="{'error': isFieldInvalid('checkout')}">
+                <label class="checkout">Fecha fin</label>
+                <input type="date" formControlName="checkout" class="checkout" placeholder="Ingresa la fecha fin" id="fechafin">
+                <div *ngIf="isFieldInvalid('checkout')" class="error-message">La fecha fin es requerida</div>
             </div>
             <div class="buttonProcedPayment">
                 <app-button type="submit" label="Proceder con el pago y la reserva" color="#275843" class="buttonend"></app-button>

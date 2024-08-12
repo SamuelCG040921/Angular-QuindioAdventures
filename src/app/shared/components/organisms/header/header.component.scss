@@ -37,14 +37,43 @@ header{
 
 .containerLinks a{
     width: max-content;
-    text-decoration: none;
     color: black;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.containerPrimero{
+    margin-right: 25px;
+    padding: 6px 20px;
+    border-radius: 15px;
+}
+
+#primero{
+    text-decoration: none;
+}
+
+.containerPrimero:hover{
+    background-color: rgba(128, 128, 128, 0.200);
+}
+
+.containerSegundo{
+    padding: 6px 20px;
+    border-radius: 15px;
     font-size: 14px;
     font-weight: 500;
 }
 
-#primero{
-    margin-right: 45px;
+.containerSegundo:hover{
+    a{
+        background-color: rgba(128, 128, 128, 0.200);
+        border-radius: 10px;
+    }
+}
+
+.containerSegundo a{
+    color: #418e6d;
+    padding: 5px;
 }
 
 .containerMoneda{
@@ -53,6 +82,20 @@ header{
     align-items: center;
     width: max-content;
     padding-left: 32px;
+}
+
+.containerProfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerProfile a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 20px;
 }
 
 .searchBar{

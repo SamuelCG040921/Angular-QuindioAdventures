@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../../features/feature-reserves/services/user.service';
+import { AuthService } from '../../../../features/feature-login/services/auth.service';
+import { UserProfile } from '../../../../features/feature-profile/models/user-profile';
 
 
 
@@ -9,14 +11,15 @@ import { UserService } from '../../../../features/feature-reserves/services/user
   styleUrl: './profile-button.component.scss'
 })
 export class ProfileButtonComponent implements OnInit {
-  user:any
+  user!: UserProfile
 
-    constructor(private userService: UserService) {}
-
+    constructor(private userService: UserService, private authService: AuthService) {}
+    
     ngOnInit() {
-      this.userService.getUserbyID() // Llamar al método del servicio
-      .subscribe((data: any) => {
-        this.user = data; // Almacenar el usuario activo
-      });
-  }
+      this.authService.getUserProfile().then(
+        data => this.user = data,
+        err => console.error(err)
+      );
+    }
 }
+

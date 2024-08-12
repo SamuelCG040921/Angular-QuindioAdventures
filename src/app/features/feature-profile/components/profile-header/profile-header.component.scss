@@ -1,0 +1,96 @@
+header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: min-content;
+}
+
+.containerFirst{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: min-content;
+    padding-top: 35px;
+}
+
+.first-part{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 88%;
+    height: min-content;
+}
+
+.containerOpc{
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    align-items: center;
+}
+
+.containerLinks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: max-content;
+}
+
+.containerLinks a{
+    width: max-content;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.containerPrimero{
+    margin-right: 25px;
+    padding: 6px 20px;
+    border-radius: 15px;
+}
+
+#primero{
+    text-decoration: none;
+}
+
+.containerPrimero:hover{
+    background-color: rgba(128, 128, 128, 0.200);
+}
+
+.containerSegundo{
+    padding: 6px 20px;
+    border-radius: 15px;
+}
+
+#segundo{
+    text-decoration: none;
+}
+
+.containerSegundo:hover{
+    background-color: rgba(128, 128, 128, 0.200);
+}
+
+.containerMoneda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    padding-left: 32px;
+}
+
+.containerProfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerProfile a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.nav{
+    margin-top: 20px;
+}

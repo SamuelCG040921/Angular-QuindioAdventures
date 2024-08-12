@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AuthService } from '../../../feature-login/services/auth.service';
 
 @Component({
   selector: 'app-page-chalet',
@@ -7,4 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class PageChaletComponent {
 
+  constructor(public authService: AuthService){}
 }

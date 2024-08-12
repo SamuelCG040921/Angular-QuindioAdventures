@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserService } from '../../../../features/feature-reserves/services/user.service';
+import { UserProfile } from '../../../../features/feature-profile/models/user-profile';
+import { AuthService } from '../../../../features/feature-login/services/auth.service';
 
 @Component({
   selector: 'app-profile-img',
@@ -7,15 +9,20 @@ import { UserService } from '../../../../features/feature-reserves/services/user
   styleUrl: './profile-img.component.scss'
 })
 export class ProfileImgComponent implements OnInit {
+
+  @Input() width = '';
+  @Input() height = '';
+
   user:any
 
-    constructor(private userService: UserService) {}
+
+    constructor(private userService: UserService, private authService: AuthService) {}
 
     ngOnInit() {
-      this.userService.getUserbyID() // Llamar al método del servicio
-      .subscribe((data: any) => {
-        this.user = data; // Almacenar el usuario activo
-      });
-  }
+      this.authService.getUserProfile().then(
+        data => this.user = data,
+        err => console.error(err)
+      );
+    }
 }
 
