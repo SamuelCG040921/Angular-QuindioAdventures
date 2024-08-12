@@ -8,11 +8,14 @@ import { ChaletRegisterFormComponent } from './features/feature-profile/pages/ch
 import { ChangePasswordComponent } from './features/feature-profile/pages/change-password/change-password.component';
 import { PageHomeUserComponent } from './features/feature-reserves/pages/page-home-user/page-home-user.component';
 import { LoginAdminComponent } from './features/feature-admin/pages/login-admin/login-admin.component';
+import { FeatureAdminComponent } from './features/feature-admin/feature-admin.component';
+
 
 
 const routes: Routes = [
   {path:'reservas', component: FeatureReservesComponent},
   {path:'', component: PageHomeComponent},
+  {path: 'adminHome', component: FeatureAdminComponent},
   {path:'login', component: FeatureLoginComponent},
   {path: 'register', component: FeatureRegisterComponent},
   {path: 'create-chalet', component: ChaletRegisterFormComponent},
