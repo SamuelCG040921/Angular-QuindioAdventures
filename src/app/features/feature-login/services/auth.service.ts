@@ -7,7 +7,7 @@ import { UserProfile } from '../../feature-profile/models/user-profile';
   providedIn: 'root'
 })
 export class AuthService {
-  
+  private apiUrlAdmin = 'http://localhost:10101/authAdmin' 
   private apiUrl = 'http://localhost:10101/auth';
   private profileUrl = 'http://localhost:10101/user';
 
@@ -15,6 +15,20 @@ export class AuthService {
 
   auth(newUser: Auth) {
     return axios.post(this.apiUrl, newUser)
+      .then(response => {
+        
+        if (response.data && response.data.token) {
+          localStorage.setItem('token', response.data.token);
+        }
+        return response.data;
+      })
+      .catch(error => {
+        throw error;
+      });
+  }
+
+  authAdmin(newUser: Auth) {
+    return axios.post(this.apiUrlAdmin, newUser)
       .then(response => {
         if (response.data && response.data.token) {
           localStorage.setItem('token', response.data.token);
