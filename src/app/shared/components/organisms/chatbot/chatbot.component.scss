@@ -1,19 +1,21 @@
 .chatbot-icon {
     display: flex;
+    position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 0px;
     cursor: pointer;
-    justify-content: end;  
+    justify-content: end;
+    z-index: 1000;
 }
 
 .chatbot-intro {
     display: flex;
     align-items: center;
-    margin: 10px 24px;
+    margin: 10px 8px;
     justify-content: end;
     position: relative;
-    z-index: 999; 
     overflow: hidden;
+    max-width: 439px;
 }
 
 .intro-text {
@@ -23,14 +25,14 @@
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
-  
+
 .chatbot-intro:hover .intro-text {
     opacity: 1;
 }
 
 .chatbot-container {
     position: fixed;
-    bottom: 70px; 
+    bottom: 70px;
     right: 20px;
     width: 350px;
     height: 500px;
@@ -39,8 +41,8 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    z-index: 999; 
-    background-color: white; 
+    z-index: 1001; /* Debajo del icono */
+    background-color: white;
 }
 
 .chatbot-header {
