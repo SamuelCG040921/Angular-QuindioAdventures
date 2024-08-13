@@ -1,0 +1,73 @@
+.chaletContainer {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin-top: 30px;
+}
+
+.reservation-paintings {
+  margin-top: 60px;
+  margin-left: 200px;
+  position: absolute;
+  z-index: 10;
+}
+
+.imgChalet {
+  height: 500px;
+  margin-left: 450px;
+  z-index: 1;
+}
+.section-title {
+  font-weight: 600;
+  font-size: 22px;
+  margin-right: 20px;
+  text-align: center; 
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin-bottom: 36px;
+  margin-top: 32px;
+}
+
+.title figure {
+  height: 1px;
+  background-color: #418E6D;
+  width: 900px; 
+}
+
+.line2 {
+  margin: 0 5px;
+}
+.titlePrincipal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.title2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.line3 {
+  width: 450px;
+  height: 1.5px;
+  background-color: #90b4a0; 
+  margin: 0 15px;
+
+}
+
+.section-title2 {
+  font-size: 24px; 
+  font-weight: bold;
+  margin: 0;
+  color: #000; 
+ 
+}

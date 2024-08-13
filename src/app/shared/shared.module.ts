@@ -59,6 +59,12 @@ import { MessagesSuccesfulComponent } from './components/templates/messages-succ
 import { ModalReservesComponent } from './components/templates/modal-reserves/modal-reserves.component';
 import { ModalUpdateComponent } from './components/templates/modal-update/modal-update.component';
 import { MoneyComponent } from './components/molecules/money/money.component';
+import { ReservationPaintingsComponent } from './components/molecules/reservation-paintings/reservation-paintings.component';
+import { InputPaintingsComponent } from './components/atoms/input-paintings/input-paintings.component';
+import { InputDatePComponent } from './components/atoms/input-date-p/input-date-p.component';
+import { ReserveRecommendedPageComponent } from './components/molecules/reserve-recommended-page/reserve-recommended-page.component';
+import { PageRecommendComponent } from './components/organisms/page-recommend/page-recommend.component';
+import { ReservationPaintingsPlansComponent } from './components/molecules/reservation-paintings-plans/reservation-paintings-plans.component';
 import { RegisterButtonComponent } from './components/molecules/register-button/register-button.component';
 import { FeatureProfileComponent } from '../features/feature-profile/feature-profile.component';
 import { ProfileHeaderComponent } from '../features/feature-profile/components/profile-header/profile-header.component';
@@ -69,6 +75,7 @@ import { NavLogueadoComponent } from './components/molecules/nav-logueado/nav-lo
 import { InfoCardProfileComponent } from './components/molecules/info-card-profile/info-card-profile.component';
 import { ChatbotComponent } from './components/organisms/chatbot/chatbot.component';
 import { LoaderComponent } from './components/organisms/loader/loader.component';
+
 
 @NgModule({
   declarations: [
@@ -131,6 +138,12 @@ import { LoaderComponent } from './components/organisms/loader/loader.component'
     ModalReservesComponent,
     ModalUpdateComponent,
     MoneyComponent,
+    ReservationPaintingsComponent,
+    InputPaintingsComponent ,
+    InputDatePComponent,
+    ReserveRecommendedPageComponent,
+    PageRecommendComponent,
+    ReservationPaintingsPlansComponent,
     RegisterButtonComponent,
     ProfileHeaderComponent,
     VentajaServicioComponent,
@@ -208,6 +221,12 @@ import { LoaderComponent } from './components/organisms/loader/loader.component'
     ParagraphMessagesComponent,
     MessagesSuccesfulComponent,
     ModalReservesComponent,
+    ReservationPaintingsComponent,
+    InputPaintingsComponent,
+    InputDatePComponent,
+    ReserveRecommendedPageComponent,
+    PageRecommendComponent,
+    ReservationPaintingsPlansComponent,
     ProfileHeaderComponent,
     VentajaServicioComponent,
     ModalEmailComponent,
