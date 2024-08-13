@@ -20,3 +20,17 @@
     font-size: 16px;
     font-weight: 500;
 }
+
+@media (max-width: 1279px) and (min-width: 921px){
+    .register{
+        width: 95%;
+    }
+    .register img{
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
+    }
+    .register p{
+        font-size: 14px;
+    }
+}
