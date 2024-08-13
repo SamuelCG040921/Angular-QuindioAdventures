@@ -10,11 +10,12 @@ import { AuthService } from '../../../feature-login/services/auth.service';
   styleUrls: ['./login-admin.component.scss']
 })
 export class LoginAdminComponent implements OnInit {
+  isAlertOpen = false;
+  isErrorAlertOpen = false;
   loginAdminForm!: FormGroup;
   isSubmitting: boolean = false;
-  user: any;
 
-  emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {}
 
@@ -27,40 +28,36 @@ export class LoginAdminComponent implements OnInit {
 
   onSubmit() {
     if (this.loginAdminForm.valid) {
-      this.isSubmitting = true; // Deshabilitar el botón al enviar
+      this.isSubmitting = true;
   
       const authData = new Auth(
         this.loginAdminForm.value.email,
         this.loginAdminForm.value.password
       );
   
-      this.authService.auth(authData).then(
+      this.authService.authAdmin(authData).then(
         response => {
-          this.isSubmitting = false; // Habilitar el botón después de la respuesta
+          this.isSubmitting = false;
           console.log('Login exitoso:', response);
-  
-          // Redirigir al usuario al panel de administración después de un pequeño retraso
-          setTimeout(() => {
-            this.router.navigate(['/adminHome']); // Redirige a la ruta 'inicio'
-          }, 2000);
+
+          // Redirigir al panel de administración
+          this.router.navigate(['/administration-home']);
         }
       ).catch(
         error => {
-          this.isSubmitting = false; // Habilitar el botón después de un error
+          // Mostrar el mensaje de error de inmediato
+          this.isSubmitting = false;
+          this.openErrorAlert(); // Abre la ventana de error de inmediato
           console.error('Login error:', error);
         }
       );
-  
-      this.authService.getUserProfile().then(
-        data => this.user = data,
-        err => console.error(err)
-      );
     } else {
+      // Mostrar el mensaje de error de validación de formulario
+      this.openErrorAlert();
       console.error('Form is not valid');
-      this.loginAdminForm.markAllAsTouched(); // Marcar todos los campos como tocados para mostrar errores
+      this.loginAdminForm.markAllAsTouched();
     }
   }
-  
 
   isFieldInvalid(field: string): boolean {
     const control = this.loginAdminForm.get(field);
@@ -93,5 +90,21 @@ export class LoginAdminComponent implements OnInit {
 
   closeModal(): void {
     this.isModalOpen = false;
+  }
+
+  openAlert(): void {
+    this.isAlertOpen = true;
+  }
+
+  closeAlert(): void {
+    this.isAlertOpen = false;
+  }
+
+  openErrorAlert(): void {
+    this.isErrorAlertOpen = true;
+  }
+
+  closeErrorAlert(): void {
+    this.isErrorAlertOpen = false;
   }
 }
