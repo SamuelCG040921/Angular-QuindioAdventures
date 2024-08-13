@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './header-logueado.component.scss'
 })
 export class HeaderLogueadoComponent {
+  isMenuOpen = false;
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  disguiseMenu(){
+    this.isMenuOpen = false;
+  }
 }
