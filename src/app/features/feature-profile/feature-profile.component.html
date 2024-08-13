@@ -37,15 +37,20 @@
 					<label>Correo</label>
 					<input type="text" [formControlName]="'email'">
                     <div class="containerCambiar">
-                        <app-button label="Cambiar contraseña" routerLink="/cambiar-contraseña"></app-button>
+                        <app-button label="Cambiar contraseña" (click)="enviarCorreo()" type="button"></app-button>
+						<app-messages-succesful title="A su correo se envió el link para el cambio de contraseña" *ngIf="isAlertOpen" (close)="closeAlert()"></app-messages-succesful>
+						<app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar el envío, verifique el correo" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
                     </div>
 				</div>
             </div>
         </div>
 			<div class="containerBtnLeft">
-				<app-button *ngIf="button1Visible" (click)="cambiarEstadoBotones()" label="Editar datos" (click)="habilitarInput()"></app-button>
+				<app-button type="button" *ngIf="button1Visible" (click)="cambiarEstadoBotones()" label="Editar datos" (click)="habilitarInput()"></app-button>
 				<div class="containerButtons">
-					<app-button *ngIf="button2y3Visible" label="Enviar"></app-button>
+					<app-button type="button" *ngIf="button2y3Visible" label="Enviar" (click)="openWarningAlert()"></app-button>
+					<app-messages-succesful title="La actualizacion se realizo correctamente" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
+					<app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar la actualizacion verifique bien los datos" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+					<app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de actualizar los datos?" *ngIf="isWarningAlertOpen" (confirm)="onConfirmModal()" (close)="closeWarningAlert()"></app-messages-warning>
 					<app-button *ngIf="button2y3Visible" (click)="cancelarBotones()" label="Cancelar" color="red"></app-button>
 				</div>
 			</div>

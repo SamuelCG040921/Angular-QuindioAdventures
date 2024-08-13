@@ -13,6 +13,7 @@ export class FeatureRegisterComponent implements OnInit {
   isErrorAlertOpen = false;
   registroForm!: FormGroup;
   isSubmitting: boolean = false;
+  img = 'https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg';
 
   constructor(private fb: FormBuilder, private registerService: RegisterService) {}
 
@@ -57,7 +58,8 @@ export class FeatureRegisterComponent implements OnInit {
         this.registroForm.value.phoneNumber,
         this.registroForm.value.document,
         this.registroForm.value.email,
-        this.registroForm.value.password
+        this.registroForm.value.password,
+        this.img
       );
 
       this.registerService.register(newUser).then(

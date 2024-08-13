@@ -19,6 +19,7 @@ const routes: Routes = [
   {path:'', component: PageHomeComponent},
   {path:'chalets', component: PageChaletComponent},
   {path:'planes', component:PagePlanComponent},
+  {path:'planes-vacacionales', component:PagePlanComponent},
   {path: 'adminHome', component: FeatureAdminComponent},
   {path:'login', component: FeatureLoginComponent},
   {path: 'register', component: FeatureRegisterComponent},

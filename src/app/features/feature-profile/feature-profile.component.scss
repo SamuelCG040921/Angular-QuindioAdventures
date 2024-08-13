@@ -93,6 +93,20 @@
     flex-direction: column;
     width: 70%;
     margin-bottom: 15px;
+
+    &.error {
+        input {
+            border-color: red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+    }
 }
 
 .containerInfo label{
@@ -196,4 +210,3 @@
 .partesUnidas{
     display: flex;
 }
-

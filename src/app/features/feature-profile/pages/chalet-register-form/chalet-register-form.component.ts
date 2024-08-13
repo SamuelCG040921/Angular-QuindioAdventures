@@ -1,98 +1,154 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../feature-reserves/services/user.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ChaletService } from '../../services/chalet.service';
 
 @Component({
   selector: 'app-chalet-register-form',
   templateUrl: './chalet-register-form.component.html',
-  styleUrl: './chalet-register-form.component.scss'
+  styleUrls: ['./chalet-register-form.component.scss']
 })
-export class ChaletRegisterFormComponent {
-  user:any
+export class ChaletRegisterFormComponent implements OnInit {
+  user: any;
   isInputDisabled = true;
-  public previsualizacion:string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s';
-  public archivos: any = []
-  public archivos2: any = [];
-  public previsualizacion2:string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s';
-  public archivos3: any = [];
-  public previsualizacion3:string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s';
-  public archivos4:any = [];
-  public previsualizacion4:string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s'
+  previsualizacion: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s';
+  archivos: any[] = [];
+  previsualizacion2: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s';
+  archivos2: any[] = [];
+  previsualizacion3: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s';
+  archivos3: any[] = [];
+  previsualizacion4: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s';
+  archivos4: any[] = [];
 
-  habilitarInput() {
-    this.isInputDisabled = false;
-  } 
-  
-  
+  constructor(private userService: UserService, private sanitizer: DomSanitizer, private chaletService: ChaletService) {}
 
-  constructor(private userService: UserService, private sanitizer: DomSanitizer) {}
-
-  ngOnInit() {
-    this.userService.getUserbyID() // Llamar al método del servicio
-    .subscribe((data: any) => {
+  ngOnInit(): void {
+    this.userService.getUserbyID().subscribe((data: any) => {
       this.user = data; // Almacenar el usuario activo
     });
   }
 
-  capturarFile(event: any): any{
-    const archivoCapturado = event.target.files[0];
-    this.extraerBase64(archivoCapturado).then((imagen:any) =>{
-      this.previsualizacion = imagen.base;
-      console.log(imagen)
-    })
-    //this.archivos.push(archivoCapturado)
+  habilitarInput(): void {
+    this.isInputDisabled = false;
   }
 
-capturarFile2(event:any): any{
-  const archivoCapturado2 = event.target.files[0];
-  this.extraerBase64(archivoCapturado2).then((imagen2:any) =>{
-    this.previsualizacion2 = imagen2.base;
-    console.log(imagen2)
-  })
-}
+  capturarFile(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const archivoCapturado = input.files?.[0];
+    if (archivoCapturado) {
+      console.log('Nombre del archivo:', archivoCapturado.name);
+      console.log('Tamaño del archivo:', archivoCapturado.size);
+      console.log('Tipo de archivo:', archivoCapturado.type);
 
-capturarFile3(event:any): any{
-  const archivoCapturado3 = event.target.files[0];
-  this.extraerBase64(archivoCapturado3).then((imagen3:any) =>{
-    this.previsualizacion3 = imagen3.base;
-    console.log(imagen3)
-  })
-}
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const fileContent = e.target?.result;
+        console.log('Contenido del archivo:', fileContent);
+        // Aquí puedes enviar el contenido del archivo a tu backend
+      };
+      reader.readAsText(archivoCapturado)
+      this.chaletService.uploadFiles(archivoCapturado).subscribe({
+        next: (response) => {
 
-capturarFile4(event:any): any{
-  const archivoCapturado4 = event.target.files[0];
-  this.extraerBase64(archivoCapturado4).then((imagen4:any) =>{
-    this.previsualizacion4 = imagen4.base;
-    console.log(imagen4)
-  })
-}
-
-
-
-  extraerBase64 = async ($event: any): Promise<any> => {
-    return new Promise((resolve, reject) => {
-      try {
-        const unsafeImg = window.URL.createObjectURL($event);
-        const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
-        const reader = new FileReader();
-        reader.readAsDataURL($event);
-        reader.onload = () => {
-          resolve({
-            base: reader.result
-          });
-        };
-        reader.onerror = error => {
-          resolve({
-            base: null
-          });
-        };
-      } catch (e) {
-        resolve({
-          base: null
-        });
-      }
-    });
+          console.log('Archivo subido exitosamente:', response);
+          this.previsualizacion = response.url;
+        },
+        error: (error) => {
+          console.error('Error al subir archivo:', error)
+        }
+      })
+    } else {
+      console.log('No se ha seleccionado ningún archivo');
+    }
   }
 
-}
+  capturarFile2(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const archivoCapturado = input.files?.[0];
+    if (archivoCapturado) {
+      console.log('Nombre del archivo:', archivoCapturado.name);
+      console.log('Tamaño del archivo:', archivoCapturado.size);
+      console.log('Tipo de archivo:', archivoCapturado.type);
 
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const fileContent = e.target?.result;
+        console.log('Contenido del archivo:', fileContent);
+        // Aquí puedes enviar el contenido del archivo a tu backend
+      };
+      reader.readAsText(archivoCapturado)
+      this.chaletService.uploadFiles(archivoCapturado).subscribe({
+        next: (response) => {
+
+          console.log('Archivo subido exitosamente:', response);
+          this.previsualizacion2 = response.url;
+        },
+        error: (error) => {
+          console.error('Error al subir archivo:', error)
+        }
+      })
+    } else {
+      console.log('No se ha seleccionado ningún archivo');
+    }
+  }
+
+  capturarFile3(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const archivoCapturado = input.files?.[0];
+    if (archivoCapturado) {
+      console.log('Nombre del archivo:', archivoCapturado.name);
+      console.log('Tamaño del archivo:', archivoCapturado.size);
+      console.log('Tipo de archivo:', archivoCapturado.type);
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const fileContent = e.target?.result;
+        console.log('Contenido del archivo:', fileContent);
+        // Aquí puedes enviar el contenido del archivo a tu backend
+      };
+      reader.readAsText(archivoCapturado)
+      this.chaletService.uploadFiles(archivoCapturado).subscribe({
+        next: (response) => {
+
+          console.log('Archivo subido exitosamente:', response);
+          this.previsualizacion3 = response.url;
+        },
+        error: (error) => {
+          console.error('Error al subir archivo:', error)
+        }
+      })
+    } else {
+      console.log('No se ha seleccionado ningún archivo');
+    }
+  }
+
+  capturarFile4(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const archivoCapturado = input.files?.[0];
+    if (archivoCapturado) {
+      console.log('Nombre del archivo:', archivoCapturado.name);
+      console.log('Tamaño del archivo:', archivoCapturado.size);
+      console.log('Tipo de archivo:', archivoCapturado.type);
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const fileContent = e.target?.result;
+        console.log('Contenido del archivo:', fileContent);
+        // Aquí puedes enviar el contenido del archivo a tu backend
+      };
+      reader.readAsText(archivoCapturado)
+      this.chaletService.uploadFiles(archivoCapturado).subscribe({
+        next: (response) => {
+
+          console.log('Archivo subido exitosamente:', response);
+          this.previsualizacion4 = response.url;
+        },
+        error: (error) => {
+          console.error('Error al subir archivo:', error)
+        }
+      })
+    } else {
+      console.log('No se ha seleccionado ningún archivo');
+    }
+  }
+}
