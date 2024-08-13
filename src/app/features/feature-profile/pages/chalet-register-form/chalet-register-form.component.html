@@ -6,11 +6,13 @@
     <div class="parte1">
         <div class="uno">
             <label for="">Nombre del chalet</label>
-            <input class="nombrechalet" type="text">
+            <input placeholder="Ingresa el nombre de tu chalet" class="nombrechalet" type="text">
             <label for="">Dirección</label>
+            <input placeholder="Ingresa la ubicación de tu chalet" type="text" class="direccionInput">
+            <label for="">Visualizar dirección</label>
             <div class="direccion">
-            <app-button label="Añadir direccion" color="#275843"></app-button>
             </div>
+            <app-button class="guardarButton" label="Guardar dirección" color="#275843"></app-button>
         </div>
         <div class="columnaImagen">
             <img class="imgPrincipal" [src]="previsualizacion" alt="">
@@ -23,7 +25,7 @@
     </div>
     <div class="parte2">
         <label for="">Descripción del chalet</label>
-        <input class="description" type="text">
+        <input placeholder="Ingresa una descripción de tu chalet" class="description" type="text">
     </div>
     <figure class="borde1"></figure>
     <div class="parte3">
@@ -86,7 +88,7 @@
     <div class="parte5">
         <h2 class="title">Tarifas y tipos de habitaciones</h2>
         <div class="headerfield">
-            <h3 class="subtitle">Habitación sencilla</h3>
+            <h3 class="subtitle">Ingresa tus tarifas</h3>
             <img class="delete" src="../../../../../assets/icons/bote-de-basura.png" alt="">
         </div>
         <div class="field">
@@ -102,234 +104,19 @@
                     <option value="opcion4">Baja</option>
                 </select>
             </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Media</option>
-                    <option value="opcion3">Alta</option>
-                    <option value="opcion4">Baja</option>
-                </select>
+            <div class="inputHabtype">
+                <div class="inputContainer2">
+                    <label for="">Tipo</label>
+                    <select name="tipohab" class="inputHab2" id="select">
+                        <option value="opcion2">Habitación sencilla</option>
+                        <option value="opcion3">Habitación doble</option>
+                        <option value="opcion4">Habitación cuadruple</option>
+                        <option value="opcion5">Pasadía</option>
+                        <option value="opcion6">Ocupación completa</option>
+                    </select>
+                </div>
             </div>
         </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Baja</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Alta</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="headerfield">
-            <h3 class="subtitle">Habitación doble</h3>
-            <img class="delete" src="../../../../../assets/icons/bote-de-basura.png" alt="">
-        </div>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Alta</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Media</option>
-                    <option value="opcion3">Alta</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Baja</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Alta</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="headerfield">
-            <h3 class="subtitle">Habitación cúadruple</h3>
-            <img class="delete" src="../../../../../assets/icons/bote-de-basura.png" alt="">
-        </div>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Alta</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Media</option>
-                    <option value="opcion3">Alta</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Baja</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Alta</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="headerfield">
-            <h3 class="subtitle">Ocupación completa</h3>
-            <img class="delete" src="../../../../../assets/icons/bote-de-basura.png" alt="">
-        </div>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Alta</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Media</option>
-                    <option value="opcion3">Alta</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Baja</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Alta</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="headerfield">
-            <h3 class="subtitle">Pasadía</h3>
-            <img class="delete" src="../../../../../assets/icons/bote-de-basura.png" alt="">
-        </div>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Alta</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Media</option>
-                    <option value="opcion3">Alta</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Baja</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Alta</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
     </div>
     <app-button class="button" label="Registrar" type="submit"></app-button>
 </div>
