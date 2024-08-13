@@ -18,6 +18,7 @@ const routes: Routes = [
   {path:'reservas', component: FeatureReservesComponent},
   {path:'', component: PageHomeComponent},
   {path:'chalets', component: PageChaletComponent},
+  {path:'planes', component:PagePlanComponent},
   {path:'planes-vacacionales', component:PagePlanComponent},
   {path: 'adminHome', component: FeatureAdminComponent},
   {path:'login', component: FeatureLoginComponent},
@@ -25,7 +26,7 @@ const routes: Routes = [
   {path: 'create-chalet', component: ChaletRegisterFormComponent},
   {path: 'cambiar-contraseña', component: ChangePasswordComponent},
   {path: 'home-user', component: PageHomeUserComponent},
-  {path: 'loginadminSamuelManuelaSantiagoJuanBalsero1234241316&_', component: LoginAdminComponent}
+  {path: 'loginadminSamuelManuelaSantiagoJuanBalsero1234241316&_', component: LoginAdminComponent},
 ];
 
 @NgModule({

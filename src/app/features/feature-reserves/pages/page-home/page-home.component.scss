@@ -43,3 +43,43 @@
 .linech{
     width: 306px;
 }
+
+@media (min-width: 921px) and (max-width: 1279px) {
+    .line1{
+        width: 300px;
+    }
+
+    .line2{
+        width: 300px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 920px) {
+    .line1{
+        width: 300px;
+    }
+
+    .line2{
+        width: 300px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .line1{
+        width: 300px;
+    }
+
+    .line2{
+        width: 300px;
+    }
+}
+
+@media (min-width: 352px) and (max-width: 480px) {
+    .line1{
+        width: 300px;
+    }
+
+    .line2{
+        width: 300px;
+    }
+}

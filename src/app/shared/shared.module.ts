@@ -158,6 +158,7 @@ import { LoaderComponent } from './components/organisms/loader/loader.component'
   imports: [
     CommonModule,
     RouterModule.forRoot([
+      { path: 'profile', component: SearchButtonComponent },
       { path: 'profile', component: FeatureProfileComponent },
       { path: 'chalets', component: FooterInputComponent },
       { path: 'planes-vacacionales', component: SearchButtonComponent },
