@@ -156,6 +156,7 @@ import { ChatbotComponent } from './components/organisms/chatbot/chatbot.compone
   imports: [
     CommonModule,
     RouterModule.forRoot([
+      { path: 'profile', component: SearchButtonComponent },
       { path: 'profile', component: FeatureProfileComponent },
       { path: 'chalets', component: FooterInputComponent },
       { path: 'planes-vacacionales', component: SearchButtonComponent },
