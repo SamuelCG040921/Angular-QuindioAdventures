@@ -6,3 +6,9 @@
     font-size: 16px;
     padding-left: 4px;
 }
+
+@media (min-width: 352px) and (max-width: 480px) {
+    .ubicationCard p{
+        font-size: 12px;
+    }
+}

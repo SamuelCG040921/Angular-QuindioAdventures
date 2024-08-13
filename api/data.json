@@ -139,7 +139,8 @@
       "correo": "samuelcalderon986@gmail.com",
       "paymentmethod": "nequi",
       "paymentmethodimg": "https://mir-s3-cdn-cf.behance.net/projects/404/43a39c151928953.Y3JvcCwxODQ0LDE0NDMsMzYsMA.png",
-      "id": "1c79"
+      "id": "1c79",
+      "estado": "Activo"
     },
     {
       "chaletimg": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/82/3c/a0/finca-hotel-la-dulcera.jpg?w=700&h=-1&s=1",
@@ -161,7 +162,8 @@
       "correo": "samuelcalderon986@gmail.com",
       "paymentmethod": "nequi",
       "paymentmethodimg": "https://mir-s3-cdn-cf.behance.net/projects/404/43a39c151928953.Y3JvcCwxODQ0LDE0NDMsMzYsMA.png",
-      "id": "bdbe"
+      "id": "bdbe",
+      "estado": "Activo"
     },
     {
       "chaletimg": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/82/3c/a0/finca-hotel-la-dulcera.jpg?w=700&h=-1&s=1",
@@ -183,7 +185,8 @@
       "correo": "samuelcalderon986@gmail.com",
       "paymentmethod": "nequi",
       "paymentmethodimg": "https://mir-s3-cdn-cf.behance.net/projects/404/43a39c151928953.Y3JvcCwxODQ0LDE0NDMsMzYsMA.png",
-      "id": "368b"
+      "id": "368b",
+      "estado": "Activo"
     },
     {
       "chaletimg": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/82/3c/a0/finca-hotel-la-dulcera.jpg?w=700&h=-1&s=1",
@@ -205,7 +208,8 @@
       "correo": "samuelcalderon986@gmail.com",
       "paymentmethod": "nequi",
       "paymentmethodimg": "https://mir-s3-cdn-cf.behance.net/projects/404/43a39c151928953.Y3JvcCwxODQ0LDE0NDMsMzYsMA.png",
-      "id": "90dc"
+      "id": "90dc",
+      "estado": "Activo"
     },
     {
       "chaletimg": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/82/3c/a0/finca-hotel-la-dulcera.jpg?w=700&h=-1&s=1",
@@ -227,7 +231,8 @@
       "correo": "samuelcalderon986@gmail.com",
       "paymentmethod": "nequi",
       "paymentmethodimg": "https://mir-s3-cdn-cf.behance.net/projects/404/43a39c151928953.Y3JvcCwxODQ0LDE0NDMsMzYsMA.png",
-      "id": "293d"
+      "id": "293d",
+      "estado": "Cancelada"
     },
     {
       "chaletimg": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/82/3c/a0/finca-hotel-la-dulcera.jpg?w=700&h=-1&s=1",
@@ -249,24 +254,26 @@
       "correo": "samuelcalderon986@gmail.com",
       "paymentmethod": "nequi",
       "paymentmethodimg": "https://mir-s3-cdn-cf.behance.net/projects/404/43a39c151928953.Y3JvcCwxODQ0LDE0NDMsMzYsMA.png",
-      "id": "c010"
+      "id": "c010",
+      "estado": "Activo"
     },
     {
-      "id": "57bc",
-      "documento": "1091884708",
-      "cantidadNinos": "2",
+      "id": "2a15",
+      "documento": "sasd",
+      "cantidadNinos": "adsdasd",
       "tipo": "Chalet",
       "codigo": 39,
       "numero": 7,
       "precio": 6000000,
-      "cantidadAdultos": "2",
-      "nombre": "Camilo",
-      "apellido": "Balsero",
-      "telefono": "318283280",
-      "correo": "camilobalsero16@gmail.com",
-      "direccion": "barrio villa del carmen mz b # 19",
-      "fechaInicio": "2024-06-25",
-      "fechaFin": "2024-06-26"
+      "cantidadAdultos": "dasdasd",
+      "nombre": "adsdasd",
+      "apellido": "adsdasd",
+      "telefono": "asdasdasd",
+      "correo": "dasdasasdasd@gmail.com",
+      "direccion": "asdasdasd",
+      "checkin": "2024-07-17",
+      "checkout": "2024-07-19",
+      "estado": "Activa"
     }
   ],
   "chalets": [

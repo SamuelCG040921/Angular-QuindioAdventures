@@ -14,7 +14,10 @@ export class ScopedReserveComponent implements OnInit {
    tipo: "",
    precio: 0,
    direccion: '',
-   telefono: ''
+   telefono: '',
+   checkin:'',
+   checkout:'',
+   estado:''
   };
 
  

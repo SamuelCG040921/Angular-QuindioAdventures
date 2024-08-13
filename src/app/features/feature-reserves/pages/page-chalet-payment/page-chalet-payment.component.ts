@@ -33,8 +33,9 @@ export class PageChaletPaymentComponent {
       telefono: ['', Validators.required],
       correo: ['', [Validators.required, Validators.email]],
       direccion: ['', Validators.required],
-      fechaInicio: ['', Validators.required],
-      fechaFin: ['', Validators.required],
+      checkin: ['', Validators.required],
+      checkout: ['', Validators.required],
+      estado: "Activa"
     });
   }
 

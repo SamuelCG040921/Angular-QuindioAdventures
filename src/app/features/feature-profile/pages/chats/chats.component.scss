@@ -1,0 +1,148 @@
+.chat-container {
+  display: flex;
+  height: 100vh;
+}
+.part1 {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-top: 10px;
+}
+.sidebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+}
+.search-bar input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 2px solid #275843;
+  border-radius: 15px;
+  margin: 0 10px;
+  text-align: center;
+}
+.profilepic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.form-header{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form-header img{
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.users {
+  background-color: #d9d9d939;
+  overflow-y: auto;
+  flex-grow: 1;
+  margin-top: 20px;
+}
+.user {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+.user:hover {
+  background-color: #D9D9D9;
+}
+.user-info {
+  flex-grow: 1;
+  padding-left: 10px;
+}
+.username {
+  font-weight: bold;
+  display: block;
+}
+.message {
+  color: #555;
+}
+.time {
+  white-space: nowrap;
+  font-size: 16px;
+}
+.chat-window {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  background-color: #f5f5f5;
+}
+.header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.messages {
+  flex: 1;
+  padding: 10px;
+  background-color: #fff;
+  overflow-y: auto;
+}
+.user1, .user2 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.user1 p, .user2 p {
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+.user1 p {
+  background-color: #e0e0e0;
+  align-self: flex-start;
+}
+.user2 p {
+  background-color: #d1e7dd;
+  align-self: flex-end;
+}
+.input-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+.input-bar input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+.input-bar button {
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  margin: 10px;
+}
+.input-bar button img {
+  width: 30px;
+  height: 30px;
+}
