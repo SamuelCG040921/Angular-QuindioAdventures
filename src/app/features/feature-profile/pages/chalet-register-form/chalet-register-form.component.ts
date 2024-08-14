@@ -1,3 +1,4 @@
+/// <reference types="google.maps" />
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../feature-reserves/services/user.service';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -8,6 +9,7 @@ import { ChaletService } from '../../services/chalet.service';
   templateUrl: './chalet-register-form.component.html',
   styleUrls: ['./chalet-register-form.component.scss']
 })
+
 export class ChaletRegisterFormComponent implements OnInit {
   user: any;
   isInputDisabled = true;
