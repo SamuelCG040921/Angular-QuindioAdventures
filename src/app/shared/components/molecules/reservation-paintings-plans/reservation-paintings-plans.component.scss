@@ -1,31 +1,84 @@
+/* Estilos generales */
 .container {
-    background: rgba(255, 255, 255, 0.888);
-    padding: 15px; 
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 450px;
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-  }
+  background: rgba(255, 255, 255, 0.888);
+  padding: 10px; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 350px; 
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
 
-  .header {
-    margin-bottom: 15px; 
+.header {
+  margin-bottom: 10px; /* Ajustar márgenes */
+}
+
+h2 {
+  font-size: 24px; /* Reducir el tamaño de la fuente */
+  margin: 0;
+}
+
+p {
+  font-size: 12px; /* Reducir el tamaño de la fuente */
+  margin: 6px 0 10px; /* Ajustar márgenes */
+}
+
+.input1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px; /* Reducir margen inferior */
+  width: 100%;
+}
+
+app-input-paintings {
+  width: 100%; /* Asegura que el input ocupe todo el ancho disponible */
+  max-width: 100%; /* Evita que el input se desborde */
+  box-sizing: border-box; /* Incluye padding y border dentro del ancho */
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 8px;
+    max-width: 300px; /* Hacer el contenedor más pequeño en pantallas medianas */
   }
 
   h2 {
-    font-size: 28px; 
-    margin: 0;
+    font-size: 20px; /* Reducir el tamaño de la fuente */
   }
 
   p {
-    font-size: 14px;
-    margin: 8px 0 15px; 
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 235px; 
+    background: rgba(255, 255, 255, 0.94);
   }
 
-  .input1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15px; 
+  h2 {
+    font-size: 18px; 
   }
+
+  p {
+    font-size: 9px; 
+  }
+
+  .input1 {
+    margin-bottom: 8px; 
+  }
+
+  app-input-paintings {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  app-button {
+    width: 60%;
+    margin-top: 10px; /* Reducir margen superior */
+  }
+}

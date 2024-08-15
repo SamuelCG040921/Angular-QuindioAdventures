@@ -71,3 +71,105 @@
   color: #000; 
  
 }
+
+@media (min-width: 769px) and (max-width: 920px) {
+
+  .reservation-paintings{
+    margin-top: 40px;
+    margin-left: 50px;
+  }
+    
+  .imgChalet {
+    width: 550px;
+    height: 450px;
+    margin-left: 250px;
+  }
+  
+  .titlePrincipal{
+    font-size: 24px;
+    margin-top: 16px;
+  }
+  .principalTitle {
+    font-size: 28px;
+    margin: 15px 0;
+}
+.section-title{
+  font-size: 20px;
+  margin-left: 20px;
+}
+.title{
+  width: auto;
+}
+.section-title2 {
+    font-size: 20px;
+    text-align: center;
+}
+}
+
+@media (max-width: 768px){
+  .chaletContainer{
+    height: 400px;
+  }
+  .reservation-paintings{
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+    
+  .imgChalet {
+    width: 400px;
+    height: 380px;
+    margin-left: 100px;
+  }
+  .principalTitle {
+    font-size: 20px;
+    margin: 10px 0;
+}
+.titlePrincipal{
+  margin-top: 1px;
+}
+.section-title{
+  font-size: 16px;
+  margin-left: 20px;
+}
+.title{
+  width: auto;
+}
+
+.section-title2 {
+    font-size: 20px;
+    text-align: center;
+
+}
+}
+
+@media (max-width: 480px){
+  .reservation-paintings{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    width: 100%; 
+  }
+
+  .imgChalet {
+      width: 360px;
+      height: 380px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+  }
+  .principalTitle {
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.section-title {
+    font-size: 16px;
+}
+
+.section-title2 {
+    font-size: 16px;
+    text-align: center;
+}
+}
