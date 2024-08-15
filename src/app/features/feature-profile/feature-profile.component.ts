@@ -42,7 +42,7 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
       phoneNumber: ['', Validators.required],
       address: ['', Validators.required],
       email: ['', Validators.required],
-      image: [''] // Inicializa la imagen como cadena vacía
+      image: [''] 
     });
   
     // Desactiva el formulario al inicio
@@ -102,7 +102,7 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
         // Recarga la página después de la actualización exitosa
         setTimeout(() => {
           window.location.reload();
-        }, 2000); // Se espera 2 segundos antes de recargar la página
+        }, 1300); // Se espera 2 segundos antes de recargar la página
 
       }
     ).catch(

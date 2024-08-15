@@ -10,6 +10,7 @@ export class FeatureAdminComponent implements OnInit {
   user: any;
   users: any[] = []; // Añadimos la propiedad `users` para almacenar la lista de usuarios
   isInputDisabled = true;
+  
 
   constructor(public authService: AuthService) {}
 

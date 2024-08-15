@@ -12,6 +12,7 @@ import { ProfileDataComponent } from './pages/profile-data/profile-data.componen
 import { ProfileWelcomeEditComponent } from './components/profile-welcome-edit/profile-welcome-edit.component';
 import { PlansProfileComponent } from './pages/plans-profile/plans-profile.component';
 import { ChaletsProfileComponent } from './pages/chalets-profile/chalets-profile.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ChaletsProfileComponent } from './pages/chalets-profile/chalets-profile
     ProfileDataComponent,
     ProfileWelcomeEditComponent,
     PlansProfileComponent,
-    ChaletsProfileComponent
+    ChaletsProfileComponent,
+    MapComponent
   ],
   imports: [
     CommonModule,

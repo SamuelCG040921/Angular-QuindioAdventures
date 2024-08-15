@@ -34,3 +34,9 @@ a{
     right: 10px;
     z-index: 1;
 }
+
+@media (min-width: 352px) and (max-width: 480px) {
+    .card{
+        max-width: 292px;
+    }
+}
