@@ -67,6 +67,10 @@ import { ModalEmailComponent } from './components/templates/modal-email/modal-em
 import { HeaderLogueadoComponent } from './components/organisms/header-logueado/header-logueado.component';
 import { NavLogueadoComponent } from './components/molecules/nav-logueado/nav-logueado.component';
 import { InfoCardProfileComponent } from './components/molecules/info-card-profile/info-card-profile.component';
+import { CardChaletAdministatorComponent } from './components/molecules/card-chalet-administator/card-chalet-administator.component';
+import { ChaletsAdministratorComponent } from './components/organisms/chalets-administrator/chalets-administrator.component';
+import { CardPlanAdministatorComponent } from './components/molecules/card-plan-administator/card-plan-administator.component';
+import { PlansAdministratorComponent } from './components/organisms/plans-administrator/plans-administrator.component';
 
 @NgModule({
   declarations: [
@@ -135,7 +139,11 @@ import { InfoCardProfileComponent } from './components/molecules/info-card-profi
     ModalEmailComponent,
     HeaderLogueadoComponent,
     NavLogueadoComponent,
-    InfoCardProfileComponent
+    InfoCardProfileComponent,
+    CardChaletAdministatorComponent,
+    ChaletsAdministratorComponent,
+    CardPlanAdministatorComponent,
+    PlansAdministratorComponent
   ],
 
   imports: [
@@ -210,7 +218,11 @@ import { InfoCardProfileComponent } from './components/molecules/info-card-profi
     InfoCardProfileComponent,
     NavComponent,
     HeaderLogueadoComponent,
-    InfoCardProfileComponent
+    InfoCardProfileComponent,
+    CardChaletAdministatorComponent,
+    ChaletsAdministratorComponent,
+    CardPlanAdministatorComponent,
+    PlansAdministratorComponent
   ],
 })
 export class SharedModule { }

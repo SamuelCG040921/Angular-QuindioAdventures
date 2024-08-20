@@ -1,0 +1,42 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    border-radius: 8px;
+    border: 1px solid #A4C3B2;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); 
+    width: 300px; 
+    cursor: pointer;
+}
+
+.container-img {
+    position: relative;
+}
+
+.container-img img {
+    width: 100%;
+    display: block;
+    z-index: -1;
+}
+
+.imgCard {
+    width: 300px;
+    height: 187px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 8px 5px 10px;
+}
+
+
+@media (min-width: 352px) and (max-width: 480px) {
+    .card{
+        max-width: 292px;
+    }
+}

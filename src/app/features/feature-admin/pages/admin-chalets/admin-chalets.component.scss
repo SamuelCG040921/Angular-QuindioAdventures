@@ -104,3 +104,27 @@ nav a{
     height: 23px;
     margin-right: 8px;
 }
+.rightContent{
+    width: 100%;
+}
+.titlechalets figure{
+    height: 1px;
+    background-color: #418E6D;
+    margin: 0 10px; 
+}
+
+.titlechalets{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.linech{
+    width: 306px;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
