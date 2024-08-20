@@ -29,3 +29,58 @@
     align-items: center;
     margin-bottom: 15px; 
   }
+  /* Estilos responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 8px;
+    max-width: 300px; /* Hacer el contenedor más pequeño en pantallas medianas */
+  }
+
+  h2 {
+    font-size: 20px; /* Reducir el tamaño de la fuente */
+  }
+
+  p {
+    font-size: 10px;
+  }
+  app-input-paintings {
+    width: 90%;
+    max-width: 100%;
+  }
+  app-input-date-p{
+    width: 90%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 280px; 
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  h2 {
+    font-size: 18px; 
+  }
+
+  p {
+    font-size: 9px; 
+  }
+
+  .input1 {
+    margin-bottom: 8px; 
+  }
+  app-input-paintings {
+    width: 90%;
+    max-width: 100%;
+  }
+  app-input-date-p{
+    width: 90%;
+    max-width: 100%;
+  }
+
+  app-button {
+    width: 60%;
+    margin-top: 10px; /* Reducir margen superior */
+  }
+}

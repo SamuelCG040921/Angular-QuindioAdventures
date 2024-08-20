@@ -74,6 +74,7 @@ footer {
     }
 }
 
+/* Media Queries para pantallas de hasta 768px */
 @media (max-width: 768px) {
     footer {
         flex-direction: column;
@@ -99,8 +100,9 @@ footer {
     }
 
     .second-part h2, .second-part p {
-        width: 100%;
+        width: 90%;
     }
+    
     .second-part div {
         display: flex;
         flex-direction: column;
@@ -108,5 +110,48 @@ footer {
     
     app-button {
         margin-top: 16px;
+    }
+}
+
+/* Media Queries para pantallas de hasta 480px */
+@media (max-width: 480px) {
+    footer {
+        padding: 13px; /* Reducir padding para pantallas muy pequeñas */
+    }
+
+    .first-part, .second-part {
+        min-width: 90%; 
+    }
+
+    .first-part {
+        justify-content: center;
+        margin: 10px 0; 
+        border-bottom: 1px solid white;
+    }
+
+    .first-part h3 {
+        font-size: 18px; 
+    }
+
+    .first-part p {
+        font-size: 10px;
+    }
+
+    .second-part h2 {
+        font-size: 20px; 
+    }
+
+    .second-part p {
+        font-size: 16px;
+    }
+    app-footer-logo{
+       margin-right: 50px;
+    }
+    app-footer-input, app-button {
+        width: 100%; /* Asegurar que el input y botón ocupen todo el ancho */
+    }
+
+    app-button {
+        margin-top: 10px; /* Reducir margen superior */
     }
 }
