@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { FeatureProfileRoutingModule } from './feature-profile-routing.module';
 import { FeatureProfileComponent } from './feature-profile.component';
 import { SharedModule } from '../../shared/shared.module';
@@ -31,7 +32,8 @@ import { MapComponent } from './components/map/map.component';
   imports: [
     CommonModule,
     FeatureProfileRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports: [
     FeatureProfileComponent

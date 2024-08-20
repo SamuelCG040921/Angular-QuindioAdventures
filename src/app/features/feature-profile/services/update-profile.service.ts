@@ -1,6 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import axios from 'axios';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,9 @@ import { Subject } from 'rxjs';
 export class UpdateService {
 
   private apiUrl = 'http://localhost:10101/updateProfile';
+  private apiImagesUrl = 'http://localhost:10101/api/images';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   async updateUserProfile(userData: any): Promise<any> {
     try {
@@ -24,6 +26,14 @@ export class UpdateService {
       console.error('Error al actualizar el perfil:', error);
       throw error;
     }
+  }
+
+  // Método para cargar archivos
+  uploadFiles(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    return this.http.post<any>(`${this.apiImagesUrl}/upload`, formData);
   }
 
   getToken(): string | null {

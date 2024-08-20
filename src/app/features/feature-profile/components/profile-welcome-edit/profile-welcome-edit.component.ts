@@ -51,7 +51,7 @@ export class ProfileWelcomeEditComponent {
 
   subirArchivo(): void {
     if (this.archivoCapturado) {
-      this.chaletService.uploadFiles(this.archivoCapturado).subscribe({
+      this.updateService.uploadFiles(this.archivoCapturado).subscribe({
         next: (response) => {
           console.log('Archivo subido exitosamente:', response);
           this.user.image = response.url; // Actualiza la imagen en el perfil localmente

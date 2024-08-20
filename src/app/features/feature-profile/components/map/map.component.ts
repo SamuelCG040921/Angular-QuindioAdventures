@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-map',
@@ -17,8 +17,40 @@ export class MapComponent implements OnInit {
 
   center: google.maps.LatLngLiteral = { lat: -34.397, lng: 150.644 };
 
+  @Output() locationVerified = new EventEmitter<boolean>();
+  direccion: any;
+
   ngOnInit(): void {
     this.loadMap();
+  }
+
+  addControls(): void {
+
+    this.response = document.createElement("pre");
+    this.response.id = "response";
+    this.response.innerText = "";
+
+    this.responseDiv = document.createElement("div");
+    this.responseDiv.id = "response-container";
+    this.responseDiv.appendChild(this.response);
+
+
+    this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(this.responseDiv);
+
+    // Event listeners
+  }
+
+  setupListeners(): void {
+    this.marker = new google.maps.Marker({ map: this.map });
+
+    this.map.addListener("click", (e: google.maps.MapMouseEvent) => {
+      this.geocode({ location: e.latLng });
+    });
+  }
+
+  clear(): void {
+    this.marker.setMap(null);
+    this.responseDiv.style.display = "none";
   }
 
   loadMap(): void {
@@ -43,75 +75,33 @@ export class MapComponent implements OnInit {
     this.clear();
   }
 
-  addControls(): void {
-    const inputText = document.createElement("input");
-    inputText.type = "text";
-    inputText.placeholder = "Ingresa una Ubicación";
-
-    const submitButton = document.createElement("input");
-    submitButton.type = "button";
-    submitButton.value = "Localizar";
-    submitButton.classList.add("button", "button-primary");
-
-    const clearButton = document.createElement("input");
-    clearButton.type = "button";
-    clearButton.value = "Limpiar";
-    clearButton.classList.add("button", "button-secondary");
-
-    this.response = document.createElement("pre");
-    this.response.id = "response";
-    this.response.innerText = "";
-
-    this.responseDiv = document.createElement("div");
-    this.responseDiv.id = "response-container";
-    this.responseDiv.appendChild(this.response);
-
-
-    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputText);
-    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(submitButton);
-    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(clearButton);
-    this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(this.responseDiv);
-
-    // Event listeners
-    submitButton.addEventListener("click", () => this.geocode({ address: inputText.value }));
-    clearButton.addEventListener("click", () => this.clear());
-  }
-
-  setupListeners(): void {
-    this.marker = new google.maps.Marker({ map: this.map });
-
-    this.map.addListener("click", (e: google.maps.MapMouseEvent) => {
-      this.geocode({ location: e.latLng });
-    });
-  }
-
-  clear(): void {
-    this.marker.setMap(null);
-    this.responseDiv.style.display = "none";
+  verifyLocation(address: string): void {
+    this.geocode({ address });
   }
 
   geocode(request: google.maps.GeocoderRequest): void {
     this.clear();
-
-    this.geocoder
-      .geocode(request)
+  
+    this.geocoder.geocode(request)
       .then((response: google.maps.GeocoderResponse) => {
         const { results } = response;
-
+  
         if (results.length > 0) {
           this.map.setCenter(results[0].geometry.location);
           this.marker.setPosition(results[0].geometry.location);
           this.marker.setMap(this.map);
-          // this.responseDiv.style.display = "block";
-          // this.response.innerText = JSON.stringify(results, null, 2);
+          this.locationVerified.emit(true);
         } else {
           this.openErrorAlert();
+          this.locationVerified.emit(false);
         }
       })
       .catch((e: any) => {
         this.openErrorAlert();
+        this.locationVerified.emit(false);
       });
   }
+  
 
   openErrorAlert(): void {
     this.isErrorAlertOpen = true;

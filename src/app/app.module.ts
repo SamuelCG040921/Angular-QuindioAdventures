@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';  // Importa ReactiveFormsModule
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FeatureReservesModule } from './features/feature-reserves/feature-reserves.module';
@@ -37,7 +38,8 @@ import { FeatureAdminModule } from './features/feature-admin/feature-admin.modul
     FeatureLoginModule,
     FeatureProfileModule,
     SharedModule,
-    FeatureAdminModule
+    FeatureAdminModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
