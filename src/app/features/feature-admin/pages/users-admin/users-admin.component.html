@@ -1,30 +1,67 @@
 <div class="admin">
-    <aside>
-        <div class="left">
-            <figure>
-                <app-logo></app-logo>
-            </figure>
-            <nav>
-                <div routerLink="/administration-home"class="link">
-                    <img src="../../../../../assets/icons/home 1.png" alt="">
-                    <p>Inicio</p>
-                </div>
-                <div routerLink="/administration-chalets" class="link">
-                    <img src="../../../../../assets/icons/image101.png" alt="">
-                    <p>Chalets</p>
-                </div>
-                <div routerLink="/administration-planes" class="link">
-                    <img src="../../../../../assets/icons/image103.png" alt="">
-                    <p>Planes</p>
-                </div>
-                <div id="users" routerLink="/administration-usuarios" class="link">
-                    <img src="../../../../../assets/icons/usuario (1).png" alt="">
-                    <p>Usuarios</p>
-                </div>
-            </nav>
-            <div class="logOut">
-                <button routerLink="/" (click)="authService.logout()"><img src="../../../assets/icons/out.svg" alt="">Cerrar sesion</button>
-            </div>
+    <div class="first-part">
+      <div class="containerLogo">
+        <button class="burger-menu" (click)="toggleMenu()">☰</button>
+        <div class="deployable-menu" [ngClass]="{'show': isMenuOpen}">
+          <div routerLink="/administration-home" class="link">
+            <img src="../../../../../assets/icons/home 1.png" alt="">
+            <p>Inicio</p>
+          </div>
+          <div routerLink="/administration-chalets" class="link">
+            <img src="../../../../../assets/icons/image101.png" alt="">
+            <p>Chalets</p>
+          </div>
+          <div routerLink="/administration-planes" class="link">
+            <img src="../../../../../assets/icons/image103.png" alt="">
+            <p>Planes</p>
+          </div>
+          <div id="users" routerLink="/administration-usuarios" class="link">
+            <img src="../../../../../assets/icons/usuario (1).png" alt="">
+            <p>Usuarios</p>
+          </div>
         </div>
+      </div>
+    </div>
+    <aside>
+      <div class="left">
+        <figure>
+          <app-logo></app-logo>
+        </figure>
+        <nav>
+          <div routerLink="/administration-home" class="link">
+            <img src="../../../../../assets/icons/home 1.png" alt="">
+            <p>Inicio</p>
+          </div>
+          <div routerLink="/administration-chalets" class="link">
+            <img src="../../../../../assets/icons/image101.png" alt="">
+            <p>Chalets</p>
+          </div>
+          <div routerLink="/administration-planes" class="link">
+            <img src="../../../../../assets/icons/image103.png" alt="">
+            <p>Planes</p>
+          </div>
+          <div id="users" routerLink="/administration-usuarios" class="link">
+            <img src="../../../../../assets/icons/usuario (1).png" alt="">
+            <p>Usuarios</p>
+          </div>
+        </nav>
+        <div class="logOut">
+          <button routerLink="/" (click)="authService.logout()">
+            <img src="../../../assets/icons/out.svg" alt="">Cerrar sesión
+          </button>
+        </div>
+      </div>
     </aside>
-</div>
+  
+    <div class="rightContent">
+      <app-admin-header></app-admin-header>
+      <div class="titleusers">
+        <h2 class="section-title">Usuarios</h2>
+        <figure class="linech"></figure>
+      </div>
+      <div class="catalogue-users">
+        <app-table-users></app-table-users>
+      </div>
+    </div>
+  </div>
+  

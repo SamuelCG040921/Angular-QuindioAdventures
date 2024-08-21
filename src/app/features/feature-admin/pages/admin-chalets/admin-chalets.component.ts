@@ -7,6 +7,12 @@ import { AuthService } from '../../../feature-login/services/auth.service';
   styleUrl: './admin-chalets.component.scss'
 })
 export class AdminChaletsComponent {
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
   user: any;
   isInputDisabled = true;
 

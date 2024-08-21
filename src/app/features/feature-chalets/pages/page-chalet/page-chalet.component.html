@@ -1,0 +1,14 @@
+<app-header *ngIf="!authService.estaActivo()"></app-header>
+<app-header-logueado *ngIf="authService.estaActivo()"></app-header-logueado>
+<div class="chaletContainer">
+    <app-reservation-paintings class="reservation-paintings"></app-reservation-paintings>
+    <img src="../../../../../assets/images/background-chalet.png" class="imgChalet">
+</div>
+<div class="titlePrincipal"><h2 class="principalTitle">¡Disfruta de los mejores chalets!</h2></div>
+<div class="title"><h2 class="section-title">Recomendados</h2><figure class="line2"></figure></div>
+<app-page-recommend></app-page-recommend>
+<div class="title2"><figure class="line3"></figure><h2 class="section-title2">Chalets</h2><figure class="line3"></figure></div>
+<app-chalet-cards></app-chalet-cards>
+<app-chalet-cards></app-chalet-cards>
+<app-footer></app-footer>
+

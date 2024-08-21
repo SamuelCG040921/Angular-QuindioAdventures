@@ -1,0 +1,13 @@
+<app-header *ngIf="!authService.estaActivo()"></app-header>
+<app-header-logueado *ngIf="authService.estaActivo()"></app-header-logueado>
+<div class="planContainer">
+    <app-reservation-paintings-plans class="reservationPlan"></app-reservation-paintings-plans>
+    <img src="../../../../../assets/images/background-plan.png" class="imgplan">
+</div>
+<div class="titlePrincipal"><h2 class="principalTitle">¡Elige el mejor plan vacacional!</h2></div>
+<div class="title"><h2 class="section-title">Recomendados</h2><figure class="line2"></figure></div>
+<app-page-recommend></app-page-recommend>
+<div class="title2"><figure class="line3"></figure><h2 class="section-title2">Planes Vacacionales</h2><figure class="line3"></figure></div>
+<app-plan-cards></app-plan-cards>
+<app-plan-cards></app-plan-cards>
+<app-footer></app-footer>

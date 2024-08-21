@@ -1,0 +1,134 @@
+.chatbot-icon {
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    right: 0px;
+    cursor: pointer;
+    justify-content: end;
+    z-index: 1000;
+}
+
+.chatbot-intro {
+    display: flex;
+    align-items: center;
+    margin: 10px 8px;
+    justify-content: end;
+    position: relative;
+    overflow: hidden;
+    max-width: 439px;
+}
+
+.intro-text {
+    font-size: 16px;
+    width: 40%;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.chatbot-intro:hover .intro-text {
+    opacity: 1;
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 1001; /* Debajo del icono */
+    background-color: white;
+}
+
+.chatbot-header {
+    background-color: #418E6D;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chatbot-body {
+    flex: 1;
+    padding: 10px;
+    background-color: #f7f7f7;
+    overflow-y: auto;
+}
+
+.modal-header .close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.modal-header .close-button img.iconClose {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.user-message, .bot-message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    width: auto;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow: hidden;
+}
+
+.bot-message {
+    background-color: #eaf3ee;
+    color: #000;
+    align-self: flex-start;
+}
+
+.user-message {
+    background-color: #c2dcd0;
+    color: #000;
+    align-self: flex-end;
+}
+
+.chatbot-footer {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chatbot-footer input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.chatbot-footer button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.chatbot-footer button img {
+    width: 24px;
+    height: 24px;
+}

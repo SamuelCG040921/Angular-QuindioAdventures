@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="container-arrow-izq">
+        <img class="arrow" src="../../../../../assets/icons/flecha-izquierda.png" alt="">
+    </div>
+    <div class="recommended-container">
+        <app-reserve-recommended-page *ngFor="let chalet of chalets;let i = index" [chalet]="chalet"></app-reserve-recommended-page>
+    </div>
+    <div class="container-arrow-der">
+        <img class="arrow" src="../../../../../assets/icons/flecha-derecha.png" alt="">
+    </div>
+</div>

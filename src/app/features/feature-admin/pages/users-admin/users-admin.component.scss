@@ -60,7 +60,10 @@ nav a{
     cursor: pointer;
     font-size: 15px;
 }
-
+.link:hover{
+    background-color: #d1e1d8;
+    cursor: pointer;
+}
 .link img{
     padding-left: 18px;
     width: 43px;
@@ -104,3 +107,44 @@ nav a{
     height: 23px;
     margin-right: 8px;
 }
+.rightContent{
+    width: 100%;
+}
+.titleusers figure{
+    height: 1px;
+    background-color: #418E6D;
+    margin: 0 10px; 
+}
+
+.titleusers{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top:40px;
+    margin-left: 90px;
+}
+
+.linech{
+    width: 406px;
+}
+.burger-menu{
+    background-color: #418E6D;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deployable-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80vh;
+    width: 25%;
+    border-right: 2px solid #418E6D;
+    background-color: #f0f0f0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
