@@ -210,3 +210,18 @@
 .partesUnidas{
     display: flex;
 }
+
+.containerInfo {
+    position: relative;
+
+    &.error {
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+    }
+}

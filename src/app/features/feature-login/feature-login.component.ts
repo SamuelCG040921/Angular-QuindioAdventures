@@ -62,7 +62,8 @@ export class FeatureLoginComponent implements OnInit {
 
       this.authService.getUserProfile().then(
         data => this.user = data,
-        err => console.error(err)
+        err => console.log(err)
+        
       );
       
     } else {

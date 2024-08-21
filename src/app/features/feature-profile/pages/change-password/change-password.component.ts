@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { ChangePasswordService } from '../../services/changepassword.service';
 import { ChangePassword } from '../../models/change-password.model';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -25,31 +25,35 @@ export class ChangePasswordComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Obtiene el token desde la URL
     this.token = this.route.snapshot.queryParamMap.get('token');
 
     this.changeForm = this.fb.group({
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', Validators.required],
-    });
+    }, { validator: this.comparePasswords });
 
     if (!this.token) {
-      // Si no hay token, redirige o muestra un mensaje de error
       console.error('Token no proporcionado');
     }
   }
 
-  openWarningAlert(): void {
-    this.isWarningAlertOpen = true;
-  }
-
-  closeWarningAlert(): void {
-    this.isWarningAlertOpen = false;
+  comparePasswords(control: AbstractControl): { [key: string]: boolean } | null {
+    const password = control.get('password');
+    const confirmPassword = control.get('confirmPassword');
+  
+    if (password?.value !== confirmPassword?.value) {
+      confirmPassword?.setErrors({ passwordsDontMatch: true });
+      return { passwordsDontMatch: true };
+    } else {
+      confirmPassword?.setErrors(null);
+    }
+  
+    return null;
   }
 
   isFieldInvalid(field: string): boolean {
     const control = this.changeForm.get(field);
-    return control ? !control.valid && (control.dirty || control.touched) : false;
+    return control ? control.invalid && (control.dirty || control.touched) : false;
   }
 
   async onSubmit() {
@@ -70,13 +74,20 @@ export class ChangePasswordComponent implements OnInit {
     } else {
       console.error('Formulario no es válido');
       this.changeForm.markAllAsTouched();
-      this.openWarningAlert();
+      this.openErrorAlert();
     }
   }
 
-  // Método para manejar la confirmación del modal
   onConfirmModal() {
-    this.onSubmit(); // Llama a la función onSubmit() cuando se confirma el modal
+    this.onSubmit();
+  }
+
+  openWarningAlert(): void {
+    this.isWarningAlertOpen = true;
+  }
+
+  closeWarningAlert(): void {
+    this.isWarningAlertOpen = false;
   }
 
   openErrorAlert(): void {

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { AuthService } from '../feature-login/services/auth.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { UpdateProfile } from './models/update-profile';
 import { UpdateService } from './services/update-profile.service';
 import { UserProfile } from './models/user-profile';
@@ -33,28 +33,23 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    // Inicializa el formulario con valores predeterminados
     this.updateForm = this.fb.group({
       name: ['', Validators.required],
       document: ['', Validators.required],
       lastName: ['', Validators.required],
-      age: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
+      age: ['', [Validators.required, Validators.min(1)]],
+      phoneNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
       address: ['', Validators.required],
-      email: ['', Validators.required],
-      image: [''] 
+      email: ['', [Validators.required, Validators.email]],
+      image: ['']
     });
   
-    // Desactiva el formulario al inicio
     this.updateForm.disable();
   
-    // Obtén el perfil del usuario
     this.authService.getUserProfile().then(
       (data: UserProfile) => {
-        console.log('Datos del usuario:', data); // Verifica los datos del usuario
+        console.log('Datos del usuario:', data);
         this.user = data;
-  
-        // Actualiza los valores del formulario con los datos del usuario
         this.updateForm.patchValue({
           name: this.user.name,
           document: this.user.document,
@@ -73,50 +68,47 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     if (this.profileWelcomeEditComponent) {
       this.profileWelcomeEditComponent.imageUrlUpdated.subscribe((imageUrl: string) => {
-        console.log('Received image URL:', imageUrl); // Verifica la URL recibida
+        console.log('Received image URL:', imageUrl);
         this.updateForm.patchValue({ image: imageUrl });
       });
     }
   }
 
   onSubmit() {
-  if (this.updateForm.valid) {
-    const updateData = new UpdateProfile(
-      this.updateForm.value.name,
-      this.updateForm.value.document,
-      this.updateForm.value.lastName,
-      this.updateForm.value.age,
-      this.updateForm.value.phoneNumber,
-      this.updateForm.value.address,
-      this.updateForm.value.email,
-      this.updateForm.value.image // Asegúrate de incluir la URL de la imagen
-    );
+    if (this.updateForm.valid) {
+      const updateData = new UpdateProfile(
+        this.updateForm.value.name,
+        this.updateForm.value.document,
+        this.updateForm.value.lastName,
+        this.updateForm.value.age,
+        this.updateForm.value.phoneNumber,
+        this.updateForm.value.address,
+        this.updateForm.value.email,
+        this.updateForm.value.image
+      );
 
-    console.log('Update Data:', updateData); // Verifica los datos de actualización
-    
-    this.updateService.updateUserProfile(updateData).then(
-      response => {
-        console.log('Actualización exitosa:', response);
-        this.openUpdateSuccessAlert();
-
-        // Recarga la página después de la actualización exitosa
-        setTimeout(() => {
-          window.location.reload();
-        }, 1300); // Se espera 2 segundos antes de recargar la página
-
-      }
-    ).catch(
-      error => {
-        console.error('Error de actualización:', error);
-        this.openErrorAlert();
-      }
-    );
-  } else {
-    console.error('Formulario no es válido');
-    this.openErrorAlert();
-    this.updateForm.markAllAsTouched();
+      console.log('Update Data:', updateData);
+      
+      this.updateService.updateUserProfile(updateData).then(
+        response => {
+          console.log('Actualización exitosa:', response);
+          this.openUpdateSuccessAlert();
+          setTimeout(() => {
+            window.location.reload();
+          }, 1300);
+        }
+      ).catch(
+        error => {
+          console.error('Error de actualización:', error);
+          this.openErrorAlert();
+        }
+      );
+    } else {
+      console.error('Formulario no es válido');
+      this.openErrorAlert();
+      this.updateForm.markAllAsTouched();
+    }
   }
-}
 
   habilitarInput() {
     Object.keys(this.updateForm.controls).forEach(field => {
@@ -142,6 +134,20 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
   isFieldInvalid(field: string): boolean {
     const control = this.updateForm.get(field);
     return control ? !control.valid && (control.dirty || control.touched) : false;
+  }
+
+  getErrorMessage(field: string): string {
+    const control = this.updateForm.get(field);
+    if (control?.hasError('required')) {
+      return 'Este campo es obligatorio';
+    } else if (control?.hasError('min')) {
+      return 'La edad debe ser mayor a 0';
+    } else if (control?.hasError('pattern')) {
+      return 'El teléfono debe tener 10 dígitos';
+    } else if (control?.hasError('email')) {
+      return 'Correo no válido';
+    }
+    return '';
   }
 
   enviarCorreo() {
