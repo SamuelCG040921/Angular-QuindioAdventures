@@ -220,3 +220,48 @@ button:active{
 button:focus-visible{
     outline: 2px solid #1E4433;
 }
+@media ((max-width: 480px) and (min-width: 352px)) {
+    h1{
+        font-size: 26px
+    }
+    .leftPart {
+      width: 100vw; /* Ocupa todo el ancho en pantallas pequeñas */
+      min-width: 0px;
+    }
+    .rightPart {
+      display: none; /* Ocultar la parte derecha en pantallas pequeñas */
+    }
+    .containerLogo img {
+      width: 100%; /* Reducir el tamaño de la imagen */
+      height: 100%;
+    }
+    .containerForm{
+        width: 100%;
+    }
+    form{
+        width: 100%;
+    }
+    #input1, #input2 {
+        width: 17rem; /* Ajustar el ancho al 80% del contenedor */
+    }
+    .containerForgot{
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .leftPart {
+        width: 100vw; /* Ocupa todo el ancho en pantallas pequeñas */
+        min-width: 0px;
+      }
+    .login {
+      flex-direction: column;
+      min-width: 0px;
+    }
+    .rightPart{
+        display: none;
+    }
+    .containerLogo img {
+      width: 80%;
+    }
+  }
