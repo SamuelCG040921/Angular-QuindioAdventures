@@ -20,6 +20,7 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
   isSendingEmail: boolean = false;
   isAlertOpen = false;
   isErrorAlertOpen = false;
+  isErrorAlertOpen2 = false;
   isWarningAlertOpen = false;
   isUpdateSuccessAlertOpen = false;
 
@@ -61,7 +62,8 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
           image: this.user.image
         });
       },
-      err => console.error(err)
+      err => this.openErrorAlert2()
+      
     );
   }
 
@@ -181,8 +183,16 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
     this.isErrorAlertOpen = true;
   }
 
+  openErrorAlert2(): void {
+    this.isErrorAlertOpen2 = true;
+  }
+
   closeErrorAlert(): void {
     this.isErrorAlertOpen = false;
+  }
+
+  closeErrorAlert2(): void {
+    this.isErrorAlertOpen2 = false;
   }
 
   openWarningAlert(): void {
