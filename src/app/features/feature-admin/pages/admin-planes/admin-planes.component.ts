@@ -13,6 +13,10 @@ export class AdminPlanesComponent {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+  disguiseMenu(){
+    this.isMenuOpen = false;
+  }
+
   user: any;
   isInputDisabled = true;
 

@@ -16,6 +16,7 @@ export class UsersAdminComponent {
   disguiseMenu(){
     this.isMenuOpen = false;
   }
+  
   user: any;
   isInputDisabled = true;
 

@@ -13,6 +13,9 @@ export class AdminChaletsComponent {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+  disguiseMenu(){
+    this.isMenuOpen = false;
+  }
   user: any;
   isInputDisabled = true;
 

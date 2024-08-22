@@ -12,6 +12,10 @@ export class FeatureAdminComponent implements OnInit {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+
+  disguiseMenu(){
+    this.isMenuOpen = false;
+  }
   user: any;
   users: any[] = []; // Añadimos la propiedad `users` para almacenar la lista de usuarios
   isInputDisabled = true;

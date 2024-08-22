@@ -76,35 +76,6 @@ nav a{
     cursor: pointer;
 }
 
-.logOut{
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    width: 100%;
-}
-
-.logOut button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 65%;
-    min-width: 50%;
-    height: 70px;
-    border-radius: 15px;
-    border: 1px solid #275843;
-    background-color: #275843;
-    color: white;
-    margin-top: 20px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.logOut button img{
-    width: 23px;
-    height: 23px;
-    margin-right: 8px;
-}
-
 .rightContent{
     display: flex;
     flex-direction: column;
@@ -257,17 +228,12 @@ nav a{
     top: 0;
     left: 0;
     height: 100vh;
-    width: 80%;
-    max-width: 350px;
+    width: 25%;
+    border-right: 2px solid #418E6D;
+    background-color: #f0f0f0;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
     z-index: 11;
-    border-right: 2px solid #418E6D;
-    background-color: #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 10px;
   }
   
   .deployable-menu li {
@@ -288,7 +254,36 @@ nav a{
     color:#418E6D;
   }
 
-  .deployable-menu button{
+  .logOut{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+}
+
+.logOut button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    min-width: 50%;
+    height: 70px;
+    border-radius: 15px;
+    border: 1px solid #275843;
+    background-color: #275843;
+    color: white;
+    margin-top: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.logOut button img{
+    width: 23px;
+    height: 23px;
+    margin-right: 8px;
+}
+
+.disguiseButton{
     width: 30px;
     height: 30px;
     border: none;
@@ -296,7 +291,7 @@ nav a{
     background-color: #418E6D;
     border-radius: 5px;
     font-size: 16px;
-  }
+}
 @media (min-width: 769px) and (max-width: 920px) {
     .left{
         display: none;
@@ -326,6 +321,11 @@ nav a{
         width: auto;
     }
 
+    .logOut button{
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 14px;
+    }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -352,6 +352,12 @@ nav a{
 
     .containerLogo .burger-menu{
         margin-right: 20px;
+    }
+
+    .logOut button{
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 12px;
     }
 }
 
@@ -389,5 +395,11 @@ nav a{
 
     .searchBar{
         padding-top: 0;
+    }
+
+    .logOut button{
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 10px;
     }
 }

@@ -2,24 +2,17 @@
     <div class="first-part">
         <div class="containerLogo">
           <button class="burger-menu" (click)="toggleMenu()">☰</button>
-          <ul class="deployable-menu" [ngClass]="{'show': isMenuOpen}">
-            <div routerLink="/administration-home" class="link">
-              <img src="../../../../../assets/icons/home 1.png" alt="">
-              <p>Inicio</p>
-            </div>
-            <div routerLink="/administration-chalets" class="link">
-              <img src="../../../../../assets/icons/image101.png" alt="">
-              <p>Chalets</p>
-            </div>
-            <div routerLink="/administration-planes" class="link">
-              <img src="../../../../../assets/icons/image103.png" alt="">
-              <p>Planes</p>
-            </div>
-            <div id="users" routerLink="/administration-usuarios" class="link">
-              <img src="../../../../../assets/icons/usuario (1).png" alt="">
-              <p>Usuarios</p>
-            </div>
-          </ul>
+            <ul class="deployable-menu" [ngClass]="{'show': isMenuOpen}">
+                <li><button class="disguiseButton" (click)="disguiseMenu()">X</button></li>
+                <li> <a routerLink="/administration-home">Inicio</a></li>
+                <li><a routerLink="/administration-chalets">Chalets</a></li>
+                <li><a routerLink="/administration-planes">Planes</a></li>
+                <li><a routerLink="/administration-usuarios">Usuarios</a></li>
+                <li><div class="logOut">
+                  <button routerLink="/" (click)="authService.logout()"><img src="../../../assets/icons/out.svg" alt="">Cerrar sesion</button>
+              </div>
+            </li>
+            </ul>
         </div>
       </div>
     <aside>
