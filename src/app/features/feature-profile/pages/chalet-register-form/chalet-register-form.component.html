@@ -9,9 +9,11 @@
             <input id="nombre" placeholder="Ingresa el nombre de tu chalet" class="nombrechalet" type="text" [formControlName]="'nombre'">
             <label for="direccion">Dirección</label>
             <input id="direccion" #direccionInput placeholder="Ingresa la ubicación de tu chalet" type="text" class="direccionInput" [formControlName]="'ubicacion'">
-            <button type="button" (click)="verificarUbicacion(direccionInput.value)">Verificar Ubicacion</button>
-            <label for="">Visualizar dirección</label>
-            <app-map></app-map>
+            <div class="containerButtonVerify">
+              <button class="buttonVerify" type="button" (click)="verificarUbicacion(direccionInput.value)">Verificar Ubicacion</button>
+            </div>
+            <label for="" class="titleView">Visualizar dirección</label>
+            <app-map class="map"></app-map>
         </div>
         <div class="columnaImagen">
             <img class="imgPrincipal" [src]="previsualizacion" alt="">
@@ -108,7 +110,7 @@
             id="temporada"
             formControlName="temporada"
           >
-            <option value="" disabled selected hidden>Selecciona la temporada</option>
+            <option value="Selecciona la temporada" disabled selected hidden>Selecciona la temporada</option>
             <option value="Alta">Alta</option>
             <option value="Media">Media</option>
             <option value="Baja">Baja</option>
@@ -123,7 +125,7 @@
               id="tipohab"
               formControlName="tipohabitacion"
             >
-              <option value="" disabled selected hidden>Selecciona el tipo de habitación</option>
+              <option value="Selecciona el tipo de habitación" disabled selected hidden>Selecciona el tipo de habitación</option>
               <option value="Habitación sencilla">Habitación sencilla</option>
               <option value="Habitación doble">Habitación doble</option>
               <option value="Habitación cuadruple">Habitación cuadruple</option>
@@ -132,15 +134,15 @@
             </select>
           </div>
         </div>
-        <button type="button" (click)="guardarTarifa()">Guardar Tarifa</button>
+        <button type="button" (click)="guardarTarifa()" class="saveFee">Guardar Tarifa</button>
       </div>
     
       <div formArrayName="tarifas" class="listaTarifas">
         <h4>Tarifas Agregadas:</h4>
         <ul>
           <li *ngFor="let tarifa of tarifasControls; let i = index">
-            <span>{{ tarifa.get('tipohabitacion')?.value }} - {{ tarifa.get('precio')?.value }} - {{ tarifa.get('temporada')?.value }}</span>
-            <button type="button" (click)="eliminarTarifa(i)">
+            <span class="feeInfo">{{ tarifa.get('tipohabitacion')?.value }} - {{ tarifa.get('precio')?.value }} - {{ tarifa.get('temporada')?.value }}</span>
+            <button class="deleteFee" type="button" (click)="eliminarTarifa(i)">
               <img src="../../../../../assets/icons/bote-de-basura.png" alt="Eliminar" />
             </button>
           </li>

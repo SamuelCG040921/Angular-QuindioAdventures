@@ -371,6 +371,10 @@
 
 .button{
     margin-bottom: 40px;
+    box-shadow: none;
+    padding: 0;
+    border: none;
+    margin-top: 40px;
 }
 
 .columnaImagen{
@@ -467,10 +471,10 @@
   .listaTarifas li {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5px;
-    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    background-color: #D1E1D8;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     align-items: center;
   }
   
@@ -478,4 +482,47 @@
     cursor: pointer;
     width: 20px;
     height: 20px;
+  }
+
+  .titleView{
+    margin-top: 40px;
+  }
+
+  .map{
+    margin-bottom: 40px;
+  }
+
+  .buttonVerify{
+    background-color: #275843;
+    color: #fff;
+    width: 180px;
+    height: 40px    ;
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .containerButtonVerify{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .saveFee{
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    background-color: #275843;
+    color: #fff;
+  }
+
+  .deleteFee{
+    background-color: transparent;
+    border: none;
+  }
+
+  .feeInfo{
+    margin-right: 20px;
+    margin-left: 10px;
   }
