@@ -81,3 +81,73 @@
     color: #418E6D;
     text-decoration: none;
 }
+/* Existing styles remain unchanged */
+
+@media (min-width: 769px) and (max-width: 920px) {
+    .containerInfo p {
+        width: 80%; /* Adjust text width for medium-sized screens */
+    }
+    
+    .containerLeft {
+        width: 45%; 
+        font-size: 14px;
+    }
+
+    .containerFinalText .textLink {
+        width: 60%; /* Adjust the width of the final text */
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .containerInfo {
+        width: 100%;
+        font-size: 14px;
+    }
+    .containerLeft {
+        width: 80%; /* Stack containers vertically on tablets */
+        margin-bottom: 20px; /* Add spacing between stacked containers */
+        font-size: 14px;
+    }
+
+    .containerSecond {
+        flex-direction: column;
+        align-items: center; /* Center containers */
+    }
+
+    .containerFinalText .textLink {
+        width: 80%; /* Adjust the width of the final text */
+    }
+}
+
+@media (min-width: 352px) and (max-width: 480px) {
+    .tittle1{
+        font-size: 16px;
+    }
+    .containerInfo {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .containerLeft {
+        width: 72%; /* Full width for small devices */
+        margin-bottom: 20px; /* Add spacing between stacked containers */
+        font-size: 12px;
+    }
+
+    .containerSecond {
+        flex-direction: column;
+        align-items: center; /* Center containers */
+    }
+
+    .containerFinalText .textLink {
+        width: 90%; /* Adjust the width of the final text */
+    }
+
+    .tittle1 p {
+        font-size: 22px; /* Adjust title size for small screens */
+    }
+
+    .containerFinalText p {
+        font-size: 12px; /* Adjust final text size for small screens */
+    }
+}
