@@ -56,3 +56,24 @@ app-profile-img{
     width: 25%;
     min-width: 70px;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+    .search input{
+        width: 50%;
+        min-width: 190px;
+    }
+    app-profile-button{
+        width: 50%;
+    }
+}
+@media (min-width: 352px) and (max-width: 480px) {
+    .search input{
+    width: 30%;
+    min-width: 152px;
+}
+app-profile-button{
+    width: 60%;
+}
+header{
+    width: 130%;
+}
+}

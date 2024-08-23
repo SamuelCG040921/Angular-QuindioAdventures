@@ -24,7 +24,6 @@ aside{
     width: 100%;
     min-width: 280px;
 }
-
 figure{
     display: flex;
     justify-content: center;
@@ -208,7 +207,7 @@ nav a{
 
 .chalet img{
     border-radius: 10px;
-    width: 38%;
+    width: 34%;
     height: 80%;
     margin-right: 20px;
 }
@@ -293,13 +292,26 @@ nav a{
     font-size: 16px;
 }
 @media (min-width: 769px) and (max-width: 920px) {
+    aside {
+        display: none; /* Hides the aside element */
+    }
+
+    .rightContent {
+        width: 100%; /* Make sure rightContent takes up the full width */
+    }
     .left{
         display: none;
     }
     .first-part{
-        margin-bottom: 30px;
+       display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 8vh;
+        padding-left: 10px;
     }
-
+    .chalet{
+        width: 100%;
+    }
     .burger-menu{
         display: block;
     }
@@ -309,8 +321,7 @@ nav a{
     }
 
     .containerLogo{
-        display: flex;
-        margin: 0%;
+        justify-content: center;
     }
 
     .containerLogo .burger-menu{
@@ -329,77 +340,175 @@ nav a{
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
+    aside {
+        display: none; /* Hides the aside element */
+    }
+
+    .rightContent {
+        display: block;
+        width: 100%; /* Make sure rightContent takes up the full width */
+        overflow-y: auto; /* Adds a scrollbar if the content overflows */
+        padding-top: 10vh; /* Ensures the content doesn't go under the header */
+        box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+    }
+
     .left{
         display: none;
     }
-    .first-part{
+
+    .first-part {
         margin-bottom: 30px;
         width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 5px;
+        position: fixed; /* Fix the header at the top */
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Ensures the header stays on top */
+        background-color: white; /* Matches background to avoid transparency issues */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for separation */
     }
 
-    .burger-menu{
+    .burger-menu {
         display: block;
         margin-left: 20px;
     }
 
-    .nav1{
+    .nav1 {
         display: none;
     }
 
-    .containerLogo{
+    .containerLogo {
         display: flex;
     }
 
-    .containerLogo .burger-menu{
+    .containerLogo .burger-menu {
         margin-right: 20px;
     }
 
-    .logOut button{
+    .logOut button {
         padding-left: 10px;
         padding-right: 10px;
         font-size: 12px;
     }
-}
 
-@media (min-width: 352px) and (max-width: 480px) {
-    .left{
-        display: none;
+    .search {
+        width: 54%;
+        min-width: 195px;
     }
-    .first-part{
-        margin-bottom: 30px;
+
+    .imgInicio p {
+        font-size: 160%;
+    }
+
+
+    .contentModifi {
         flex-direction: column;
     }
 
-    .burger-menu{
-        display: block;
+    .catalogueChalets {
+        margin-top: 20px;
+        width: 70%;
     }
 
-    .nav1{
+    .info {
+        justify-content: flex-start;
+    }
+    .containerUsers{
+        margin-left: 40px;
+    }
+    .deployable-menu.show{
+        width: 46%;
+    }
+       
+}
+
+
+@media (min-width: 352px) and (max-width: 480px) {
+    aside {
+        display: none; /* Hides the aside element */
+    }
+
+    .rightContent {
+        width: 100%; /* Make sure rightContent takes up the full width */
+        overflow-y: auto; /* Adds a scrollbar if the content overflows */
+        padding-top: 10vh; /* Ensures the content doesn't go under the header */
+        box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+    }
+
+    .left{
         display: none;
     }
 
-    .containerLogo{
+    .first-part {
+        margin-bottom: 30px;
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 5px;
+        position: fixed; /* Fix the header at the top */
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Ensures the header stays on top */
+        background-color: white; /* Matches background to avoid transparency issues */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for separation */
+    }
+
+    .burger-menu {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .nav1 {
+        display: none;
+    }
+
+    .containerLogo {
         display: flex;
     }
 
-    .containerLogo .burger-menu{
+    .containerLogo .burger-menu {
         margin-right: 20px;
     }
-    .deployable-menu a{
+
+    .logOut button {
+        padding-left: 10px;
+        padding-right: 10px;
         font-size: 12px;
     }
 
-    .deployable-menu{
-        width: 40%;
+    .search {
+        width: 54%;
+        min-width: 195px;
     }
 
-    .searchBar{
-        padding-top: 0;
+    .imgInicio p {
+        font-size: 160%;
     }
 
-    .logOut button{
-        padding-left: 10px;
-        padding-right: 10px;
-        font-size: 10px;
+    .contentModifi {
+        flex-direction: column;
     }
+
+    .catalogueChalets {
+        margin-top: 20px;
+        width: 70%;
+    }
+
+    .info {
+        justify-content: flex-start;
+    }
+    .containerUsers{
+        margin-left: 40px;
+    }
+    .deployable-menu.show{
+        width: 46%;
+    }
+       
+
 }
