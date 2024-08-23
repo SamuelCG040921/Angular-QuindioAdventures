@@ -309,28 +309,6 @@
       "img2": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/297213586.jpg?k=37d1845490a401529093670a423f214f785d772b316c3918bcf6847e5ae486e2&o=&hp=1",
       "img3": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/297219285.jpg?k=29a8503c49116992cf74a9c4e935edb88882a9db02c5ffa68d1611fe412941eb&o=&hp=1",
       "id": "7b52"
-    },
-    {
-      "codigo": 3,
-      "nombre": "Finca Hotel NaviaGOD",
-      "descripcion": "Finca Hotel El Sendero te ofrece confortables habitaciones, con las comodidades y los servicios necesarios para el descanso, lo que hará tu estadía una experiencia inolvidable, rodeada de bienestar y tranquilidad.",
-      "ubicacion": "Quimbaya,Quindío",
-      "imgPrincipal": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/294543537.jpg?k=885414db523398af7414566f34c1036a2b11d2d62e039f35b9fc25b51f9b7d1c&o=&hp=1",
-      "img1": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/174840074.jpg?k=66ee0006465a96ae671dddf2fc522d6aaad458fe1656e60f507d1a6599c6fc58&o=&hp=1",
-      "img2": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/297213586.jpg?k=37d1845490a401529093670a423f214f785d772b316c3918bcf6847e5ae486e2&o=&hp=1",
-      "img3": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/297219285.jpg?k=29a8503c49116992cf74a9c4e935edb88882a9db02c5ffa68d1611fe412941eb&o=&hp=1",
-      "id": "7b52"
-    },
-    {
-      "codigo": 3,
-      "nombre": "Finca Hotel Manuela Estreñida",
-      "descripcion": "Finca Hotel El Sendero te ofrece confortables habitaciones, con las comodidades y los servicios necesarios para el descanso, lo que hará tu estadía una experiencia inolvidable, rodeada de bienestar y tranquilidad.",
-      "ubicacion": "Quimbaya,Quindío",
-      "imgPrincipal": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/294543537.jpg?k=885414db523398af7414566f34c1036a2b11d2d62e039f35b9fc25b51f9b7d1c&o=&hp=1",
-      "img1": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/174840074.jpg?k=66ee0006465a96ae671dddf2fc522d6aaad458fe1656e60f507d1a6599c6fc58&o=&hp=1",
-      "img2": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/297213586.jpg?k=37d1845490a401529093670a423f214f785d772b316c3918bcf6847e5ae486e2&o=&hp=1",
-      "img3": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/297219285.jpg?k=29a8503c49116992cf74a9c4e935edb88882a9db02c5ffa68d1611fe412941eb&o=&hp=1",
-      "id": "7b52"
     }
   ],
   "planes": [

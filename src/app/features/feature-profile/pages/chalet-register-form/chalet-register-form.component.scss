@@ -68,7 +68,7 @@
     border: none;
     border-radius: 15px;
     background-color: #D1E1D8;
-    width: 741px;
+    width: 690px;
     height: 105px;
     padding-left: 20px;
 }
@@ -302,6 +302,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 .subtitle{
@@ -313,7 +314,9 @@
 .field{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .inputContainer{
@@ -322,7 +325,32 @@
     justify-content: space-between;
 }
 
+.inputContainer2{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputContainer, .inputContainer2 {
+    margin-right: 10px;
+}
+
+.inputHabtype{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .inputHab{
+    width: 295px;
+    height: 40px;
+    border-radius: 15px;
+    background-color:#D1E1D8;
+    border: none;
+    padding-left: 20px;
+}
+
+.inputHab2{
     width: 295px;
     height: 40px;
     border-radius: 15px;
@@ -343,6 +371,10 @@
 
 .button{
     margin-bottom: 40px;
+    box-shadow: none;
+    padding: 0;
+    border: none;
+    margin-top: 40px;
 }
 
 .columnaImagen{
@@ -415,3 +447,82 @@
 	font-weight:normal;
 }
 
+.direccionInput{
+    border: none;
+    border-radius: 15px;
+    background-color: #D1E1D8;
+    height: 48px;
+    width: 350px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.guardarButton{
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.listaTarifas ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .listaTarifas li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #D1E1D8;
+    padding: 10px;
+    border-radius: 15px;
+    align-items: center;
+  }
+  
+  .listaTarifas img {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+
+  .titleView{
+    margin-top: 40px;
+  }
+
+  .map{
+    margin-bottom: 40px;
+  }
+
+  .buttonVerify{
+    background-color: #275843;
+    color: #fff;
+    width: 180px;
+    height: 40px    ;
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .containerButtonVerify{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .saveFee{
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    background-color: #275843;
+    color: #fff;
+  }
+
+  .deleteFee{
+    background-color: transparent;
+    border: none;
+  }
+
+  .feeInfo{
+    margin-right: 20px;
+    margin-left: 10px;
+  }

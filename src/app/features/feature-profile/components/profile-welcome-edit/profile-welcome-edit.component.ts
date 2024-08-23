@@ -1,65 +1,69 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../../../feature-login/services/auth.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ChaletService } from '../../services/chalet.service';
+import { UpdateService } from '../../services/update-profile.service';
 
 @Component({
   selector: 'app-profile-welcome-edit',
   templateUrl: './profile-welcome-edit.component.html',
-  styleUrl: './profile-welcome-edit.component.scss'
+  styleUrls: ['./profile-welcome-edit.component.scss']
 })
 export class ProfileWelcomeEditComponent {
   @Input() buttonVisible: boolean = false;
+  @Output() imageUrlUpdated = new EventEmitter<string>(); // Agrega un EventEmitter para enviar la URL de la imagen
   user: any;
   isInputDisabled = true;
-  public previsualizacion:string = '../../../../../assets/images/profile-default.webp';
-  public archivos: any = []
+  public previsualizacion: string = '../../../../../assets/images/profile-default.webp';
+  public archivoCapturado: File | null = null;
 
-  habilitarInput() {
-    this.isInputDisabled = false;
-  }
-
-  constructor(public authService: AuthService, private sanitizer: DomSanitizer) {}
+  constructor(public authService: AuthService, private sanitizer: DomSanitizer, private chaletService: ChaletService, private updateService: UpdateService) {}
 
   ngOnInit() {
     this.authService.getUserProfile().then(
-      data => this.user = data,
+      data => {
+        this.user = data;
+        if (this.user.image) {
+          this.previsualizacion = this.user.image;
+        }
+      },
       err => console.error(err)
     );
   }
 
-  capturarFile(event: any): any{
-    const archivoCapturado = event.target.files[0];
-    this.extraerBase64(archivoCapturado).then((imagen:any) =>{
-      this.previsualizacion = imagen.base;
-      console.log(imagen)
-    })
-    //this.archivos.push(archivoCapturado)
+  capturarFile(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const archivo = input.files?.[0];
+    if (archivo) {
+      this.archivoCapturado = archivo;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.previsualizacion = e.target?.result as string;
+      };
+      reader.readAsDataURL(archivo);
+
+      this.subirArchivo();
+    } else {
+      console.log('No se ha seleccionado ningún archivo');
+    }
   }
 
-  extraerBase64 = async ($event: any): Promise<any> => {
-    return new Promise((resolve, reject) => {
-      try {
-        const unsafeImg = window.URL.createObjectURL($event);
-        const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
-        const reader = new FileReader();
-        reader.readAsDataURL($event);
-        reader.onload = () => {
-          resolve({
-            base: reader.result
-          });
-        };
-        reader.onerror = error => {
-          resolve({
-            base: null
-          });
-        };
-      } catch (e) {
-        resolve({
-          base: null
-        });
-      }
-    });
+  subirArchivo(): void {
+    if (this.archivoCapturado) {
+      this.updateService.uploadFiles(this.archivoCapturado).subscribe({
+        next: (response) => {
+          console.log('Archivo subido exitosamente:', response);
+          this.user.image = response.url; // Actualiza la imagen en el perfil localmente
+          this.previsualizacion = response.url;
+          this.imageUrlUpdated.emit(response.url); // Emitir la URL de la imagen
+        },
+        error: (error) => {
+          console.error('Error al subir archivo:', error);
+        }
+      });
+    } else {
+      console.log('No se ha seleccionado ningún archivo para subir');
+    }
   }
-
-
 }

@@ -1,14 +1,25 @@
 <div class="modal-overlay" (click)="closeModal()">
-    <div class="modal-container" (click)="$event.stopPropagation()">
-      <div class="modal-header">
-        <button (click)="closeModal()"><img class="iconClose"  src="../../../../../assets/icons/x.svg"></button>
-      </div>
-      <div class="modal-content">
-        <h2 class="title">Enviar correo para cambio de contraseña</h2>
-        <form>
-            <label for="email">Correo</label>
-            <input type="email" placeholder="Ingresa tu correo">
-            <app-button class="button" type="submit" label="Enviar"></app-button>
-        </form>
-      </div>
+  <div class="modal-container" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <button (click)="closeModal()">
+        <img class="iconClose" src="../../../../../assets/icons/x.svg" alt="Close">
+      </button>
+    </div>
+    <div class="modal-content">
+      <h2 class="title">Enviar correo para cambio de contraseña</h2>
+      <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+        <label for="email">Correo</label>
+        <input type="email" placeholder="Ingresa tu correo" formControlName="email">
+        <!-- <div *ngIf="isFieldInvalid('email')" class="error-message">El correo es requerido y debe ser válido</div> -->
+        <app-button class="button" type="submit" label="Enviar"></app-button>
+        <app-messages-succesful 
+          title="A su correo se envió el link para el cambio de contraseña" 
+          *ngIf="isAlertOpen" 
+          (close)="closeAlert()">
+        </app-messages-succesful>
+        <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar el envío, verifique el correo" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()">
+        </app-messages-error>
+      </form>
+    </div>
   </div>
+</div>

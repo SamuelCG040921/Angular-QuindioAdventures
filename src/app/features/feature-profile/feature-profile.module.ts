@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { FeatureProfileRoutingModule } from './feature-profile-routing.module';
 import { FeatureProfileComponent } from './feature-profile.component';
 import { SharedModule } from '../../shared/shared.module';
@@ -12,6 +13,7 @@ import { ProfileDataComponent } from './pages/profile-data/profile-data.componen
 import { ProfileWelcomeEditComponent } from './components/profile-welcome-edit/profile-welcome-edit.component';
 import { PlansProfileComponent } from './pages/plans-profile/plans-profile.component';
 import { ChaletsProfileComponent } from './pages/chalets-profile/chalets-profile.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,14 @@ import { ChaletsProfileComponent } from './pages/chalets-profile/chalets-profile
     ProfileDataComponent,
     ProfileWelcomeEditComponent,
     PlansProfileComponent,
-    ChaletsProfileComponent
+    ChaletsProfileComponent,
+    MapComponent
   ],
   imports: [
     CommonModule,
     FeatureProfileRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports: [
     FeatureProfileComponent

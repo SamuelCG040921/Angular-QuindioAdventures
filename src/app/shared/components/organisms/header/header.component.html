@@ -2,6 +2,17 @@
     <div class="containerFirst">
         <div class="first-part">
             <div class="containerLogo">
+                <button class="burger-menu" (click)="toggleMenu()">☰</button>
+                <ul class="deployable-menu" [ngClass]="{'show': isMenuOpen}">
+                    <li><button (click)="disguiseMenu()">X</button></li>
+                    <li> <a routerLink="/">Inicio</a></li>
+                    <li><a routerLink="/chalets">Chalets</a></li>
+                    <li><a routerLink="/planes-vacacionales">Planes vacacionales</a></li>
+                    <li><a routerLink="/login">Tus reservas</a></li>
+                    <li><a routerLink="/login">Registra tu chalet</a></li>
+                    <li><a routerLink="/login">Registra tu plan</a></li>
+                    <li><a routerLink="/">¿Qué hacer?</a></li>
+                </ul>
                 <app-logo></app-logo>
             </div>
             <div class="containerOpc">
@@ -10,7 +21,7 @@
                         <a routerLink="queHacer" id="primero">¿Que hacer?</a>
                     </div>
                     <div class="containerSegundo">
-                        <p id="segundo">Registra tu <a id="chalet" routerLink="/create-chalet">chalet</a> o <a id="plan" routerLink="/create-plan"> plan</a></p>
+                        <p id="segundo">Registra tu <a id="chalet" routerLink="/login">chalet</a> o <a id="plan" routerLink="/login"> plan</a></p>
                     </div>
                 </div>
                 <div class="containerMoneda">
@@ -27,6 +38,6 @@
         <app-search-bar></app-search-bar>
     </div>
     <div class="nav">
-        <app-nav></app-nav>
+        <app-nav class="nav1"></app-nav>
     </div>
 </header>

@@ -1,16 +1,19 @@
 <app-profile-header></app-profile-header>
 <app-profile-welcome></app-profile-welcome>
-<form class="formulario">
+<form class="formulario" [formGroup]="chaletForm" (ngSubmit)="onSubmit()">
 <div class="containerFormulario">
     <h2 class="title">Registrar chalet</h2>
     <div class="parte1">
         <div class="uno">
-            <label for="">Nombre del chalet</label>
-            <input class="nombrechalet" type="text">
-            <label for="">Dirección</label>
-            <div class="direccion">
-            <app-button label="Añadir direccion" color="#275843"></app-button>
+            <label for="nombre">Nombre del chalet</label>
+            <input id="nombre" placeholder="Ingresa el nombre de tu chalet" class="nombrechalet" type="text" [formControlName]="'nombre'">
+            <label for="direccion">Dirección</label>
+            <input id="direccion" #direccionInput placeholder="Ingresa la ubicación de tu chalet" type="text" class="direccionInput" [formControlName]="'ubicacion'">
+            <div class="containerButtonVerify">
+              <button class="buttonVerify" type="button" (click)="verificarUbicacion(direccionInput.value)">Verificar Ubicacion</button>
             </div>
+            <label for="" class="titleView">Visualizar dirección</label>
+            <app-map class="map"></app-map>
         </div>
         <div class="columnaImagen">
             <img class="imgPrincipal" [src]="previsualizacion" alt="">
@@ -22,34 +25,34 @@
         </div>
     </div>
     <div class="parte2">
-        <label for="">Descripción del chalet</label>
-        <input class="description" type="text">
+        <label for="descripcion">Descripción del chalet</label>
+        <input id="descripcion" placeholder="Ingresa una descripción de tu chalet" class="description" type="text" [formControlName]="'descripcion'">
     </div>
     <figure class="borde1"></figure>
     <div class="parte3">
         <h2 class="title">Ventajas y servicios</h2>
         <div class="ventajascontainer1">
-            <app-ventaja-servicio class="ventaja" label="Parrilla" imagen="../../../../../assets/icons/barbacoa.svg"></app-ventaja-servicio>
-            <app-ventaja-servicio class="ventaja" label="Restaurante" imagen="../../../../../assets/icons/restaurante.svg"></app-ventaja-servicio>
-            <app-ventaja-servicio  label="Jacuzzi" imagen="../../../../../assets/icons/jacuzzi.svg"></app-ventaja-servicio>
+            <app-ventaja-servicio class="ventaja" label="Parrilla" imagen="../../../../../assets/icons/barbacoa.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
+            <app-ventaja-servicio class="ventaja" label="Restaurante" imagen="../../../../../assets/icons/restaurante.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
+            <app-ventaja-servicio  label="Jacuzzi" imagen="../../../../../assets/icons/jacuzzi.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
         </div>
         <div class="ventajascontainer2">
-            <app-ventaja-servicio class="ventaja" label="Piscina" imagen="../../../../../assets/icons/piscina.svg"></app-ventaja-servicio>
-            <app-ventaja-servicio label="Permite mascotas" imagen="../../../../../assets/icons/huella.svg"></app-ventaja-servicio>
+            <app-ventaja-servicio class="ventaja" label="Piscina" imagen="../../../../../assets/icons/piscina.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
+            <app-ventaja-servicio label="Permite mascotas" imagen="../../../../../assets/icons/huella.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
         </div>
         <div class="ventajascontainer3">
-            <app-ventaja-servicio class="ventaja" label="Paseos a caballo" imagen="../../../../../assets/icons/equitacion 2.svg"></app-ventaja-servicio>
-            <app-ventaja-servicio class="ventaja" label="Puntos deportivos" imagen="../../../../../assets/icons/deportivos.svg"></app-ventaja-servicio>
-            <app-ventaja-servicio label="Parqueadero" imagen="../../../../../assets/icons/estacionamiento.svg"></app-ventaja-servicio>
+            <app-ventaja-servicio class="ventaja" label="Paseos a caballo" imagen="../../../../../assets/icons/equitacion 2.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
+            <app-ventaja-servicio class="ventaja" label="Puntos deportivos" imagen="../../../../../assets/icons/deportivos.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
+            <app-ventaja-servicio label="Parqueadero" imagen="../../../../../assets/icons/estacionamiento.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
         </div>
         <div class="ventajascontainer4">
-            <app-ventaja-servicio class="ventaja" label="Servicios para bebé" imagen="../../../../../assets/icons/bebes.svg"></app-ventaja-servicio>
-            <app-ventaja-servicio label="Senderismo y montañismo" imagen="../../../../../assets/icons/hombre-en-caminata.svg"></app-ventaja-servicio>
+            <app-ventaja-servicio class="ventaja" label="Servicios para bebé" imagen="../../../../../assets/icons/bebes.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
+            <app-ventaja-servicio label="Senderismo y montañismo" imagen="../../../../../assets/icons/hombre-en-caminata.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
         </div>
         <div class="ventajascontainer5">
-            <app-ventaja-servicio class="ventaja" label="Acceso a conexión wi-fi" imagen="../../../../../assets/icons/wifi.svg"></app-ventaja-servicio>
-            <app-ventaja-servicio class="ventaja" label="Espacios libres de humo" imagen="../../../../../assets/icons/no-fumar.svg"></app-ventaja-servicio>
-            <app-ventaja-servicio label="Fogata" imagen="../../../../../assets/icons/fogata.png"></app-ventaja-servicio>
+            <app-ventaja-servicio class="ventaja" label="Acceso a conexión wi-fi" imagen="../../../../../assets/icons/wifi.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
+            <app-ventaja-servicio class="ventaja" label="Espacios libres de humo" imagen="../../../../../assets/icons/no-fumar.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
+            <app-ventaja-servicio label="Fogata" imagen="../../../../../assets/icons/fogata.png" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
         </div>
     </div>
     <figure class="borde1"></figure>
@@ -83,254 +86,69 @@
         </div>
     </div>
     <figure class="borde1"></figure>
-    <div class="parte5">
-        <h2 class="title">Tarifas y tipos de habitaciones</h2>
-        <div class="headerfield">
-            <h3 class="subtitle">Habitación sencilla</h3>
-            <img class="delete" src="../../../../../assets/icons/bote-de-basura.png" alt="">
+    <form [formGroup]="tarifasform" class="parte5">
+      <h2 class="title">Tarifas y tipos de habitaciones</h2>
+      <div class="headerfield">
+        <h3 class="subtitle">Ingresa tus tarifas</h3>
+      </div>
+      <div class="field">
+        <div class="inputContainer">
+          <label for="precio">Precio</label>
+          <input
+            placeholder="Ingresa el precio"
+            id="precio"
+            class="inputHab"
+            type="text"
+            formControlName="precio"
+          />
         </div>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Alta</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
+        <div class="inputContainer">
+          <label for="temporada">Temporada</label>
+          <select
+            name="temporada"
+            class="inputHab"
+            id="temporada"
+            formControlName="temporada"
+          >
+            <option value="Selecciona la temporada" disabled selected hidden>Selecciona la temporada</option>
+            <option value="Alta">Alta</option>
+            <option value="Media">Media</option>
+            <option value="Baja">Baja</option>
+          </select>
         </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Media</option>
-                    <option value="opcion3">Alta</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
+        <div class="inputHabtype">
+          <div class="inputContainer2">
+            <label for="tipohab">Tipo</label>
+            <select
+              name="tipohab"
+              class="inputHab2"
+              id="tipohab"
+              formControlName="tipohabitacion"
+            >
+              <option value="Selecciona el tipo de habitación" disabled selected hidden>Selecciona el tipo de habitación</option>
+              <option value="Habitación sencilla">Habitación sencilla</option>
+              <option value="Habitación doble">Habitación doble</option>
+              <option value="Habitación cuadruple">Habitación cuadruple</option>
+              <option value="Pasadía">Pasadía</option>
+              <option value="Ocupación completa">Ocupación completa</option>
+            </select>
+          </div>
         </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Baja</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Alta</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="headerfield">
-            <h3 class="subtitle">Habitación doble</h3>
-            <img class="delete" src="../../../../../assets/icons/bote-de-basura.png" alt="">
-        </div>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Alta</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Media</option>
-                    <option value="opcion3">Alta</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Baja</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Alta</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="headerfield">
-            <h3 class="subtitle">Habitación cúadruple</h3>
-            <img class="delete" src="../../../../../assets/icons/bote-de-basura.png" alt="">
-        </div>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Alta</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Media</option>
-                    <option value="opcion3">Alta</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Baja</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Alta</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="headerfield">
-            <h3 class="subtitle">Ocupación completa</h3>
-            <img class="delete" src="../../../../../assets/icons/bote-de-basura.png" alt="">
-        </div>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Alta</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Media</option>
-                    <option value="opcion3">Alta</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Baja</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Alta</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="headerfield">
-            <h3 class="subtitle">Pasadía</h3>
-            <img class="delete" src="../../../../../assets/icons/bote-de-basura.png" alt="">
-        </div>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Alta</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Media</option>
-                    <option value="opcion3">Alta</option>
-                    <option value="opcion4">Baja</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-        <div class="field">
-            <div class="inputContainer">
-                <label for="">Precio</label>
-                <input placeholder="Ingresa el precio" id="espacioInput" class="inputHab" type="text">
-            </div>
-            <div class="inputContainer">
-                <label for="">Temporada</label>
-                <select name="temporada" class="inputHab" id="select">
-                    <option value="opcion2">Baja</option>
-                    <option value="opcion3">Media</option>
-                    <option value="opcion4">Alta</option>
-                </select>
-            </div>
-        </div>
-        <figure class="borderInput"></figure>
-    </div>
+        <button type="button" (click)="guardarTarifa()" class="saveFee">Guardar Tarifa</button>
+      </div>
+    
+      <div formArrayName="tarifas" class="listaTarifas">
+        <h4>Tarifas Agregadas:</h4>
+        <ul>
+          <li *ngFor="let tarifa of tarifasControls; let i = index">
+            <span class="feeInfo">{{ tarifa.get('tipohabitacion')?.value }} - {{ tarifa.get('precio')?.value }} - {{ tarifa.get('temporada')?.value }}</span>
+            <button class="deleteFee" type="button" (click)="eliminarTarifa(i)">
+              <img src="../../../../../assets/icons/bote-de-basura.png" alt="Eliminar" />
+            </button>
+          </li>
+        </ul>
+      </div>
+    </form>            
     <app-button class="button" label="Registrar" type="submit"></app-button>
 </div>
 </form>

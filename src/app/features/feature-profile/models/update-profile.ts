@@ -6,6 +6,7 @@ export class UpdateProfile {
         public age: number,
         public phoneNumber: string,
         public address: string,
-        public email: string
+        public email: string,
+        public image: string
     ) {}
 }

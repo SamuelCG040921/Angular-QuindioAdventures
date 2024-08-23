@@ -59,6 +59,12 @@ import { MessagesSuccesfulComponent } from './components/templates/messages-succ
 import { ModalReservesComponent } from './components/templates/modal-reserves/modal-reserves.component';
 import { ModalUpdateComponent } from './components/templates/modal-update/modal-update.component';
 import { MoneyComponent } from './components/molecules/money/money.component';
+import { ReservationPaintingsComponent } from './components/molecules/reservation-paintings/reservation-paintings.component';
+import { InputPaintingsComponent } from './components/atoms/input-paintings/input-paintings.component';
+import { InputDatePComponent } from './components/atoms/input-date-p/input-date-p.component';
+import { ReserveRecommendedPageComponent } from './components/molecules/reserve-recommended-page/reserve-recommended-page.component';
+import { PageRecommendComponent } from './components/organisms/page-recommend/page-recommend.component';
+import { ReservationPaintingsPlansComponent } from './components/molecules/reservation-paintings-plans/reservation-paintings-plans.component';
 import { RegisterButtonComponent } from './components/molecules/register-button/register-button.component';
 import { FeatureProfileComponent } from '../features/feature-profile/feature-profile.component';
 import { ProfileHeaderComponent } from '../features/feature-profile/components/profile-header/profile-header.component';
@@ -71,6 +77,9 @@ import { CardChaletAdministatorComponent } from './components/molecules/card-cha
 import { ChaletsAdministratorComponent } from './components/organisms/chalets-administrator/chalets-administrator.component';
 import { CardPlanAdministatorComponent } from './components/molecules/card-plan-administator/card-plan-administator.component';
 import { PlansAdministratorComponent } from './components/organisms/plans-administrator/plans-administrator.component';
+import { ChatbotComponent } from './components/organisms/chatbot/chatbot.component';
+import { LoaderComponent } from './components/organisms/loader/loader.component';
+
 
 @NgModule({
   declarations: [
@@ -133,6 +142,12 @@ import { PlansAdministratorComponent } from './components/organisms/plans-admini
     ModalReservesComponent,
     ModalUpdateComponent,
     MoneyComponent,
+    ReservationPaintingsComponent,
+    InputPaintingsComponent ,
+    InputDatePComponent,
+    ReserveRecommendedPageComponent,
+    PageRecommendComponent,
+    ReservationPaintingsPlansComponent,
     RegisterButtonComponent,
     ProfileHeaderComponent,
     VentajaServicioComponent,
@@ -143,12 +158,15 @@ import { PlansAdministratorComponent } from './components/organisms/plans-admini
     CardChaletAdministatorComponent,
     ChaletsAdministratorComponent,
     CardPlanAdministatorComponent,
-    PlansAdministratorComponent
+    PlansAdministratorComponent,
+    ChatbotComponent,
+    LoaderComponent
   ],
 
   imports: [
     CommonModule,
     RouterModule.forRoot([
+      { path: 'profile', component: SearchButtonComponent },
       { path: 'profile', component: FeatureProfileComponent },
       { path: 'chalets', component: FooterInputComponent },
       { path: 'planes-vacacionales', component: SearchButtonComponent },
@@ -212,6 +230,12 @@ import { PlansAdministratorComponent } from './components/organisms/plans-admini
     ParagraphMessagesComponent,
     MessagesSuccesfulComponent,
     ModalReservesComponent,
+    ReservationPaintingsComponent,
+    InputPaintingsComponent,
+    InputDatePComponent,
+    ReserveRecommendedPageComponent,
+    PageRecommendComponent,
+    ReservationPaintingsPlansComponent,
     ProfileHeaderComponent,
     VentajaServicioComponent,
     ModalEmailComponent,
@@ -222,7 +246,9 @@ import { PlansAdministratorComponent } from './components/organisms/plans-admini
     CardChaletAdministatorComponent,
     ChaletsAdministratorComponent,
     CardPlanAdministatorComponent,
-    PlansAdministratorComponent
+    PlansAdministratorComponent,
+    ChatbotComponent,
+    LoaderComponent
   ],
 })
 export class SharedModule { }
