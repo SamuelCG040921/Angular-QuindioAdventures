@@ -28,3 +28,18 @@
     height: 24px;
     cursor: pointer;
 }
+
+
+@media (min-width: 352px) and (max-width: 480px) {
+    .recommended-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin: 0;
+    margin-bottom: 80px;
+    }
+    .arrow{
+        display: none;
+    }
+
+  }

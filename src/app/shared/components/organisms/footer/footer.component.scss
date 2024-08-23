@@ -114,13 +114,11 @@ footer {
 }
 
 /* Media Queries para pantallas de hasta 480px */
-@media (max-width: 480px) {
-    footer {
-        padding: 13px; /* Reducir padding para pantallas muy pequeñas */
-    }
+@media (min-width: 352px) and (max-width: 480px) {
+
 
     .first-part, .second-part {
-        min-width: 90%; 
+        width: 100%;
     }
 
     .first-part {
@@ -143,9 +141,6 @@ footer {
 
     .second-part p {
         font-size: 16px;
-    }
-    app-footer-logo{
-       margin-right: 50px;
     }
     app-footer-input, app-button {
         width: 100%; /* Asegurar que el input y botón ocupen todo el ancho */

@@ -142,7 +142,7 @@
 }
 }
 
-@media (max-width: 480px){
+@media (min-width: 352px) and (max-width: 480px) {
   .reservation-paintings{
     margin-top: 30px;
     margin-left: auto;
@@ -153,8 +153,8 @@
   }
 
   .imgChalet {
-      width: 360px;
-      height: 380px;
+      width: 340px;
+      height: 360px;
       margin-left: auto;
       margin-right: auto;
       display: block;
