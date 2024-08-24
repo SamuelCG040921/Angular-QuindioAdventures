@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-map',
@@ -15,17 +15,20 @@ export class MapComponent implements OnInit {
   response!: HTMLPreElement;
   isErrorAlertOpen = false;
 
+  @Input() locationFromBackend: { address: string } | null = null;
   center: google.maps.LatLngLiteral = { lat: -34.397, lng: 150.644 };
 
   @Output() locationVerified = new EventEmitter<boolean>();
-  direccion: any;
 
   ngOnInit(): void {
     this.loadMap();
+    
+    if (this.locationFromBackend) {
+      this.loadLocationFromBackend(this.locationFromBackend.address);
+    }
   }
 
   addControls(): void {
-
     this.response = document.createElement("pre");
     this.response.id = "response";
     this.response.innerText = "";
@@ -34,23 +37,26 @@ export class MapComponent implements OnInit {
     this.responseDiv.id = "response-container";
     this.responseDiv.appendChild(this.response);
 
-
     this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(this.responseDiv);
-
-    // Event listeners
   }
 
   setupListeners(): void {
     this.marker = new google.maps.Marker({ map: this.map });
 
     this.map.addListener("click", (e: google.maps.MapMouseEvent) => {
-      this.geocode({ location: e.latLng });
+      if (e.latLng) {
+        this.geocode({ location: e.latLng });
+      }
     });
   }
 
   clear(): void {
-    this.marker.setMap(null);
-    this.responseDiv.style.display = "none";
+    if (this.marker) {
+      this.marker.setMap(null);
+    }
+    if (this.responseDiv) {
+      this.responseDiv.style.display = "none";
+    }
   }
 
   loadMap(): void {
@@ -67,9 +73,9 @@ export class MapComponent implements OnInit {
       center: this.center,
       mapTypeControl: false,
     });
-    
+
     this.geocoder = new google.maps.Geocoder();
-    
+
     this.addControls();
     this.setupListeners();
     this.clear();
@@ -79,16 +85,26 @@ export class MapComponent implements OnInit {
     this.geocode({ address });
   }
 
+  loadLocationFromBackend(address: string): void {
+    if (address) {
+      this.verifyLocation(address);
+    } else {
+      console.error('No address provided from backend.');
+      this.locationVerified.emit(false);
+    }
+  }
+
   geocode(request: google.maps.GeocoderRequest): void {
     this.clear();
-  
+
     this.geocoder.geocode(request)
       .then((response: google.maps.GeocoderResponse) => {
-        const { results } = response;
-  
+        const results = response.results;
+
         if (results.length > 0) {
-          this.map.setCenter(results[0].geometry.location);
-          this.marker.setPosition(results[0].geometry.location);
+          const location = results[0].geometry.location;
+          this.map.setCenter(location);
+          this.marker.setPosition(location);
           this.marker.setMap(this.map);
           this.locationVerified.emit(true);
         } else {
@@ -97,11 +113,11 @@ export class MapComponent implements OnInit {
         }
       })
       .catch((e: any) => {
+        console.error('Error en la geocodificación:', e);
         this.openErrorAlert();
         this.locationVerified.emit(false);
       });
   }
-  
 
   openErrorAlert(): void {
     this.isErrorAlertOpen = true;

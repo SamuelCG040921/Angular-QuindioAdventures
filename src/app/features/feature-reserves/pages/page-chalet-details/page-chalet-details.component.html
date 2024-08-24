@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="containerMiga">
+<div class="containerMiga" *ngIf="chalet">
     <app-miga-de-pan id="miga"></app-miga-de-pan>
 </div>
 <div class="primera">
@@ -8,17 +8,18 @@
         <app-card-calification id="qualify"></app-card-calification>
     </div>
     <div class="containerDer">
-        <app-collage-view></app-collage-view>
+        <app-collage-view [images]="restOfImages"></app-collage-view>
         <div class="containerText">
-            <p id="tittle">Finca hotel la dulcera</p>
-            <p id="info">Finca Hotel La Dulcera te ofrece confortables habitaciones, con las comodidades y los servicios necesarios para el descanso, lo que hará tu estadía una experiencia inolvidable, rodeada de bienestar y tranquilidad.</p>
+            <p id="tittle">{{ chalet.nombre_chalet }}</p>
+            <p id="info">{{ chalet.caracteristicas }}</p>
         </div>
     </div>
 </div>
 <div class="segunda">
     <div class="pricesTable">
         <app-prices-table id="precios"></app-prices-table>
-        <app-navegation-map id="mapa"></app-navegation-map>
+        <app-map class="map"></app-map>
+        <p>{{chalet.ubicacion_chalet}}</p>
     </div>
 </div>
 <div class="tercera">

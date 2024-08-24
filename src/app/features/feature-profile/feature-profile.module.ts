@@ -36,7 +36,8 @@ import { MapComponent } from './components/map/map.component';
     FormsModule
   ],
   exports: [
-    FeatureProfileComponent
+    FeatureProfileComponent,
+    MapComponent
   ]
 })
 export class FeatureProfileModule { }
