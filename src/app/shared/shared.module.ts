@@ -79,6 +79,7 @@ import { CardPlanAdministatorComponent } from './components/molecules/card-plan-
 import { PlansAdministratorComponent } from './components/organisms/plans-administrator/plans-administrator.component';
 import { ChatbotComponent } from './components/organisms/chatbot/chatbot.component';
 import { LoaderComponent } from './components/organisms/loader/loader.component';
+import { InfoCardChaletProfileComponent } from './components/molecules/info-card-chalet-profile/info-card-chalet-profile.component';
 
 
 @NgModule({
@@ -160,7 +161,8 @@ import { LoaderComponent } from './components/organisms/loader/loader.component'
     CardPlanAdministatorComponent,
     PlansAdministratorComponent,
     ChatbotComponent,
-    LoaderComponent
+    LoaderComponent,
+    InfoCardChaletProfileComponent
   ],
 
   imports: [
@@ -248,7 +250,8 @@ import { LoaderComponent } from './components/organisms/loader/loader.component'
     CardPlanAdministatorComponent,
     PlansAdministratorComponent,
     ChatbotComponent,
-    LoaderComponent
+    LoaderComponent,
+    InfoCardChaletProfileComponent
   ],
 })
 export class SharedModule { }

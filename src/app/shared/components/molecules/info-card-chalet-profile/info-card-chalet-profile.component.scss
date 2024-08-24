@@ -29,10 +29,6 @@
     flex-direction: column;
 }
 .button1{
-    margin-bottom: 15px;
-}
-
-.button1{
     background-color: #275843;
     border: none;
     border-radius: 10px;
@@ -49,10 +45,15 @@
     padding: 15px;
 }
 
+app-button {
+
+    width: 200px; 
+    text-align: center;
+}
+
 @media (min-width: 352px) and (max-width: 480px){
     .container{
         width: 100%;
     }
 
-    
 }

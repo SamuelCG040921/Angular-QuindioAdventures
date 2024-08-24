@@ -81,3 +81,39 @@
     color: #418E6D;
     text-decoration: none;
 }
+
+@media (min-width: 352px) and (max-width: 480px){
+    .tittle1 p{
+        font-size: 20px;
+    }
+
+    .containerInfo p{
+        font-size: small;
+    }
+
+    .containerSecond{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .containerLeft{
+        width: 70%;
+        margin-bottom: 40px;
+    }
+
+    .textLeft p{
+        text-align: center;
+        font-size: small;
+    }
+
+    .containerFinalText{
+        margin-top: 0px;
+    }
+
+    .containerTittleLeft{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 0px 4px 0px;
+    }
+}

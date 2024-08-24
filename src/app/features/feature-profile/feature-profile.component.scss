@@ -225,3 +225,122 @@
         }
     }
 }
+@media (min-width: 769px) and (max-width: 920px){
+    .partesUnidas{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .parte1{
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    .parte2{
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    .parte3{
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+
+    .profile{
+        padding: 20px;
+        height: auto;
+    }
+
+    .profile .containerCambiar{
+        width: 100%;
+        justify-self: flex-start;
+    }
+
+    .containerInfo{
+        width: auto;
+    }
+}
+
+@media (max-width: 1279px) and (min-width: 921px) {
+    .partesUnidas{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .parte1{
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    .parte2{
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    .parte3{
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+
+    .profile{
+        padding: 20px;
+        height: auto;
+    }
+
+    .profile .containerCambiar{
+        width: 100%;
+        justify-self: flex-start;
+    }
+
+    .containerInfo{
+        width: auto;
+    }
+}
+
+@media (min-width: 352px) and (max-width: 480px){
+    .leftPart{
+        height: 100vh;
+        width: 100%;
+    }
+
+    .profile{
+        height: auto;
+    }
+
+    .partesUnidas{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .parte1{
+        margin-top: 40px;
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    .parte2{
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    .containerInfo{
+        width: 100%;
+    }
+
+    .parte3{
+        width: 100%;
+    }
+
+    .sendBtn{
+        margin-right: 20px;
+    }
+}

@@ -72,43 +72,41 @@
  
 }
 
-@media (min-width: 769px) and (max-width: 920px) {
 
-  .reservation-paintings{
-    margin-top: 40px;
-    margin-left: 50px;
-  }
-    
-  .imgChalet {
-    width: 550px;
-    height: 450px;
-    margin-left: 250px;
+@media (max-width: 1279px) and (min-width: 921px){
+  .title figure{
+    display: none;
   }
   
-  .titlePrincipal{
-    font-size: 24px;
-    margin-top: 16px;
+  .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .principalTitle {
-    font-size: 28px;
-    margin: 15px 0;
-}
-.section-title{
-  font-size: 20px;
-  margin-left: 20px;
-}
-.title{
-  width: auto;
-}
-.section-title2 {
-    font-size: 20px;
-    text-align: center;
-}
+
+  .imgChalet{
+    width: 800px;
+    height: 420px;
+    margin-left: 0px;
+  }
+
+  .chaletContainer{
+    justify-content: center;
+    margin-bottom: 0px;
+    height: auto;
+  }
+
+  .reservation-paintings{
+    margin-left: 30px;
+    margin-top: 20px;
+  }
 }
 
-@media (max-width: 768px){
+@media (min-width: 769px) and (max-width: 920px){
   .chaletContainer{
+    justify-content: center;
     height: 400px;
+    margin-bottom: 40px;
   }
   .reservation-paintings{
     margin-top: 30px;
@@ -140,9 +138,22 @@
     text-align: center;
 
 }
+
+.title figure{
+  display: none;
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 }
 
 @media (min-width: 352px) and (max-width: 480px) {
+  .chaletContainer{
+    height: auto;
+  }
   .reservation-paintings{
     margin-top: 30px;
     margin-left: auto;
@@ -171,5 +182,14 @@
 .section-title2 {
     font-size: 16px;
     text-align: center;
+}
+
+.title figure{
+display: none;
+}
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 }

@@ -16,3 +16,9 @@
   background-color: #D9D9D9;
   border: 2px solid #275843;
 }
+
+@media (min-width: 352px) and (max-width: 480px){
+  .rating-container{
+    gap: 2px;
+  }
+}

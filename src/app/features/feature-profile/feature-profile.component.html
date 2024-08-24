@@ -68,7 +68,7 @@
 			<div class="containerBtnLeft">
 				<app-button type="button" *ngIf="button1Visible" (click)="cambiarEstadoBotones()" label="Editar datos" (click)="habilitarInput()"></app-button>
 				<div class="containerButtons">
-					<app-button type="button" *ngIf="button2y3Visible" label="Enviar" (click)="openWarningAlert()"></app-button>
+					<app-button type="button" class="sendBtn" *ngIf="button2y3Visible" label="Enviar" (click)="openWarningAlert()"></app-button>
 					<app-messages-succesful title="La actualizacion se realizo correctamente" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
 					<app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar la actualizacion verifique bien los datos" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
 					<app-messages-error title="¡Ooops!" paragraph="Parece que hubo un problema al cargar tus datos" *ngIf="isErrorAlertOpen2" (close)="closeErrorAlert2()"></app-messages-error>

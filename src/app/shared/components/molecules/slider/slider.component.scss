@@ -74,12 +74,17 @@
   }
   
   @media (min-width: 921px) and (max-width: 1279px) {
-    
+    .arrow{
+        display: none;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 920px) {
     .slider-image{
         height: 300px;
+    }
+    .arrow{
+        display: none;
     }
 }
 
@@ -91,6 +96,10 @@
 
     .slider-image{
         height: 275px;
+    }
+
+    .arrow{
+        display: none;
     }
 }
 
