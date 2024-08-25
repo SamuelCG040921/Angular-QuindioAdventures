@@ -7,6 +7,8 @@ import { UserProfile } from '../../feature-profile/models/user-profile';
   providedIn: 'root'
 })
 export class AuthService {
+
+
   private apiUrlAdmin = 'http://localhost:10101/authAdmin' 
   private apiUrl = 'http://localhost:10101/auth';
   private profileUrl = 'http://localhost:10101/user';
@@ -40,17 +42,24 @@ export class AuthService {
       });
   }
 
-  getToken(): string | null {
-    return localStorage.getItem('token');
+  private isTokenExpired(token: string): boolean {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    const currentTime = Math.floor(Date.now() / 1000);
+    return payload.exp < currentTime;
   }
 
-  estaActivo():any {
-    let token = this.getToken();
-    if(token === null){
-      return false
-    }else{
-      return true
+  getToken(): string | null {
+    const token = localStorage.getItem('token');
+    if (token && this.isTokenExpired(token)) {
+      this.logout(); // Elimina el token expirado
+      return null;
     }
+    return token;
+  }
+
+  estaActivo(): boolean {
+    const token = this.getToken();
+    return token !== null;
   }
 
   logout(): void {
@@ -59,13 +68,15 @@ export class AuthService {
 
   getUserProfile(): Promise<UserProfile> {
     const token = this.getToken();
+    if (!token) {
+      return Promise.reject('Token expirado o no disponible');
+    }
+
     return axios.get(this.profileUrl, {
-      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      headers: { Authorization: `Bearer ${token}` }
     })
     .then(response => {
       const data = response.data;
-      console.log(data);
-      
       const user = new UserProfile(
         data.documento,
         data.email,
@@ -76,11 +87,8 @@ export class AuthService {
         data.image,
         data.numero_telefono,
         data.direccion_usuario
-      ); 
-
-      console.log(user);
+      );
       return user;
-      
     })
     .catch(error => {
       throw error;

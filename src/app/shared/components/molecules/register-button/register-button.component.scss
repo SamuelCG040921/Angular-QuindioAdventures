@@ -20,3 +20,41 @@
     font-size: 16px;
     font-weight: 500;
 }
+
+@media (max-width: 1279px) and (min-width: 921px){
+    .register{
+        width: 95%;
+    }
+    .register img{
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
+    }
+    .register p{
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .register p{
+        font-size: 12px;
+    }
+
+    .register img{
+        width: 18px;
+        height: 18px;
+        margin-right: 2px;
+    }
+}
+
+@media (min-width: 352px) and (max-width: 480px) {
+    .register p{
+        font-size: 10px;
+    }
+
+    .register img{
+        width: 14px;
+        height: 14px;
+        margin-right: 2px;
+    }
+}

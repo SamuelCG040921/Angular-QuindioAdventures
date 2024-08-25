@@ -132,3 +132,13 @@
     width: 24px;
     height: 24px;
 }
+
+@media (min-width: 352px) and (max-width: 480px) {
+    .chatbot-icon{
+        max-width: 351px;
+    }
+    .chatbot-container{
+        width: 300px;
+        height: 450px;
+    }
+}

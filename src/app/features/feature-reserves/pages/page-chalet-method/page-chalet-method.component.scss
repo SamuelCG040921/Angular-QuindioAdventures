@@ -1,0 +1,439 @@
+
+.principal{
+    display: flex;
+}
+.section1{
+    width: 24%;
+    margin-top: 32px;
+    margin-left: 90px;
+    border-right: 1px solid  #90A3BF;
+    padding-right: 38px;
+}
+.container1 h2{
+   font-size: 20px;
+    font-weight: 500;
+}
+.container1 p{
+    font-size: 16px;
+    color: #C3D4E9;
+}
+.container2{
+    display: flex;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.imgChalet{
+    width: 132px;
+    height: 108px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.reviews{
+    margin-top: 20px;
+}
+.reviews p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.container3{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #90A3BF;
+}
+.organization{
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 12px;
+}
+.organization p{
+    font-size: 16px;
+    color: #90A3BF;
+    margin-right: 70px;
+}
+.organization span{
+    font-size: 16px;
+    font-weight: 500;
+}
+.container4{
+    margin-top: 32px;
+}
+.container4 h2{
+ font-size: 20px;
+ font-weight: 500;
+}
+.priceAll{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.priceAll p{
+    color: #90A3BF;
+    width: 50%;
+}
+.priceAll span{
+    font-size: 24px;
+    font-weight: 500;
+}
+.form-header{
+    margin-left: 39px;
+      margin-top: 20px;
+    }
+    
+    .form-header img{
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+    }
+    
+    .line3 {
+        width: 95%;
+        height: 5px;
+        background: linear-gradient(to right, #D8D8D8  50%, #90b4a0 50%);
+        margin-top: 20px;
+        margin-left: 30px;
+    }
+    .infopayment{
+        display: flex;
+        margin-left: 80px;
+        margin-top: 32px;
+        justify-content: space-between;
+        width: 70%;
+    }
+    .infopayment p{
+        font-size: 16px;
+        color: #C3D4E9;
+    }
+    .container-info h2{
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .container-info p{
+        font-size: 16px;
+        color: #C3D4E9;
+    }
+    .container-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 70%;
+        margin-top: 30px;
+        margin-left: 80px;
+    }
+    
+    .field {
+        display: flex;
+        flex-direction: column;
+        width: calc(50% - 10px); 
+    }
+    
+    .field label {
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .section2{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .buttonProcedPayment{
+        margin-top: 30px;
+        margin-left: 206px;
+    }
+    
+  @media (min-width: 921px) and (max-width: 1279px) {
+    .line3{
+        width: 95%;
+        margin-left: 28px;
+      }
+      .section1 {
+        width: 36%;
+        margin-left: 46px;
+      }
+      .form-header {
+        margin-left: 11px;
+        width: 34%;
+    }
+      .container1 h2 {
+        font-size: 18px;
+        width: 101%;
+    }
+      .container1 p {
+        font-size: 14px;
+    }
+    .imgChalet {
+        width: 86px;
+        height: 86px;
+    }
+    .reviews p {
+        font-size: 16px;
+        margin-right: 16px;
+        margin-bottom: 4px;
+    }
+    .container3{
+        width: auto;
+    }
+    .organization p{
+        font-size: 14px;
+        margin-right: 12px;
+    }
+    .container4 h2{
+        font-size: 18px;
+    }
+    .priceAll p{
+        font-size: 12px;
+        width: 58%;
+    }
+    .infopayment{
+        margin-left: 30px;
+        width: 88%;
+    }
+    .container-info .p1{
+        font-size: 14px;
+        width:71%;
+    }
+    .container-info h2{
+        font-size: 18px;
+    }
+    .infopayment .p2 {
+        font-size: 12px;
+        margin-right: 8px;
+        width: 50%;
+    }
+    .container-form{
+        flex-direction: column;
+        width: 85%;
+    }
+    .field label {
+        font-size: 16px;
+    }
+    .buttonProcedPayment{
+        margin-left: 8px;
+        width: 70%;
+    }
+  }
+
+@media (min-width: 769px) and (max-width: 920px) {
+    .line3{
+        width: 90%;
+        margin-left: 34px;
+      }
+      .section1 {
+        width: 36%;
+        margin-left: 46px;
+      }
+      .form-header {
+        margin-left: 11px;
+        width: 34%;
+    }
+      .container1 h2 {
+        font-size: 18px;
+        width: 101%;
+    }
+      .container1 p {
+        font-size: 14px;
+    }
+    .imgChalet {
+        width: 86px;
+        height: 86px;
+        margin-top: 16px;
+    }
+    .reviews p {
+        font-size: 16px;
+        margin-right: 16px;
+        margin-bottom: 4px;
+    }
+    .container3{
+        width: auto;
+    }
+    .organization p{
+        font-size: 14px;
+        margin-right: 12px;
+    }
+    .container4 h2{
+        font-size: 18px;
+    }
+    .priceAll p{
+        font-size: 12px;
+        width: 58%;
+    }
+    .infopayment{
+        margin-left: 30px;
+        width: 88%;
+    }
+    .container-info .p1{
+        font-size: 14px;
+        width:71%;
+    }
+    .container-info h2{
+        font-size: 18px;
+    }
+    .infopayment .p2 {
+        font-size: 12px;
+        margin-right: 8px;
+        width: 50%;
+    }
+    .container-form{
+        flex-direction: column;
+        width: 80%;
+    }
+    .field label {
+        font-size: 16px;
+    }
+    .buttonProcedPayment{
+        margin-left: 18px;
+        width: 80%;
+    }
+    
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .section2{
+        width: 48%;
+    }
+    .form-header {
+        width: 34%;
+    }
+  .line3{
+    width: 90%;
+    margin-left: 34px;
+  }
+  .section1 {
+    width: 36%;
+    margin-left: 46px;
+  }
+  .container1 h2 {
+    font-size: 18px;
+    width: 101%;
+}
+  .container1 p {
+    font-size: 14px;
+}
+.imgChalet {
+    width: 86px;
+    height: 86px;
+    margin-top: 20px;
+}
+.reviews p {
+    font-size: 16px;
+    margin-right: 16px;
+    margin-bottom: 4px;
+}
+.container3{
+    width: auto;
+}
+.organization p{
+    font-size: 14px;
+    margin-right: 12px;
+}
+.container4 h2{
+    font-size: 18px;
+}
+.priceAll p{
+    font-size: 12px;
+    width: 58%;
+}
+.infopayment{
+    margin-left: 30px;
+    width: 100%;
+}
+.container-info .p1{
+    font-size: 14px;
+    width:71%;
+}
+.container-info h2{
+    font-size: 18px;
+}
+.infopayment .p2 {
+    font-size: 12px;
+    margin-right: 8px;
+    width: 50%;
+}
+.container-form{
+    flex-direction: column;
+    width: 100%;
+    margin-left: 30px;
+}
+.field label {
+    font-size: 16px;
+}
+.buttonProcedPayment{
+    margin-left: 46px;
+    width: 70%;
+}
+}
+
+@media (min-width: 352px) and (max-width: 480px) {
+    .principal {
+        flex-direction: column;
+        width: 92%;
+        margin-left: 16px;
+    }
+    .line3 {
+        margin-left: 10px;
+    }
+    .form-header {
+        margin-left: 11px;
+        width: 34%;
+    }
+    .section1{
+        width: 88%;
+        margin-top: 20px;
+        margin-left: 20px;
+        border-right: none;
+    }
+    .container1 h2 {
+    font-size: 18px;
+   }
+   .container1 p{
+    font-size: 14px;
+
+}
+.container2 {
+    margin-top: 10px;
+}
+    .imgChalet {
+        width: 111px;
+        height: 80px;
+}
+.reviews p {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+.container4 h2 {
+    font-size: 18px;
+}
+.priceAll p{
+    font-size: 14px;
+    width: 63%;
+}
+.infopayment{
+    margin-left: 10px;
+    width: 100%;
+}
+.container-info .p1{
+    font-size: 14px;
+    width:71%;
+}
+.container-info h2{
+    font-size: 18px;
+}
+.infopayment .p2 {
+    font-size: 12px;
+    margin-right: 8px;
+    width: 50%;
+}
+.container-form{
+    flex-direction: column;
+    width: 78%;
+}
+.field label {
+    font-size: 14px;
+}
+.buttonProcedPayment{
+    margin-left: 30px;
+    width: 70%;
+}
+}

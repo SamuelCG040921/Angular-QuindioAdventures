@@ -19,9 +19,29 @@
     margin-bottom: 30px;
 }
 
-.chalet-nombre {
+.plan-nombre {
     font-size: 16px;
     margin: 8px;
+}
+
+@media (min-width: 352px) and (max-width: 480px){
+    .card{
+        width: 80%;
+    }
+
+    .card-header{
+        width: 100%;
+        padding-right: 10px;
+    }
+
+    .container{
+        width: 100%;
+    }
+
+    .card-content{
+        width: 100%;
+        margin: 0px;
+    }
 }
 
 

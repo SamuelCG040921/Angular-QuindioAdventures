@@ -30,6 +30,13 @@
     margin-bottom: 15px; 
   }
   /* Estilos responsive */
+@media (max-width: 1279px) and (min-width: 921px){
+  .container{
+    max-width: 500px;
+   
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 8px;

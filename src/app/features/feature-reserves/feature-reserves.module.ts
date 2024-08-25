@@ -15,6 +15,8 @@ import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { PageChaletPaymentComponent } from './pages/page-chalet-payment/page-chalet-payment.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageHomeUserComponent } from './pages/page-home-user/page-home-user.component';
+import { PageChaletMethodComponent } from './pages/page-chalet-method/page-chalet-method.component';
+import { ProgressComponent } from './components/progress/progress.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { PageHomeUserComponent } from './pages/page-home-user/page-home-user.com
     PageHomeComponent,
     PageChaletPaymentComponent,
     PageHomeUserComponent,
+    PageChaletMethodComponent,
+    ProgressComponent,
   ],
   imports: [
     CommonModule,
@@ -47,7 +51,9 @@ import { PageHomeUserComponent } from './pages/page-home-user/page-home-user.com
     PageReservesClientsComponent,
     PageReservesReservesComponent,
     PageChaletPaymentComponent,
-    PageChaletDetailsComponent
+    PageChaletDetailsComponent,
+    PageChaletMethodComponent,
+    ProgressComponent
   ]
 })
 export class FeatureReservesModule { }
