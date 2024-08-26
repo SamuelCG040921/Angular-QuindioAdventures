@@ -1,43 +1,63 @@
 .client {
+    width: 300px; /* Ancho de la tarjeta */
+    padding: 20px; /* Espacio interno de la tarjeta */
+    margin: 20px auto; /* Espaciado automático y centrado horizontal */
+    background-color: #fff; /* Color de fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle un efecto elevado */
+    border: 1px solid #ddd; 
+    text-align: center; /* Centrar el texto */
+    transition: transform 0.3s ease; /* Efecto de transición suave */
+}
+
+.client:hover {
+    transform: translateY(-5px); /* Elevar la tarjeta al hacer hover */
+}
+
+/* Agrupa el `strong` y `p` en una fila en todos los contenedores */
+.client .containerNumber,
+.client .containerCodigo,
+.client .containerNombre,
+.client .containerFecha,
+.client .containerTelefono,
+.client .containerPrecio {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    border: 1px solid #D9D9D9;
-    padding: 20px 0 20px 60px;
+    margin-bottom: 10px; 
+}
+
+.client .containerNumber strong,
+.client .containerCodigo strong,
+.client .containerNombre strong,
+.client .containerFecha strong,
+.client .containerTelefono strong,
+.client .containerPrecio strong {
+    margin-right: 5px; 
+}
+
+.client .containerNumber p,
+.client .containerCodigo p,
+.client .containerNombre p,
+.client .containerFecha p,
+.client .containerTelefono p,
+.client .containerPrecio p {
+    margin: 0; 
+    font-size: 14px; 
+    color: #333; 
+}
+
+#text8 {
+    color: #e67e22;
+    font-weight: bold;
+}
+.client.containerBtnModal {
+    display: flex;
+    align-items: center;
+    
+}
+
+.client .containerBtnModal img {
+    width:30px;
+    height: 30px;
     cursor: pointer;
-    width: 1000px;
-}
-
-.client p {
-    margin: 0 20px; 
-}
-
-#text1{
-    width: 40px;
-    text-align: center;
-}
-#text2{
-    width: 130px;
-    text-align: center;
-}
-
-#text3{
-    width: 105px;
-    text-align: center;
-}
-#text4{
-    width: 110px;
-    text-align: center;
-}
-#text5{
-    width: 230px;
-    text-align: center;
-}
-#text7{
-    width: 186px;
-    text-align: center;
-}
-#title8{
-    width: 80px;
-    text-align: center;
 }
