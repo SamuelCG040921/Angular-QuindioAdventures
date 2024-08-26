@@ -38,7 +38,8 @@ import { CardChaletComponent } from './components/card-chalet/card-chalet.compon
     FormsModule
   ],
   exports: [
-    FeatureProfileComponent
+    FeatureProfileComponent,
+    MapComponent
   ]
 })
 export class FeatureProfileModule { }

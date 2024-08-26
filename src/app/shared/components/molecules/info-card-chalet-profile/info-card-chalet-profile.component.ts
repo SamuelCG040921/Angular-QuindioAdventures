@@ -12,9 +12,6 @@ export class InfoCardChaletProfileComponent {
   };
   constructor(private reservesService:ReservesService){}
   ngOnInit(): void {
-    this.reservesService.getReservebyCode(this.info.codigo).
-    subscribe((res=>{
-       this.info = res
-    }))
+    
   }
 }

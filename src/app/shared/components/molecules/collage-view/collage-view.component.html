@@ -1,13 +1,14 @@
 <div class="containerCollage">
-    <div class="containerImg1">
-        <img id="img1" src="../../../../../assets/images/img1.jpg" alt="">
+    <div class="containerImg1" *ngIf="images.length > 0">
+        <img id="img1" [src]="images[0]" alt="Imagen 1">
     </div>
     <div class="containerImg">
-        <div class="containerImg2">
-            <img id="img2" src="../../../../../assets/images/img2.jpg" alt="">
+        <div class="containerImg2" *ngIf="images.length > 1">
+            <img id="img2" [src]="images[1]" alt="Imagen 2">
         </div>
-        <div class="containerImg3">
-            <img id="img3" src="../../../../../assets/images/img2.jpg" alt="">
+        <div class="containerImg3" *ngIf="images.length > 2">
+            <img id="img3" [src]="images[2]" alt="Imagen 3">
         </div>
+
     </div>
 </div>

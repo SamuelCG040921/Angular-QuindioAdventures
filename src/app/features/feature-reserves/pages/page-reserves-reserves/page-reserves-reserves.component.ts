@@ -7,18 +7,12 @@ import { ReservesService } from '../../services/reserves.service';
   templateUrl: './page-reserves-reserves.component.html',
   styleUrl: './page-reserves-reserves.component.scss'
 })
-export class PageReservesReservesComponent implements OnInit{
+export class PageReservesReservesComponent{
   reserves: any
 
 constructor(private reservesService:ReservesService, public authService:AuthService){}
 
 
-ngOnInit() {
-    this.reservesService.getReserves()
-    .subscribe(res=>{
-      this.reserves = res
-    })
-}
   }
   
 

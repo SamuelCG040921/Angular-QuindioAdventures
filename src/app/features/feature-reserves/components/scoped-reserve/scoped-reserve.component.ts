@@ -28,10 +28,7 @@ export class ScopedReserveComponent implements OnInit {
   constructor(private reservesService: ReservesService) { }
 
   ngOnInit() {
-    this.reservesService.getReserves()
-      .subscribe(res => {
-        this.reserves = res;
-      });
+    
   }
 
   openModal(reserve: any): void {

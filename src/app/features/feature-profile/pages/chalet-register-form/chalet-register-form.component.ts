@@ -251,6 +251,7 @@ export class ChaletRegisterFormComponent implements OnInit {
       const chaletData: ChaletDTO = this.chaletForm.value;
       console.log(chaletData);
       
+      
       this.chaletService.registrarChalet(chaletData).subscribe({
         next: (response) => {
           console.log('Chalet registrado exitosamente:', response);

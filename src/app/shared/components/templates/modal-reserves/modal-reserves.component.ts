@@ -6,7 +6,7 @@ import { ReservesService } from '../../../../features/feature-reserves/services/
   templateUrl: './modal-reserves.component.html',
   styleUrl: './modal-reserves.component.scss'
 })
-export class ModalReservesComponent implements OnInit {
+export class ModalReservesComponent{
   @Input() reserve:any= {
     chaletimg:'',
     codigo: '',
@@ -40,14 +40,5 @@ export class ModalReservesComponent implements OnInit {
 
   actualizarReserva(){
     this.isModalUpdateOpen = true;
-  }
-
-  
-
-  ngOnInit(): void {
-    this.reservesService.getReservebyCode(this.reserve.codigo).
-    subscribe((res=>{
-       this.reserve = res
-    }))
   }
 }

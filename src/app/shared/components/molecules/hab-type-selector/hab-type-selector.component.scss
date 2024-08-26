@@ -1,0 +1,76 @@
+.containerCountClient{
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.client{
+    display: flex;
+    width: max-content;
+}
+
+.containerText{
+    padding-left: 18px;
+}
+
+.containerText #tittle{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.containerButtonsCount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.buttonMinum{
+    padding-right: 15px;
+}
+
+.buttonMore{
+    padding-left: 15px;
+}
+
+.arrow1{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.arrow2{
+    width: 15px;
+    height: 15px; 
+    margin-left: 10px;
+}
+
+span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #88B8A3;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#description{
+    width: 550px;
+}
+
+.containerIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    height: min-content;
+    padding: 7px;
+    background-color: #88B8A3;
+    border-radius: 10px;
+}
+
+#imgIcon{
+    width: 54px;
+    height: 54px;
+}

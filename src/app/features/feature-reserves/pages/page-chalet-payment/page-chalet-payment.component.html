@@ -12,9 +12,10 @@
         </div>
 
         <div class="container2">
-            <img class="imgChalet" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/197556405.jpg?k=aedb485cf1745c92d66df80704fde35dad7d26d11220a848fe129bf30e59b5c9&o=&hp=1">
+            <img class="imgChalet"
+            [src]="firstImage">
             <div class="reviews">
-                <p>Finca Hotel La Dulcera</p>
+                <p>{{ chalet?.nombre_chalet }}</p>
                 <app-calification-card></app-calification-card>
             </div>
         </div>
@@ -35,6 +36,8 @@
             <div class="priceAll">
                 <p>Precio total incluido el descuento por reserva en nuestro aplicativo</p>
                 <span>$110.000</span>
+                <p>Precio total contando la cantidad de días de la reserva</p>
+                <span>{{ formattedPrice || '$0' }}</span>
             </div>
         </div>
     </section>
@@ -57,17 +60,12 @@
                 <input formControlName="documento" class="documento" placeholder="Ingresa tu documento" id="documento">
                 <div *ngIf="isFieldInvalid('documento')" class="error-message">El documento es requerido</div>
             </div>
-
-            <div class="field" [ngClass]="{'error': isFieldInvalid('cantidadNinos')}">
-                <label class="cantidadNinos">Cantidad de niños</label>
-                <input formControlName="cantidadNinos" class="cantidadNinos" placeholder="Ingresa la cantidad de niños" id="cantidadNinos">
-                <div *ngIf="isFieldInvalid('cantidadNinos')" class="error-message">La cantidad de niños es requerida</div>
-            </div>
-
-            <div class="field" [ngClass]="{'error': isFieldInvalid('cantidadAdultos')}">
-                <label class="cantidadAdultos">Cantidad de adultos</label>
-                <input formControlName="cantidadAdultos" class="cantidadAdultos" placeholder="Ingresa la cantidad de adultos" id="cantidadAdultos">
-                <div *ngIf="isFieldInvalid('cantidadAdultos')" class="error-message">La cantidad de adultos es requerida</div>
+            <div class="field" [ngClass]="{'error': isFieldInvalid('cantidadPersonas')}">
+                <label class="cantidadNinos">Cantidad de Personas</label>
+                <input formControlName="cantidadPersonas" class="cantidadNinos" placeholder="Ingresa la cantidad de personas"
+                    id="cantidadNinos">
+                <div *ngIf="isFieldInvalid('cantidadPersonas')" class="error-message">La cantidad de peronas es requerida
+                </div>
             </div>
 
             <div class="field" [ngClass]="{'error': isFieldInvalid('nombre')}">
@@ -87,35 +85,78 @@
                 <input formControlName="telefono" class="telefono" placeholder="Ingresa tu teléfono" id="telefono">
                 <div *ngIf="isFieldInvalid('telefono')" class="error-message">El teléfono es requerido</div>
             </div>
-
-            <div class="field" [ngClass]="{'error': isFieldInvalid('correo')}">
-                <label class="correo">Correo</label>
-                <input formControlName="correo" class="correo" placeholder="Ingresa tu correo" id="correo">
-                <div *ngIf="isFieldInvalid('correo')" class="error-message">El correo es requerido</div>
-            </div>
-
             <div class="field" [ngClass]="{'error': isFieldInvalid('direccion')}">
                 <label class="direccion">Dirección</label>
-                <input formControlName="direccion" class="direccion" placeholder="Ingresa tu dirección" id="direccion">
+                <input formControlName="direccion" class="direccion" placeholder="Ingresa tu dirección"
+                    id="direccion">
                 <div *ngIf="isFieldInvalid('direccion')" class="error-message">La dirección es requerida</div>
             </div>
 
             <div class="field" [ngClass]="{'error': isFieldInvalid('checkin')}">
                 <label class="checkin">Fecha inicio</label>
-                <input type="date" formControlName="checkin" class="checkin" placeholder="Ingresa la fecha de inicio" id="fechainicio">
+                <input type="date" formControlName="checkin" class="checkin"
+                    placeholder="Ingresa la fecha de inicio" id="fechainicio">
                 <div *ngIf="isFieldInvalid('checkin')" class="error-message">La fecha de inicio es requerida</div>
             </div>
-
             <div class="field" [ngClass]="{'error': isFieldInvalid('checkout')}">
                 <label class="checkout">Fecha fin</label>
-                <input type="date" formControlName="checkout" class="checkout" placeholder="Ingresa la fecha fin" id="fechafin">
+                <input type="date" formControlName="checkout" class="checkout" placeholder="Ingresa la fecha fin"
+                    id="fechafin">
                 <div *ngIf="isFieldInvalid('checkout')" class="error-message">La fecha fin es requerida</div>
             </div>
-
-            <div routerLink="/method-payment" class="buttonProcedPayment">
-                <app-button type="submit" label="Proceder con el pago y la reserva" color="#275843" class="buttonend"></app-button>
-                <app-messages-error title="¡Hubo un problema!" paragraph="Alguno de los datos no es válido" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+    <div class="buttonProcedPayment">
+        <app-button type="submit" label="Proceder con el pago y la reserva" color="#275843"
+            class="buttonend"></app-button>
+        <app-messages-succesful title="Su reserva ha sido registrada exitosamente" *ngIf="isAlertOpen"
+            (close)="closeAlert()"></app-messages-succesful>
+        <app-messages-error title="¡Hubo un problema!" paragraph="Alguno de los datos no es valido"
+            *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+    </div>
+            <div *ngIf="tarifas && tarifas.length > 0">
+                <div *ngFor="let tarifa of tarifas">
+                  <p><strong>Tipo de habitación:</strong> {{ tarifa.tipo_habitacion }}</p>
+                  <p><strong>Precio:</strong> {{ tarifa.precio | currency }}</p>
+                  <p><strong>Temporada:</strong> {{ tarifa.temporada }}</p>
+                  <button type="button" (click)="selectTarifa(tarifa)">Seleccionar esta tarifa</button>
+                </div>
+            </div>
+              
+            <div class="buttonProcedPayment">
+                <app-button type="submit" label="Proceder con el pago y la reserva" color="#275843"
+                    class="buttonend"></app-button>
+                <app-messages-succesful title="Su reserva ha sido registrada exitosamente" *ngIf="isAlertOpen"
+                    (close)="closeAlert()"></app-messages-succesful>
+                <app-messages-error title="¡Hubo un problema!" paragraph="Alguno de los datos no es valido"
+                    *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
             </div>
         </form>
+
+
+        <div class="container-form">
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/nequi.svg"
+                    [metodoPago]="'Nequi'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/daviplata.svg"
+                    [metodoPago]="'Daviplata'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/PSE.svg"
+                    [metodoPago]="'PSE'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/mercadopago.svg"
+                    [metodoPago]="'Mercado Pago'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/paypal.svg"
+                    [metodoPago]="'PayPal'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/tarjeta.svg"
+                    [metodoPago]="'Debito'"></app-button-method-payment>
+            </div>
+        </div>
     </section>
 </section>

@@ -55,22 +55,6 @@ export class PageChaletMethodComponent {
   }
 
   onSubmit(): void {
-    if (this.reservaForm.valid) {
-      const reserva = this.reservaForm.value;
-      this.reservesService.createReservation(reserva).subscribe(
-        res => {
-          console.log('Reserva creada correctamente:', res);
-          this.router.navigate(['/reserves']);
-          this.openAlert();
-        },
-        error => {
-          console.error('Error al crear la reserva:', error);
-        }
-      );
-    } else {
-      console.error('Formulario no es válido');
-      this.openErrorAlert();
-    }
   }
 
   isFieldInvalid(field: string): boolean {

@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PageHomeUserComponent } from './pages/page-home-user/page-home-user.component';
 import { PageChaletMethodComponent } from './pages/page-chalet-method/page-chalet-method.component';
 import { ProgressComponent } from './components/progress/progress.component';
+import { FeatureProfileModule } from '../feature-profile/feature-profile.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ProgressComponent } from './components/progress/progress.component';
     CommonModule,
     FeatureReservesRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FeatureProfileModule
   ],
   exports: [
     FeatureReservesComponent,

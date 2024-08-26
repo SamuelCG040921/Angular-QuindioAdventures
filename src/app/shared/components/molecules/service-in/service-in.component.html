@@ -1,30 +1,8 @@
 <div class="containerService">
-    <div class="deTres">
-        <div class="content">
+    <div class="deTres" *ngFor="let grupo of agruparServicios(chalet?.servicios, 3)">
+        <div class="content" *ngFor="let servicio of grupo">
             <app-icon-services></app-icon-services>
-            <p>acceso a coneccion wifi</p>
-        </div>
-        <div class="content">
-            <app-icon-services></app-icon-services>
-            <p>acceso a coneccion wifi</p>
-        </div>
-        <div class="content">
-            <app-icon-services></app-icon-services>
-            <p>acceso a coneccion wifi</p>
-        </div>
-    </div>
-    <div class="deTres">
-        <div class="content">
-            <app-icon-services></app-icon-services>
-            <p>acceso a coneccion wifi</p>
-        </div>
-        <div class="content">
-            <app-icon-services></app-icon-services>
-            <p>acceso a coneccion wifi</p>
-        </div>
-        <div class="content">
-            <app-icon-services></app-icon-services>
-            <p>acceso a coneccion wifi</p>
+            <p>{{ servicio }}</p>
         </div>
     </div>
 </div>

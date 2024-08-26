@@ -1,0 +1,36 @@
+.cuidado img{
+    width: 35px;
+    height: 35px;
+    margin-right: 25px;
+}
+
+.cuidado{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.cuidado p{
+    width: 232px;
+    font-weight: normal;
+    font-size: 20px;
+    
+}
+
+#borde{
+    border-bottom: 1px solid black;
+    margin-left: 30px;
+}
+
+.imagechat{
+    width: 32px;
+    height: 32px;
+    margin-right: 20px;
+}
+
+.chatear{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
