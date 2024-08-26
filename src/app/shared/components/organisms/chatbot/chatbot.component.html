@@ -1,0 +1,32 @@
+<div class="chatbot-icon" (click)="toggleChat()">
+  <div class="chatbot-intro">
+    <div class="intro-text" *ngIf="!isChatOpen">
+      {{ introText }}
+    </div>
+    <img class="imagen" src="../../../../../assets/icons/chatbot.svg" alt="Chatbot" />
+  </div>
+</div>
+
+<div class="chatbot-container" *ngIf="isChatOpen">
+  <div class="chatbot-header">
+    <span>Chatbot</span>
+    <div class="modal-header">
+      <button class="close-button" (click)="toggleChat()">
+        <img class="iconClose" src="../../../../../assets/icons/x.svg">
+      </button>
+    </div>
+  </div>
+  <div class="chatbot-body">
+    <div *ngFor="let message of messages">
+      <div [ngClass]="{'user-message': message.fromUser, 'bot-message': !message.fromUser}">
+        {{ message.text }}
+      </div>
+    </div>
+  </div>
+  <div class="chatbot-footer">
+    <input [(ngModel)]="newMessage" placeholder="Empieza a chatear..." />
+    <button (click)="sendMessage()">
+      <img src="../../../../../assets/icons/sendChat.svg" alt="send">
+    </button>
+  </div>
+</div>

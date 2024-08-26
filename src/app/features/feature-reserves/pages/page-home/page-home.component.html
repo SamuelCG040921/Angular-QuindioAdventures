@@ -1,3 +1,6 @@
+
+<app-header *ngIf="!authService.estaActivo()"></app-header>
+<app-header-logueado *ngIf="authService.estaActivo()"></app-header-logueado>
 <app-slider></app-slider>
 <div class="title"><figure class="line1"></figure><h2 class="section-title">Mejores recomendaciones del mes</h2><figure class="line2"></figure></div>
 <app-recommendeds-cards></app-recommendeds-cards>
@@ -5,4 +8,5 @@
 <app-chalet-cards></app-chalet-cards>
 <div class="titlechalets"><figure class="linech"></figure><h2 class="section-title">Planes vacacionales</h2><figure class="linech"></figure></div>
 <app-plan-cards></app-plan-cards>
+<app-chatbot></app-chatbot>
 <app-footer></app-footer>

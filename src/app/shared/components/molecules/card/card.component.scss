@@ -13,7 +13,6 @@ a{
     position: relative;
 }
 .container-img img{
-    width: 100%;
     display: block;
     z-index: -1;
 }
@@ -33,4 +32,10 @@ a{
     top: 10px;
     right: 10px;
     z-index: 1;
+}
+
+@media (min-width: 352px) and (max-width: 480px) {
+    .card{
+        max-width: 292px;
+    }
 }

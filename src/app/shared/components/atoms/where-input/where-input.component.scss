@@ -12,3 +12,16 @@
   input:focus-visible{
     outline: 1px solid #418E6D;
   }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    .search-input-where{
+      width: auto;
+    }
+}
+
+@media (min-width: 352px) and (max-width: 480px) {
+  .search-input-where{
+    width: 30%;
+    font-size: 10px;
+  }
+}

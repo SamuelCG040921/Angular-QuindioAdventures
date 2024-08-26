@@ -37,14 +37,44 @@ header{
 
 .containerLinks a{
     width: max-content;
-    text-decoration: none;
     color: black;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.containerPrimero{
+    margin-right: 25px;
+    padding: 6px 20px;
+    border-radius: 15px;
+}
+
+#primero{
+    text-decoration: none;
+    width: max-content;
+}
+
+.containerPrimero:hover{
+    background-color: rgba(128, 128, 128, 0.200);
+}
+
+.containerSegundo{
+    padding: 6px 20px;
+    border-radius: 15px;
     font-size: 14px;
     font-weight: 500;
 }
 
-#primero{
-    margin-right: 45px;
+.containerSegundo:hover{
+    a{
+        background-color: rgba(128, 128, 128, 0.200);
+        border-radius: 10px;
+    }
+}
+
+.containerSegundo a{
+    color: #418e6d;
+    padding: 5px;
 }
 
 .containerMoneda{
@@ -55,6 +85,20 @@ header{
     padding-left: 32px;
 }
 
+.containerProfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerProfile a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
 .searchBar{
     display: flex;
     width: 100%;
@@ -62,4 +106,229 @@ header{
     align-items: center;
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+.burger-menu{
+    background-color: #418E6D;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.deployable-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 25%;
+    background-color: #f0f0f0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 11;
+  }
+  
+  .deployable-menu li {
+    text-align:left;
+    padding: 10px;
+  }
+  
+  .deployable-menu.show {
+    transform: translateX(0);
+  }
+
+  .deployable-menu a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .deployable-menu a:hover{
+    color:#418E6D;
+  }
+
+  .deployable-menu button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #418E6D;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+@media (max-width: 1279px) and (min-width: 921px) {
+    .first-part{
+        min-width: 92%;
+    }
+    .containerOpc{
+        width: 45%;
+    }
+    .containerLinks{
+        width: 60%;
+    }
+    .containerMoneda{
+        padding-left: 10px;
+    }
+    .containerPrimero{
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+        margin: 0px;
+        width: 50%;
+    }
+    .containerSegundo{
+        padding: 0px;
+        width: 120px;
+        text-align: center;
+    }
+    .containerProfile a{
+        font-size: 14px;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 920px) {
+    #primero{
+        display: none;
+    }
+
+    #segundo{
+        display: none;
+    }
+
+
+    .containerMoneda{
+        display: none;
+    }
+    .first-part{
+        margin-bottom: 30px;
+    }
+
+    .burger-menu{
+        display: block;
+    }
+
+    .nav1{
+        display: none;
+    }
+
+    .containerLogo{
+        display: flex;
+        margin: 0%;
+    }
+
+    .containerLogo .burger-menu{
+        margin-right: 20px;
+    }
+
+    .searchBar{
+        width: auto;
+    }
+
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    #primero{
+        display: none;
+    }
+
+    #segundo{
+        display: none;
+    }
+
+    .containerMoneda{
+        display: none;
+    }
+    .first-part{
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .burger-menu{
+        display: block;
+        margin-left: 20px;
+    }
+
+    .nav1{
+        display: none;
+    }
+
+    .containerLogo{
+        display: flex;
+    }
+
+    .containerLogo .burger-menu{
+        margin-right: 20px;
+    }
+
+    .containerProfile{
+        flex-wrap: wrap;
+        margin-right: 20px;
+    }
+
+    .containerProfile a{
+        margin-bottom: 15px;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 352px) and (max-width: 480px) {
+    #primero{
+        display: none;
+    }
+
+    #segundo{
+        display: none;
+    }
+
+    .containerMoneda{
+        display: none;
+    }
+    .first-part{
+        margin-bottom: 30px;
+        flex-direction: column;
+    }
+
+    .burger-menu{
+        display: block;
+    }
+
+    .nav1{
+        display: none;
+    }
+
+    .containerLogo{
+        display: flex;
+    }
+
+    .containerLogo .burger-menu{
+        margin-right: 20px;
+    }
+
+    .containerProfile{
+        display: flex;
+        align-items: end;
+        flex-wrap: wrap;
+        
+    }
+
+    .containerProfile a{
+        margin-bottom: 15px;
+        font-size: 10px;
+    }
+
+    .deployable-menu a{
+        font-size: 12px;
+    }
+
+    .deployable-menu{
+        width: 40%;
+    }
+
+    .searchBar{
+        padding-top: 0;
+    }
 }

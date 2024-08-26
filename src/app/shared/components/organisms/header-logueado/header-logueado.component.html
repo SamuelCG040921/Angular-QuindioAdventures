@@ -1,0 +1,42 @@
+<header>
+    <div class="containerFirst">
+        <div class="first-part">
+            <div class="containerLogo">
+                <button class="burger-menu" (click)="toggleMenu()">☰</button>
+                <ul class="deployable-menu" [ngClass]="{'show': isMenuOpen}">
+                    <li><button (click)="disguiseMenu()">X</button></li>
+                    <li> <a routerLink="/">Inicio</a></li>
+                    <li><a routerLink="/chalets">Chalets</a></li>
+                    <li><a routerLink="/planes-vacacionales">Planes vacacionales</a></li>
+                    <li><a routerLink="/reservas">Tus reservas</a></li>
+                    <li><a routerLink="/create-chalet">Registra tu chalet</a></li>
+                    <li><a routerLink="/create-plan">Registra tu plan</a></li>
+                    <li><a routerLink="/">¿Qué hacer?</a></li>
+                </ul>
+                <app-logo></app-logo>
+            </div>
+            <div class="containerOpc">
+                <div class="containerLinks">
+                    <div class="containerPrimero">
+                        <a routerLink="queHacer" id="primero">¿Que hacer?</a>
+                    </div>
+                    <div class="containerSegundo">
+                        <p id="segundo">Registra tu <a id="chalet" routerLink="/create-chalet">chalet</a> o <a id="plan" routerLink="/create-plan"> plan</a></p>
+                    </div>
+                </div>
+                <div class="containerMoneda">
+                    <app-money></app-money>
+                </div>
+            </div>
+            <div class="containerProfile">
+                <app-profile-button></app-profile-button>
+            </div>
+        </div>
+    </div>
+    <div class="searchBar">
+        <app-search-bar></app-search-bar>
+    </div>
+    <div class="nav">
+       <app-nav-logueado class="nav1"></app-nav-logueado>
+    </div>
+</header>

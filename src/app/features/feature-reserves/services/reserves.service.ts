@@ -1,34 +1,24 @@
 import { Injectable } from '@angular/core';
-import { Reserva } from '../models/reserva.model';
-import axios from 'axios';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservesService {
-  private apiUrl = 'http://localhost:10101/reserva'; // Asegúrate de que esta URL sea correcta
+  private apiUrl = 'http://localhost:10101/reserva';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  async registerReserva(newReserva: Reserva) {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      throw new Error('No token found');
-    }
+  enviarReserva(data: any): Observable<any> {
+    const token = localStorage.getItem('token'); // Obtener el token del localStorage
 
-    console.log('Sending reservation data to backend:', newReserva);
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}` // Incluir el token en los headers
+    });
 
-    try {
-      const response = await axios.post(this.apiUrl, newReserva, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
-      console.log('Backend response:', response.data);
-      return response.data;
-    } catch (error) {
-      console.error('Error registering reservation:', error);
-      throw error;
-    }
+    return this.http.post<any>(this.apiUrl, data, { headers });
   }
 }

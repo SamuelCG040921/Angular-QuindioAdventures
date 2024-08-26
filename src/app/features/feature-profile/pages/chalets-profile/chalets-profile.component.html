@@ -1,0 +1,14 @@
+<app-profile-header></app-profile-header>
+<app-profile-welcome></app-profile-welcome>
+<div class="buttonAdd">
+    <button 
+      class="btnGeneral"
+      (click)="handleClick()"
+      [disabled]="estaDeshabilidato">
+      <img src="../../../../../assets/icons/add.svg" alt="Add" class="btnIcon">
+      <span>Añadir chalet</span>
+    </button>
+  </div>
+  <app-card-plan class="card"></app-card-plan>
+  <app-card-plan class="card"></app-card-plan>
+

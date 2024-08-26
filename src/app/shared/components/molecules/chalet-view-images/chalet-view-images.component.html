@@ -1,4 +1,7 @@
-<div class="containerImgView"> 
-    <img class="imgCard" src="../../../../../assets/images/imgPrincipalChalet.jpg">
-    <app-favorite-icon class="icon"></app-favorite-icon>
-</div>
+<div *ngIf="firstImage">
+    <div class="containerImgView">
+      <img class="imgCard" [src]="firstImage" alt="Imagen del chalet">
+      <app-favorite-icon class="icon"></app-favorite-icon>
+    </div>
+  </div>
+  

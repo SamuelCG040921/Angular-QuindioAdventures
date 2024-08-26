@@ -14,6 +14,8 @@ import { PageChaletDetailsComponent } from './pages/page-chalet-details/page-cha
 import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { PageChaletPaymentComponent } from './pages/page-chalet-payment/page-chalet-payment.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PageHomeUserComponent } from './pages/page-home-user/page-home-user.component';
+import { FeatureProfileModule } from '../feature-profile/feature-profile.module';
 
 @NgModule({
   declarations: [
@@ -28,12 +30,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     PageChaletDetailsComponent,
     PageHomeComponent,
     PageChaletPaymentComponent,
+    PageHomeUserComponent,
   ],
   imports: [
     CommonModule,
     FeatureReservesRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FeatureProfileModule
   ],
   exports: [
     FeatureReservesComponent,

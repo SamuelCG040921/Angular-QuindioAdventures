@@ -8,6 +8,7 @@ import { WhatInputComponent } from './components/atoms/what-input/what-input.com
 import { WhereInputComponent } from './components/atoms/where-input/where-input.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileImgComponent } from './components/atoms/profile-img/profile-img.component';
 import { LogoComponent } from './components/molecules/logo/logo.component';
 import { SearchBarComponent } from './components/molecules/search-bar/search-bar.component';
@@ -61,6 +62,22 @@ import { HabTypeSelectorComponent } from './components/molecules/hab-type-select
 import { ChaletPlanAttendantComponent } from './components/molecules/chalet-plan-attendant/chalet-plan-attendant.component';
 import { CommunicationAttendantComponent } from './components/molecules/communication-attendant/communication-attendant.component';
 import { CommentComponent } from './components/organisms/comment/comment.component';
+import { ReservationPaintingsComponent } from './components/molecules/reservation-paintings/reservation-paintings.component';
+import { InputPaintingsComponent } from './components/atoms/input-paintings/input-paintings.component';
+import { InputDatePComponent } from './components/atoms/input-date-p/input-date-p.component';
+import { ReserveRecommendedPageComponent } from './components/molecules/reserve-recommended-page/reserve-recommended-page.component';
+import { PageRecommendComponent } from './components/organisms/page-recommend/page-recommend.component';
+import { ReservationPaintingsPlansComponent } from './components/molecules/reservation-paintings-plans/reservation-paintings-plans.component';
+import { RegisterButtonComponent } from './components/molecules/register-button/register-button.component';
+import { FeatureProfileComponent } from '../features/feature-profile/feature-profile.component';
+import { ProfileHeaderComponent } from '../features/feature-profile/components/profile-header/profile-header.component';
+import { VentajaServicioComponent } from './components/molecules/ventaja-servicio/ventaja-servicio.component';
+import { ModalEmailComponent } from './components/templates/modal-email/modal-email.component';
+import { HeaderLogueadoComponent } from './components/organisms/header-logueado/header-logueado.component';
+import { NavLogueadoComponent } from './components/molecules/nav-logueado/nav-logueado.component';
+import { InfoCardProfileComponent } from './components/molecules/info-card-profile/info-card-profile.component';
+import { ChatbotComponent } from './components/organisms/chatbot/chatbot.component';
+import { LoaderComponent } from './components/organisms/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -108,6 +125,7 @@ import { CommentComponent } from './components/organisms/comment/comment.compone
     NavegationMapComponent,
     IconServicesComponent,
     ServiceInComponent,
+    ButtonComponent,
     PeoppleCountInfoComponent,
     ButtonPlusMoreComponent,
     RecuadroPrecioCalculoComponent,
@@ -124,26 +142,48 @@ import { CommentComponent } from './components/organisms/comment/comment.compone
     HabTypeSelectorComponent,
     ChaletPlanAttendantComponent,
     CommunicationAttendantComponent,
-    CommentComponent
+    CommentComponent,
+    ReservationPaintingsComponent,
+    InputPaintingsComponent ,
+    InputDatePComponent,
+    ReserveRecommendedPageComponent,
+    PageRecommendComponent,
+    ReservationPaintingsPlansComponent,
+    RegisterButtonComponent,
+    ProfileHeaderComponent,
+    VentajaServicioComponent,
+    ModalEmailComponent,
+    HeaderLogueadoComponent,
+    NavLogueadoComponent,
+    InfoCardProfileComponent,
+    ChatbotComponent,
+    LoaderComponent
   ],
 
   imports: [
     CommonModule,
     RouterModule.forRoot([
       { path: 'profile', component: SearchButtonComponent },
+      { path: 'profile', component: FeatureProfileComponent },
       { path: 'chalets', component: FooterInputComponent },
       { path: 'planes-vacacionales', component: SearchButtonComponent },
       { path: 'reservas', component: SearchButtonComponent },
     ]),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
 
   exports: [
     ProfileButtonComponent,
     ProfileImgComponent,
+    ReactiveFormsModule,
     SearchButtonComponent,
     SearchButtonComponent,
     WhatInputComponent,
+    CommonModule,
+    ReactiveFormsModule,
+    ButtonComponent,
+    LoginRegisterInputComponent,
     WhereInputComponent,
     ButtonProfileComponent,
     LogoComponent,
@@ -152,7 +192,6 @@ import { CommentComponent } from './components/organisms/comment/comment.compone
     HeaderComponent,
     ModalComponent,
     EmailInputComponent,
-    LoginRegisterInputComponent,
     FooterInputComponent,
     FooterLogoComponent,
     FooterComponent,
@@ -190,7 +229,22 @@ import { CommentComponent } from './components/organisms/comment/comment.compone
     HabTypeSelectorComponent,
     ChaletPlanAttendantComponent,
     CommunicationAttendantComponent,
-    CommentComponent
+    CommentComponent,
+    ReservationPaintingsComponent,
+    InputPaintingsComponent,
+    InputDatePComponent,
+    ReserveRecommendedPageComponent,
+    PageRecommendComponent,
+    ReservationPaintingsPlansComponent,
+    ProfileHeaderComponent,
+    VentajaServicioComponent,
+    ModalEmailComponent,
+    InfoCardProfileComponent,
+    NavComponent,
+    HeaderLogueadoComponent,
+    InfoCardProfileComponent,
+    ChatbotComponent,
+    LoaderComponent
   ],
 })
 export class SharedModule { }

@@ -2,19 +2,35 @@
     <div class="containerFirst">
         <div class="first-part">
             <div class="containerLogo">
+                <button class="burger-menu" (click)="toggleMenu()">☰</button>
+                <ul class="deployable-menu" [ngClass]="{'show': isMenuOpen}">
+                    <li><button (click)="disguiseMenu()">X</button></li>
+                    <li> <a routerLink="/">Inicio</a></li>
+                    <li><a routerLink="/chalets">Chalets</a></li>
+                    <li><a routerLink="/planes-vacacionales">Planes vacacionales</a></li>
+                    <li><a routerLink="/login">Tus reservas</a></li>
+                    <li><a routerLink="/login">Registra tu chalet</a></li>
+                    <li><a routerLink="/login">Registra tu plan</a></li>
+                    <li><a routerLink="/">¿Qué hacer?</a></li>
+                </ul>
                 <app-logo></app-logo>
             </div>
             <div class="containerOpc">
                 <div class="containerLinks">
-                    <a routerLink="queHacer" id="primero">¿Que hacer?</a>
-                    <a routerLink="regitrarChalet" id="segundo">Registra tu chalet o plan</a>
+                    <div class="containerPrimero">
+                        <a routerLink="queHacer" id="primero">¿Que hacer?</a>
+                    </div>
+                    <div class="containerSegundo">
+                        <p id="segundo">Registra tu <a id="chalet" routerLink="/login">chalet</a> o <a id="plan" routerLink="/login"> plan</a></p>
+                    </div>
                 </div>
                 <div class="containerMoneda">
                     <app-money></app-money>
                 </div>
             </div>
             <div class="containerProfile">
-                <app-profile-button></app-profile-button>
+                <a routerLink="/login">Iniciar sesión</a>
+                <app-register-button></app-register-button>
             </div>
         </div>
     </div>
@@ -22,6 +38,6 @@
         <app-search-bar></app-search-bar>
     </div>
     <div class="nav">
-        <app-nav></app-nav>
+        <app-nav class="nav1"></app-nav>
     </div>
 </header>

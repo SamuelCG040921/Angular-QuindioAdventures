@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>QuindioAdventuresFront</title>
+  <title>QuindioAdventures</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZ4coQBMjCfCFVes6LFuMHTgQV5Y7mz3w&callback=initMap" async defer></script>
+
+      <script>
+        function initMap() {
+          const map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: -34.397, lng: 150.644 },
+            zoom: 8
+          });
+        }
+      </script>
 </head>
 <body>
   <app-root></app-root>

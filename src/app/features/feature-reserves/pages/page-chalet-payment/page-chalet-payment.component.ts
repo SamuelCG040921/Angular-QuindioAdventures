@@ -1,89 +1,220 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { ChaletInfo } from '../../models/chaletsById';
+import { ChaletsService } from '../../services/chalets.service';
+import { TarifaService } from '../../services/tarifa.service';
+import { CountPeopleService } from '../../services/count-people.service';
+import { Subscription } from 'rxjs';
 import { ReservesService } from '../../services/reserves.service';
-import { Router } from '@angular/router';
-import { Reserva } from '../../models/reserva.model';
 
 @Component({
   selector: 'app-page-chalet-payment',
   templateUrl: './page-chalet-payment.component.html',
   styleUrls: ['./page-chalet-payment.component.scss']
 })
-export class PageChaletPaymentComponent implements OnInit{
-  isSubmitting = false;
-  reserves: any
-  isAlertOpen = false;
-  isErrorAlertOpen = false;
-  reservaForm!: FormGroup;
+export class PageChaletPaymentComponent implements OnInit, OnDestroy {
+  tarifas: any[] = [];
+  miVariable: any;
+  reservaForm: FormGroup;
+  chalet: ChaletInfo | null = null;
+  loading: boolean = true;
+  error: string | null = null;
+  isAlertOpen: boolean = false;
+  isErrorAlertOpen: boolean = false;
+  firstImage: string | null = null;
+  tarifaSeleccionada: any | null = null;
+  formattedPrice: string | null = null;
+  fecha_inicio: string | null = null;
+  fecha_fin: string | null = null;
+  totalPersonsSubscription!: Subscription;
+  routerSubscription!: Subscription;
+  precioTotal: number | null = null; // Nueva variable para el precio total
 
   constructor(
     private fb: FormBuilder,
-    private reservesService: ReservesService,
-    private router: Router
-  ) {}
-
-  ngOnInit(){
+    private router: Router,
+    private chaletsService: ChaletsService,
+    private route: ActivatedRoute,
+    private tarifaService: TarifaService,
+    private personCountService: CountPeopleService,
+    private reservesService: ReservesService
+  ) {
     this.reservaForm = this.fb.group({
       documento: ['', Validators.required],
-      cantidadNinos: ['', Validators.required],
-      cantidadAdultos: ['', Validators.required],
+      cantidadPersonas: ['', Validators.required],
       nombre: ['', Validators.required],
-      fechaInicio: ['', Validators.required],
-      fechaFin: ['', Validators.required],
+      apellido: ['', Validators.required],
+      telefono: ['', Validators.required],
+      direccion: ['', Validators.required],
+      checkin: ['', Validators.required],
+      checkout: ['', Validators.required]
+    });
+
+    this.totalPersonsSubscription = this.personCountService.totalPersons$.subscribe((count: number) => {
+      this.reservaForm.patchValue({ cantidadPersonas: count });
     });
   }
 
-  onSubmit() {
-    if (this.reservaForm.valid) {
-      this.isSubmitting = true; // Deshabilitar el botón al enviar
+  ngOnInit(): void {
+    const valorGuardado = localStorage.getItem('miVariable');
+    this.miVariable = valorGuardado ? JSON.parse(valorGuardado) : 0;
 
-      const newReserva = new Reserva(
-        this.reservaForm.value.documento,
-        this.reservaForm.value.cantidadAdultos,
-        this.reservaForm.value.cantidadNinos,
-        this.reservaForm.value.nombre,
-        this.reservaForm.value.fechaFin,
-        this.reservaForm.value.fechaInicio,
-      );
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id) {
+        this.loadChalet(id);
+      } else {
+        this.error = 'ID del chalet no disponible';
+        this.loading = false;
+      }
+    });
 
-      this.reservesService.registerReserva(newReserva).then(
-        response => {
-          this.isSubmitting = false; // Habilitar el botón después de la respuesta
-          // Manejar la respuesta exitosa aquí
-          this.openAlert();
+    this.reservaForm.get('checkin')?.valueChanges.subscribe(value => {
+      this.fecha_inicio = value;
+      this.fetchTarifas(); // Obtener tarifas basadas en la fecha de inicio
+    });
+
+    this.reservaForm.get('checkout')?.valueChanges.subscribe(value => {
+      this.fecha_fin = value;
+      this.calculateTotalPrice(); // Calcular el precio total cuando se cambie la fecha de fin
+    });
+
+    this.routerSubscription = this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/page-chalet-payment') {
+          this.miVariable = 0;
         }
-      ).catch(
+      }
+    });
+  }
+
+  loadChalet(id: string): void {
+    this.chaletsService.getChaletById(id)
+      .then(chalet => {
+        this.chalet = chalet;
+        const imagenesKeys = Object.keys(this.chalet.imagenes);
+        if (imagenesKeys.length > 0) {
+          this.firstImage = this.chalet.imagenes[imagenesKeys[0]];
+        }
+        this.loading = false;
+      })
+      .catch(error => {
+        this.error = 'Error al cargar el chalet';
+        this.loading = false;
+      });
+  }
+
+  fetchTarifas(): void {
+    if (this.fecha_inicio && this.chalet) {
+      const idChalet = this.chalet.id_chalet;
+      this.tarifaService.getTarifasPorFecha(idChalet, this.fecha_inicio)
+        .subscribe(
+          response => {
+            const tarifasArray = response?.tarifas;
+            if (Array.isArray(tarifasArray) && tarifasArray.length > 0) {
+              if (Array.isArray(tarifasArray[0])) {
+                this.tarifas = tarifasArray[0];
+              } else {
+                this.error = 'Datos de tarifas incorrectos.';
+              }
+            } else {
+              this.error = 'No se encontraron tarifas disponibles.';
+            }
+          },
+          error => {
+            this.error = 'Error al obtener tarifas';
+          }
+        );
+    }
+  }
+
+  openAlert() {
+    this.isAlertOpen = true;
+  }
+
+  closeAlert() {
+    this.isAlertOpen = false;
+  }
+
+  openErrorAlert() {
+    this.isErrorAlertOpen = true;
+  }
+
+  closeErrorAlert() {
+    this.isErrorAlertOpen = false;
+  }
+
+  onSubmit() {
+    if (this.reservaForm.valid && this.tarifaSeleccionada) {
+      const formData = {
+        ...this.reservaForm.value,
+        fecha_inicio: this.fecha_inicio,
+        fecha_fin: this.fecha_fin,
+        tarifaSeleccionada: this.tarifaSeleccionada,
+        precioTotal: this.precioTotal
+      };
+
+      console.log(formData,2345);
+      
+  
+      this.reservesService.enviarReserva(formData).subscribe(
+        response => {
+          console.log('Reserva creada exitosamente:', response);
+          // Aquí puedes redirigir al usuario a otra página o mostrar un mensaje de éxito
+          this.openAlert(); // Muestra la alerta de éxito
+        },
         error => {
-          this.isSubmitting = false; // Habilitar el botón después de un error
-          console.error('Registration error:', error);
-          this.openErrorAlert();
+          console.error('Error al crear la reserva:', error);
+          this.openErrorAlert(); // Muestra la alerta de error
         }
       );
     } else {
-      console.error('Form is not valid');
-      this.reservaForm.markAllAsTouched(); // Marcar todos los campos como tocados para mostrar errores
+      console.log('Formulario inválido o tarifa no seleccionada');
       this.openErrorAlert();
     }
   }
 
-  openAlert(): void {
-    this.isAlertOpen = true;
-  }
-
-  closeAlert(): void {
-    this.isAlertOpen = false;
-  }
-
-  openErrorAlert(): void {
-    this.isErrorAlertOpen = true;
-  }
-
-  closeErrorAlert(): void {
-    this.isErrorAlertOpen = false;
+  ngOnDestroy(): void {
+    if (this.totalPersonsSubscription) {
+      this.totalPersonsSubscription.unsubscribe();
+    }
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
   }
 
   isFieldInvalid(field: string): boolean {
     const control = this.reservaForm.get(field);
-    return control ? !control.valid && (control.dirty || control.touched) : false;
+    return control ? control.invalid && (control.dirty || control.touched) : false;
+  }
+
+  selectTarifa(tarifa: any): void {
+    this.tarifaSeleccionada = tarifa;
+    this.formattedPrice = tarifa.precio ? this.formatPrice(tarifa.precio) : null;
+    this.calculateTotalPrice(); // Calcular el precio total cuando se seleccione una tarifa
+  }
+
+  calculateTotalPrice(): void {
+    if (this.fecha_inicio && this.fecha_fin && this.tarifaSeleccionada) {
+      const startDate = new Date(this.fecha_inicio);
+      const endDate = new Date(this.fecha_fin);
+      const timeDiff = endDate.getTime() - startDate.getTime();
+      const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24)) + 1;
+
+      const pricePerDay = this.tarifaSeleccionada.precio || 0;
+      const totalPrice = daysDiff * pricePerDay;
+
+      this.precioTotal = totalPrice; // Almacena como número para enviar al backend
+      this.formattedPrice = this.formatPrice(totalPrice); // Formatea el precio total
+    } else {
+      this.precioTotal = null;
+      this.formattedPrice = null;
+    }
+  }
+
+  formatPrice(price: number): string {
+    // Formatea el precio a una cadena con separadores de miles y sin decimales
+    return price.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 });
   }
 }
