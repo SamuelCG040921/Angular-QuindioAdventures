@@ -17,14 +17,16 @@
     </div>
   </div>
   <div class="chatbot-body">
-    <div *ngFor="let message of messages">
+    <div class="messageUser" *ngFor="let message of messages">
       <div [ngClass]="{'user-message': message.fromUser, 'bot-message': !message.fromUser}">
         {{ message.text }}
       </div>
     </div>
   </div>
   <div class="chatbot-footer">
-    <input [(ngModel)]="newMessage" placeholder="Empieza a chatear..." />
+    <input [(ngModel)]="newMessage" 
+           placeholder="Empieza a chatear..." 
+           (keypress)="handleKeyPress($event)" />
     <button (click)="sendMessage()">
       <img src="../../../../../assets/icons/sendChat.svg" alt="send">
     </button>

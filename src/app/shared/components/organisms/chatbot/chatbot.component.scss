@@ -79,8 +79,24 @@
     height: 24px;
     filter: brightness(0) invert(1);
 }
+.user-message {
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    width: auto;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow: hidden;
+    background-color: #c2dcd0;
+    color: #000;
+}
 
-.user-message, .bot-message {
+
+.bot-message {
     margin: 10px 0;
     padding: 10px;
     border-radius: 10px;
@@ -94,13 +110,12 @@
 .bot-message {
     background-color: #eaf3ee;
     color: #000;
-    align-self: flex-start;
 }
 
 .user-message {
     background-color: #c2dcd0;
     color: #000;
-    align-self: flex-end;
+
 }
 
 .chatbot-footer {
