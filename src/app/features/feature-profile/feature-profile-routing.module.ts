@@ -4,13 +4,14 @@ import { FeatureProfileComponent } from './feature-profile.component';
 import { ChatsComponent } from './pages/chats/chats.component';
 import { PlansProfileComponent } from './pages/plans-profile/plans-profile.component';
 import { ChaletsProfileComponent } from './pages/chalets-profile/chalets-profile.component';
+import { PlanRegisterFormComponent } from './pages/plan-register-form/plan-register-form.component';
 
   const routes: Routes = [
     {path:'micuenta', component:FeatureProfileComponent},
     {path:'mischats',component:ChatsComponent},
     {path:'misplanesvacacionales',component:PlansProfileComponent},
-    {path:'mischalets',component:ChaletsProfileComponent}
-    
+    {path:'mischalets',component:ChaletsProfileComponent},
+    {path:'create-plan', component:PlanRegisterFormComponent},
   ];
 
 @NgModule({
