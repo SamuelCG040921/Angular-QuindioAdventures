@@ -22,8 +22,10 @@
 <div class="segunda">
     <div class="pricesTable">
         <app-prices-table id="precios"></app-prices-table>
-        <app-map class="map"></app-map>
-        <p>{{ chalet.ubicacion_chalet }}</p>
+        <div class="addressContainer">
+            <app-map class="map"></app-map>
+            <p>{{ chalet.ubicacion_chalet }}</p>
+        </div>
     </div>
 </div>
 
@@ -80,7 +82,7 @@
                     <p>Juan Bedoya</p>
                 </div>
                 <div class="bordername"></div>
-                <input type="text" id="comment" placeholder="Agrega un comentario..." (click)="mostrarBotones()" >
+                <input class="commentInput" type="text" id="comment" placeholder="Agrega un comentario..." (click)="mostrarBotones()" >
                 
             </div>
             

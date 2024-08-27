@@ -1,3 +1,12 @@
-<div class="recommended-container">
-    <app-recommended-card *ngFor="let chalet of chalets;let i = index" [chalet]="chalet"></app-recommended-card>
+<div class="emptyState" *ngIf="recommended.length<=0">
+    <div class="containerChaplanito">
+        <p id="ono">Ooops!</p>
+        <img src="../../../../../assets/images/chaplanitoreservas.jpeg" alt="">
+        <div class="contenedorNoTienes">
+            <p id="noTienesClientes">Aún no tenemos recomendaciones para ti</p>
+        </div>
+    </div>
+</div>
+<div class="recommended-container" *ngIf="recommended.length>0">
+    <app-recommended-card></app-recommended-card>
 </div>

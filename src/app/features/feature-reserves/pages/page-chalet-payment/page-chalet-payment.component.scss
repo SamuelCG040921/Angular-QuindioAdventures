@@ -59,6 +59,7 @@ input{
     font-size: 16px;
     color: #90A3BF;
     margin-right: 30px;
+    align-self: center;
 }
 .organization span{
     font-size: 16px;
@@ -83,6 +84,7 @@ input{
 .priceAll span{
     font-size: 24px;
     font-weight: 500;
+    align-self: center;
 }
 .infopayment{
     display: flex;
@@ -129,9 +131,12 @@ input{
     align-items: center;
 }
 .buttonProcedPayment{
-    margin-top: 40px;
-    margin-bottom: 60px;
-    margin-left: 130px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 }
 
 .field {
@@ -168,6 +173,39 @@ input{
     background: linear-gradient(to right, #90b4a0 50%, #D8D8D8 50%);
     margin-top: 20px;
     margin-left: 40px;
+}
+
+.tarifasContainer{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tarifaView{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+    margin-bottom: 20px;
+    background-color: #90b4a0;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.tarifaView button{
+    margin-bottom: 10px;
+    background-color: #275843;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+
+.titleTarifa{
+    margin-top: 10px;
+    text-align: center;
 }
 
   @media (min-width: 921px) and (max-width: 1279px) {

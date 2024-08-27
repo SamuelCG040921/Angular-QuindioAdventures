@@ -7,14 +7,11 @@ import { ChaletsService } from '../../../../features/feature-reserves/services/c
   styleUrl: './page-recommend.component.scss'
 })
 export class PageRecommendComponent {
-  chalets:any;
+  recommended:any;
 
   constructor(private chaletsService:ChaletsService){}
 
   ngOnInit(){
-    this.chaletsService.getChalets()
-    .subscribe(res=>{
-      this.chalets=res
-    })
+    this.recommended = []
   }
 }

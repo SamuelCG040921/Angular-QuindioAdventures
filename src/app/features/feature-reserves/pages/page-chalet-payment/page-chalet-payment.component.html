@@ -8,9 +8,8 @@
     <section class="section1">
         <div class="container1">
             <h2>Antes de la reserva</h2>
-            <p>El valor del paquete de tu reserva puede variar dependiendo del día y el pasaporte que elegiste.</p>
+            <p>El valor del paquete de tu reserva puede variar dependiendo de el dia y el pasaporte que elejiste.</p>
         </div>
-
         <div class="container2">
             <img class="imgChalet"
             [src]="firstImage">
@@ -19,23 +18,22 @@
                 <app-calification-card></app-calification-card>
             </div>
         </div>
-
         <div class="container3">
             <div class="organization">
-                <p>Valor del chalet</p>
-                <span>$120.000</span>
-            </div>
-            <div class="organization">
-                <p>Descuento de aplicativo</p>
-                <span>$10.000</span>
-            </div>
+                <p>Detalles de la tarifa seleccionada:</p>
+                <div *ngIf="tarifaSeleccionada">
+                  <p><strong>Tipo de habitación:</strong> {{ tarifaSeleccionada.tipo_habitacion }}</p>
+                  <p><strong>Temporada:</strong> {{ tarifaSeleccionada.temporada }}</p>
+                  <p><strong>Precio:</strong> {{ tarifaSeleccionada.precio }}</p>
+                </div>
+                <div *ngIf="!tarifaSeleccionada">
+                  <p>No se ha seleccionado ninguna tarifa.</p>
+                </div>
+              </div>
         </div>
-
         <div class="container4">
             <h2>Precio total de la reserva</h2>
             <div class="priceAll">
-                <p>Precio total incluido el descuento por reserva en nuestro aplicativo</p>
-                <span>$110.000</span>
                 <p>Precio total contando la cantidad de días de la reserva</p>
                 <span>{{ formattedPrice || '$0' }}</span>
             </div>
@@ -104,17 +102,9 @@
                     id="fechafin">
                 <div *ngIf="isFieldInvalid('checkout')" class="error-message">La fecha fin es requerida</div>
             </div>
-    <div class="buttonProcedPayment">
-        <app-button type="submit" label="Proceder con el pago y la reserva" color="#275843"
-            class="buttonend"></app-button>
-        <app-messages-succesful title="Su reserva ha sido registrada exitosamente" *ngIf="isAlertOpen"
-            (close)="closeAlert()"></app-messages-succesful>
-        <app-messages-error title="¡Hubo un problema!" paragraph="Alguno de los datos no es valido"
-            *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
-    </div>
-            <div *ngIf="tarifas && tarifas.length > 0">
-                <div *ngFor="let tarifa of tarifas">
-                  <p><strong>Tipo de habitación:</strong> {{ tarifa.tipo_habitacion }}</p>
+            <div *ngIf="tarifas && tarifas.length > 0" class="tarifasContainer">
+                <div *ngFor="let tarifa of tarifas" class="tarifaView">
+                  <p class="titleTarifa"><strong>Tipo de habitación:</strong> {{ tarifa.tipo_habitacion }}</p>
                   <p><strong>Precio:</strong> {{ tarifa.precio | currency }}</p>
                   <p><strong>Temporada:</strong> {{ tarifa.temporada }}</p>
                   <button type="button" (click)="selectTarifa(tarifa)">Seleccionar esta tarifa</button>

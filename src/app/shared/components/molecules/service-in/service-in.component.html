@@ -1,7 +1,7 @@
 <div class="containerService">
     <div class="deTres" *ngFor="let grupo of agruparServicios(chalet?.servicios, 3)">
         <div class="content" *ngFor="let servicio of grupo">
-            <app-icon-services></app-icon-services>
+            <app-icon-services class="icon"></app-icon-services>
             <p>{{ servicio }}</p>
         </div>
     </div>
