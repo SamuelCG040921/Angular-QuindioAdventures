@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-chatbot',
   templateUrl: './chatbot.component.html',
-  styleUrl: './chatbot.component.scss'
+  styleUrls: ['./chatbot.component.scss']
 })
 export class ChatbotComponent {
   isChatOpen = false;
@@ -11,7 +11,7 @@ export class ChatbotComponent {
   messages: { fromUser: boolean, text: string }[] = [];
   newMessage = '';
 
-  toggleChat() { 
+  toggleChat() {
     this.isChatOpen = !this.isChatOpen;
   }
 
@@ -20,6 +20,12 @@ export class ChatbotComponent {
       this.messages.push({ text: this.newMessage, fromUser: true });
       this.newMessage = '';
       // Lógica para enviar el mensaje al backend y recibir respuesta
+    }
+  }
+
+  handleKeyPress(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.sendMessage();
     }
   }
 }

@@ -115,7 +115,7 @@ nav a{
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 700vh;
     width: 25%;
     border-right: 2px solid #418E6D;
     background-color: #f0f0f0;
@@ -153,7 +153,7 @@ nav a{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 65%;
+    width: auto;
     min-width: 50%;
     height: 70px;
     border-radius: 15px;
@@ -182,11 +182,11 @@ nav a{
 }
 @media (min-width: 769px) and (max-width: 920px) {
     aside {
-        display: none; 
+        display: none; /* Hides the aside element */
     }
 
     .rightContent {
-        width: 100%; 
+        width: 100%; /* Make sure rightContent takes up the full width */
     }
     .left{
         display: none;
@@ -195,7 +195,7 @@ nav a{
        display: flex;
         justify-content: center;
         align-items: center;
-        height: 8vh;
+        height: 100px;
         padding-left: 10px;
     }
     .burger-menu{
@@ -235,40 +235,24 @@ nav a{
         display: none; /* Hides the aside element */
     }
 
-    .rightContent {
-        display: block;
-        width: 100%; /* Make sure rightContent takes up the full width */
-        overflow-y: auto; /* Adds a scrollbar if the content overflows */
-        padding-top: 10vh; /* Ensures the content doesn't go under the header */
-        box-sizing: border-box; /* Ensures padding doesn't cause overflow */
-    }
-
     .left{
         display: none;
     }
 
     .first-part {
-        margin-bottom: 30px;
-        width: 100%;
-        height: 10vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-left: 5px;
-        position: fixed; /* Fix the header at the top */
-        top: 0;
-        left: 0;
-        z-index: 1000; /* Ensures the header stays on top */
-        background-color: white; /* Matches background to avoid transparency issues */
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for separation */
+        height: 100px;
+        padding-left: 0px;
     }
 
-    .burger-menu{
+    .burger-menu {
         display: block;
         margin-left: 20px;
     }
 
-    .nav1{
+    .nav1 {
         display: none;
     }
 
@@ -295,41 +279,26 @@ nav a{
         display: none; /* Hides the aside element */
     }
 
-    .rightContent {
-        width: 100%; /* Make sure rightContent takes up the full width */
-        overflow-y: auto; /* Adds a scrollbar if the content overflows */
-        padding-top: 10vh; /* Ensures the content doesn't go under the header */
-        box-sizing: border-box; /* Ensures padding doesn't cause overflow */
-    }
-
     .left{
         display: none;
     }
 
     .first-part {
-        margin-bottom: 30px;
-        width: 100%;
-        height: 10vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-left: 5px;
-        position: fixed; /* Fix the header at the top */
-        top: 0;
-        left: 0;
-        z-index: 1000; /* Ensures the header stays on top */
-        background-color: white; /* Matches background to avoid transparency issues */
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for separation */
+        height: 100px;
+        padding-left: 0px;
     }
 
-    .burger-menu{
+    .burger-menu {
         display: block;
+        margin-left: 20px;
     }
 
-    .nav1{
+    .nav1 {
         display: none;
     }
-
     .containerLogo{
         display: flex;
     }
