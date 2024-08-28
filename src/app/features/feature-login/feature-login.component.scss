@@ -4,7 +4,7 @@
     height: 100vh;
   }
   
-  .leftPart {
+.leftPart {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +12,7 @@
     width: 100%;
     min-width: 40rem;
     height: 100vh;
-  }
+}
 
 .form-header{
     display: flex;
@@ -54,7 +54,8 @@ h1{
 .containerP{
     display: flex;
     justify-content: flex-start;
-    width: 65%;
+    width: 35%;
+    min-width: 350px;
 }
 
 .containerText1 p{
@@ -225,6 +226,9 @@ button:focus-visible{
     .leftPart {
       width: 100vw; /* Ocupa todo el ancho en pantallas pequeñas */
       min-width: 0px;
+    }
+    .containerP{
+        min-width: 265px;
     }
     .rightPart {
       display: none; /* Ocultar la parte derecha en pantallas pequeñas */

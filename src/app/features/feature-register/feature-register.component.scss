@@ -5,7 +5,7 @@
     background-image: url('../../../assets/images/registerImg.jpg');
     background-size: cover;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     min-width: 950px;
 }
 
@@ -35,9 +35,9 @@
     background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
-    width: 90%;
-    max-width: 950px;
+    width: 50%;
     min-width: 950px;
+    max-width: 1500px;
 }
 
 .form-container h1 {
@@ -170,4 +170,71 @@
     border-radius: 8px;
     font-size: 12px;
     padding-left: 10px;
+}
+
+@media ((max-width: 1279px) and (min-width: 921px)) {
+    .form-container{
+        width: 80%;
+        min-width: 800px;
+    }
+    .left{
+        width: 100%;
+    }
+    .center{
+        width: 100%;
+    }
+    .right{
+        width: 100%;
+    }
+    #formInput{
+        width: 90%;
+    }
+}
+
+@media ((max-width: 920px) and (min-width: 769px)) {
+    .form-container{
+        width: 80%;
+        min-width: 800px;
+    }
+    .left{
+        width: 100%;
+    }
+    .center{
+        width: 100%;
+    }
+    .right{
+        width: 100%;
+    }
+    #formInput{
+        width: 90%;
+    }
+}
+
+@media ((max-width: 768px) and (min-width: 481px)) {
+    .form-container{
+        width: 80%;
+        min-width: 800px;
+    }
+    .containerFirst{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    .form{
+        display: flex;
+        flex-direction: column;
+    }
+    .left{
+        display: flex;
+        width: 100%;
+    }
+    .center{
+        width: 100%;
+    }
+    .right{
+        width: 100%;
+    }
+    #formInput{
+        width: 90%;
+    }
 }
