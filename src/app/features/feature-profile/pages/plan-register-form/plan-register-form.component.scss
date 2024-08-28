@@ -311,6 +311,7 @@
     align-items: center;
     margin-bottom: 40px;
     flex-wrap: wrap;
+    width: 80%;
 }
 
 .inputContainer{
@@ -509,6 +510,7 @@
     padding: 10px;
     background-color: #275843;
     color: #fff;
+    margin-bottom: 32px;
   }
 
   .deleteFee{
@@ -520,6 +522,16 @@
     margin-right: 20px;
     margin-left: 10px;
 }
+
+#precio{
+    margin-bottom: 32px;
+}
+
+#temporada{
+    margin-bottom: 32px;
+}
+
+
 
 @media (min-width: 352px) and (max-width: 480px){
     .parte1{

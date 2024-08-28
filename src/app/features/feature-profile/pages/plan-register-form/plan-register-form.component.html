@@ -89,6 +89,28 @@
                 <option value="Baja">Baja</option>
               </select>
             </div>
+            <div class="inputContainer">
+              <label for="precio">Hora de llegada</label>
+              <input
+                placeholder="Ingresa la hora de llegada"
+                id="horallegada"
+                class="inputHab"
+                type="text"
+                formControlName="horallegada"
+              />
+            </div>
+            <div class="inputContainer">
+              <label for="precio">Hora de salida</label>
+              <input
+                placeholder="Ingresa la hora de salida"
+                id="horasalida"
+                class="inputHab"
+                type="text"
+                formControlName="horasalida"
+              />
+            </div>
+          </div>
+          <div class="containerButtonSave">
             <button type="button" (click)="guardarTarifa()" class="saveFee">Guardar Tarifa</button>
           </div>
         

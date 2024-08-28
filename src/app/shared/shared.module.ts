@@ -259,7 +259,8 @@ import { InfoCardChaletProfileComponent } from './components/molecules/info-card
     PlansAdministratorComponent,
     ChatbotComponent,
     LoaderComponent,
-    InfoCardChaletProfileComponent
+    InfoCardChaletProfileComponent,
+    NavLogueadoComponent
   ],
 })
 export class SharedModule { }
