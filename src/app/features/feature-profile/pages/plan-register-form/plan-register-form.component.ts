@@ -3,11 +3,11 @@ import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/cor
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../feature-reserves/services/user.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ChaletService } from '../../services/chalet.service';
+import { PlansService } from '../../services/plans.service';
 import { MapComponent } from '../../components/map/map.component';
 import { AuthService } from '../../../feature-login/services/auth.service';
 import { UpdateService } from '../../services/update-profile.service';
-import { ChaletDTO } from '../../models/register-chalet';
+import { PlanDTO } from '../../models/register-plan';
 
 @Component({
   selector: 'app-plan-register-form',
@@ -18,7 +18,7 @@ export class PlanRegisterFormComponent {
   @ViewChild(MapComponent) mapComponent!: MapComponent;
   @Output() imageUrlUpdated = new EventEmitter<string>();
   
-  chaletForm!: FormGroup;
+  planForm!: FormGroup;
   tarifasform!: FormGroup; // Asegúrate de que esta propiedad esté declarada
   serviciosSeleccionados: string[] = [];
   user: any;
@@ -38,15 +38,14 @@ export class PlanRegisterFormComponent {
   archivoCapturado3: File | null = null;
   archivoCapturado4: File | null = null;
 
-  constructor(private fb: FormBuilder, private userService: UserService, private sanitizer: DomSanitizer, private chaletService: ChaletService, private authService: AuthService, private updateService: UpdateService) {
+  constructor(private fb: FormBuilder, private userService: UserService, private sanitizer: DomSanitizer, private plansService: PlansService, private authService: AuthService, private updateService: UpdateService) {
   }
 
   ngOnInit(): void {
-    this.chaletForm = this.fb.group({
+    this.planForm = this.fb.group({
       nombre: ['', Validators.required],
       ubicacion: ['', Validators.required],
       descripcion: ['', Validators.required],
-      servicios: [[], Validators.required],
       imagenes: this.fb.array([], Validators.required),
       tarifas: this.fb.array([]) // Aquí se agrega el FormArray de tarifas
     });
@@ -64,7 +63,7 @@ export class PlanRegisterFormComponent {
   }
 
   get tarifas() {
-    return this.chaletForm.get('tarifas') as FormArray;
+    return this.planForm.get('tarifas') as FormArray;
   }
 
   get tarifasControls() {
@@ -72,7 +71,7 @@ export class PlanRegisterFormComponent {
   }
 
   get imagenes() {
-    return this.chaletForm.get('imagenes') as FormArray;
+    return this.planForm.get('imagenes') as FormArray;
   }
 
   verificarUbicacion(direccion: string): void {
@@ -230,7 +229,7 @@ export class PlanRegisterFormComponent {
       this.serviciosSeleccionados = this.serviciosSeleccionados.filter(servicio => servicio !== evento.servicio);
       console.log(this.serviciosSeleccionados);
     }
-    this.chaletForm.patchValue({ servicios: this.serviciosSeleccionados }); // Actualiza el formulario con los servicios seleccionados
+    this.planForm.patchValue({ servicios: this.serviciosSeleccionados }); // Actualiza el formulario con los servicios seleccionados
   }
 
   guardarTarifa(): void {
@@ -245,18 +244,18 @@ export class PlanRegisterFormComponent {
   }
   
   onSubmit(): void {
-    if (this.chaletForm.valid) {
-      const chaletData: ChaletDTO = this.chaletForm.value;
-      console.log(chaletData);
+    if (this.planForm.valid) {
+      const planData: PlanDTO = this.planForm.value;
+      console.log(planData);
       
       
-      this.chaletService.registrarChalet(chaletData).subscribe({
+      this.plansService.registrarPlan(planData).subscribe({
         next: (response) => {
-          console.log('Chalet registrado exitosamente:', response);
+          console.log('Plan registrado exitosamente:', response);
           // Aquí podrías redirigir al usuario o mostrar un mensaje de éxito
         },
         error: (error) => {
-          console.error('Error al registrar chalet:', error);
+          console.error('Error al registrar plan:', error);
           // Aquí podrías mostrar un mensaje de error al usuario
         }
       });

@@ -1,6 +1,6 @@
 <app-profile-header></app-profile-header>
 <app-profile-welcome></app-profile-welcome>
-<form class="formulario">
+<form class="formulario" [formGroup]="planForm" (ngSubmit)="onSubmit()">
     <div class="containerFormulario">
         <h2 class="title">Registrar Plan</h2>
         <div class="parte1">
