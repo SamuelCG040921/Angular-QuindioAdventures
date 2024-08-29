@@ -44,6 +44,7 @@ export class PlanRegisterFormComponent {
   ngOnInit(): void {
     this.planForm = this.fb.group({
       nombre: ['', Validators.required],
+      municipio: ['', Validators.required],
       ubicacion: ['', Validators.required],
       descripcion: ['', Validators.required],
       imagenes: this.fb.array([], Validators.required),
@@ -52,8 +53,9 @@ export class PlanRegisterFormComponent {
 
     this.tarifasform = this.fb.group({
       precio: ['', [Validators.required]],
-      tipohabitacion: ['', [Validators.required]],
       temporada: ['', [Validators.required]],
+      horaSalida: ['', [Validators.required]],
+      horaLlegada: ['', [Validators.required]]
       // Agrega otros campos de tarifa si es necesario
     });
 
@@ -74,8 +76,9 @@ export class PlanRegisterFormComponent {
     return this.planForm.get('imagenes') as FormArray;
   }
 
-  verificarUbicacion(direccion: string): void {
-    this.mapComponent.verifyLocation(direccion);
+  verificarUbicacion(direccion: string, municipio:string): void {
+    const direccionCompleta = `${direccion}, ${municipio}`;
+    this.mapComponent.verifyLocation(direccionCompleta);
   }
 
   onLocationVerified(isValid: boolean): void {

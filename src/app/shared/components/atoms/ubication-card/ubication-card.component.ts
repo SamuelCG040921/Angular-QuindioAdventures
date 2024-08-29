@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class UbicationCardComponent {
   @Input()chalet={
-   ubicacion: ""
+   municipio: ""
   }
   @Input()plan={
     ubicacion: ""

@@ -11,7 +11,8 @@ export class CardComponent {
    @Input()chalet={
     nombre:"",
     ubicacion:"",
-    imgPrincipal:""
+    imgPrincipal:"",
+    municipio: "",
    }
 
    openDetails(chalet:any){

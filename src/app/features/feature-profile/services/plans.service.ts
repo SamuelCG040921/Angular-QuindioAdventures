@@ -8,7 +8,7 @@ import { AuthService } from '../../feature-login/services/auth.service';
 })
 export class PlansService {
 
-  private apiRegisterPlanUrl = 'http://localhost:10101/createChalet';
+  private apiRegisterPlanUrl = 'http://localhost:10101/createPlan';
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 

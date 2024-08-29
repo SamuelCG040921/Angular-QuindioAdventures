@@ -4,7 +4,6 @@
             <tr>
                 <th>Tipo de habitación</th>
                 <th>Temporada alta</th>
-                <th>Temporada media</th>
                 <th>Temporada baja</th>
             </tr>
         </thead>
@@ -12,7 +11,6 @@
             <tr *ngFor="let tarifa of groupByHabitacion(chalet?.tarifas)">
                 <td>{{ tarifa.tipo_habitacion }}</td>
                 <td>{{ formatPrice(getPriceForSeason(tarifa, 'Alta')) }}</td>
-                <td>{{ formatPrice(getPriceForSeason(tarifa, 'Media')) }}</td>
                 <td>{{ formatPrice(getPriceForSeason(tarifa, 'Baja')) }}</td>
             </tr>
         </tbody>

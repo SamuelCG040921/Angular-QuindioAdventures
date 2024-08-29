@@ -25,6 +25,7 @@ export class ChaletsService {
         const chalets: ChaletDetails[] = data.map((chalet: any) => new ChaletDetails(
           chalet.id_chalet,
           chalet.nombre_chalet,
+          chalet.municipio_chalet,
           chalet.ubicacion_chalet,
           chalet.caracteristicas,
           chalet.imagen_principal,
@@ -46,6 +47,7 @@ export class ChaletsService {
         const chalet = new ChaletInfo(
           data[0].id_chalet,
           data[0].nombre_chalet,
+          data[0].municipio_chalet,
           data[0].ubicacion_chalet,
           data[0].caracteristicas,
           JSON.parse(data[0].imagenes), // Aquí convertimos el JSON a objeto

@@ -46,6 +46,7 @@ export class ChaletRegisterFormComponent implements OnInit {
   ngOnInit(): void {
     this.chaletForm = this.fb.group({
       nombre: ['', Validators.required],
+      municipio: ['', Validators.required],
       ubicacion: ['', Validators.required],
       descripcion: ['', Validators.required],
       servicios: [[], Validators.required],
@@ -77,8 +78,9 @@ export class ChaletRegisterFormComponent implements OnInit {
     return this.chaletForm.get('imagenes') as FormArray;
   }
 
-  verificarUbicacion(direccion: string): void {
-    this.mapComponent.verifyLocation(direccion);
+  verificarUbicacion(direccion: string, municipio:string): void {
+    const direccionCompleta = `${direccion}, ${municipio}`;
+    this.mapComponent.verifyLocation(direccionCompleta);
   }
 
   onLocationVerified(isValid: boolean): void {

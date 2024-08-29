@@ -9,7 +9,7 @@ import { ChaletsService } from '../../../../features/feature-reserves/services/c
   styleUrls: ['./chalet-view-images.component.scss']
 })
 export class ChaletViewImagesComponent implements OnInit {
-  chalet: ChaletInfo = new ChaletInfo(0, '', '', '', {}, [], []); // Inicializa con valores por defecto
+  chalet: ChaletInfo = new ChaletInfo(0, '', '', '', '', {}, [], []); // Inicializa con valores por defecto
   firstImage: string | null = null; // Variable para almacenar la primera imagen
   loading: boolean = true;
   error: string | null = null;

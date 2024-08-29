@@ -16,7 +16,7 @@ import { Subscription } from 'rxjs';
 })
 export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
   botones = false;
-  chalet: ChaletInfo = new ChaletInfo(0, '', '', '', {}, [], []); 
+  chalet: ChaletInfo = new ChaletInfo(0, '', '', '', '', {}, [], []); 
   firstImage: string | null = null; 
   restOfImages: string[] = []; 
   loading: boolean = true;
@@ -54,10 +54,13 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    if (this.chalet.ubicacion_chalet) {
-      this.mapComponent.loadLocationFromBackend(this.chalet.ubicacion_chalet);
+    if (this.chalet.ubicacion_chalet && this.chalet.municipio_chalet) {
+      const ubicacionCompleta = `${this.chalet.ubicacion_chalet}, ${this.chalet.municipio_chalet}`;
+      console.log(ubicacionCompleta,2345);
+      
+      this.mapComponent.loadLocationFromBackend(ubicacionCompleta);
     }
-  }
+  }  
 
   loadChalet(): void {
     const id = this.route.snapshot.paramMap.get('id');

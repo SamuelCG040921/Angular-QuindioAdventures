@@ -1,6 +1,7 @@
 export class ChaletInfo {
     id_chalet: number;
     nombre_chalet: string;
+    municipio_chalet: string;
     ubicacion_chalet: string;
     caracteristicas: string;
     imagenes: { [key: string]: string }; // Este es el tipo correcto
@@ -10,6 +11,7 @@ export class ChaletInfo {
     constructor(
       id_chalet: number,
       nombre_chalet: string,
+      municipio_chalet:string,
       ubicacion_chalet: string,
       caracteristicas: string,
       imagenes: { [key: string]: string },
@@ -18,6 +20,7 @@ export class ChaletInfo {
     ) {
       this.id_chalet = id_chalet;
       this.nombre_chalet = nombre_chalet;
+      this.municipio_chalet = municipio_chalet;
       this.ubicacion_chalet = ubicacion_chalet;
       this.caracteristicas = caracteristicas;
       this.imagenes = imagenes;

@@ -1,8 +1,9 @@
 export interface PlanDTO {
     nombre: string;
-    direccion: string;
+    municipio: string;
+    ubicacion: string;
     descripcion: string;
     imagenes: string[];
-    tarifas: Array<{ precio: number | null, temporada: string, tipoHabitacion: string }>;
+    tarifas: Array<{ precio: number | null, temporada: string, horaSalida: string, horaLlegada: string }>;
   }
   

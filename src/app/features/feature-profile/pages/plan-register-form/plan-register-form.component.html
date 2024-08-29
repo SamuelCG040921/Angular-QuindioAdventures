@@ -7,10 +7,12 @@
             <div class="uno">
                 <label for="nombre">Nombre del plan</label>
                 <input id="nombre" placeholder="Ingresa el nombre de tu plan" class="nombrechalet" type="text" [formControlName]="'nombre'">
+                <label for="municipio">Municipio</label>
+                <input id="nombre" #municipioInput placeholder="Ingresa el municipio" class="nombrechalet" type="text" [formControlName]="'municipio'">
                 <label for="direccion">Dirección</label>
                 <input id="direccion" #direccionInput placeholder="Ingresa la ubicación de tu plan" type="text" class="direccionInput" [formControlName]="'ubicacion'">
                 <div class="containerButtonVerify">
-                  <button class="buttonVerify" type="button" (click)="verificarUbicacion(direccionInput.value)">Verificar Ubicacion</button>
+                  <button class="buttonVerify" type="button" (click)="verificarUbicacion(direccionInput.value, municipioInput.value) ">Verificar Ubicacion</button>
                 </div>
                 <label for="" class="titleView">Visualizar dirección</label>
                 <app-map class="map"></app-map>
@@ -85,28 +87,27 @@
               >
                 <option value="Selecciona la temporada" disabled selected hidden>Selecciona la temporada</option>
                 <option value="Alta">Alta</option>
-                <option value="Media">Media</option>
                 <option value="Baja">Baja</option>
               </select>
             </div>
             <div class="inputContainer">
-              <label for="precio">Hora de llegada</label>
+              <label for="horaLlegada">Hora de salida</label>
               <input
                 placeholder="Ingresa la hora de llegada"
                 id="horallegada"
                 class="inputHab"
-                type="text"
-                formControlName="horallegada"
+                type="time"
+                formControlName="horaSalida"
               />
             </div>
             <div class="inputContainer">
-              <label for="precio">Hora de salida</label>
+              <label for="horaSalida">Hora de llegada</label>
               <input
                 placeholder="Ingresa la hora de salida"
                 id="horasalida"
                 class="inputHab"
-                type="text"
-                formControlName="horasalida"
+                type="time"
+                formControlName="horaLlegada"
               />
             </div>
           </div>
@@ -118,7 +119,7 @@
             <h4>Tarifas Agregadas:</h4>
             <ul>
               <li *ngFor="let tarifa of tarifasControls; let i = index">
-                <span class="feeInfo">{{ tarifa.get('tipohabitacion')?.value }} - {{ tarifa.get('precio')?.value }} - {{ tarifa.get('temporada')?.value }}</span>
+                <span class="feeInfo">{{ tarifa.get('horaSalida')?.value }} - {{ tarifa.get('horaLlegada')?.value }} - {{ tarifa.get('precio')?.value }} - {{ tarifa.get('temporada')?.value }}</span>
                 <button class="deleteFee" type="button" (click)="eliminarTarifa(i)">
                   <img src="../../../../../assets/icons/bote-de-basura.png" alt="Eliminar" />
                 </button>
