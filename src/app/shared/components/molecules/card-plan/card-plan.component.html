@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="container-img" routerLink="/plan-details"> 
+    <div class="container-img" [routerLink]="openDetails(plan)"> 
         <img class="imgCard" src="{{plan.imgPrincipal}}">
         <app-favorite-icon class="icon"></app-favorite-icon>
     </div>

@@ -83,6 +83,8 @@ import { PlansAdministratorComponent } from './components/organisms/plans-admini
 import { ChatbotComponent } from './components/organisms/chatbot/chatbot.component';
 import { LoaderComponent } from './components/organisms/loader/loader.component';
 import { InfoCardChaletProfileComponent } from './components/molecules/info-card-chalet-profile/info-card-chalet-profile.component';
+import { PlanViewImagesComponent } from './components/molecules/plan-view-images/plan-view-images.component';
+import { PricesTablePlanComponent } from './components/molecules/prices-table-plan/prices-table-plan.component';
 
 @NgModule({
   declarations: [
@@ -167,7 +169,9 @@ import { InfoCardChaletProfileComponent } from './components/molecules/info-card
     PlansAdministratorComponent,
     ChatbotComponent,
     LoaderComponent,
-    InfoCardChaletProfileComponent
+    InfoCardChaletProfileComponent,
+    PlanViewImagesComponent,
+    PricesTablePlanComponent
   ],
 
   imports: [
@@ -260,7 +264,9 @@ import { InfoCardChaletProfileComponent } from './components/molecules/info-card
     ChatbotComponent,
     LoaderComponent,
     InfoCardChaletProfileComponent,
-    NavLogueadoComponent
+    NavLogueadoComponent,
+    PlanViewImagesComponent,
+    PricesTablePlanComponent
   ],
 })
 export class SharedModule { }

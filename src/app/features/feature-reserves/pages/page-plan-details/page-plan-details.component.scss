@@ -1,0 +1,306 @@
+
+
+.containerMiga{
+    width: max-content;
+}
+
+#miga{
+    display: flex;
+    padding: 25px 0px 0px 100px;
+    width: min-content;
+}
+
+.primera{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.containerIzq{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#qualify{
+    margin-top: 25px;
+    padding-right: 35px;
+}
+
+#bordeImg{
+    border-right: 1px solid #BEBEBE;
+    padding-right: 35px;
+}
+
+.containerDer{
+    display: flex;
+    flex-direction: column;
+}
+
+.containerText{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+#tittle{
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+#info{
+    width: 600px;
+}
+
+.pricesTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#precios{
+    margin-right: 30px;
+}
+
+#mapa{
+    margin-left: 20px;
+}
+
+.title figure {
+    height: 1px;
+    background-color: #418E6D;
+    margin: 0 10px; /* Añade un margen horizontal para separarlos del título */
+}
+
+.title {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;
+    width: 90%;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.line1 {
+    width: 8%;
+}
+
+.line2 {
+    width: 70%;
+}
+
+.tercera{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.servicios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.cuarta{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.titleReserva figure{
+    height: 1px;
+    background-color: #418E6D;
+    margin: 0 30px; /* Añade un margen horizontal para separarlos del título */
+}
+
+.titleReserva{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.linech{
+    width: 35%;
+}
+
+.containerPersona{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.contenido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.recuadroPrecio{
+    display: flex;
+    flex-direction: column;
+    padding-left: 120px;
+    margin-right: 40px;
+}
+
+#persona{
+    margin-bottom: 30px;
+}
+
+.button{
+    margin-left: 30px;
+    margin-top: 20px;
+    padding: 0;
+    border: none;
+}
+
+
+.quinta{
+    display: flex;
+   justify-content: space-evenly;
+   margin-bottom: 40px;
+   margin-top: 100px;
+}
+
+.titlequinta{
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.encargado{
+    padding-right: 90px;
+    border-right: 1px solid black;
+}
+
+.titlecom{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-top: 60px;
+}
+
+.titlecom figure{
+    border: 1px solid #418E6D;
+    width: 400px;
+}
+
+.titlecom h2{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#filtercomments{
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 70px;
+    margin-bottom: 50px;
+}
+
+.profilecomment{
+    width: 64px;
+    height: 64px;
+    background-color: black;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.commentheader{
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    width: max-content;
+    width: 100%;
+}
+
+.commentheader p{
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    margin-right: 20px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.bordername{
+    border: 1px solid lightgray;
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.commentInput{
+    margin-left: 10px;
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #88B8A3;
+    padding-left: 20px;
+}
+
+form{
+   width: 90%;
+}
+
+.containerform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+#publish{
+    margin-right: 20px;
+}
+
+.todoscomentarios{
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.calificacion{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 220px;
+}
+
+
+
+.map{
+    margin-left: 20px;
+  }
+
+.addressContainer{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.addressContainer p{
+    margin-top: 5px;
+}
+

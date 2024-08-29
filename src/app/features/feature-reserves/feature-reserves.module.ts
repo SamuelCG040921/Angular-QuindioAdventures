@@ -17,6 +17,7 @@ import { PageHomeUserComponent } from './pages/page-home-user/page-home-user.com
 import { PageChaletMethodComponent } from './pages/page-chalet-method/page-chalet-method.component';
 import { ProgressComponent } from './components/progress/progress.component';
 import { FeatureProfileModule } from '../feature-profile/feature-profile.module';
+import { PagePlanDetailsComponent } from './pages/page-plan-details/page-plan-details.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FeatureProfileModule } from '../feature-profile/feature-profile.module'
     PageHomeUserComponent,
     PageChaletMethodComponent,
     ProgressComponent,
+    PagePlanDetailsComponent,
   ],
   imports: [
     CommonModule,

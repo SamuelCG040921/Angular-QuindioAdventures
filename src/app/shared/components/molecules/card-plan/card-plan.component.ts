@@ -16,7 +16,7 @@ export class CardPlanComponent {
    }
 
    openDetails(plan:any){
-    return ['/', plan.id];
+    return ['/plan-details', plan.id];
  }
 
  plans:any;

@@ -1,13 +1,13 @@
-<div class="containerMiga" *ngIf="chalet">
+<div class="containerMiga" >
     <div class="miga">
         <p id="verdes">Inicio</p>
     </div>
     <div class="miga">
         <p>></p>
-        <p id="verdes">Chalets</p>
+        <p *ngIf="chaletNombre.length>0" id="verdes">Chalets</p> <p *ngIf="planNombre.length>0" id="verdes">Planes vacacionales</p>
     </div>
     <div class="miga">
         <p>></p>
-        <p >{{ chalet.nombre_chalet }}</p>
+        <p >{{ planNombre }} {{ chaletNombre }}</p>
     </div>
 </div>

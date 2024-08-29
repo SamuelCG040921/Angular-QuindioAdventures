@@ -1,38 +1,31 @@
 <app-header *ngIf="!authService.estaActivo()"></app-header>
 <app-header-logueado *ngIf="authService.estaActivo()"></app-header-logueado>
 
-<div class="containerMiga" *ngIf="chalet">
-    <app-miga-de-pan [chaletNombre]="chalet.nombre_chalet" id="miga"></app-miga-de-pan>
+<div class="containerMiga" *ngIf="plan">
+    <app-miga-de-pan [planNombre]="plan.nombre_planV" id="miga"></app-miga-de-pan>
 </div>
 
 <div class="primera">
     <div class="containerIzq">
-        <app-chalet-view-images id="bordeImg"></app-chalet-view-images>
+        <app-plan-view-images id="bordeImg"></app-plan-view-images>
         <app-card-calification id="qualify"></app-card-calification>
     </div>
     <div class="containerDer">
         <app-collage-view [images]="restOfImages"></app-collage-view>
         <div class="containerText">
-            <p id="tittle">{{ chalet.nombre_chalet }}</p>
-            <p id="info">{{ chalet.caracteristicas }}</p>
+            <p id="tittle">{{ plan.nombre_planV }}</p>
+            <p id="info">{{ plan.descripcion }}</p>
         </div>
     </div>
 </div>
 
 <div class="segunda">
     <div class="pricesTable">
-        <app-prices-table id="precios"></app-prices-table>
+        <app-prices-table-plan id="precios"></app-prices-table-plan>
         <div class="addressContainer">
             <app-map class="map"></app-map>
-            <p>{{ chalet.ubicacion_chalet }}</p>
+            <p>{{ plan.ubicacion_planV }}</p>
         </div>
-    </div>
-</div>
-
-<div class="tercera">
-    <div class="title"><figure class="line1"></figure><p class="section-title">Ventajas y servicios</p><figure class="line2"></figure></div>
-    <div class="servicios">
-        <app-service-in></app-service-in>
     </div>
 </div>
 
@@ -40,6 +33,7 @@
     <div class="titleReserva"><figure class="linech"></figure><p class="section-title">Reserva e información</p><figure class="linech"></figure></div>
     <div class="contenido">
         <div class="containerPersona">
+
             <app-peopple-count-info 
                 imageUrl="../../../../../assets/icons/hombre 1.png" 
                 title="Adultos" 
@@ -57,7 +51,7 @@
             </app-peopple-count-info>
         </div>
         <div class="recuadroPrecio">
-            <app-button  class="button" label="Continuar con la reserva" color="#275843" [routerLink]="['/paymentform', chalet.id_chalet]"></app-button>
+            <app-button  class="button" label="Continuar con la reserva" color="#275843" [routerLink]="['/paymentform', plan.id_planV]"></app-button>
         </div>
     </div>
 </div>

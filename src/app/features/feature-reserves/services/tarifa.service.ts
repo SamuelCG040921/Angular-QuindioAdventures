@@ -24,4 +24,9 @@ export class TarifaService {
     const url = `${this.apiUrl}`; // Asegúrate de que esta URL coincida con tu ruta en el backend
     return this.http.post<any[]>(url, { idChalet, fechaInicio });
   }
+
+  getTarifasPorFehcaPlan(idPlan: number, fechaPlan: string): Observable<any>{
+    const url = `${this.apiUrl}`;
+    return this.http.post<any[]>(url, {idPlan, fechaPlan});
+  }
 }

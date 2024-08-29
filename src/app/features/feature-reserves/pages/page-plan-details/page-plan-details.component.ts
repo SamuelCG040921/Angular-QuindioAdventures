@@ -1,0 +1,148 @@
+import { Component, ViewChild } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../../../feature-login/services/auth.service';
+import { MapComponent } from '../../../feature-profile/components/map/map.component';
+import { PlanInfo } from '../../models/plansById';
+import { CountPeopleService } from '../../services/count-people.service';
+import { PlanIdService } from '../../services/plan-id.service';
+import { PlansService } from '../../../feature-profile/services/plans.service';
+import { TarifaService } from '../../services/tarifa.service';
+
+@Component({
+  selector: 'app-page-plan-details',
+  templateUrl: './page-plan-details.component.html',
+  styleUrl: './page-plan-details.component.scss'
+})
+export class PagePlanDetailsComponent {
+  botones = false;
+  plan: PlanInfo = new PlanInfo(0, '', '', '', '', {}, []); 
+  firstImage: string | null = null; 
+  restOfImages: string[] = []; 
+  loading: boolean = true;
+  error: string | null = null;
+  tarifaSeleccionada: any | null = null;
+  totalPersons: number = 0;
+  adultCount: number = 0;
+  childCount: number = 0;
+
+  @ViewChild(MapComponent) mapComponent!: MapComponent;
+  routerSubscription!: Subscription;
+
+  constructor(
+    private route: ActivatedRoute,
+    private plansService: PlansService,
+    public authService: AuthService,
+    public planIdService: PlanIdService,
+    public tarifaService: TarifaService,
+    private personCountService: CountPeopleService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.loadChalet();
+    
+    this.routerSubscription = this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (event.url !== this.route.snapshot.url.join('/')) {
+          // Elimina la variable de localStorage cuando se navega fuera de la página actual
+          localStorage.removeItem('miVariable');
+          console.log('Variable miVariable eliminada del localStorage');
+        }
+      }
+    });
+  }
+
+  ngAfterViewInit(): void {
+    if (this.plan.ubicacion_planV && this.plan.municipio_planV) {
+      const ubicacionCompleta = `${this.plan.ubicacion_planV}, ${this.plan.municipio_planV}`;
+      console.log(ubicacionCompleta,2345);
+      
+      this.mapComponent.loadLocationFromBackend(ubicacionCompleta);
+    }
+  }  
+
+  loadChalet(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.plansService.getPlanById(id)
+        .then(plan => {
+          this.plan = plan;
+         
+
+          const imagenesKeys = Object.keys(this.plan.imagenes);
+          if (imagenesKeys.length > 0) {
+            this.firstImage = this.plan.imagenes[imagenesKeys[0]];
+            this.restOfImages = imagenesKeys.slice(1).map(key => this.plan.imagenes[key]);
+          } else {
+            this.firstImage = null;
+            this.restOfImages = [];
+          }
+
+          if (this.plan.ubicacion_planV) {
+            setTimeout(() => {
+              this.mapComponent.loadLocationFromBackend(this.plan.ubicacion_planV);
+            }, 0);
+          }
+
+          this.loading = false;
+
+          // Guarda el ID del chalet en el servicio
+          this.planIdService.setPlanId(id);
+        })
+        .catch(error => {
+          this.error = 'Error al cargar el plan';
+          this.loading = false;
+        });
+    } else {
+      this.error = 'ID del plan no proporcionado';
+      this.loading = false;
+    }
+  }
+
+  mostrarBotones() {
+    this.botones = true;
+  }
+
+  ocultarBotones() {
+    this.botones = false;
+  }
+
+  seleccionarTarifa(tarifa: any) {
+    this.tarifaSeleccionada = tarifa;
+    this.tarifaService.setTarifaSeleccionada(tarifa);
+  }
+
+  updateTotalPersons() {
+    this.totalPersons = this.adultCount + this.childCount;
+    this.personCountService.setTotalPersons(this.totalPersons); // Actualiza el servicio con el total de personas
+  }
+
+  onAdultCountChange(count: number): void {
+    this.adultCount = count;
+    this.updateTotalPersons(); // Llama a updateTotalPersons para actualizar totalPersons
+  }
+
+  onChildCountChange(count: number): void {
+    this.childCount = count;
+    this.updateTotalPersons(); // Llama a updateTotalPersons para actualizar totalPersons
+  }
+
+  continuarReserva() {
+    // Lógica para continuar con la reserva aquí
+    
+    // Reiniciar los contadores
+    this.adultCount = 0;
+    this.childCount = 0;
+    this.updateTotalPersons(); // Actualiza el servicio con el nuevo total de personas
+
+    // Mostrar en consola el total de personas después de reiniciar
+    console.log('Total de personas después de reiniciar:', this.totalPersons);
+  }
+
+  ngOnDestroy(): void {
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
+  }
+}
