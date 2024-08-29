@@ -10,6 +10,6 @@ export class UbicationCardComponent {
    municipio: ""
   }
   @Input()plan={
-    ubicacion: ""
+    municipio: ""
    }
 }

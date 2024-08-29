@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PlansService } from '../../../../features/feature-reserves/services/plans.service';
+import { PlansService } from '../../../../features/feature-profile/services/plans.service';
+import { PlansDetails } from '../../../../features/feature-reserves/models/plans.model';
 
 @Component({
   selector: 'app-plan-cards',
@@ -7,14 +8,19 @@ import { PlansService } from '../../../../features/feature-reserves/services/pla
   styleUrl: './plan-cards.component.scss'
 })
 export class PlanCardsComponent implements OnInit{
-planes:any
 
-constructor(private plansService:PlansService){}
+planes!: PlansDetails[];
 
- ngOnInit(){
-     this.plansService.getPlans()
-     .subscribe(res=>{
-      this.planes = res
-     })
- }
+  constructor(private plansService:PlansService){}
+
+  ngOnInit(){
+    this.plansService.getPlansConnection().then(
+      (data: PlansDetails[]) => {
+        console.log('Datos del chalet:', data);
+        this.planes = data;
+      },
+      err => console.error(err)
+      
+    );
+  }
 }
