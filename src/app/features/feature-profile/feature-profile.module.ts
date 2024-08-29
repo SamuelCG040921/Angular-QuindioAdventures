@@ -16,6 +16,8 @@ import { ChaletsProfileComponent } from './pages/chalets-profile/chalets-profile
 import { MapComponent } from './components/map/map.component';
 import { CardChaletComponent } from './components/card-chalet/card-chalet.component';
 import { PlanRegisterFormComponent } from './pages/plan-register-form/plan-register-form.component';
+import { ChaletEditFormComponent } from './pages/chalet-edit-form/chalet-edit-form.component';
+import { PlanEditFormComponent } from './pages/plan-edit-form/plan-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { PlanRegisterFormComponent } from './pages/plan-register-form/plan-regis
     ChaletsProfileComponent,
     MapComponent,
     CardChaletComponent,
-    PlanRegisterFormComponent
+    PlanRegisterFormComponent,
+    ChaletEditFormComponent,
+    PlanEditFormComponent
   ],
   imports: [
     CommonModule,

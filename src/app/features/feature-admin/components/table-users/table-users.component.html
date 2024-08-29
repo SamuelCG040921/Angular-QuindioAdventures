@@ -1,0 +1,12 @@
+<div class="emptyState" *ngIf="users.length<=0">
+    <div class="containerChaplanito">
+        <p id="ono">!Oh no!</p>
+        <img src="../../../../../assets/images/chaplanitoreservas.jpeg" alt="">
+        <div class="contenedorNoTienes">
+            <p id="noTienesClientes">Parece que aún no hay usuarios</p>
+        </div>
+    </div>
+</div>
+<div class="containerUsers">
+    <app-user-card *ngFor="let user of users;let i = index" [user]="user"></app-user-card>
+</div>

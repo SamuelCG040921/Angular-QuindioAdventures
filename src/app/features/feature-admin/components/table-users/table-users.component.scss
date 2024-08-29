@@ -1,0 +1,10 @@
+.containerUsers{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    place-items: center;
+    gap: 64px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+}

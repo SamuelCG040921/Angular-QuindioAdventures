@@ -12,6 +12,7 @@ export class AuthService {
   private apiUrlAdmin = 'http://localhost:10101/authAdmin' 
   private apiUrl = 'http://localhost:10101/auth';
   private profileUrl = 'http://localhost:10101/user';
+  private apiUsers = 'http://localhost:10101/usuarios';
 
   constructor() {}
 
@@ -93,5 +94,28 @@ export class AuthService {
     .catch(error => {
       throw error;
     });
+  }
+
+  getUsersConnection(): Promise<UserProfile[]>{
+    return axios.get(this.apiUsers)
+    .then(response => {
+      const data = response.data;
+      console.log(data, 333)
+      const users: UserProfile[] = data.map((user:any) => new UserProfile(
+        user.documento,
+        user.email,
+        user.password,
+        user.nombres,
+        user.apellidos,
+        user.edad,
+        user.image,
+        user.telefono,
+        user.direccion
+      ));
+      return users;
+    })
+    .catch(error => {
+      throw error
+    })
   }
 }

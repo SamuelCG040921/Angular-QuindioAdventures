@@ -11,6 +11,7 @@ import { AdminPlanesComponent } from './pages/admin-planes/admin-planes.componen
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 import { UserRowComponent } from './components/user-row/user-row.component';
 import { TableUsersComponent } from './components/table-users/table-users.component';
+import { UserCardComponent } from './components/user-card/user-card.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { TableUsersComponent } from './components/table-users/table-users.compon
     AdminHeaderComponent,
     UserRowComponent,
     TableUsersComponent,
+    UserCardComponent,
   ],
   imports: [
     CommonModule,
