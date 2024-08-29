@@ -86,6 +86,8 @@
                             <!-- Confirmar contraseña -->
                             <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('confirmPassword')}">
                                 <label>Confirmar contraseña</label>
+                                <input type="password" placeholder="Ingresa nuevamente tu contraseña" id="formInput" formControlName="confirmPassword" class="confirmPassword">
+                                <div *ngIf="isFieldInvalid('confirmPassword')" class="error-message">La contraseña es requerida</div>
                                 <input type="password" placeholder="Ingresa nuevamente tu contraseña" id="formInput" formControlName="confirmPassword">
                                 <div *ngIf="isFieldInvalid('confirmPassword')" class="error-message">
                                     <div *ngIf="registroForm.get('confirmPassword')?.errors?.['required']">La confirmación de la contraseña es requerida</div>
@@ -94,12 +96,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="containerTerms">
-                        <app-terms></app-terms>
-                    </div>
                     <div class="containerBtn">
-                        <app-button label="Registrarme" type="submit" [disabled]="isSubmitting">Registrarse</app-button>
+                        <app-button class="registerBtn" label="Registrarme" type="submit" [disabled]="isSubmitting"></app-button>
                         <app-messages-succesful title="Se ha registrado correctamente" *ngIf="isAlertOpen" (close)="closeAlert()"></app-messages-succesful>
+                        <app-messages-error title="¡Hubo un problema!" paragraph="No se puedo registrar" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
                         <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo registrar" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
                         <app-messages-error title="¡Error interno!" paragraph="Inténtalo de nuevo, por favor" *ngIf="isErrorAlertOpen2" (close)="closeErrorAlert2()"></app-messages-error>
                     </div>
