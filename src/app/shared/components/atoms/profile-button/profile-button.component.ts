@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../../features/feature-reserves/services/user.service';
 import { AuthService } from '../../../../features/feature-login/services/auth.service';
-import { User } from '../../../../features/feature-register/models/user.model';
 import { UserProfile } from '../../../../features/feature-profile/models/user-profile';
 
 
@@ -12,7 +11,7 @@ import { UserProfile } from '../../../../features/feature-profile/models/user-pr
   styleUrl: './profile-button.component.scss'
 })
 export class ProfileButtonComponent implements OnInit {
-  user:any
+  user!: UserProfile
 
     constructor(private userService: UserService, private authService: AuthService) {}
     

@@ -1,4 +1,5 @@
-<app-header></app-header>
+<app-header *ngIf="!authService.estaActivo()"></app-header>
+<app-header-logueado *ngIf="authService.estaActivo()"></app-header-logueado>
 <app-scoped-background-menu></app-scoped-background-menu>
 <section class="emptyState" *ngIf="reserves.length <= 0">
     <p id="ono">¡Oh no!</p>
@@ -6,5 +7,4 @@
     <p id="noTienesClientes">Aún no tienes clientes</p>
 </section>
 <section *ngIf="reserves.length > 0" class="background">
-    <app-scoped-table-clients></app-scoped-table-clients>
 </section>

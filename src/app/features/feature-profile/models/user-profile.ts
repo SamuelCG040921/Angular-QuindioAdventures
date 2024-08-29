@@ -6,7 +6,7 @@ export class UserProfile {
         public name: string,
         public lastName: string,
         public age: number,
-        public image: Blob,
+        public image: string,
         public phoneNumber: string,
         public address: string,
     ) {}

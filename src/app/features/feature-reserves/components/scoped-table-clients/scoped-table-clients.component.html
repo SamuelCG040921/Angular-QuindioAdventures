@@ -1,32 +1,5 @@
 <div class="table">
-    <h2>Clientes</h2>
-    <div class="clients-table">
-        <p id="title1">#</p>
-        <p id="title2">Código</p>
-        <p id="title3">Cliente</p>
-        <p id="title4">Fecha registro</p>
-        <p id="title7">Teléfono</p>
-        <p id="title8">Monto</p>
-    </div>
     <div *ngFor="let reserve of reserves;let i = index" class="clients-container">
         <app-scoped-client [reserve]="reserve"></app-scoped-client>
-    </div>
-</div>
-<div class="filters">
-    <div class="selectFilter">
-            <img src="../../../../../assets/icons/filtrar.png" alt="">
-            <p class="containerTextoPor">Ordenar por:</p>
-        <div class="filters-select">
-            <select name="order-by" id="order-by">
-                <option value="opcion2">Fecha</option>
-                <option value="opcion3">Check-in</option>
-                <option value="opcion4">Check-out</option>
-                <option value="opcion5">Monto-Ascendente</option>
-                <option value="opcion1">Monto-Descendente</option>
-            </select>
-        </div>
-    </div>
-    <div class="searchBar">
-        <input type="text" id="searchInput" placeholder="Search">
     </div>
 </div>

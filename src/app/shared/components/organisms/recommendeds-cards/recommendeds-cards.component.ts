@@ -7,14 +7,11 @@ import { ChaletsService } from '../../../../features/feature-reserves/services/c
   styleUrl: './recommendeds-cards.component.scss'
 })
 export class RecommendedsCardsComponent implements OnInit {
-  chalets:any;
+  recommended:any;
 
-  constructor(private chaletsService:ChaletsService){}
+  constructor(){}
 
   ngOnInit(){
-    this.chaletsService.getChalets()
-    .subscribe(res=>{
-      this.chalets=res
-    })
+    this.recommended = []
   }
 }

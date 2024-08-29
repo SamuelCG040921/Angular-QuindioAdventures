@@ -11,6 +11,7 @@ export class ButtonComponent {
   @Input() color: string = '';
   @Input() border: string = '';
   @Input() textColor: string = '';
+  @Input() type: 'button' | 'submit' = 'button'
 
   handleClick() {
     this.click.emit();

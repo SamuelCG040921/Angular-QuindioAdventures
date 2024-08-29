@@ -1,0 +1,46 @@
+.encargadoinfo{
+    border-radius: 15px;
+    background-color: #275843;
+    display: flex;
+    align-items: center;
+
+}
+
+.encargadoimagen img{
+    width: 180px;
+    height: 155px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.encargadoimagen p{
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.encargadoimagen{
+    margin: 20px;
+    color: white;
+}
+.encargadodatos{
+    margin: 20px;
+    color: white;
+}
+
+.infor{
+    margin-bottom: 15px;
+    border-bottom: 1px solid white;
+}
+
+#number{
+    padding-left: 15px;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+#textnumber{
+    font-weight: normal;
+    font-size: 12px;
+    padding-left: 10px;
+}

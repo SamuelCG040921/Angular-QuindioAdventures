@@ -76,7 +76,73 @@ nav a{
     cursor: pointer;
 }
 
-.logOut{
+.rightContent{
+    width: 100%;
+}
+.titleplans figure{
+    height: 1px;
+    background-color: #418E6D;
+    margin: 0 10px; 
+}
+
+.titleplans{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.linech{
+    width: 306px;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.burger-menu{
+    background-color: #418E6D;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.deployable-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 700vh;
+    width: 25%;
+    border-right: 2px solid #418E6D;
+    background-color: #f0f0f0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 11;
+  }
+  
+  .deployable-menu li {
+    text-align:left;
+    padding: 10px;
+  }
+  
+  .deployable-menu.show {
+    transform: translateX(0);
+  }
+
+  .deployable-menu a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .deployable-menu a:hover{
+    color:#418E6D;
+  }
+
+  .logOut{
     display: flex;
     justify-content: center;
     align-items:center;
@@ -87,7 +153,7 @@ nav a{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 65%;
+    width: auto;
     min-width: 50%;
     height: 70px;
     border-radius: 15px;
@@ -104,27 +170,160 @@ nav a{
     height: 23px;
     margin-right: 8px;
 }
-.rightContent{
-    width: 100%;
-}
-.titlechalets figure{
-    height: 1px;
+
+.disguiseButton{
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
     background-color: #418E6D;
-    margin: 0 10px; 
+    border-radius: 5px;
+    font-size: 16px;
+}
+@media (min-width: 769px) and (max-width: 920px) {
+    aside {
+        display: none; /* Hides the aside element */
+    }
+
+    .rightContent {
+        width: 100%; /* Make sure rightContent takes up the full width */
+    }
+    .left{
+        display: none;
+    }
+    .first-part{
+       display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        padding-left: 10px;
+    }
+    .burger-menu{
+        display: block;
+    }
+
+    .nav1{
+        display: none;
+    }
+
+    .containerLogo{
+        display: flex;
+        margin: 0%;
+    }
+
+    .containerLogo .burger-menu{
+        margin-right: 20px;
+    }
+
+    .searchBar{
+        width: auto;
+    }
+
+    .logOut button{
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 14px;
+    }
+    .section-title {
+        text-align: center;
+    }
+
 }
 
-.titlechalets{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px 0;
+@media (min-width: 481px) and (max-width: 768px) {
+    aside {
+        display: none; /* Hides the aside element */
+    }
+
+    .left{
+        display: none;
+    }
+
+    .first-part {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        padding-left: 0px;
+    }
+
+    .burger-menu {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .nav1 {
+        display: none;
+    }
+
+    .containerLogo{
+        display: flex;
+    }
+
+    .containerLogo .burger-menu{
+        margin-right: 20px;
+    }
+
+    .logOut button{
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 12px;
+    }
+    .section-title {
+        text-align: center;
+    }
 }
 
-.linech{
-    width: 306px;
-}
-.card{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (min-width: 352px) and (max-width: 480px) {
+    aside {
+        display: none; /* Hides the aside element */
+    }
+
+    .left{
+        display: none;
+    }
+
+    .first-part {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        padding-left: 0px;
+    }
+
+    .burger-menu {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .nav1 {
+        display: none;
+    }
+    .containerLogo{
+        display: flex;
+    }
+
+    .containerLogo .burger-menu{
+        margin-right: 20px;
+    }
+    .deployable-menu a{
+        font-size: 12px;
+    }
+
+    .deployable-menu{
+        width: 40%;
+    }
+
+    .searchBar{
+        padding-top: 0;
+    }
+
+    .logOut button{
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 10px;
+    }
+    .section-title {
+        text-align: center;
+    }
 }

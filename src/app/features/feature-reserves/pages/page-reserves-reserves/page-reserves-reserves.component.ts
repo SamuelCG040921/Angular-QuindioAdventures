@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../feature-login/services/auth.service';
 import { ReservesService } from '../../services/reserves.service';
 
 @Component({
@@ -9,14 +10,12 @@ import { ReservesService } from '../../services/reserves.service';
 export class PageReservesReservesComponent implements OnInit{
   reserves: any
 
-constructor(private reservesService:ReservesService){}
+constructor(public authService:AuthService){}
 
-ngOnInit() {
-    this.reservesService.getReserves()
-    .subscribe(res=>{
-      this.reserves = res
-    })
+ngOnInit(): void {
+    this.reserves = []
 }
+
   }
   
 

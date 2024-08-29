@@ -1,0 +1,126 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    margin-top: 55px;
+}
+
+.recommended-container {
+    display: flex;
+    justify-content: center; 
+    gap: 90px;
+    flex-wrap: nowrap; 
+    align-items: center; 
+}
+
+.container-arrow-izq,
+.container-arrow-der {
+    display: flex;
+    align-items: center; 
+    width: 28px; 
+    height: 170px; 
+    margin: 20px;
+}
+
+.arrow {
+    width: 28px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.containerChaplanito{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .containerChaplanito #ono{
+    font-weight: bold;
+    font-size: 76px;
+    color: #8D8D8D;
+  }
+  
+  .contenedorNoTienes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .contenedorNoTienes #noTienesClientes{
+    display: flex;
+    text-align: center;
+    width: 80%;
+    font-size: 36px;
+    color: #8D8D8D;
+    font-weight: 500;
+    justify-content: center;
+  }
+  
+  .containerChaplanito img{
+    width: 300px;
+  }
+  
+  .emptyState{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+@media (max-width: 1279px) and (min-width: 921px){
+    .recommended-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .arrow{
+        display: none;
+    }
+}
+
+@media (min-width:769px) and (max-width: 920px){
+    .recommended-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .arrow{
+        display: none;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+    .recommended-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        margin: 0;
+        margin-bottom: 80px;
+    }
+
+    .arrow{
+        display: none;
+    }
+}
+
+
+@media (min-width: 352px) and (max-width: 480px) {
+    .recommended-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin: 0;
+    margin-bottom: 80px;
+    }
+    .arrow{
+        display: none;
+    }
+
+  }

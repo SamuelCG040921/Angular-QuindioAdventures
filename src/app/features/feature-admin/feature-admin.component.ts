@@ -7,6 +7,15 @@ import { AuthService } from '../feature-login/services/auth.service';
   styleUrls: ['./feature-admin.component.scss'] // Nota: el nombre de la propiedad es `styleUrls`, no `styleUrl`
 })
 export class FeatureAdminComponent implements OnInit {
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  disguiseMenu(){
+    this.isMenuOpen = false;
+  }
   user: any;
   users: any[] = []; // Añadimos la propiedad `users` para almacenar la lista de usuarios
   isInputDisabled = true;

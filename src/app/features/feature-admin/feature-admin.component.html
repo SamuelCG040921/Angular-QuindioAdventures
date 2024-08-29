@@ -1,4 +1,21 @@
 <div class="admin">
+    <div class="first-part">
+        <div class="containerLogo">
+            <button class="burger-menu" (click)="toggleMenu()">☰</button>
+            <ul class="deployable-menu" [ngClass]="{'show': isMenuOpen}">
+                <li><button class="disguiseButton" (click)="disguiseMenu()">X</button></li>
+                <li> <a routerLink="/administration-home">Inicio</a></li>
+                <li><a routerLink="/administration-chalets">Chalets</a></li>
+                <li><a routerLink="/administration-planes">Planes</a></li>
+                <li><a routerLink="/administration-usuarios">Usuarios</a></li>
+                <li>
+                    <div class="logOut">
+                        <button routerLink="/" (click)="authService.logout()"><img src="../../../assets/icons/out.svg" alt="">Cerrar sesion</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+      </div>
     <aside>
         <div class="left">
             <figure>

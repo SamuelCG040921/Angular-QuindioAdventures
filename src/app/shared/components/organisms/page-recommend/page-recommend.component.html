@@ -1,0 +1,20 @@
+<div class="emptyState" *ngIf="recommended.length<=0">
+    <div class="containerChaplanito">
+        <p id="ono">Ooops!</p>
+        <img src="../../../../../assets/images/chaplanitoreservas.jpeg" alt="">
+        <div class="contenedorNoTienes">
+            <p id="noTienesClientes">Aún no tenemos recomendaciones para ti</p>
+        </div>
+    </div>
+</div>
+<div class="container" *ngIf="recommended.length>0">
+    <div class="container-arrow-izq">
+        <img class="arrow" src="../../../../../assets/icons/flecha-izquierda.png" alt="">
+    </div>
+    <div class="recommended-container">
+        <app-reserve-recommended-page ></app-reserve-recommended-page>
+    </div>
+    <div class="container-arrow-der">
+        <img class="arrow" src="../../../../../assets/icons/flecha-derecha.png" alt="">
+    </div>
+</div>

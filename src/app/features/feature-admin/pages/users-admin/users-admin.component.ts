@@ -7,6 +7,16 @@ import { AuthService } from '../../../feature-login/services/auth.service';
   styleUrl: './users-admin.component.scss'
 })
 export class UsersAdminComponent {
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  disguiseMenu(){
+    this.isMenuOpen = false;
+  }
+  
   user: any;
   isInputDisabled = true;
 

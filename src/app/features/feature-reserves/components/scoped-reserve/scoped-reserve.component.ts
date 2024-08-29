@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ReservesService } from '../../services/reserves.service';
 
 
 
@@ -8,36 +9,40 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrl: './scoped-reserve.component.scss'
 })
 export class ScopedReserveComponent implements OnInit {
+  reserves: any;
+  selectedReserve: any = null;
+  isModalOpen = false;
+
   @Input() reserve = {
-   numero: 0,
-   codigo: 0,
-   tipo: "",
-   precio: 0,
-   direccion: '',
-   telefono: '',
-   checkin:'',
-   checkout:'',
-   estado:''
-  };
+    numero: 0,
+    codigo: 0,
+    tipo: "",
+    precio: 0,
+    direccion: '',
+    telefono: '',
+    checkin:'',
+    checkout:'',
+    estado:''
+   };
 
- 
+  constructor(private reservesService: ReservesService) { }
 
-  constructor(){}
-
-  ngOnInit() { 
+  ngOnInit() {
     
   }
 
-
-  isModalOpen = false;
-
-  openModal(): void {
+  openModal(reserve: any): void {
+    this.selectedReserve = reserve;
     this.isModalOpen = true;
   }
 
   closeModal(): void {
     this.isModalOpen = false;
+    this.selectedReserve = null;
   }
-  
+
+  trackById(index: number, reserve: any): string {
+    return reserve.codigo; // Usa un identificador único para cada reserva, como la propiedad 'codigo'
+  }
 
 }

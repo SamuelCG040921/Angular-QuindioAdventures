@@ -1,4 +1,5 @@
-<app-header></app-header>
+<app-header *ngIf="!authService.estaActivo()"></app-header>
+<app-header-logueado *ngIf="authService.estaActivo()"></app-header-logueado>
 <app-scoped-background-menu></app-scoped-background-menu>
 <section class="emptyState" *ngIf="reserves.length <= 0">
     <div class="containerChaplanito">
@@ -31,6 +32,6 @@
     </div>
 </section>
 <section *ngIf="reserves.length > 0" class="background">
-    <app-scoped-table-reserves></app-scoped-table-reserves>
+   
 </section>
 

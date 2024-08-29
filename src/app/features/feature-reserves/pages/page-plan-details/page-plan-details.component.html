@@ -1,0 +1,104 @@
+<app-header *ngIf="!authService.estaActivo()"></app-header>
+<app-header-logueado *ngIf="authService.estaActivo()"></app-header-logueado>
+
+<div class="containerMiga" *ngIf="plan">
+    <app-miga-de-pan [planNombre]="plan.nombre_planV" id="miga"></app-miga-de-pan>
+</div>
+
+<div class="primera">
+    <div class="containerIzq">
+        <app-plan-view-images id="bordeImg"></app-plan-view-images>
+        <app-card-calification id="qualify"></app-card-calification>
+    </div>
+    <div class="containerDer">
+        <app-collage-view [images]="restOfImages"></app-collage-view>
+        <div class="containerText">
+            <p id="tittle">{{ plan.nombre_planV }}</p>
+            <p id="info">{{ plan.descripcion }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="segunda">
+    <div class="pricesTable">
+        <app-prices-table-plan id="precios"></app-prices-table-plan>
+        <div class="addressContainer">
+            <app-map class="map"></app-map>
+            <p>{{ plan.ubicacion_planV }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="cuarta">
+    <div class="titleReserva"><figure class="linech"></figure><p class="section-title">Reserva e información</p><figure class="linech"></figure></div>
+    <div class="contenido">
+        <div class="containerPersona">
+
+            <app-peopple-count-info 
+                imageUrl="../../../../../assets/icons/hombre 1.png" 
+                title="Adultos" 
+                description="Personas mayores a 14 años empiezan a pagar precio de adulto" 
+                id="persona" 
+                (countChange)="onAdultCountChange($event)">
+            </app-peopple-count-info>
+
+            <app-peopple-count-info 
+                imageUrl="../../../../../assets/icons/nino.png" 
+                title="Niños" 
+                description="Personas menores a 14 años pueden pagar precio de niño" 
+                id="persona" 
+                (countChange)="onChildCountChange($event)">
+            </app-peopple-count-info>
+        </div>
+        <div class="recuadroPrecio">
+            <app-button  class="button" label="Continuar con la reserva" color="#275843" [routerLink]="['/paymentform', plan.id_planV]"></app-button>
+        </div>
+    </div>
+</div>
+
+<div class="quinta">
+    <div class="encargado">
+        <p class="titlequinta">Conoce al encargado del chalet</p>
+        <app-chalet-plan-attendant></app-chalet-plan-attendant>
+    </div>
+    <div class="comunicacion">
+       <app-communication-attendant></app-communication-attendant>
+    </div>
+</div>
+
+<section class="comentarios">
+   <div class="titlecom"> <figure></figure><h2>Comentarios y calificaciones</h2><figure></figure></div>
+   <section class="containerform">
+        <form action="" formGruoup="comment">
+            <div class="commentheader">
+                <img class="profilecomment" src="../../../../../assets/images/erling-haaland 1.png" alt="">
+                <div>
+                    <p>Juan Bedoya</p>
+                </div>
+                <div class="bordername"></div>
+                <input class="commentInput" type="text" id="comment" placeholder="Agrega un comentario..." (click)="mostrarBotones()" >
+                
+            </div>
+            
+            <div class="calificacion">
+                <app-calification-card *ngIf="botones === true"></app-calification-card>
+            </div>
+            <div class="buttons">
+                <app-button id="publish" *ngIf="botones === true" label="Publicar"></app-button>
+                <app-button *ngIf="botones === true" label="Cancelar" color="red" (click)="ocultarBotones()"></app-button>
+            </div>
+        </form>
+    </section>
+        <div class="filter">
+            <select name="filtrocomentarios" id="filtercomments">
+                <option value="value1">Todos los comentarios</option>
+                <option value="value2">Comentarios positivos</option>
+                <option value="value3">Comentarios negativos</option>
+            </select>
+        </div>
+        <div class="todoscomentarios">
+             <app-comment></app-comment>
+        </div>
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,23 @@
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Temporada alta</th>
+                <th>Temporada baja</th>
+                <th>Hora de salida</th>
+                <th>Hora de llegada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tarifa of groupByHabitacion(plan?.tarifas)">
+                <td>{{ formatPrice(getPriceForSeason(tarifa, 'Alta')) }}</td>
+                <td>{{ formatPrice(getPriceForSeason(tarifa, 'Baja')) }}</td>
+                <td>{{tarifa.hora_salida}}</td>
+                <td>{{tarifa.hora_llegada}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="textValue">
+        <p>Valor x noche</p>
+    </div>
+</div>

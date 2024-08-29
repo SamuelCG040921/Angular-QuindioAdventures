@@ -1,0 +1,76 @@
+/* map.component.scss */
+
+/* Estilo del contenedor del mapa */
+#map {
+    width: 350px;
+    height: 364px;
+    position: relative;
+    margin-top: 10px;
+    border-radius: 15px;
+  }
+
+  
+  /* Estilos para los controles personalizados del mapa */
+  .button {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 4px;
+    margin-top: 5px;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  /* Estilos para el botón principal */
+  .button-primary {
+    background-color: #4285f4;
+    color: white;
+    border-color: #4285f4;
+  }
+  
+  .button-primary:hover {
+    background-color: #357ae8;
+    border-color: #357ae8;
+  }
+  
+  /* Estilos para el botón secundario */
+  .button-secondary {
+    background-color: white;
+    color: #333;
+    border-color: #ccc;
+  }
+  
+  .button-secondary:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+  }
+  
+  /* Estilo para el contenedor de respuesta */
+  #response-container {
+    display: none;
+  }
+  
+  /* Estilo para la respuesta JSON */
+  #response {
+    font-family: monospace;
+    white-space: pre-wrap;
+    color: #444;
+  }
+  
+  /* Estilo para las instrucciones */
+  #instructions {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: normal;
+    background-color: white;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  

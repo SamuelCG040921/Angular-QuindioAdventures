@@ -1,0 +1,231 @@
+.planContainer {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.reservationPlan{
+  margin-top: 100px;
+  margin-left: 200px;
+  position: absolute;
+  z-index: 10;
+}
+
+.imgplan {
+  height: 500px;
+  margin-left: 450px;
+  z-index: 1;
+  display: block;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 22px;
+  margin-right: 20px;
+  text-align: center; 
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin-bottom: 36px;
+  margin-top: 32px;
+}
+
+.title figure {
+  height: 1px;
+  background-color: #418E6D;
+  width: 900px; 
+}
+
+.line2 {
+  margin: 0 5px;
+}
+
+.titlePrincipal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.title2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.line3 {
+  width: 450px;
+  height: 1.5px;
+  background-color: #90b4a0; 
+  margin: 0 15px;
+}
+
+.section-title2 {
+  font-size: 24px; 
+  font-weight: bold;
+  margin: 0;
+  color: #000; 
+}
+
+@media (max-width: 1279px) and (min-width: 921px){
+  .title figure{
+    display: none;
+  }
+
+  .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgplan{
+    width: 800px;
+    height: 420px;
+    margin-left: 0px;
+  }
+
+  .planContainer{
+    justify-content: center;
+    margin-bottom: 0px;
+    height: auto;
+  }
+
+  .reservationPlan{
+    margin-left: 30px;
+    margin-top: 80px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 920px) {
+
+  .title figure{
+    display: none;
+  }
+
+  .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .reservationPlan{
+    margin-top: 50px;
+    margin-left: 50px;
+  }
+    
+  .imgplan {
+    width: 400px;
+    height: 350px;
+    margin-left: 300px;
+  }
+  
+  .titlePrincipal{
+    font-size: 24px;
+    margin-top: 16px;
+  }
+  .principalTitle {
+    font-size: 28px;
+    margin: 15px 0;
+}
+.section-title{
+  font-size: 20px;
+  margin-left: 20px;
+}
+.title{
+  width: auto;
+}
+.section-title2 {
+    font-size: 20px;
+    text-align: center;
+}
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+
+  .title figure{
+    display: none;
+  }
+
+  .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
+
+  .reservationPlan{
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+    
+  .imgplan {
+    width: 340px;
+    height: 300px;
+    margin-left: 150px;
+  }
+  .principalTitle {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.section-title{
+  font-size: 16px;
+  margin-left: 20px;
+}
+.title{
+  width: auto;
+}
+
+.section-title2 {
+    font-size: 20px;
+    text-align: center;
+
+}
+}
+
+@media (min-width: 352px) and (max-width: 480px){
+  .title figure{
+    display: none;
+  }
+
+  .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .reservationPlan{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    width: 100%; 
+  }
+
+  .imgplan {
+      width: 340px;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+  }
+  .principalTitle {
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.section-title {
+    font-size: 16px;
+}
+
+.section-title2 {
+    font-size: 16px;
+    text-align: center;
+}
+}

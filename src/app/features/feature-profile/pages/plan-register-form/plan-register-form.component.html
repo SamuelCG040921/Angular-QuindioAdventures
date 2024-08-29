@@ -1,0 +1,132 @@
+<app-profile-header></app-profile-header>
+<app-profile-welcome></app-profile-welcome>
+<form class="formulario" [formGroup]="planForm" (ngSubmit)="onSubmit()">
+    <div class="containerFormulario">
+        <h2 class="title">Registrar Plan</h2>
+        <div class="parte1">
+            <div class="uno">
+                <label for="nombre">Nombre del plan</label>
+                <input id="nombre" placeholder="Ingresa el nombre de tu plan" class="nombrechalet" type="text" [formControlName]="'nombre'">
+                <label for="municipio">Municipio</label>
+                <input id="nombre" #municipioInput placeholder="Ingresa el municipio" class="nombrechalet" type="text" [formControlName]="'municipio'">
+                <label for="direccion">Dirección</label>
+                <input id="direccion" #direccionInput placeholder="Ingresa la ubicación de tu plan" type="text" class="direccionInput" [formControlName]="'ubicacion'">
+                <div class="containerButtonVerify">
+                  <button class="buttonVerify" type="button" (click)="verificarUbicacion(direccionInput.value, municipioInput.value) ">Verificar Ubicacion</button>
+                </div>
+                <label for="" class="titleView">Visualizar dirección</label>
+                <app-map class="map"></app-map>
+            </div>
+            <div class="columnaImagen">
+                <img class="imgPrincipal" [src]="previsualizacion" alt="">
+                    <input accept=".png, .jpg, .jpeg, .webp" (change)="capturarFile($event)" type="file" name="file-1" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} archivos seleccionados" multiple />
+                    <label for="file-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                    <span class="iborrainputfile">Seleccionar archivo</span>
+                    </label>
+            </div>
+        </div>
+        <div class="parte2">
+            <label for="descripcion">Descripción del plan</label>
+            <input id="descripcion" placeholder="Ingresa una descripción para tu plan" class="description" type="text" [formControlName]="'descripcion'">
+        </div>
+        <figure class="borde1"></figure>
+        <div class="parte4">
+            <h2 class="title">Imagenes de referencia</h2>
+            <div class="img1">
+                <img class="image1" [src]="previsualizacion2" alt="">
+                <input accept=".png, .jpg, .jpeg, .webp" (change)="capturarFile2($event)" type="file" name="file-2" id="file-2" class="inputfile inputfile-1" data-multiple-caption="{count} archivos seleccionados" multiple />
+                <label for="file-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                    <span class="iborrainputfile">Seleccionar archivo</span>
+                </label>
+            </div>
+            <div class="img2y3">
+                <div class="img2">
+                    <img class="image2" [src]="previsualizacion3" alt="">
+                    <input accept=".png, .jpg, .jpeg, .webp" (change)="capturarFile3($event)" type="file" name="file-3" id="file-3" class="inputfile inputfile-1" data-multiple-caption="{count} archivos seleccionados" multiple />
+                    <label for="file-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                        <span class="iborrainputfile">Seleccionar archivo</span>
+                    </label>
+                </div>   
+                <div class="img3">
+                    <img class="image3" [src]="previsualizacion4" alt="">
+                    <input accept=".png, .jpg, .jpeg, .webp" (change)="capturarFile4($event)" type="file" name="file-4" id="file-4" class="inputfile inputfile-1" data-multiple-caption="{count} archivos seleccionados" multiple />
+                    <label for="file-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                        <span class="iborrainputfile">Seleccionar archivo</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <figure class="borde1"></figure>
+        <form [formGroup]="tarifasform" class="parte5">
+          <h2 class="title">Tarifas y tipos de planes</h2>
+          <div class="headerfield">
+            <h3 class="subtitle">Ingresa tus tarifas</h3>
+          </div>
+          <div class="field">
+            <div class="inputContainer">
+              <label for="precio">Precio</label>
+              <input
+                placeholder="Ingresa el precio"
+                id="precio"
+                class="inputHab"
+                type="text"
+                formControlName="precio"
+              />
+            </div>
+            <div class="inputContainer">
+              <label for="temporada">Temporada</label>
+              <select
+                name="temporada"
+                class="inputHab"
+                id="temporada"
+                formControlName="temporada"
+              >
+                <option value="Selecciona la temporada" disabled selected hidden>Selecciona la temporada</option>
+                <option value="Alta">Alta</option>
+                <option value="Baja">Baja</option>
+              </select>
+            </div>
+            <div class="inputContainer">
+              <label for="horaLlegada">Hora de salida</label>
+              <input
+                placeholder="Ingresa la hora de llegada"
+                id="horallegada"
+                class="inputHab"
+                type="time"
+                formControlName="horaSalida"
+              />
+            </div>
+            <div class="inputContainer">
+              <label for="horaSalida">Hora de llegada</label>
+              <input
+                placeholder="Ingresa la hora de salida"
+                id="horasalida"
+                class="inputHab"
+                type="time"
+                formControlName="horaLlegada"
+              />
+            </div>
+          </div>
+          <div class="containerButtonSave">
+            <button type="button" (click)="guardarTarifa()" class="saveFee">Guardar Tarifa</button>
+          </div>
+        
+          <div formArrayName="tarifas" class="listaTarifas">
+            <h4>Tarifas Agregadas:</h4>
+            <ul>
+              <li *ngFor="let tarifa of tarifasControls; let i = index">
+                <span class="feeInfo">{{ tarifa.get('horaSalida')?.value }} - {{ tarifa.get('horaLlegada')?.value }} - {{ tarifa.get('precio')?.value }} - {{ tarifa.get('temporada')?.value }}</span>
+                <button class="deleteFee" type="button" (click)="eliminarTarifa(i)">
+                  <img src="../../../../../assets/icons/bote-de-basura.png" alt="Eliminar" />
+                </button>
+              </li>
+            </ul>
+          </div>
+        </form>            
+        <app-button class="button" label="Registrar" type="submit"></app-button>
+    </div>
+</form>

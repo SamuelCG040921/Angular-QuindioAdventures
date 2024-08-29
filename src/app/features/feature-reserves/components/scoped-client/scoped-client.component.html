@@ -1,9 +1,24 @@
-<div class="client" (click)="openModal()">  
-    <p id="text1">{{reserve.numero}}</p>
-    <p id="text2">{{reserve.codigo}}</p>
-    <p id="text3">{{reserve.nombre}}</p>
-    <p id="text4">{{reserve.fecharegistro}}</p>
-    <p id="text7">{{reserve.telefono}}</p>
-    <p id="text8">{{reserve.precio}}</p>
+<div class="client" >  
+    <div class="containerBtnModal">
+        <img (click)="openModal()" src="../../../../../assets/icons/mas-opciones.png" alt="">
+    </div>
+    <div class="containerNumber">
+        <strong>Numero:</strong><p id="text1">{{reserve.numero}}</p>
+    </div>
+    <div class="containerCodigo">
+        <strong>Codigo:</strong><p id="text2">{{reserve.codigo}}</p>
+    </div>
+    <div class="containerNombre">
+        <strong>Nombre:</strong> <p id="text3">{{reserve.nombre}}</p>
+    </div>
+    <div class="containerFecha">
+        <strong>Fecha de registro:</strong><p id="text4">{{reserve.fecharegistro}}</p>
+    </div>
+    <div class="containerTelefono">
+        <strong>Telefono:</strong><p id="text7">{{reserve.telefono}}</p>
+    </div>
+    <div class="containerPrecio">
+        <strong>Precio:</strong><p id="text8">{{reserve.precio}}</p>
+    </div>
 </div>
     <app-modal *ngIf="isModalOpen" (close)="closeModal()"></app-modal>

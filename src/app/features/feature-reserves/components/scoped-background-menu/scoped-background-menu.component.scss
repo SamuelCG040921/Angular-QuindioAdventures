@@ -118,3 +118,10 @@ select:focus-visible{
     flex-direction: column;
 }
 
+@media (min-width: 352px) and (max-width: 480px){
+    .navigate{
+        justify-content: center;
+        padding-left: 0px;
+    }
+}
+

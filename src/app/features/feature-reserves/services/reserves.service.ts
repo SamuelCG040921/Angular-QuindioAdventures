@@ -1,35 +1,27 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservesService {
-  
-  private reservesUrl = 'http://localhost:8000/reserves';
-
-  constructor(private http: HttpClient) { }
-
-  getReserves(){
-    return this.http.get('http://localhost:8000/reserves')
+  createReservation(reserva: any) {
+    throw new Error('Method not implemented.');
   }
+  private apiUrl = 'http://localhost:10101/reserva';
 
-  createReservation(reserva: any){
-    return this.http.post('http://localhost:8000/reserves', reserva)
+  constructor(private http: HttpClient) {}
+
+  enviarReserva(data: any): Observable<any> {
+    const token = localStorage.getItem('token'); // Obtener el token del localStorage
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}` // Incluir el token en los headers
+    });
+
+    return this.http.post<any>(this.apiUrl, data, { headers });
   }
-
-  
-  getReservebyCode(codigo:any){
-    return this.http.get('http://localhost:8000/reserves')
-    .pipe(
-      map((data: any) => {
-        const reserves = data;
-        const activeUserDocument = 33;
-        return reserves.find((reserve: { codigo: number; }) => reserve.codigo === activeUserDocument);
-      })
-    );
-
-
-}
 }

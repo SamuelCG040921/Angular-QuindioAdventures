@@ -10,6 +10,7 @@ import { AdminChaletsComponent } from './pages/admin-chalets/admin-chalets.compo
 import { AdminPlanesComponent } from './pages/admin-planes/admin-planes.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 import { UserRowComponent } from './components/user-row/user-row.component';
+import { TableUsersComponent } from './components/table-users/table-users.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { UserRowComponent } from './components/user-row/user-row.component';
     AdminPlanesComponent,
     AdminHeaderComponent,
     UserRowComponent,
+    TableUsersComponent,
   ],
   imports: [
     CommonModule,

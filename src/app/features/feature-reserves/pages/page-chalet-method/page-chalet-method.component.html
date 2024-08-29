@@ -1,0 +1,77 @@
+<app-nav-logueado></app-nav-logueado>
+<figure class="line3"></figure>
+
+<div class="form-header">
+    <img routerLink="/paymentform" src="../../../assets/icons/flechas-register-login-devolver.png" alt="">
+</div>
+
+<section class="principal">
+    <section class="section1">
+        <div class="container1">
+            <h2>Antes de la reserva</h2>
+            <p>El valor del paquete de tu reserva puede variar dependiendo de el dia y el pasaporte que elejiste.</p>
+        </div>
+
+        <div class="container2">
+            <img class="imgChalet" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/197556405.jpg?k=aedb485cf1745c92d66df80704fde35dad7d26d11220a848fe129bf30e59b5c9&o=&hp=1" alt="Chalet Image">
+            <div class="reviews">
+                <p>Finca Hotel La Dulcera</p>
+                <app-calification-card></app-calification-card>
+            </div>
+        </div>
+
+        <div class="container3">
+            <div class="organization">
+                <p>Valor del chalet</p><span>$120.000</span>
+            </div>
+            <div class="organization">
+                <p>Descuento de aplicativo</p><span>$10.000</span>
+            </div>
+        </div>
+
+        <div class="container4">
+            <h2>Precio total de la reserva</h2>
+            <div class="priceAll">
+                <p>Precio total incuido el descuento por reserva en nuestro aplicativo</p>
+                <span>$110.000</span>
+            </div>
+        </div>
+    </section>
+    <section class="section2">
+        <div class="infopayment">
+                <div class="container-info">
+                    <h2>Información de reserva</h2>
+                    <p class="p1">Completa la información necesaria para proceder con tu reserva</p>
+                </div>
+                <div class="p2">
+                    <p >Paso 1 de 2</p>
+                </div>
+        </div>
+
+        <div class="container-form">
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/nequi.svg" [metodoPago]="'Nequi'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/daviplata.svg" [metodoPago]="'Daviplata'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/PSE.svg" [metodoPago]="'PSE'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/mercadopago.svg" [metodoPago]="'Mercado Pago'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/paypal.svg" [metodoPago]="'PayPal'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/tarjeta.svg" [metodoPago]="'Debito'"></app-button-method-payment>
+            </div>
+            <div class="buttonProcedPayment">
+                <app-button type="submit" label="Proceder con el pago" color="#275843" class="buttonend"></app-button>
+                <app-messages-succesful title="Su reserva ha sido registrada exitosamente" *ngIf="isAlertOpen" (close)="closeAlert()"></app-messages-succesful>
+                <app-messages-error title="¡Hubo un problema!" paragraph="Alguno de los datos no es valido" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+              </div>
+        </div>         
+    </section>
+</section>
