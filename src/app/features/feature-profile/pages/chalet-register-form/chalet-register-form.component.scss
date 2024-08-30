@@ -527,92 +527,243 @@
     margin-left: 10px;
   }
 
+  @media (min-width: 769px) and (max-width: 1279px) {
+    .field{
+        width: 50%;
+    }
+
+    .parte3{
+        width: 92%;
+    }
+
+    .image1{
+        width: 90%;
+    }
+
+    .img1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .uno{
+        margin-right: 1px;
+    }
+    .saveFee{
+        display: flex;
+        margin-top: 20px;
+        margin-left: 90px;
+    }
+    .inputHabtype{
+        width: auto;
+    }
+    
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .parte1{
+        flex-direction: column;
+    }
+    .description{
+        width: 80%;
+    }
+
+    .parte2{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .parte2 label{
+        margin-top: 40px;
+    }
+
+    .borde1{
+        width: 80%;
+    }
+
+    .ventajascontainer1{
+        display: block;
+    }
+
+    .ventajascontainer2{
+        display: block;
+    }
+
+    .ventajascontainer3{
+        display: block;
+    }
+
+    .ventajascontainer4{
+        display: block;
+    }
+
+    .ventajascontainer5{
+        display: block;
+    }
+
+    .parte3{
+        width: 100%;
+    }
+
+    .image1{
+        width: 90%;
+    }
+
+    .img1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .img2y3{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .parte4{
+        width: 90%;
+    }
+
+    .image2{
+        width: 95%;
+    }
+
+    .image3{
+        width: 95%;
+    }
+
+    .img2{
+        width: auto;
+    }
+    .img2 input label{
+        margin-right: 40px;
+    }
+
+    .img3{
+        width: auto;
+    }
+    .uno{
+        margin-right: 1px;
+    }
+    .saveFee{
+        display: flex;
+        margin-top: 20px;
+        margin-left: 90px;
+    }
+    .inputHabtype{
+        width: auto;
+    }
+    .field{
+        width: auto;
+    }
+
+    
+}
+
 @media (min-width: 352px) and (max-width: 480px){
-.parte1{
-    flex-direction: column;
+    .parte1{
+        flex-direction: column;
+    }
+
+    .description{
+        width: 80%;
+    }
+
+    .parte2{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .parte2 label{
+        margin-top: 40px;
+    }
+
+    .borde1{
+        width: 80%;
+    }
+
+    .parte3{
+        width: 100%;
+    }
+
+    .ventajascontainer1{
+        display: block;
+    }
+
+    .ventajascontainer2{
+        display: block;
+    }
+
+    .ventajascontainer3{
+        display: block;
+    }
+
+    .ventajascontainer4{
+        display: block;
+    }
+
+    .ventajascontainer5{
+        display: block;
+    }
+    .image1{
+        width: 90%;
+    }
+
+    .img1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .img2y3{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image2{
+        width: 90%;
+    }
+
+    .image3{
+        width: 100%;
+    }
+
+    .img2{
+        width: auto;
+    }
+    .img2 input label{
+        margin-right: 40px;
+    }
+
+    .img3{
+        width: auto;
+    }
+    .uno{
+        margin-right: 1px;
+    }
+    .uno label{
+        margin-left: 16px;
+    }
+    .uno input{
+        width: 280px;
+        margin-left: 16px;
+    }
+    .field{
+        width: auto;
+    }
+    .saveFee{
+        margin-top: 20px;
+        margin-left: 90px;
+    }
+
 }
-
-.description{
-    width: 80%;
-}
-
-.parte2{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.parte2 label{
-    margin-top: 40px;
-}
-
-.borde1{
-    width: 80%;
-}
-
-.parte3{
-    width: 100%;
-}
-
-.ventajascontainer1{
-    display: block;
-}
-
-.ventajascontainer2{
-    display: block;
-}
-
-.ventajascontainer3{
-    display: block;
-}
-
-.ventajascontainer4{
-    display: block;
-}
-
-.ventajascontainer5{
-    display: block;
-}
-
-.parte4{
-    width: 100%;
-}
-
-.image1{
-    width: 90%;
-}
-
-.img1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.img2y3{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image2{
-    width: 90%;
-}
-
-.image3{
-    width: 90%;
-}
-
-.img2{
-    width: 100%;
-}
-
-.img3{
-    width: 100%;
-}
-
-
-
-  }
