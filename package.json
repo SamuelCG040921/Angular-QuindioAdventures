@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "start:api": "json-server --watch api/data.json --port 8000"
@@ -21,6 +21,8 @@
     "@angular/router": "^17.3.0",
     "axios": "^1.7.2",
     "google": "^2.1.0",
+    "http-server": "^14.1.1",
+    "httpserver": "^0.3.0",
     "json-server": "^1.0.0-beta.1",
     "jwt-decode": "^4.0.0",
     "rxjs": "~7.8.0",
