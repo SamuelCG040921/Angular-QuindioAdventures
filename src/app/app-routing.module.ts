@@ -15,6 +15,8 @@ import { FeatureAdminComponent } from './features/feature-admin/feature-admin.co
 import { AdminChaletsComponent } from './features/feature-admin/pages/admin-chalets/admin-chalets.component';
 import { PageChaletDetailsComponent } from './features/feature-reserves/pages/page-chalet-details/page-chalet-details.component';
 import { PageChaletPaymentComponent } from './features/feature-reserves/pages/page-chalet-payment/page-chalet-payment.component';
+import { ChaletEditFormComponent } from './features/feature-profile/pages/chalet-edit-form/chalet-edit-form.component';
+import { PlanEditFormComponent } from './features/feature-profile/pages/plan-edit-form/plan-edit-form.component';
 
 const routes: Routes = [
   {path:'reservas', component: FeatureReservesComponent},
@@ -29,8 +31,10 @@ const routes: Routes = [
   {path: 'cambiar-contraseña', component: ChangePasswordComponent},
   {path: 'home-user', component: PageHomeUserComponent},
   {path: 'chalet/:id', component: PageChaletDetailsComponent},
-  { path: 'paymentform/:id', component: PageChaletPaymentComponent },
+  {path: 'paymentform/:id', component: PageChaletPaymentComponent },
   {path: 'loginadminSamuelManuelaSantiagoJuanBalsero1234241316&_', component: LoginAdminComponent},
+  {path: 'edit-chalet', component: ChaletEditFormComponent},
+  {path: 'edit-plan', component: PlanEditFormComponent}
 ];
 
 @NgModule({

@@ -51,6 +51,9 @@ app-button {
     text-align: center;
 }
 
+button{
+    cursor: pointer;
+}
 @media (min-width: 352px) and (max-width: 480px){
     .container{
         width: 100%;

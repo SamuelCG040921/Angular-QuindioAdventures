@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { User } from './models/user.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RegisterService } from './services/register.service';
@@ -40,6 +40,40 @@ export class FeatureRegisterComponent implements OnInit {
       address: ['', Validators.required]
     });
   }
+
+  @HostListener('keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Tab') {
+      const activeElement = document.activeElement as HTMLElement;
+
+      if (activeElement.classList.contains('name')) {
+        event.preventDefault();
+        (document.querySelector('.lastName') as HTMLElement).focus();
+      } else if (activeElement.classList.contains('lastName')) {
+        event.preventDefault();
+        (document.querySelector('.email') as HTMLElement).focus();
+      } else if (activeElement.classList.contains('email')) {
+        event.preventDefault();
+        (document.querySelector('.age') as HTMLElement).focus();
+      } else if (activeElement.classList.contains('age')) {
+        event.preventDefault();
+        (document.querySelector('.phoneNumber') as HTMLElement).focus();
+      } else if (activeElement.classList.contains('phoneNumber')) {
+        event.preventDefault();
+        (document.querySelector('.password') as HTMLElement).focus();
+      } else if (activeElement.classList.contains('password')) {
+        event.preventDefault();
+        (document.querySelector('.confirmPassword') as HTMLElement).focus();
+      } else if (activeElement.classList.contains('confirmPassword')) {
+        event.preventDefault();
+        (document.querySelector('.address') as HTMLElement).focus();
+      } else if (activeElement.classList.contains('address')) {
+        event.preventDefault();
+        (document.querySelector('.document') as HTMLElement).focus();
+      } 
+    }
+  }
+
   openAlert(): void {
     this.isAlertOpen = true;
   }
