@@ -22,6 +22,9 @@
         {{ message.text }}
       </div>
     </div>
+    <div *ngIf="isLoading" class="loading-spinner">
+      <img src="../../../../../assets/icons/spinner.png" alt="Cargando...">
+    </div>
   </div>
   <form [formGroup]="chatbotForm" (ngSubmit)="onSubmit()" class="chatbot-footer">
     <input [(ngModel)]="newMessage" 
@@ -29,7 +32,7 @@
            (keypress)="handleKeyPress($event)" 
            formControlName="messageSend"
            />
-    <button type="submit" >
+    <button type="submit">
       <img src="../../../../../assets/icons/sendChat.svg" alt="send">
     </button>
   </form>

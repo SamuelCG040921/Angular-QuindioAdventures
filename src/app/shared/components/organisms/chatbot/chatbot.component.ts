@@ -14,22 +14,22 @@ export class ChatbotComponent implements OnInit {
   introText = 'Hola, mi nombre es chaplanito. ¿Cómo puedo ayudarte?';
   messages: { fromUser: boolean, text: string }[] = [];
   newMessage = '';
+  isLoading: boolean = false; // Nuevo estado de carga
 
   constructor(private fb: FormBuilder, private chatbotService: ChatbotService){}
 
   ngOnInit(): void {
-      this.chatbotForm
-    = this.fb.group({
+    this.chatbotForm = this.fb.group({
       messageSend: ['']
-    })
+    });
   }
 
   onSubmit() {
-    if(this.chatbotForm.valid){
+    if (this.chatbotForm.valid) {
       this.isSubmitting = true;
+      this.isLoading = true; // Mostrar el spinner al iniciar la solicitud
 
       const messageData = this.chatbotForm.value.messageSend;
-
 
       this.chatbotService.sendMessage(messageData).then(
         response => {
@@ -37,20 +37,20 @@ export class ChatbotComponent implements OnInit {
             this.messages.push({ text: this.newMessage, fromUser: true });
             this.newMessage = '';
             this.messages.push({text: response.response, fromUser: false});
-            // Lógica para enviar el mensaje al backend y recibir respuesta
           }
 
           this.isSubmitting = false;
+          this.isLoading = false; // Ocultar el spinner al recibir la respuesta
           console.log('envio exitoso del mensaje:', response);
         }
       ).catch(
         error => {
           this.isSubmitting = false;
-          console.error('Error en el envio del mensaje:', error)
+          this.isLoading = false; // Ocultar el spinner en caso de error
+          console.error('Error en el envio del mensaje:', error);
         }
-      )
-      
-    } else{
+      );
+    } else {
       console.error('Form is not valid');
       this.chatbotForm.markAllAsTouched();
     }
@@ -59,7 +59,6 @@ export class ChatbotComponent implements OnInit {
   toggleChat() {
     this.isChatOpen = !this.isChatOpen;
   }
-
 
   handleKeyPress(event: KeyboardEvent) {
     if (event.key === 'Enter') {
