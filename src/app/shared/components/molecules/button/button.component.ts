@@ -13,8 +13,10 @@ export class ButtonComponent {
   @Input() textColor: string = '';
   @Input() type: 'button' | 'submit' = 'button'
 
-  handleClick() {
-    this.click.emit();
+  handleClick(): void {
+    if (!this.estaDeshabilidato) {
+      this.click.emit();
+    }
   }
 
   estaDeshabilidato = false;

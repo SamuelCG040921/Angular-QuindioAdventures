@@ -1,9 +1,4 @@
 {
-    "git": {
-        "ignore": ["feature/admin"],
-        "productionBranch": "main"
-      },
-      
     "version": 2,
     "builds": [
       {

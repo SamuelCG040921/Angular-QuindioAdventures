@@ -5,6 +5,7 @@ import { AuthService } from '../../feature-login/services/auth.service';
 import axios from 'axios';
 import { PlansDetails } from '../../feature-reserves/models/plans.model';
 import { PlanInfo } from '../../feature-reserves/models/plansById';
+import { PlansInfoPerfil } from '../../feature-reserves/models/plansInfoPerfil';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class PlansService {
   private apiRegisterPlanUrl = 'http://localhost:10101/createPlan';
   private apiUrl = 'http://localhost:10101/plan'
   private apiUlr2 = 'http://localhost:10101/planId'
+  private apiUrl3 = 'http://localhost:10101/planEmail'
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
@@ -68,6 +70,36 @@ export class PlansService {
     .catch(error =>{
       throw error;
     })
+  }
+
+  getPlansByEmail(): Promise<PlansInfoPerfil[]> {
+    // Obtén el token desde el localStorage
+    const token = localStorage.getItem('token'); // Asegúrate de usar la clave correcta
+
+    return axios.get(`${this.apiUrl3}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`, // Envía el token en los encabezados
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      const plans = response.data.map((data: any) => new PlansInfoPerfil(
+        data.id_planV,
+        data.nombre_planV,
+        data.municipio_planV,
+        data.ubicacion_planV,
+        data.descripcion,
+        data.fecha_registro,
+        JSON.parse(data.imagenes), // Convertimos el JSON a objeto
+        JSON.parse(data.tarifas),  // Convertimos el JSON a objeto si es necesario
+      ));
+      console.log(plans,2345);
+      
+      return plans;
+    })
+    .catch(error => {
+      throw error;
+    });
   }
 
   objectKeys(obj: any): string[] {

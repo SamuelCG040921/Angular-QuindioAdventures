@@ -2,7 +2,7 @@
     <img [src]="user.image" alt="">
     <p>{{user.name}}</p>
     <div class="containerButtons">
-        <app-button class="active" label="Activar"></app-button>
-        <app-button label="Desactivar" color="#BF3434"></app-button>
+        <button (click)="activarUsuario()" class="active" label="Activar">Activar</button>
+        <button (click)="desactivarUsuario()" class="inactive" label="Desactivar" color="#BF3434">Desactivar</button>
     </div>
 </div>

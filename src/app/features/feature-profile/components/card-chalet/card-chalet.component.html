@@ -1,8 +1,8 @@
-<div class="card">
+<div class="card" *ngIf="chalets.length > 0">
     <div class="card-content">
         <div class="card-header">
-            <p class="chalet-nombre">Chalet la carmencia - Chaguala</p>
-            <app-calification-card></app-calification-card><p>20</p>
+            <p class="chalet-nombre">{{chalets[0].nombre_chalet}} - {{chalets[0].municipio_chalet}}</p>
+            <app-calification-card></app-calification-card><p>0</p>
         </div>
         <div class="card-body">
             <app-info-card-chalet-profile></app-info-card-chalet-profile>

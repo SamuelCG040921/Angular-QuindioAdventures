@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ChaletsService } from '../../../feature-reserves/services/chalets.service';
+import { PlansService } from '../../services/plans.service';
+import { PlansInfoPerfil } from '../../../feature-reserves/models/plansInfoPerfil';
 
 @Component({
   selector: 'app-card-plan',
@@ -10,12 +11,19 @@ export class CardPlanComponent {
   @Input()chalets:any= {
     nombre:'',
   };
-  constructor(private chaletsService:ChaletsService){}
+  constructor(private planService:PlansService){}
+
+  planes!:PlansInfoPerfil[];
 
   ngOnInit(){
-    this.chaletsService.getChalets()
-    .subscribe(res=>{
-      this.chalets=res
-    })
+    this.planService.getPlansByEmail().then(
+      (data: PlansInfoPerfil[]) => {
+        this.planes = data;
+        
+      },
+      err => {
+        console.error('Error en la solicitud:', err.response.data);
+      }
+    );
   }
 }

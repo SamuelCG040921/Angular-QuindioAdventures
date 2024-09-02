@@ -23,12 +23,14 @@
       </div>
     </div>
   </div>
-  <div class="chatbot-footer">
+  <form [formGroup]="chatbotForm" (ngSubmit)="onSubmit()" class="chatbot-footer">
     <input [(ngModel)]="newMessage" 
            placeholder="Empieza a chatear..." 
-           (keypress)="handleKeyPress($event)" />
-    <button (click)="sendMessage()">
+           (keypress)="handleKeyPress($event)" 
+           formControlName="messageSend"
+           />
+    <button type="submit" >
       <img src="../../../../../assets/icons/sendChat.svg" alt="send">
     </button>
-  </div>
+  </form>
 </div>

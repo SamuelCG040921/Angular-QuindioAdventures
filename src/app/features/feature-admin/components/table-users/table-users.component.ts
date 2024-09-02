@@ -17,6 +17,7 @@ export class TableUsersComponent implements OnInit{
       (data: UserProfile[]) => {
         console.log('Datos del usuario:', data);
         this.users = data;
+        
       },
       err => console.error(err)
      );

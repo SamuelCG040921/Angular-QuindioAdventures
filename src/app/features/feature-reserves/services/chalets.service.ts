@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 import { ChaletDetails } from '../models/chalets.model';
-import { map, Observable } from 'rxjs';
 import { ChaletInfo } from '../models/chaletsById';
+import { ChaletsInfoPerfil } from '../models/chaletsInfoPerfil';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ export class ChaletsService {
 
   private apiUrl = 'http://localhost:10101/chalet';
   private apiUrl2 = 'http://localhost:10101/api';
+  private apiUrl3 = 'http://localhost:10101/chaletEmail';
 
   constructor(private http: HttpClient) {}
 
@@ -60,6 +61,37 @@ export class ChaletsService {
         throw error;
       });
   }
+
+  getChaletsByEmail(): Promise<ChaletsInfoPerfil[]> {
+    // Obtén el token desde el localStorage
+    const token = localStorage.getItem('token'); // Asegúrate de usar la clave correcta
+
+    return axios.get(`${this.apiUrl3}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`, // Envía el token en los encabezados
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      const chalets = response.data.map((data: any) => new ChaletsInfoPerfil(
+        data.id_chalet,
+        data.nombre_chalet,
+        data.municipio_chalet,
+        data.ubicacion_chalet,
+        data.caracteristicas,
+        data.fecha_registro,
+        JSON.parse(data.imagenes), // Convertimos el JSON a objeto
+        JSON.parse(data.tarifas),  // Convertimos el JSON a objeto si es necesario
+        JSON.parse(data.servicios) // Convertimos el JSON a objeto si es necesario
+      ));
+      console.log(chalets,2345);
+      
+      return chalets; // Devuelve un arreglo
+    })
+    .catch(error => {
+      throw error;
+    });
+}
 
 
   getChalets() {
