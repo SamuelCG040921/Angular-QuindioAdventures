@@ -16,7 +16,6 @@ export class CardChaletComponent {
     this.chaletsService.getChaletsByEmail().then(
       (data: ChaletsInfoPerfil[]) => {
         this.chalets = data;
-        console.log(this.chalets,23453);
         
       },
       err => {

@@ -86,8 +86,6 @@
                             <!-- Confirmar contraseña -->
                             <div class="containerCamp" [ngClass]="{'error': isFieldInvalid('confirmPassword')}">
                                 <label>Confirmar contraseña</label>
-                                <input type="password" placeholder="Ingresa nuevamente tu contraseña" id="formInput" formControlName="confirmPassword" class="confirmPassword">
-                                <div *ngIf="isFieldInvalid('confirmPassword')" class="error-message">La contraseña es requerida</div>
                                 <input type="password" placeholder="Ingresa nuevamente tu contraseña" id="formInput" formControlName="confirmPassword">
                                 <div *ngIf="isFieldInvalid('confirmPassword')" class="error-message">
                                     <div *ngIf="registroForm.get('confirmPassword')?.errors?.['required']">La confirmación de la contraseña es requerida</div>
