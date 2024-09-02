@@ -1,11 +1,11 @@
-<div class="card" *ngIf="chalets.length > 0">
+<div class="card" >
     <div class="card-content">
         <div class="card-header">
-            <p class="chalet-nombre">{{chalets[0].nombre_chalet}} - {{chalets[0].municipio_chalet}}</p>
+            <p class="chalet-nombre">{{chalet.nombre_chalet}} - {{chalet.municipio_chalet}}</p>
             <app-calification-card></app-calification-card><p>0</p>
         </div>
         <div class="card-body">
-            <app-info-card-chalet-profile></app-info-card-chalet-profile>
+            <app-info-card-chalet-profile [fechaRegistro_chalet]="chalet.fechaRegistro_chalet"></app-info-card-chalet-profile>
         </div>
     </div>
 </div>

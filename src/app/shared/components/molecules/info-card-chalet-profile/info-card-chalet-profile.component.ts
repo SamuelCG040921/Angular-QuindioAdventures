@@ -10,20 +10,8 @@ import { ChaletsInfoPerfil } from '../../../../features/feature-reserves/models/
 })
 export class InfoCardChaletProfileComponent {
 
-  chalets!:ChaletsInfoPerfil[];
+  @Input() fechaRegistro_chalet:any ='';
 
-  @Input()info:any= {
-    fechaRegistro:''
-  };
-  constructor(private chaletsService:ChaletsService){}
-  ngOnInit(){
-    this.chaletsService.getChaletsByEmail().then(
-      (data: ChaletsInfoPerfil[]) => {
-        this.chalets = data;
-      },
-      err => {
-        console.error('Error en la solicitud:', err.response.data);
-      }
-    );
-  }
+  constructor(private chaletsService: ChaletsService){}
+  
 }
