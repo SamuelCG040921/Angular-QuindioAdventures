@@ -34,21 +34,18 @@ export class AdminService {
 
   async desactivarUsuario(email: string): Promise<void> {
     try {
-      // Obtener el token del localStorage
       const token = localStorage.getItem('token');
 
-      // Configurar los headers con el token
       const config = {
         headers: {
           'Authorization': `Bearer ${token}`
         }
       };
 
-      // Hacer la solicitud PUT con el token en los headers
       await axios.put(this.desactivarUrl, { email }, config);
     } catch (error) {
       console.error('Error desactivando el usuario:', error);
-      throw error; // Propagar el error para manejarlo en el componente
+      throw error;
     }
   }
 }
