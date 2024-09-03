@@ -60,10 +60,20 @@ header{
 .containerSegundo{
     padding: 6px 20px;
     border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-#segundo{
-    text-decoration: none;
+.containerSegundo:hover{
+    a{
+        background-color: rgba(128, 128, 128, 0.200);
+        border-radius: 10px;
+    }
+}
+
+.containerSegundo a{
+    color: #418e6d;
+    padding: 5px;
 }
 
 .containerMoneda{
@@ -95,14 +105,6 @@ header{
     align-items: center;
     padding-top: 30px;
     padding-bottom: 30px;
-}
-
-#chalet{
-    color: #275843;
-}
-
-#plan{
-    color: #275843;
 }
 
 .burger-menu{

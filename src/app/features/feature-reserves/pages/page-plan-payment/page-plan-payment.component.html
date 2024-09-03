@@ -1,0 +1,140 @@
+<app-nav-logueado class="nav"></app-nav-logueado>
+<figure class="line3"></figure>
+<div class="form-header">
+    <img routerLink="/plan-details/:id" src="../../../assets/icons/flechas-register-login-devolver.png" alt="">
+</div>
+<section class="principal">
+    <section class="section1">
+        <div class="container1">
+            <h2>Antes de la reserva</h2>
+            <p>El valor del paquete de tu reserva puede variar dependiendo de el dia y el pasaporte que elejiste.</p>
+        </div>
+        <div class="container2">
+            <img class="imgChalet"
+            [src]="firstImage">
+            <div class="reviews">
+                <p>{{ plan?.nombre_planV }}</p>
+                <app-calification-card></app-calification-card>
+            </div>
+        </div>
+        <div class="container3">
+            <div class="organization">
+                <p>Detalles de la tarifa seleccionada:</p>
+                <div *ngIf="tarifaSeleccionada">
+                  <p><strong>Temporada:</strong> {{ tarifaSeleccionada.temporada }}</p>
+                  <p><strong>Precio:</strong> {{ tarifaSeleccionada.precio }}</p>
+                </div>
+                <div *ngIf="!tarifaSeleccionada">
+                  <p>No se ha seleccionado ninguna tarifa.</p>
+                </div>
+              </div>
+        </div>
+        <div class="container4">
+            <h2>Precio total de la reserva</h2>
+            <div class="priceAll">
+                <p>Precio total contando la cantidad de días de la reserva</p>
+                <span>{{ formattedPrice || '$0' }}</span>
+            </div>
+        </div>
+    </section>
+    <section class="section2">
+        <div class="infopayment">
+            <div class="container-info">
+                <h2>Información de reserva</h2>
+                <p class="p1">Completa la información necesaria para proceder con tu reserva</p>
+            </div>
+            <div class="p2">
+                <p >Paso 1 de 2</p>
+            </div>
+           
+        </div>
+
+        <form [formGroup]="reservaForm" class="container-form" (ngSubmit)="onSubmit()">
+            <div class="field" [ngClass]="{'error': isFieldInvalid('documento')}">
+                <label class="documento">Documento</label>
+                <input formControlName="documento" class="documento" placeholder="Ingresa tu documento" id="documento">
+                <div *ngIf="isFieldInvalid('documento')" class="error-message">El documento es requerido</div>
+            </div>
+            <div class="field" [ngClass]="{'error': isFieldInvalid('cantidadPersonas')}">
+                <label class="cantidadNinos">Cantidad de Personas</label>
+                <input formControlName="cantidadPersonas" class="cantidadNinos" placeholder="Ingresa la cantidad de personas"
+                    id="cantidadNinos">
+                <div *ngIf="isFieldInvalid('cantidadPersonas')" class="error-message">La cantidad de peronas es requerida
+                </div>
+            </div>
+
+            <div class="field" [ngClass]="{'error': isFieldInvalid('nombre')}">
+                <label class="nombre">Nombre</label>
+                <input formControlName="nombre" class="nombre" placeholder="Ingresa tu nombre" id="nombre">
+                <div *ngIf="isFieldInvalid('nombre')" class="error-message">El nombre es requerido</div>
+            </div>
+
+            <div class="field" [ngClass]="{'error': isFieldInvalid('apellido')}">
+                <label class="apellido">Apellido</label>
+                <input formControlName="apellido" class="apellido" placeholder="Ingresa tu apellido" id="apellido">
+                <div *ngIf="isFieldInvalid('apellido')" class="error-message">El apellido es requerido</div>
+            </div>
+
+            <div class="field" [ngClass]="{'error': isFieldInvalid('telefono')}">
+                <label class="telefono">Teléfono</label>
+                <input formControlName="telefono" class="telefono" placeholder="Ingresa tu teléfono" id="telefono">
+                <div *ngIf="isFieldInvalid('telefono')" class="error-message">El teléfono es requerido</div>
+            </div>
+            <div class="field" [ngClass]="{'error': isFieldInvalid('direccion')}">
+                <label class="direccion">Dirección</label>
+                <input formControlName="direccion" class="direccion" placeholder="Ingresa tu dirección"
+                    id="direccion">
+                <div *ngIf="isFieldInvalid('direccion')" class="error-message">La dirección es requerida</div>
+            </div>
+
+            <div class="field" [ngClass]="{'error': isFieldInvalid('checkin')}">
+                <label class="checkin">Fecha inicio</label>
+                <input type="date" formControlName="checkin" class="checkin"
+                    placeholder="Ingresa la fecha de inicio" id="fechainicio">
+                <div *ngIf="isFieldInvalid('checkin')" class="error-message">La fecha de inicio es requerida</div>
+            </div>
+            <div *ngIf="tarifas && tarifas.length > 0" class="tarifasContainer">
+                <div *ngFor="let tarifa of tarifas" class="tarifaView">
+                  <p><strong>Precio:</strong> {{ tarifa.precio | currency }}</p>
+                  <p><strong>Temporada:</strong> {{ tarifa.temporada }}</p>
+                  <button type="button" (click)="selectTarifa(tarifa)">Seleccionar esta tarifa</button>
+                </div>
+            </div>
+              
+            <div class="buttonProcedPayment">
+                <app-button type="submit" label="Proceder con el pago y la reserva" color="#275843"
+                    class="buttonend"></app-button>
+                <app-messages-succesful title="Su reserva ha sido registrada exitosamente" *ngIf="isAlertOpen"
+                    (close)="closeAlert()"></app-messages-succesful>
+                <app-messages-error title="¡Hubo un problema!" paragraph="Alguno de los datos no es valido"
+                    *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+            </div>
+        </form>
+        <div class="container-form">
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/nequi.svg"
+                    [metodoPago]="'Nequi'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/daviplata.svg"
+                    [metodoPago]="'Daviplata'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/PSE.svg"
+                    [metodoPago]="'PSE'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/mercadopago.svg"
+                    [metodoPago]="'Mercado Pago'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/paypal.svg"
+                    [metodoPago]="'PayPal'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/tarjeta.svg"
+                    [metodoPago]="'Debito'"></app-button-method-payment>
+            </div>
+        </div>
+    </section>
+</section>

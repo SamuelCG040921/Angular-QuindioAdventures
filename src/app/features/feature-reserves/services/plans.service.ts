@@ -12,7 +12,7 @@ import { AuthService } from '../../feature-login/services/auth.service';
 export class PlansService {
 
   private apiUrl = 'http://localhost:10101/plan';
-  private apiUrl2 = 'http://localhost:10101/api';
+  private apiUrl2 = 'http://localhost:10101/planId';
   private apiUrl3 = 'http://localhost:10101/planEmail';
   private apiUrl4 = 'http://localhost:10101/eliminarPlan';
 
@@ -39,7 +39,7 @@ export class PlansService {
   }
 
   getPlanById(id: string): Promise<PlanInfo> {
-    return axios.get(`${this.apiUrl2}/plans/${id}`)
+    return axios.get(`${this.apiUrl2}/planes/${id}`)
       .then(response => {
         const data = response.data;
         const plan = new PlanInfo(

@@ -17,6 +17,7 @@ import { PageChaletDetailsComponent } from './features/feature-reserves/pages/pa
 import { PageChaletPaymentComponent } from './features/feature-reserves/pages/page-chalet-payment/page-chalet-payment.component';
 import { ChaletEditFormComponent } from './features/feature-profile/pages/chalet-edit-form/chalet-edit-form.component';
 import { PlanEditFormComponent } from './features/feature-profile/pages/plan-edit-form/plan-edit-form.component';
+import { PagePlanPaymentComponent } from './features/feature-reserves/pages/page-plan-payment/page-plan-payment.component';
 
 const routes: Routes = [
   {path:'reservas', component: FeatureReservesComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'home-user', component: PageHomeUserComponent},
   {path: 'chalet/:id', component: PageChaletDetailsComponent},
   {path: 'paymentform/:id', component: PageChaletPaymentComponent },
+  {path: 'paymentformplan/:id', component: PagePlanPaymentComponent },
   {path: 'loginadminSamuelManuelaSantiagoJuanBalsero1234241316&_', component: LoginAdminComponent},
   {path: 'edit-chalet', component: ChaletEditFormComponent},
   {path: 'edit-plan', component: PlanEditFormComponent}
