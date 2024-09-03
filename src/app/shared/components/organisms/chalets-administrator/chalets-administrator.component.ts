@@ -12,6 +12,7 @@ export class ChaletsAdministratorComponent implements OnInit {
 
   constructor(private chaletsService:ChaletsService){}
 
+
   ngOnInit(): void {
       this.chaletsService.getChaletsConnection().then(
         (data: ChaletDetails[]) => {
@@ -20,5 +21,6 @@ export class ChaletsAdministratorComponent implements OnInit {
         },
         err => console.error(err)
       );
-  }
+
+}
 }

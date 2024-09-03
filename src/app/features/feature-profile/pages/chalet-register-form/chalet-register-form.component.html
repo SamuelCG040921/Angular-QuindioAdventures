@@ -150,6 +150,10 @@
         </ul>
       </div>
     </form>            
-    <app-button class="button" label="Registrar" type="submit"></app-button>
+    <app-button class="button" label="Registrar" type="button" (click)="openWarningAlert()"></app-button>
+    <app-messages-succesful title="Su chalet se registro exitosamente, por favor espere confirmacion del administrador" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
+					<app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar la actualizacion verifique bien los datos" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+					<app-messages-error title="¡Ooops!" paragraph="Parece que hubo un problema al cargar tus datos" *ngIf="isErrorAlertOpen2" (close)="closeErrorAlert2()"></app-messages-error>
+					<app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de actualizar los datos?" *ngIf="isWarningAlertOpen" (confirm)="onConfirmModal()" (close)="closeWarningAlert()"></app-messages-warning>
 </div>
 </form>
