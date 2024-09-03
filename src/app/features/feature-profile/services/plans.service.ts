@@ -11,11 +11,19 @@ import { PlansInfoPerfil } from '../../feature-reserves/models/plansInfoPerfil';
   providedIn: 'root'
 })
 export class PlansService {
+  eliminarPlan(id: number) {
+    const token = this.authService.getToken(); // Obtén el token de tu servicio de autenticación
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const body = { id }; // El backend espera un objeto con `id` en el cuerpo de la solicitud
+
+    return this.http.put<any>(`${this.apiUrl4}`, body, { headers }).toPromise();
+  }
 
   private apiRegisterPlanUrl = 'http://localhost:10101/createPlan';
   private apiUrl = 'http://localhost:10101/plan'
   private apiUlr2 = 'http://localhost:10101/planId'
   private apiUrl3 = 'http://localhost:10101/planEmail'
+  private apiUrl4 = 'http://localhost:10101/eliminarPlan';
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 

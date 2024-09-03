@@ -12,9 +12,6 @@ export class PlansAdministratorComponent {
   constructor(private plansService:PlansService){}
   
    ngOnInit(){
-       this.plansService.getPlans()
-       .subscribe(res=>{
-        this.planes = res
-       })
+       
    }
 }
