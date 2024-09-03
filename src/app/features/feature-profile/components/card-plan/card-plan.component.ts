@@ -8,22 +8,11 @@ import { PlansInfoPerfil } from '../../../feature-reserves/models/plansInfoPerfi
   styleUrl: './card-plan.component.scss'
 })
 export class CardPlanComponent {
-  @Input()chalets:any= {
-    nombre:'',
+  @Input()plan:any= {
+    nombre_plan:'',
+    municipio_plan:'',
+    fechaRegistro_plan:''
   };
   constructor(private planService:PlansService){}
 
-  planes!:PlansInfoPerfil[];
-
-  ngOnInit(){
-    this.planService.getPlansByEmail().then(
-      (data: PlansInfoPerfil[]) => {
-        this.planes = data;
-        
-      },
-      err => {
-        console.error('Error en la solicitud:', err.response.data);
-      }
-    );
-  }
 }

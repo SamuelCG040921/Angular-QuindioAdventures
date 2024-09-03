@@ -11,9 +11,7 @@ export class InfoCardChaletProfileComponent {
 
   chalets!: ChaletsInfoPerfil[];
 
-  @Input() info: any = {
-    fechaRegistro: ''
-  };
+  @Input() fechaRegistro_chalet:any ='';
 
   constructor(private chaletsService: ChaletsService) {}
 

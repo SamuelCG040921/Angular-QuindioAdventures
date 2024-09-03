@@ -9,23 +9,8 @@ import { PlansInfoPerfil } from '../../../../features/feature-reserves/models/pl
   styleUrl: './info-card-profile.component.scss'
 })
 export class InfoCardProfileComponent {
-  @Input()info:any= {
-    fechaRegistro:''
-  };
+  @Input() fechaRegistro_plan:any = '';
   
   constructor(private planService:PlansService){}
 
-  planes!:PlansInfoPerfil[];
-
-  ngOnInit(){
-    this.planService.getPlansByEmail().then(
-      (data: PlansInfoPerfil[]) => {
-        this.planes = data;
-        
-      },
-      err => {
-        console.error('Error en la solicitud:', err.response.data);
-      }
-    );
-  }
 }

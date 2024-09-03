@@ -10,6 +10,19 @@
       <span>Añadir plan</span>
     </button>
   </div>
-  <app-card-plan class="card"></app-card-plan>
+  <div class="containerCards">
+    <app-card-plan *ngFor="let plan of planes; let i = index" [plan]="plan" class="card"></app-card-plan>
+  </div>
+  <div class="emptyState" *ngIf="planes.length<=0">
+    <div class="containerChaplanito">
+        <p id="ono">¡Vaya!</p>
+        <img src="../../../../../assets/images/chaplanitoreservas.jpeg" alt="">
+        <div class="contenedorNoTienes">
+            <p id="noTienesClientes">Parece que aún no has cread planes</p>
+        </div>
+    </div>
+</div>
+
+
 
   
