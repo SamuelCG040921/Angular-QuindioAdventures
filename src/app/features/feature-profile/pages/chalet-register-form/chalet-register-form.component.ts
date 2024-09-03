@@ -8,7 +8,6 @@ import { MapComponent } from '../../components/map/map.component';
 import { AuthService } from '../../../feature-login/services/auth.service';
 import { UpdateService } from '../../services/update-profile.service';
 import { ChaletDTO } from '../../models/register-chalet';
-import { from } from 'rxjs';
 
 @Component({
   selector: 'app-chalet-register-form',
@@ -21,7 +20,12 @@ export class ChaletRegisterFormComponent implements OnInit {
   @Output() imageUrlUpdated = new EventEmitter<string>();
   
   chaletForm!: FormGroup;
-  tarifasform!: FormGroup; // Asegúrate de que esta propiedad esté declarada
+  tarifasform!: FormGroup;
+  isAlertOpen = false;
+  isErrorAlertOpen = false;
+  isErrorAlertOpen2 = false;
+  isWarningAlertOpen = false;
+  isUpdateSuccessAlertOpen = false;
   serviciosSeleccionados: string[] = [];
   user: any;
   isInputDisabled = true;
@@ -257,15 +261,63 @@ export class ChaletRegisterFormComponent implements OnInit {
       this.chaletService.registrarChalet(chaletData).subscribe({
         next: (response) => {
           console.log('Chalet registrado exitosamente:', response);
-          // Aquí podrías redirigir al usuario o mostrar un mensaje de éxito
+          this.openUpdateSuccessAlert();
+          setTimeout(() => {
+            window.location.reload();
+          }, 1300);
         },
         error: (error) => {
           console.error('Error al registrar chalet:', error);
-          // Aquí podrías mostrar un mensaje de error al usuario
+          this.openErrorAlert();
         }
       });
     } else {
       console.log('El formulario no es válido');
+      this.openErrorAlert();
     }
+  }
+
+  openAlert(): void {
+    this.isAlertOpen = true;
+  }
+
+  closeAlert(): void {
+    this.isAlertOpen = false;
+  }
+
+  openErrorAlert(): void {
+    this.isErrorAlertOpen = true;
+  }
+
+  openErrorAlert2(): void {
+    this.isErrorAlertOpen2 = true;
+  }
+
+  closeErrorAlert(): void {
+    this.isErrorAlertOpen = false;
+  }
+
+  closeErrorAlert2(): void {
+    this.isErrorAlertOpen2 = false;
+  }
+
+  openWarningAlert(): void {
+    this.isWarningAlertOpen = true;
+  }
+
+  closeWarningAlert(): void {
+    this.isWarningAlertOpen = false;
+  }
+
+  openUpdateSuccessAlert(): void {
+    this.isUpdateSuccessAlertOpen = true;
+  }
+
+  closeUpdateSuccessAlert(): void {
+    this.isUpdateSuccessAlertOpen = false;
+  }
+
+  onConfirmModal() {
+    this.onSubmit();
   }
 }

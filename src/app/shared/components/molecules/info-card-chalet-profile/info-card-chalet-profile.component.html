@@ -1,12 +1,12 @@
 <div class="container">
     <div class="part1">
-        <p class="paragraph">Añadido el {{chalets[0].fechaRegistro_chalet}}</p>
-        <p>234 comentarios</p>
+      <p class="paragraph">Añadido el {{ chalets[0].fechaRegistro_chalet }}</p>
+      <p>0 comentarios</p>
     </div>
     <div class="separator"></div>
     <div class="part2">
-        <button class="button1" routerLink="/edit-chalet">Editar mi chalet</button>
-        <button class="button2">Eliminar chalet</button>
+      <button class="button1" routerLink="/edit-chalet">Editar mi chalet</button>
+      <button class="button2" (click)="eliminarChalet(chalets[0].id_chalet)">Eliminar chalet</button>
     </div>
-</div>
-
+  </div>
+  

@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 import { ChaletDetails } from '../models/chalets.model';
 import { ChaletInfo } from '../models/chaletsById';
 import { ChaletsInfoPerfil } from '../models/chaletsInfoPerfil';
+import { AuthService } from '../../feature-login/services/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,16 +14,14 @@ export class ChaletsService {
   private apiUrl = 'http://localhost:10101/chalet';
   private apiUrl2 = 'http://localhost:10101/api';
   private apiUrl3 = 'http://localhost:10101/chaletEmail';
+  private apiUrl4 = 'http://localhost:10101/eliminarChalet';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   getChaletsConnection(): Promise<ChaletDetails[]> {
-
     return axios.get(this.apiUrl)
       .then(response => {
         const data = response.data;
-        
-        // Si `data` es un array de chalets, mapea cada elemento a un `ChaletDetails`
         const chalets: ChaletDetails[] = data.map((chalet: any) => new ChaletDetails(
           chalet.id_chalet,
           chalet.nombre_chalet,
@@ -33,7 +32,6 @@ export class ChaletsService {
           chalet.tarifa,
           chalet.servicio
         ));
-        
         return chalets;
       })
       .catch(error => {
@@ -51,9 +49,9 @@ export class ChaletsService {
           data[0].municipio_chalet,
           data[0].ubicacion_chalet,
           data[0].caracteristicas,
-          JSON.parse(data[0].imagenes), // Aquí convertimos el JSON a objeto
-          JSON.parse(data[0].tarifas),  // Convertimos el JSON a objeto si es necesario
-          JSON.parse(data[0].servicios) // Convertimos el JSON a objeto si es necesario
+          JSON.parse(data[0].imagenes),
+          JSON.parse(data[0].tarifas),
+          JSON.parse(data[0].servicios)
         );
         return chalet;
       })
@@ -63,12 +61,11 @@ export class ChaletsService {
   }
 
   getChaletsByEmail(): Promise<ChaletsInfoPerfil[]> {
-    // Obtén el token desde el localStorage
-    const token = localStorage.getItem('token'); // Asegúrate de usar la clave correcta
+    const token = localStorage.getItem('token');
 
     return axios.get(`${this.apiUrl3}`, {
       headers: {
-        'Authorization': `Bearer ${token}`, // Envía el token en los encabezados
+        'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
       }
     })
@@ -80,26 +77,22 @@ export class ChaletsService {
         data.ubicacion_chalet,
         data.caracteristicas,
         data.fecha_registro,
-        JSON.parse(data.imagenes), // Convertimos el JSON a objeto
-        JSON.parse(data.tarifas),  // Convertimos el JSON a objeto si es necesario
-        JSON.parse(data.servicios) // Convertimos el JSON a objeto si es necesario
+        JSON.parse(data.imagenes),
+        JSON.parse(data.tarifas),
+        JSON.parse(data.servicios)
       ));
-      console.log(chalets,2345);
-      
-      return chalets; // Devuelve un arreglo
+      return chalets;
     })
     .catch(error => {
       throw error;
     });
-}
-
-
-  getChalets() {
-    return this.http.get('http://localhost:8000/chalets');
   }
 
-  objectKeys(obj: any): string[] {
-    return Object.keys(obj);
-  }
+  eliminarChalet(id: number): Promise<any> {
+    const token = this.authService.getToken(); // Obtén el token de tu servicio de autenticación
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const body = { id }; // El backend espera un objeto con `id` en el cuerpo de la solicitud
 
+    return this.http.put<any>(`${this.apiUrl4}`, body, { headers }).toPromise();
+  }
 }

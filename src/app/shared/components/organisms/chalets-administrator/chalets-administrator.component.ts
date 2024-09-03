@@ -12,9 +12,6 @@ export class ChaletsAdministratorComponent {
   constructor(private chaletsService:ChaletsService){}
 
   ngOnInit(){
-    this.chaletsService.getChalets()
-    .subscribe(res=>{
-      this.chalets=res
-    })
+    
   }
 }
