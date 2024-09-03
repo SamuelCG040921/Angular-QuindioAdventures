@@ -1,4 +1,4 @@
-<div class="cardContainer" *ngFor="let reserve of reserves; trackBy: trackById">
+
     <div class="clientCard">
         <div class="containerPrincipal">
             <div class="containerEstado">
@@ -28,5 +28,4 @@
 			<strong>Precio:</strong><p id="text7">{{reserve.precio}}</p>
         </div>
     </div>
-</div>
 <app-modal-reserves *ngIf="isModalOpen" [reserve]="selectedReserve" (close)="closeModal()"></app-modal-reserves>

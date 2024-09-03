@@ -1,3 +1,13 @@
+<div class="emptyState" *ngIf="planes.length<=0">
+    <div class="containerChaplanito">
+        <p id="ono">Paciencia...</p>
+        <img src="../../../../../assets/images/chaplanitoreservas.jpeg" alt="">
+        <div class="contenedorNoTienes">
+            <p id="noTienesClientes">Nadie ha registrado nuevos planes</p>
+        </div>
+    </div>
+</div>
+
 <div class="plan-container">
     <app-card-plan-administator  *ngFor="let plan of planes;let i = index" [plan]="plan"></app-card-plan-administator>
 </div>

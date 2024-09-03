@@ -1,3 +1,13 @@
+<div class="emptyState" *ngIf="chalets.length<=0">
+    <div class="containerChaplanito">
+        <p id="ono">Paciencia...</p>
+        <img src="../../../../../assets/images/chaplanitoreservas.jpeg" alt="">
+        <div class="contenedorNoTienes">
+            <p id="noTienesClientes">Nadie ha registrado nuevos chalets</p>
+        </div>
+    </div>
+</div>
+
 <div class="chalet-container">
-    <app-card-chalet-administator  *ngFor="let chalet of chalets;let i = index" [chalet]="chalet"></app-card-chalet-administator>
+    <app-card-chalet-administator *ngFor="let chalet of chalets;let i = index" [chalet]="chalet"></app-card-chalet-administator>
 </div>
