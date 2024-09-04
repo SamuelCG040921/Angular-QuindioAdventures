@@ -9,8 +9,35 @@ import { PlansInfoPerfil } from '../../../../features/feature-reserves/models/pl
   styleUrl: './info-card-profile.component.scss'
 })
 export class InfoCardProfileComponent {
-  @Input() fechaRegistro_plan:any = '';
-  
-  constructor(private planService:PlansService){}
+  plans!: PlansInfoPerfil[];
 
+  @Input() fechaRegistro_plan:any ='';
+
+  constructor(private plansService: PlansService) {}
+
+  ngOnInit() {
+    this.plansService.getPlansByEmail().then(
+      (data: PlansInfoPerfil[]) => {
+        this.plans = data;
+      },
+      err => {
+        console.error('Error en la solicitud:', err);
+      }
+    );
+  }
+
+  eliminarPlan(id: number) {
+    this.plansService.eliminarPlan(id).then(
+      response => {
+        console.log('plan eliminado:', response);
+        // Actualizar la lista de chalets después de eliminar
+        this.plans = this.plans.filter(plan => plan.id_plan !== id);
+      },
+      err => {
+        console.error('Error eliminando el plan:', err);
+      }
+    );
+  }
+  
 }
+
