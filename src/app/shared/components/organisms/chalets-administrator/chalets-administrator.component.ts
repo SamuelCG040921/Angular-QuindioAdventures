@@ -5,22 +5,24 @@ import { ChaletsService } from '../../../../features/feature-reserves/services/c
 @Component({
   selector: 'app-chalets-administrator',
   templateUrl: './chalets-administrator.component.html',
-  styleUrl: './chalets-administrator.component.scss'
+  styleUrls: ['./chalets-administrator.component.scss']
 })
 export class ChaletsAdministratorComponent implements OnInit {
-  chalets!: ChaletDetails[];
+  chalets: ChaletDetails[] = [];
 
-  constructor(private chaletsService:ChaletsService){}
-
+  constructor(private chaletsService: ChaletsService) {}
 
   ngOnInit(): void {
-      this.chaletsService.getChaletsConnection().then(
-        (data: ChaletDetails[]) => {
-          console.log('Datos del chalet:',data);
-          this.chalets = data
-        },
-        err => console.error(err)
-      );
+    this.loadChalets();
+  }
 
-}
+  loadChalets(): void {
+    this.chaletsService.getChaletsConnectionAdmin().then(
+      (data: ChaletDetails[]) => {
+        console.log('Datos del chalet:', data);
+        this.chalets = data;
+      },
+      err => console.error(err)
+    );
+  }
 }
