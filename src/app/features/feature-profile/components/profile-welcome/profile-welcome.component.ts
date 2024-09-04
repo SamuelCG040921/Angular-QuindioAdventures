@@ -9,6 +9,7 @@ import { AuthService } from '../../../feature-login/services/auth.service';
 export class ProfileWelcomeComponent {
   user: any;
   isInputDisabled = true;
+  
 
   habilitarInput() {
     this.isInputDisabled = false;

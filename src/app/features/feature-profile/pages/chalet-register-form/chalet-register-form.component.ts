@@ -1,6 +1,6 @@
 /// <reference types="google.maps" />
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { UserService } from '../../../feature-reserves/services/user.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ChaletService } from '../../services/chalet.service';
@@ -44,15 +44,17 @@ export class ChaletRegisterFormComponent implements OnInit {
   archivoCapturado3: File | null = null;
   archivoCapturado4: File | null = null;
 
+  acceptedMunicipios = ['Armenia', 'Calarcá', 'La Tebaida', 'Montenegro', 'Quimbaya', 'Circasia', 'Salento', 'Córdoba', 'Buenavista', 'Génova', 'Pijao', 'Filandia'];
+
   constructor(private fb: FormBuilder, private userService: UserService, private sanitizer: DomSanitizer, private chaletService: ChaletService, private authService: AuthService, private updateService: UpdateService) {
   }
 
   ngOnInit(): void {
     this.chaletForm = this.fb.group({
       nombre: ['', Validators.required],
-      municipio: ['', Validators.required],
+      municipio: ['', [Validators.required, this.municipioValidator.bind(this)]],
       ubicacion: ['', Validators.required],
-      descripcion: ['', Validators.required],
+      descripcion: ['', [Validators.required, Validators.maxLength(500)]],
       servicios: [[], Validators.required],
       imagenes: this.fb.array([], Validators.required),
       tarifas: this.fb.array([]) // Aquí se agrega el FormArray de tarifas
@@ -319,5 +321,10 @@ export class ChaletRegisterFormComponent implements OnInit {
 
   onConfirmModal() {
     this.onSubmit();
+  }
+
+  municipioValidator(control: AbstractControl): ValidationErrors | null {
+    const municipio = control.value;
+    return this.acceptedMunicipios.includes(municipio) ? null : { municipioInvalido: true };
   }
 }

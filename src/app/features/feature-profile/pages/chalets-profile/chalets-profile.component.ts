@@ -18,6 +18,7 @@ export class ChaletsProfileComponent {
   }
 
   chalets!:ChaletsInfoPerfil[];
+  isErrorAlertOpen = false;
 
   constructor(private chaletsService:ChaletsService){}
 
@@ -25,11 +26,19 @@ export class ChaletsProfileComponent {
     this.chaletsService.getChaletsByEmail().then(
       (data: ChaletsInfoPerfil[]) => {
         this.chalets = data;
-        
       },
       err => {
         console.error('Error en la solicitud:', err.response.data);
+        this.openErrorAlert()
       }
     );
+  }
+
+  openErrorAlert(): void {
+    this.isErrorAlertOpen = true;
+  }
+
+  closeErrorAlert(): void {
+    this.isErrorAlertOpen = false;
   }
 }

@@ -29,7 +29,8 @@ export class PageChaletPaymentComponent implements OnInit, OnDestroy {
   fecha_fin: string | null = null;
   totalPersonsSubscription!: Subscription;
   routerSubscription!: Subscription;
-  precioTotal: number | null = null; // Nueva variable para el precio total
+  precioTotal: number | null = null; 
+  checkoutDateError: boolean = false;// Nueva variable para el precio total
 
   constructor(
     private fb: FormBuilder,
@@ -48,7 +49,7 @@ export class PageChaletPaymentComponent implements OnInit, OnDestroy {
       telefono: ['', Validators.required],
       direccion: ['', Validators.required],
       checkin: ['', Validators.required],
-      checkout: ['', Validators.required]
+      checkout: ['', [Validators.required, this.checkCheckoutDate.bind(this)]] // Apply custom validation here
     });
 
     this.totalPersonsSubscription = this.personCountService.totalPersons$.subscribe((count: number) => {
@@ -216,5 +217,18 @@ export class PageChaletPaymentComponent implements OnInit, OnDestroy {
   formatPrice(price: number): string {
     // Formatea el precio a una cadena con separadores de miles y sin decimales
     return price.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 });
+  }
+
+  checkCheckoutDate(control: any): { [key: string]: boolean } | null {
+    const checkInDate = new Date(this.reservaForm?.get('checkin')?.value);
+    if (control.value && checkInDate) {
+      const checkoutDate = new Date(control.value);
+      if (checkoutDate <= checkInDate) {
+        this.checkoutDateError = true; // Set the property to true when validation fails
+        return { checkoutDateError: true };
+      }
+    }
+    this.checkoutDateError = false; // Reset the property when validation passes
+    return null;
   }
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output , EventEmitter} from '@angular/core';
+
 
 @Component({
   selector: 'app-loader',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './loader.component.scss'
 })
 export class LoaderComponent {
-
+  
 }

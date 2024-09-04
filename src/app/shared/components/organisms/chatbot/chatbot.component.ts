@@ -14,7 +14,8 @@ export class ChatbotComponent implements OnInit {
   introText = 'Hola, mi nombre es chaplanito. ¿Cómo puedo ayudarte?';
   messages: { fromUser: boolean, text: string }[] = [];
   newMessage = '';
-  isLoading: boolean = false; // Nuevo estado de carga
+  isLoading: boolean = false;
+  isErrorAlertOpen = false; // Nuevo estado de carga
 
   constructor(private fb: FormBuilder, private chatbotService: ChatbotService){}
 
@@ -48,6 +49,7 @@ export class ChatbotComponent implements OnInit {
           this.isSubmitting = false;
           this.isLoading = false; // Ocultar el spinner en caso de error
           console.error('Error en el envio del mensaje:', error);
+          this.openErrorAlert();
         }
       );
     } else {
@@ -64,5 +66,13 @@ export class ChatbotComponent implements OnInit {
     if (event.key === 'Enter') {
       this.onSubmit();
     }
+  }
+
+  openErrorAlert(): void {
+    this.isErrorAlertOpen = true;
+  }
+
+  closeErrorAlert(): void {
+    this.isErrorAlertOpen = false;
   }
 }

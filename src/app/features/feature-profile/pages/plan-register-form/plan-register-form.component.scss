@@ -31,7 +31,6 @@
     background-color: #D1E1D8;
     height: 48px;
     width: 350px;
-    margin-bottom: 20px;
     padding-left: 20px;
 }
 
@@ -44,7 +43,7 @@
     justify-content: center;
     align-items: center;
     background-image: url(../../../../../assets/images/mp.png);
-    margin-bottom: 20px;
+
 }
 
 .imgPrincipal{
@@ -448,7 +447,6 @@
     background-color: #D1E1D8;
     height: 48px;
     width: 350px;
-    margin-bottom: 20px;
     padding-left: 20px;
 }
 
@@ -530,6 +528,18 @@
 #temporada{
     margin-bottom: 32px;
 }
+
+.formField{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
 @media (min-width: 769px) and (max-width: 1279px) {
     .field{
         width: 50%;

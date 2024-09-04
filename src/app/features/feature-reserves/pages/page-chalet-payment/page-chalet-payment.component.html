@@ -96,12 +96,12 @@
                     placeholder="Ingresa la fecha de inicio" id="fechainicio">
                 <div *ngIf="isFieldInvalid('checkin')" class="error-message">La fecha de inicio es requerida</div>
             </div>
-            <div class="field" [ngClass]="{'error': isFieldInvalid('checkout')}">
+            <div class="field" [ngClass]="{'error': isFieldInvalid('checkout') || checkoutDateError}">
                 <label class="checkout">Fecha fin</label>
-                <input type="date" formControlName="checkout" class="checkout" placeholder="Ingresa la fecha fin"
-                    id="fechafin">
-                <div *ngIf="isFieldInvalid('checkout')" class="error-message">La fecha fin es requerida</div>
-            </div>
+                <input type="date" formControlName="checkout" class="checkout" placeholder="Ingresa la fecha fin" id="fechafin">
+                <div *ngIf="isFieldInvalid('checkout')" class="error-message">La fecha fin es requerida y debe ser porterior a la fecha de inicio</div>
+                
+              </div>
             <div *ngIf="tarifas && tarifas.length > 0" class="tarifasContainer">
                 <div *ngFor="let tarifa of tarifas" class="tarifaView">
                   <p class="titleTarifa"><strong>Tipo de habitación:</strong> {{ tarifa.tipo_habitacion }}</p>

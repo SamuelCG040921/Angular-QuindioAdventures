@@ -5,12 +5,27 @@
         <h2 class="title">Registrar plan vacacional</h2>
         <div class="parte1">
             <div class="uno">
+              <div class="formField">
                 <label for="nombre">Nombre del plan</label>
                 <input id="nombre" placeholder="Ingresa el nombre de tu plan" class="nombrechalet" type="text" [formControlName]="'nombre'">
+                <div *ngIf="planForm.get('nombre')?.invalid && planForm.get('nombre')?.touched" class="error-message">
+                  El nombre del chalet es requerido.
+                </div>
+              </div>
+              <div class="formField">
                 <label for="municipio">Municipio</label>
                 <input id="nombre" #municipioInput placeholder="Ingresa el municipio" class="nombrechalet" type="text" [formControlName]="'municipio'">
+                <div *ngIf="planForm.get('municipio')?.invalid && planForm.get('municipio')?.touched" class="error-message">
+                  El municipio debe ser uno de los permitidos.
+                </div>
+              </div>
+              <div class="formField">
                 <label for="direccion">Dirección</label>
                 <input id="direccion" #direccionInput placeholder="Ingresa la ubicación de tu plan" type="text" class="direccionInput" [formControlName]="'ubicacion'">
+                <div *ngIf="planForm.get('ubicacion')?.invalid && planForm.get('ubicacion')?.touched" class="error-message">
+                  La dirección es requerida.
+                </div>
+              </div>
                 <div class="containerButtonVerify">
                   <button class="buttonVerify" type="button" (click)="verificarUbicacion(direccionInput.value, municipioInput.value) ">Verificar Ubicacion</button>
                 </div>
@@ -29,6 +44,9 @@
         <div class="parte2">
             <label for="descripcion">Descripción del plan</label>
             <input id="descripcion" placeholder="Ingresa una descripción para tu plan" class="description" type="text" [formControlName]="'descripcion'">
+            <div *ngIf="planForm.get('descripcion')?.invalid && planForm.get('descripcion')?.touched" class="error-message">
+              La descripción es requerida y no puede exceder los 500 caracteres.
+            </div>
         </div>
         <figure class="borde1"></figure>
         <div class="parte4">
@@ -127,6 +145,10 @@
             </ul>
           </div>
         </form>            
-        <app-button class="button" label="Registrar" type="submit"></app-button>
+        <app-button (click)="openWarningAlert()" class="button" label="Registrar" type="button"></app-button>
+        <app-messages-succesful title="Su plan se registro exitosamente, por favor espere confirmacion del administrador" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
+					<app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar el registro, verifique bien los datos" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+					<app-messages-error title="¡Ooops!" paragraph="Parece que hubo un problema al cargar tus datos" *ngIf="isErrorAlertOpen2" (close)="closeErrorAlert2()"></app-messages-error>
+					<app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de los datos que ingresaste?" *ngIf="isWarningAlertOpen" (confirm)="onConfirmModal()" (close)="closeWarningAlert()"></app-messages-warning>
     </div>
 </form>

@@ -16,6 +16,7 @@ export class FeatureRegisterComponent implements OnInit {
   registroForm!: FormGroup;
   isSubmitting: boolean = false;
   img = 'https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg';
+  isLoading: boolean = false;
 
   constructor(private fb: FormBuilder, private registerService: RegisterService,  private router:Router) {}
 
@@ -100,7 +101,8 @@ export class FeatureRegisterComponent implements OnInit {
 
   onSubmit() {
     if (this.registroForm.valid) {
-      this.isSubmitting = true; // Deshabilitar el botón al enviar
+      this.isSubmitting = true;
+      this.isLoading = true; // Deshabilitar el botón al enviar
 
       const newUser = new User(
         this.registroForm.value.name,
@@ -125,10 +127,12 @@ export class FeatureRegisterComponent implements OnInit {
             this.router.navigate(['/login']); // Redirigir al home después de 2 segundos
           }, 1000);
           
+          this.isLoading = false
         }
       ).catch(
         error => {
-          this.isSubmitting = false; // Habilitar el botón después de un error
+          this.isSubmitting = false;
+          this.isLoading = false // Habilitar el botón después de un error
           console.error('Registration error:', error);
           this.openErrorAlert2();
         }

@@ -21,5 +21,6 @@
             <p id="noTienesClientes">Parece que aún no has creado chalets</p>
         </div>
     </div>
+    <app-messages-error title="¡Hubo un problema!" paragraph="No logramos cargar tus chalets" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
 </div>
 

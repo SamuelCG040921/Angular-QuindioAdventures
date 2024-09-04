@@ -18,6 +18,7 @@ export class PlansProfileComponent {
   }
 
   planes!: PlansInfoPerfil[];
+  isErrorAlertOpen = false;
 
   constructor(private planService:PlansService){}
 
@@ -31,7 +32,16 @@ export class PlansProfileComponent {
       },
       err => {
         console.error('Error en la solicitud:', err.response.data);
+        this.openErrorAlert();
       }
     );
+  }
+  
+  openErrorAlert(): void {
+    this.isErrorAlertOpen = true;
+  }
+
+  closeErrorAlert(): void {
+    this.isErrorAlertOpen = false;
   }
 }
