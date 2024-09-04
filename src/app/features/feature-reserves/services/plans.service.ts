@@ -15,6 +15,7 @@ export class PlansService {
   private apiUrl2 = 'http://localhost:10101/planId';
   private apiUrl3 = 'http://localhost:10101/planEmail';
   private apiUrl4 = 'http://localhost:10101/eliminarPlan';
+  private apiUrl5 = 'http://localhost:10101/activarPlan'
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
@@ -90,6 +91,22 @@ export class PlansService {
     const token = this.authService.getToken(); // Obtén el token de tu servicio de autenticación
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     const body = { id }; // El backend espera un objeto con `id` en el cuerpo de la solicitud
+
+    return this.http.put<any>(`${this.apiUrl4}`, body, { headers }).toPromise();
+  }
+
+  activarPlan(id: string): Promise<any> {
+    const token = this.authService.getToken(); // Obtén el token de tu servicio de autenticación
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const body = { id }; 
+
+    return this.http.put<any>(`${this.apiUrl5}`, body, { headers }).toPromise();
+  }
+
+  desactivarPlan(id: string): Promise<any> {
+    const token = this.authService.getToken(); // Obtén el token de tu servicio de autenticación
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const body = { id }; // El backend espera un objeto con id en el cuerpo de la solicitud
 
     return this.http.put<any>(`${this.apiUrl4}`, body, { headers }).toPromise();
   }
