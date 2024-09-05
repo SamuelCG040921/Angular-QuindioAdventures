@@ -1,9 +1,8 @@
-<app-nav-logueado></app-nav-logueado>
+<app-nav-logueado class="nav"></app-nav-logueado>
 <figure class="line3"></figure>
 <div class="form-header">
-    <img routerLink="/chalet-details/:id" src="../../../assets/icons/flechas-register-login-devolver.png" alt="">
+    <img routerLink="/plan-details/:id" src="../../../assets/icons/flechas-register-login-devolver.png" alt="">
 </div>
-
 <section class="principal">
     <section class="section1">
         <div class="container1">
@@ -14,7 +13,7 @@
             <img class="imgChalet"
             [src]="firstImage">
             <div class="reviews">
-                <p>{{ chalet?.nombre_chalet }}</p>
+                <p>{{ plan?.nombre_planV }}</p>
                 <app-calification-card></app-calification-card>
             </div>
         </div>
@@ -22,7 +21,6 @@
             <div class="organization">
                 <p>Detalles de la tarifa seleccionada:</p>
                 <div *ngIf="tarifaSeleccionada">
-                  <p><strong>Tipo de habitación:</strong> {{ tarifaSeleccionada.tipo_habitacion }}</p>
                   <p><strong>Temporada:</strong> {{ tarifaSeleccionada.temporada }}</p>
                   <p><strong>Precio:</strong> {{ tarifaSeleccionada.precio }}</p>
                 </div>
@@ -39,7 +37,6 @@
             </div>
         </div>
     </section>
-
     <section class="section2">
         <div class="infopayment">
             <div class="container-info">
@@ -96,15 +93,8 @@
                     placeholder="Ingresa la fecha de inicio" id="fechainicio">
                 <div *ngIf="isFieldInvalid('checkin')" class="error-message">La fecha de inicio es requerida</div>
             </div>
-            <div class="field" [ngClass]="{'error': isFieldInvalid('checkout') || checkoutDateError}">
-                <label class="checkout">Fecha fin</label>
-                <input type="date" formControlName="checkout" class="checkout" placeholder="Ingresa la fecha fin" id="fechafin">
-                <div *ngIf="isFieldInvalid('checkout')" class="error-message">La fecha fin es requerida y debe ser porterior a la fecha de inicio</div>
-                
-              </div>
             <div *ngIf="tarifas && tarifas.length > 0" class="tarifasContainer">
                 <div *ngFor="let tarifa of tarifas" class="tarifaView">
-                  <p class="titleTarifa"><strong>Tipo de habitación:</strong> {{ tarifa.tipo_habitacion }}</p>
                   <p><strong>Precio:</strong> {{ tarifa.precio | currency }}</p>
                   <p><strong>Temporada:</strong> {{ tarifa.temporada }}</p>
                   <button type="button" (click)="selectTarifa(tarifa)">Seleccionar esta tarifa</button>
@@ -120,6 +110,31 @@
                     *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
             </div>
         </form>
-
+        <div class="container-form">
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/nequi.svg"
+                    [metodoPago]="'Nequi'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/daviplata.svg"
+                    [metodoPago]="'Daviplata'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/PSE.svg"
+                    [metodoPago]="'PSE'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/mercadopago.svg"
+                    [metodoPago]="'Mercado Pago'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/paypal.svg"
+                    [metodoPago]="'PayPal'"></app-button-method-payment>
+            </div>
+            <div class="field">
+                <app-button-method-payment src="../../../../../assets/images/tarjeta.svg"
+                    [metodoPago]="'Debito'"></app-button-method-payment>
+            </div>
+        </div>
     </section>
 </section>

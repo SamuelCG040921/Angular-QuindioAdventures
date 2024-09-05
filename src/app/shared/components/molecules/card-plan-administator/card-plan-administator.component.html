@@ -5,10 +5,16 @@
 <app-title-card [plan]="plan" class="title"></app-title-card>
 <div class="info">
     <div>
-        <app-button label="Activar" color="#275843"></app-button>
+        <app-button (click)="openWarningAlert(plan.id)" type="button" label="Activar" color="#275843"></app-button>
+        <app-messages-succesful title="El Plan se activo correctamente" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
+	    <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo activar el chalet" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+		<app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de activar este chalet?" *ngIf="isWarningAlertOpen" (confirm)="onConfirmModal()" (close)="closeWarningAlert()"></app-messages-warning>
     </div>
     <div>
-        <app-button label="Desactivar" color="#BF3434"></app-button>
+        <app-button (click)="openWarningAlert2(plan.id)" type="button" label="Desactivar" color="#BF3434"></app-button>
+        <app-messages-succesful title="El Plan se desactivo correctamente" *ngIf="isUpdateSuccessAlertOpen2" (close)="closeUpdateSuccessAlert2()"></app-messages-succesful>
+	    <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo desactivar el chalet" *ngIf="isErrorAlertOpen2" (close)="closeErrorAlert2()"></app-messages-error>
+		<app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de desactivar este chalet?" *ngIf="isWarningAlertOpen2" (confirm)="onConfirmModal2()" (close)="closeWarningAlert2()"></app-messages-warning>
     </div>
 </div>
 </div>

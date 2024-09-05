@@ -1,4 +1,5 @@
 export class ChaletDetails {
+    codigo: any;
     constructor(
       public id: string,
       public nombre: string,

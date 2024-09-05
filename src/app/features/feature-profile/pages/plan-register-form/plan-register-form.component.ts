@@ -1,6 +1,6 @@
 /// <reference types="google.maps" />
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { UserService } from '../../../feature-reserves/services/user.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { PlansService } from '../../services/plans.service';
@@ -32,11 +32,18 @@ export class PlanRegisterFormComponent {
   archivos3: any[] = [];
   previsualizacion4: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s';
   archivos4: any[] = [];
+  isAlertOpen = false;
+  isErrorAlertOpen = false;
+  isErrorAlertOpen2 = false;
+  isWarningAlertOpen = false;
+  isUpdateSuccessAlertOpen = false;
 
   archivoCapturado1: File | null = null;
   archivoCapturado2: File | null = null;
   archivoCapturado3: File | null = null;
   archivoCapturado4: File | null = null;
+
+  acceptedMunicipios = ['Armenia', 'Calarcá', 'La Tebaida', 'Montenegro', 'Quimbaya', 'Circasia', 'Salento', 'Córdoba', 'Buenavista', 'Génova', 'Pijao', 'Filandia'];
 
   constructor(private fb: FormBuilder, private userService: UserService, private sanitizer: DomSanitizer, private plansService: PlansService, private authService: AuthService, private updateService: UpdateService) {
   }
@@ -44,9 +51,9 @@ export class PlanRegisterFormComponent {
   ngOnInit(): void {
     this.planForm = this.fb.group({
       nombre: ['', Validators.required],
-      municipio: ['', Validators.required],
+      municipio: ['', [Validators.required, this.municipioValidator.bind(this)]],
       ubicacion: ['', Validators.required],
-      descripcion: ['', Validators.required],
+      descripcion: ['', [Validators.required, Validators.maxLength(500)]],
       imagenes: this.fb.array([], Validators.required),
       tarifas: this.fb.array([]) // Aquí se agrega el FormArray de tarifas
     });
@@ -255,15 +262,68 @@ export class PlanRegisterFormComponent {
       this.plansService.registrarPlan(planData).subscribe({
         next: (response) => {
           console.log('Plan registrado exitosamente:', response);
-          // Aquí podrías redirigir al usuario o mostrar un mensaje de éxito
+          this.openUpdateSuccessAlert();
+          setTimeout(() => {
+            window.location.reload();
+          }, 1300);
         },
         error: (error) => {
           console.error('Error al registrar plan:', error);
-          // Aquí podrías mostrar un mensaje de error al usuario
+         this.openErrorAlert();
         }
       });
     } else {
       console.log('El formulario no es válido');
+      this.openErrorAlert();
     }
+  }
+
+  openAlert(): void {
+    this.isAlertOpen = true;
+  }
+
+  closeAlert(): void {
+    this.isAlertOpen = false;
+  }
+
+  openErrorAlert(): void {
+    this.isErrorAlertOpen = true;
+  }
+
+  openErrorAlert2(): void {
+    this.isErrorAlertOpen2 = true;
+  }
+
+  closeErrorAlert(): void {
+    this.isErrorAlertOpen = false;
+  }
+
+  closeErrorAlert2(): void {
+    this.isErrorAlertOpen2 = false;
+  }
+
+  openWarningAlert(): void {
+    this.isWarningAlertOpen = true;
+  }
+
+  closeWarningAlert(): void {
+    this.isWarningAlertOpen = false;
+  }
+
+  openUpdateSuccessAlert(): void {
+    this.isUpdateSuccessAlertOpen = true;
+  }
+
+  closeUpdateSuccessAlert(): void {
+    this.isUpdateSuccessAlertOpen = false;
+  }
+
+  onConfirmModal() {
+    this.onSubmit();
+  }
+
+  municipioValidator(control: AbstractControl): ValidationErrors | null {
+    const municipio = control.value;
+    return this.acceptedMunicipios.includes(municipio) ? null : { municipioInvalido: true };
   }
 }

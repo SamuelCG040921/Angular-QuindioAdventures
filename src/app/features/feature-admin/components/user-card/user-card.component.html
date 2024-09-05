@@ -2,7 +2,12 @@
     <img [src]="user.image" alt="">
     <p>{{user.name}}</p>
     <div class="containerButtons">
-        <button (click)="activarUsuario()" class="active" label="Activar">Activar</button>
-        <button (click)="desactivarUsuario()" class="inactive" label="Desactivar" color="#BF3434">Desactivar</button>
+        <button (click)="openWarningAlert()" class="active" label="Activar">Activar</button>
+        <button (click)="openWarningAlert2()" class="inactive" label="Desactivar" color="#BF3434">Desactivar</button>
     </div>
 </div>
+<app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de activar este usuario?" *ngIf="isWarningAlertOpen" (confirm)="onConfirmModal()" (close)="closeWarningAlert()"></app-messages-warning>
+<app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de desactivar este usuario?" *ngIf="isWarningAlertOpen2" (confirm)="onConfirmModal2()" (close)="closeWarningAlert2()"></app-messages-warning>
+<app-messages-succesful title="Usuario activado correctamente" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
+<app-messages-succesful title="Usuario desactivado correctamente" *ngIf="isUpdateSuccessAlertOpen2" (close)="closeUpdateSuccessAlert2()"></app-messages-succesful>
+<app-messages-error title="¡Ooops!" paragraph="Parece que hubo un error interno al realizar esta acción, intentalo de nuevo" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>

@@ -1,6 +1,3 @@
-*{
-    outline: 1px solid red;
-}
 input{
     border: 2px solid #275843;
     width: 250px;
@@ -13,6 +10,7 @@ input{
 .principal{
     display: flex;
 }
+
 .section1{
     width: 24%;
     margin-top: 32px;
@@ -132,6 +130,7 @@ input{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
 }
 .buttonProcedPayment{
     margin-top: 10px;
@@ -156,7 +155,6 @@ input{
             position: absolute;
             top: 100%;
             left: 0;
-            max-width: 250px;
         }
     }
 }
@@ -273,7 +271,7 @@ input{
     }
     .container-form{
         flex-direction: column;
-        width: 60%;
+        width: 85%;
     }
     .field label {
         font-size: 16px;
@@ -290,8 +288,8 @@ input{
         margin-left: 34px;
       }
       .section1 {
-        width: 40%;
-        margin-left: 30px;
+        width: 36%;
+        margin-left: 46px;
       }
       .form-header {
         margin-left: 11px;
@@ -346,7 +344,7 @@ input{
     }
     .container-form{
         flex-direction: column;
-        width: 70%;
+        width: 85%;
     }
     .field label {
         font-size: 16px;
@@ -440,7 +438,7 @@ input{
         margin-left: 10px;
     }
     .form-header {
-        margin-left: 16px;
+        margin-left: 11px;
         width: 34%;
     }
     .section1{
@@ -475,7 +473,7 @@ input{
     width: 63%;
 }
 .infopayment{
-    margin-left: 1px;
+    margin-left: 30px;
     width: 100%;
 }
 .container-info .p1{
@@ -493,14 +491,13 @@ input{
 .container-form{
     flex-direction: column;
     width: 78%;
-    margin-left: 12px;
 }
 .field label {
     font-size: 14px;
 }
 .buttonProcedPayment{
-
-    width: 100%;
+    margin-left: 30px;
+    width: 70%;
 }
 }
 

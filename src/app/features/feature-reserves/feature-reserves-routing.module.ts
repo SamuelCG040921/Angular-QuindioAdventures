@@ -6,15 +6,16 @@ import { PageReservesClientsComponent } from './pages/page-reserves-clients/page
 import { PageReservesReservesComponent } from './pages/page-reserves-reserves/page-reserves-reserves.component';
 import { PageChaletMethodComponent } from './pages/page-chalet-method/page-chalet-method.component';
 import { PagePlanDetailsComponent } from './pages/page-plan-details/page-plan-details.component';
+import { PagePlanPaymentComponent } from './pages/page-plan-payment/page-plan-payment.component';
 
 const routes: Routes = [
   {path:'reserves-clients', component: PageReservesClientsComponent},
   {path:'reserves-reserves', component: PageReservesReservesComponent},
   {path:'chalet-details/:id', component: PageChaletDetailsComponent},
   {path:'paymentform', component:PageChaletPaymentComponent},
+  {path:'paymentformplan', component:PagePlanPaymentComponent},
   {path:'method-payment', component:PageChaletMethodComponent},
   {path:'plan-details/:id', component: PagePlanDetailsComponent}
-  
 ];
 
 @NgModule({

@@ -15,6 +15,8 @@ export class ChaletsService {
   private apiUrl2 = 'http://localhost:10101/api';
   private apiUrl3 = 'http://localhost:10101/chaletEmail';
   private apiUrl4 = 'http://localhost:10101/eliminarChalet';
+  private apiUrl5 = 'http://localhost:10101/chaletsAdmin';
+  private apiUrl6 = 'http://localhost:10101/activarChalet';
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
@@ -38,6 +40,30 @@ export class ChaletsService {
         throw error;
       });
   }
+
+  getChaletsConnectionAdmin(): Promise<ChaletDetails[]> {
+    return axios.get(this.apiUrl5)
+      .then(response => {
+        // Elimina o comenta este console.log si no necesitas el log aquí
+        // console.log('Datos recibidos:', response.data);
+        const data = response.data;
+        const chalets: ChaletDetails[] = data.map((chalet: any) => new ChaletDetails(
+          chalet.id_chalet,
+          chalet.nombre_chalet,
+          chalet.municipio_chalet,
+          chalet.ubicacion_chalet,
+          chalet.caracteristicas,
+          chalet.imagen_principal,
+          chalet.tarifa,
+          chalet.servicio
+        ));
+        return chalets;
+      })
+      .catch(error => {
+        throw error;
+      });
+  }
+  
 
   getChaletById(id: string): Promise<ChaletInfo> {
     return axios.get(`${this.apiUrl2}/chalets/${id}`)
@@ -91,7 +117,23 @@ export class ChaletsService {
   eliminarChalet(id: number): Promise<any> {
     const token = this.authService.getToken(); // Obtén el token de tu servicio de autenticación
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    const body = { id }; // El backend espera un objeto con `id` en el cuerpo de la solicitud
+    const body = { id }; // El backend espera un objeto con id en el cuerpo de la solicitud
+
+    return this.http.put<any>(`${this.apiUrl4}`, body, { headers }).toPromise();
+  }
+
+  activarChalet(id: string): Promise<any> {
+    const token = this.authService.getToken(); // Obtén el token de tu servicio de autenticación
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const body = { id }; 
+
+    return this.http.put<any>(`${this.apiUrl6}`, body, { headers }).toPromise();
+  }
+
+  desactivarChalet(id: string): Promise<any> {
+    const token = this.authService.getToken(); // Obtén el token de tu servicio de autenticación
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const body = { id }; // El backend espera un objeto con id en el cuerpo de la solicitud
 
     return this.http.put<any>(`${this.apiUrl4}`, body, { headers }).toPromise();
   }

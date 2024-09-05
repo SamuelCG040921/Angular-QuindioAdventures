@@ -23,6 +23,7 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
   isErrorAlertOpen2 = false;
   isWarningAlertOpen = false;
   isUpdateSuccessAlertOpen = false;
+  isLoading: boolean = false
 
   @ViewChild(ProfileWelcomeEditComponent) profileWelcomeEditComponent!: ProfileWelcomeEditComponent;
 
@@ -78,6 +79,7 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
 
   onSubmit() {
     if (this.updateForm.valid) {
+      this.isLoading = true
       const updateData = new UpdateProfile(
         this.updateForm.value.name,
         this.updateForm.value.document,
@@ -93,6 +95,7 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
       
       this.updateService.updateUserProfile(updateData).then(
         response => {
+          this.isLoading = false
           console.log('Actualización exitosa:', response);
           this.openUpdateSuccessAlert();
           setTimeout(() => {
@@ -101,6 +104,7 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
         }
       ).catch(
         error => {
+          this.isLoading = false
           console.error('Error de actualización:', error);
           this.openErrorAlert();
         }

@@ -36,4 +36,5 @@
       <img src="../../../../../assets/icons/sendChat.svg" alt="send">
     </button>
   </form>
+  <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo recibir el mensaje del chatbot" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
 </div>

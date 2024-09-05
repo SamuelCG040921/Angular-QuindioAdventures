@@ -31,7 +31,6 @@
     background-color: #D1E1D8;
     height: 48px;
     width: 350px;
-    margin-bottom: 20px;
     padding-left: 20px;
 }
 
@@ -453,7 +452,6 @@
     background-color: #D1E1D8;
     height: 48px;
     width: 350px;
-    margin-bottom: 20px;
     padding-left: 20px;
 }
 
@@ -525,6 +523,12 @@
   .feeInfo{
     margin-right: 20px;
     margin-left: 10px;
+  }
+
+  .formField{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
   }
 
   @media (min-width: 769px) and (max-width: 1279px) {
@@ -767,3 +771,9 @@
     }
 
 }
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }

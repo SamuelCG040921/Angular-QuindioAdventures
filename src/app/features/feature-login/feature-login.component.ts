@@ -41,6 +41,7 @@ export class FeatureLoginComponent implements OnInit {
 
       this.authService.auth(authData).then(
         response => {
+          
           this.isSubmitting = false; // Habilitar el botón después de la respuesta
           console.log('Login exitoso:', response);
           // Manejar la respuesta exitosa aquí (p.ej., redirigir al usuario)
@@ -60,11 +61,7 @@ export class FeatureLoginComponent implements OnInit {
       );
       
 
-      this.authService.getUserProfile().then(
-        data => this.user = data,
-        err => console.log(err)
-        
-      );
+      
       
     } else {
       console.error('Form is not valid');
