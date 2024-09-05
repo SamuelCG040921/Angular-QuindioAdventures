@@ -50,7 +50,6 @@ export class PagePlanPaymentComponent {
       telefono: ['', Validators.required],
       direccion: ['', Validators.required],
       checkin: ['', Validators.required],
-      checkout: ['', Validators.required]
     });
 
     this.totalPersonsSubscription = this.personCountService.totalPersons$.subscribe((count: number) => {
@@ -81,6 +80,7 @@ export class PagePlanPaymentComponent {
       this.fecha_inicio = value;
       this.fetchTarifas(); // Obtener tarifas basadas en la fecha de inicio
     });
+    
 
     this.routerSubscription = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -110,7 +110,7 @@ export class PagePlanPaymentComponent {
   fetchTarifas(): void {
     if (this.fecha_inicio && this.plan) {
       const idPlan = this.plan.id_planV
-      this.tarifaService.getTarifasPorFecha(idPlan, this.fecha_inicio)
+      this.tarifaService.getTarifasPorFechaPlan(idPlan, this.fecha_inicio)
         .subscribe(
           response => {
             const tarifasArray = response?.tarifas;
@@ -158,7 +158,7 @@ export class PagePlanPaymentComponent {
       console.log(formData,2345);
       
   
-      this.reservesService.enviarReserva(formData).subscribe(
+      this.reservesService.enviarReservaPlan(formData).subscribe(
         response => {
           console.log('Reserva creada exitosamente:', response);
           // Aquí puedes redirigir al usuario a otra página o mostrar un mensaje de éxito

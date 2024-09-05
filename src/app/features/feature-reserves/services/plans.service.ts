@@ -67,11 +67,11 @@ export class PlansService {
       .then(response => {
         const data = response.data;
         const plan = new PlanInfo(
-          data[0].id_plan,
-          data[0].nombre_plan,
-          data[0].municipio_plan,
-          data[0].ubicacion_plan,
-          data[0].caracteristicas,
+          data[0].id_planV,
+          data[0].nombre_planV,
+          data[0].municipio_planV,
+          data[0].ubicacion_planV,
+          data[0].descripcion,
           JSON.parse(data[0].imagenes),
           JSON.parse(data[0].tarifas),
       

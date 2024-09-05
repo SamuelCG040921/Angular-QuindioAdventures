@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class TarifaService {
   private tarifaSeleccionada: any | null = null;
   private apiUrl = 'http://localhost:10101/temporadas';
+  private apiUrl2 = 'http://localhost:10101/temporadasPlan';
 
   constructor(private http: HttpClient) {}
 
@@ -25,8 +26,10 @@ export class TarifaService {
     return this.http.post<any[]>(url, { idChalet, fechaInicio });
   }
 
-  getTarifasPorFehcaPlan(idPlan: number, fechaPlan: string): Observable<any>{
-    const url = `${this.apiUrl}`;
-    return this.http.post<any[]>(url, {idPlan, fechaPlan});
+  getTarifasPorFechaPlan(idPlan: number, fechaPlan: string): Observable<any> {
+    const url = `${this.apiUrl2}`;
+    console.log({idPlan, fechaPlan}, 5678); // Verifica que los datos se estén enviando correctamente
+    return this.http.post<any[]>(url, { idPlan, fechaPlan });
   }
+  
 }
