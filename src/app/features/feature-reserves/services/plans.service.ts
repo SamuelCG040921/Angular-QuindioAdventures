@@ -16,6 +16,7 @@ export class PlansService {
   private apiUrl3 = 'http://localhost:10101/planEmail';
   private apiUrl4 = 'http://localhost:10101/eliminarPlan';
   private apiUrl5 = 'http://localhost:10101/activarPlan'
+  private apiUrl6 = 'http://localhost:10101/planesAdmin'
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
@@ -33,6 +34,28 @@ export class PlansService {
           plan.tarifa,
         ));
         return plans;
+      })
+      .catch(error => {
+        throw error;
+      });
+  }
+
+  getPlanesConnectionAdmin(): Promise<PlansDetails[]> {
+    return axios.get(this.apiUrl6)
+      .then(response => {
+        // Elimina o comenta este console.log si no necesitas el log aquí
+        // console.log('Datos recibidos:', response.data);
+        const data = response.data;
+        const planes: PlansDetails[] = data.map((plan: any) => new PlansDetails(
+          plan.id_planV,
+          plan.nombre_planV,
+          plan.municipio_planV,
+          plan.ubicacion_planV,
+          plan.descripcion,
+          plan.imagen_principal,
+          plan.tarifas
+        ));
+        return planes;
       })
       .catch(error => {
         throw error;

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { PlansService } from '../../../../features/feature-profile/services/plans.service';
 import { PlansDetails } from '../../../../features/feature-reserves/models/plans.model';
+import { PlansService } from '../../../../features/feature-reserves/services/plans.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class PlansAdministratorComponent {
   constructor(private plansService:PlansService){}
   
    ngOnInit(){
-       this.plansService.getPlansConnection().then(
+       this.plansService.getPlanesConnectionAdmin().then(
         (data: PlansDetails[]) => {
           console.log('Datos del plan:', data);
           this.planes = data;
