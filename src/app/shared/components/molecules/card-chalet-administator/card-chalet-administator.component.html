@@ -16,6 +16,7 @@
             <app-messages-succesful title="El chalet se desactivo correctamente" *ngIf="isUpdateSuccessAlertOpen2" (close)="closeUpdateSuccessAlert2()"></app-messages-succesful>
 	        <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo desactivar el chalet" *ngIf="isErrorAlertOpen2" (close)="closeErrorAlert2()"></app-messages-error>
 		    <app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de desactivar este chalet?" *ngIf="isWarningAlertOpen2" (confirm)="onConfirmModal2()" (close)="closeWarningAlert2()"></app-messages-warning>
+            <app-loader *ngIf="isLoading"></app-loader>
         </div>
     </div>
 </a>

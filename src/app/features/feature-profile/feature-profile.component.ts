@@ -159,15 +159,18 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
   enviarCorreo() {
     if (this.isSendingEmail) return;
     this.isSendingEmail = true;
+    this.isLoading = true;
     
     this.changeService.solicitarRestablecimientoAutenticado().then(
       response => {
+        this.isLoading = false;
         console.log('Envío exitoso:', response);
         this.isSendingEmail = false;
         this.openAlert();
       }
     ).catch(
       error => {
+        this.isLoading = false;
         console.error('Error:', error);
         this.isSendingEmail = false;
         this.openErrorAlert();

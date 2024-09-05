@@ -118,6 +118,7 @@
                     (close)="closeAlert()"></app-messages-succesful>
                 <app-messages-error title="¡Hubo un problema!" paragraph="Alguno de los datos no es valido"
                     *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+                <app-loader *ngIf="isLoading"></app-loader>
             </div>
         </form>
 

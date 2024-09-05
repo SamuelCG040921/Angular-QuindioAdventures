@@ -30,20 +30,24 @@ export class CardPlanAdministatorComponent {
   isErrorAlertOpen2 = false;
   isWarningAlertOpen2 = false;
   isUpdateSuccessAlertOpen2 = false;
+  isLoading : boolean = false;
 
   openDetails(chalet: PlansDetails) {
     return ['/plan-details', chalet.id];
   }
 
   activarPlan(id: string) {
+    this.isLoading = true
     this.plansService.activarPlan(id).then(
       response => {
+        this.isLoading = false;
         console.log(id,234);
         this.openUpdateSuccessAlert();
         console.log('Plan activado:', response);
         this.planes = this.planes.filter(plan => plan.id !== id);
       },
       err => {
+        this.isLoading = false;
         console.error('Error activando el chalet:', err);
         this.openErrorAlert();
       }
@@ -85,14 +89,17 @@ export class CardPlanAdministatorComponent {
 
 
   desactivarPlan(id: string) {
+    this.isLoading = true
     this.plansService.desactivarPlan(id).then(
       response => {
+        this.isLoading = false
         console.log(id,234);
         this.openUpdateSuccessAlert2();
         console.log('Plan desactivado:', response);
         this.planes = this.planes.filter(plan => plan.id !== id);
       },
       err => {
+        this.isLoading = false;
         console.error('Error desactivando el plan:', err);
         this.openErrorAlert2();
       }

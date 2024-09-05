@@ -37,6 +37,7 @@ export class PlanRegisterFormComponent {
   isErrorAlertOpen2 = false;
   isWarningAlertOpen = false;
   isUpdateSuccessAlertOpen = false;
+  isLoading: boolean = false;
 
   archivoCapturado1: File | null = null;
   archivoCapturado2: File | null = null;
@@ -255,12 +256,14 @@ export class PlanRegisterFormComponent {
   
   onSubmit(): void {
     if (this.planForm.valid) {
+      this.isLoading = true;
       const planData: PlanDTO = this.planForm.value;
       console.log(planData);
       
       
       this.plansService.registrarPlan(planData).subscribe({
         next: (response) => {
+          this.isLoading = false;
           console.log('Plan registrado exitosamente:', response);
           this.openUpdateSuccessAlert();
           setTimeout(() => {
@@ -268,6 +271,7 @@ export class PlanRegisterFormComponent {
           }, 1300);
         },
         error: (error) => {
+          this.isLoading = false;
           console.error('Error al registrar plan:', error);
          this.openErrorAlert();
         }

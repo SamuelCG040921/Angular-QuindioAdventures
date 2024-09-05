@@ -16,6 +16,7 @@ export class ChangePasswordComponent implements OnInit {
   changeForm!: FormGroup;
   isSubmitting: boolean = false;
   token!: string | null;
+  isLoading: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -58,16 +59,19 @@ export class ChangePasswordComponent implements OnInit {
 
   async onSubmit() {
     if (this.changeForm.valid && this.token) {
+      this.isLoading = true;
       const changeData = new ChangePassword(
         this.changeForm.value.password,
         this.changeForm.value.confirmPassword
       );
 
       try {
+        this.isLoading = false
         const response = await this.changePasswordService.change(changeData, this.token);
         console.log('Cambio exitoso:', response);
         this.openAlert();
       } catch (error) {
+        this.isLoading = false;
         console.error('Cambio fallido:', error);
         this.openErrorAlert();
       }

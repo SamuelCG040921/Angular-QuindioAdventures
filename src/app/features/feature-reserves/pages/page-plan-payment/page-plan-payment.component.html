@@ -87,8 +87,8 @@
                 <div *ngIf="isFieldInvalid('direccion')" class="error-message">La dirección es requerida</div>
             </div>
 
-            <div class="field" [ngClass]="{'error': isFieldInvalid('checkin')}">
-                <label class="checkin">Fecha inicio</label>
+            <div class="field" id="fieldDate" [ngClass]="{'error': isFieldInvalid('checkin')}">
+                <label class="checkin">Fecha</label>
                 <input type="date" formControlName="checkin" class="checkin"
                     placeholder="Ingresa la fecha de inicio" id="fechainicio">
                 <div *ngIf="isFieldInvalid('checkin')" class="error-message">La fecha de inicio es requerida</div>
@@ -108,33 +108,8 @@
                     (close)="closeAlert()"></app-messages-succesful>
                 <app-messages-error title="¡Hubo un problema!" paragraph="Alguno de los datos no es valido"
                     *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+                <app-loader *ngIf="isLoading"></app-loader>
             </div>
         </form>
-        <div class="container-form">
-            <div class="field">
-                <app-button-method-payment src="../../../../../assets/images/nequi.svg"
-                    [metodoPago]="'Nequi'"></app-button-method-payment>
-            </div>
-            <div class="field">
-                <app-button-method-payment src="../../../../../assets/images/daviplata.svg"
-                    [metodoPago]="'Daviplata'"></app-button-method-payment>
-            </div>
-            <div class="field">
-                <app-button-method-payment src="../../../../../assets/images/PSE.svg"
-                    [metodoPago]="'PSE'"></app-button-method-payment>
-            </div>
-            <div class="field">
-                <app-button-method-payment src="../../../../../assets/images/mercadopago.svg"
-                    [metodoPago]="'Mercado Pago'"></app-button-method-payment>
-            </div>
-            <div class="field">
-                <app-button-method-payment src="../../../../../assets/images/paypal.svg"
-                    [metodoPago]="'PayPal'"></app-button-method-payment>
-            </div>
-            <div class="field">
-                <app-button-method-payment src="../../../../../assets/images/tarjeta.svg"
-                    [metodoPago]="'Debito'"></app-button-method-payment>
-            </div>
-        </div>
     </section>
 </section>

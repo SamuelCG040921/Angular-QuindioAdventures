@@ -147,8 +147,9 @@
         </form>            
         <app-button (click)="openWarningAlert()" class="button" label="Registrar" type="button"></app-button>
         <app-messages-succesful title="Su plan se registro exitosamente, por favor espere confirmacion del administrador" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
-					<app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar el registro, verifique bien los datos" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
-					<app-messages-error title="¡Ooops!" paragraph="Parece que hubo un problema al cargar tus datos" *ngIf="isErrorAlertOpen2" (close)="closeErrorAlert2()"></app-messages-error>
+					<app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar el registro ni enviar los correos, verifique bien los datos" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+					<app-messages-error title="¡Ooops!" paragraph="Parece que hubo un problema al cargar tus datos y enviar los correos" *ngIf="isErrorAlertOpen2" (close)="closeErrorAlert2()"></app-messages-error>
 					<app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de los datos que ingresaste?" *ngIf="isWarningAlertOpen" (confirm)="onConfirmModal()" (close)="closeWarningAlert()"></app-messages-warning>
+          <app-loader *ngIf="isLoading"></app-loader>
     </div>
 </form>

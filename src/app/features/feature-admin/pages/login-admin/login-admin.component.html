@@ -28,6 +28,7 @@
                     <button type="submit" [disabled]="isSubmitting">Ingresar</button>
                     <app-messages-succesful title="Se autentico correctamente" *ngIf="isAlertOpen" (close)="closeAlert()"></app-messages-succesful>
                     <app-messages-error title="¡Hubo un problema!" paragraph="No eres administrador" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+                    <app-loader *ngIf="isLoading"></app-loader>
                 </div>
             </form>
         </div>

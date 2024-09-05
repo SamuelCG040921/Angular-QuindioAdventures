@@ -32,6 +32,7 @@ export class PagePlanPaymentComponent {
   routerSubscription!: Subscription;
   precioTotal: number | null = null; // Nueva variable para el precio total
   totalPersons: number | null = null;
+  isLoading: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -148,6 +149,7 @@ export class PagePlanPaymentComponent {
 
   onSubmit() {
     if (this.reservaForm.valid && this.tarifaSeleccionada) {
+      this.isLoading = true;
       const formData = {
         ...this.reservaForm.value,
         fecha_inicio: this.fecha_inicio,
@@ -160,11 +162,13 @@ export class PagePlanPaymentComponent {
   
       this.reservesService.enviarReservaPlan(formData).subscribe(
         response => {
+          this.isLoading = false;
           console.log('Reserva creada exitosamente:', response);
           // Aquí puedes redirigir al usuario a otra página o mostrar un mensaje de éxito
           this.openAlert(); // Muestra la alerta de éxito
         },
         error => {
+          this.isLoading = false;
           console.error('Error al crear la reserva:', error);
           this.openErrorAlert(); // Muestra la alerta de error
         }

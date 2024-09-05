@@ -133,12 +133,12 @@ input{
     margin-bottom: 40px;
 }
 .buttonProcedPayment{
-    margin-top: 10px;
+    margin-top: 40px;
     margin-bottom: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 90%;
 }
 
 .field {
@@ -208,6 +208,12 @@ input{
 .titleTarifa{
     margin-top: 10px;
     text-align: center;
+}
+
+#fieldDate{
+    width: 90%;
+    align-items: center;
+    justify-content: center;
 }
 
   @media (min-width: 921px) and (max-width: 1279px) {

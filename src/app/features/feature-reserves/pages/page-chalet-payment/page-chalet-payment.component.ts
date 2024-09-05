@@ -30,7 +30,8 @@ export class PageChaletPaymentComponent implements OnInit, OnDestroy {
   totalPersonsSubscription!: Subscription;
   routerSubscription!: Subscription;
   precioTotal: number | null = null; 
-  checkoutDateError: boolean = false;// Nueva variable para el precio total
+  checkoutDateError: boolean = false;
+  isLoading: boolean = false;// Nueva variable para el precio total
 
   constructor(
     private fb: FormBuilder,
@@ -148,6 +149,7 @@ export class PageChaletPaymentComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     if (this.reservaForm.valid && this.tarifaSeleccionada) {
+      this.isLoading = true;
       const formData = {
         ...this.reservaForm.value,
         fecha_inicio: this.fecha_inicio,
@@ -161,11 +163,13 @@ export class PageChaletPaymentComponent implements OnInit, OnDestroy {
   
       this.reservesService.enviarReserva(formData).subscribe(
         response => {
+          this.isLoading = false;
           console.log('Reserva creada exitosamente:', response);
           // Aquí puedes redirigir al usuario a otra página o mostrar un mensaje de éxito
           this.openAlert(); // Muestra la alerta de éxito
         },
         error => {
+          this.isLoading = false
           console.error('Error al crear la reserva:', error);
           this.openErrorAlert(); // Muestra la alerta de error
         }

@@ -32,20 +32,24 @@ export class CardChaletAdministatorComponent {
   isErrorAlertOpen2 = false;
   isWarningAlertOpen2 = false;
   isUpdateSuccessAlertOpen2 = false;
+  isLoading: boolean = false;
 
   openDetails(chalet: ChaletDetails) {
     return ['/chalet-details', chalet.codigo];
   }
 
   activarChalet(id: string) {
+    this.isLoading = true;
     this.chaletsService.activarChalet(id).then(
       response => {
+        this.isLoading = false;
         console.log(id,234);
         this.openUpdateSuccessAlert();
         console.log('Chalet activado:', response);
         this.chalets = this.chalets.filter(chalet => chalet.id !== id);
       },
       err => {
+        this.isLoading = false;
         console.error('Error activando el chalet:', err);
         this.openErrorAlert();
       }
@@ -87,14 +91,17 @@ export class CardChaletAdministatorComponent {
 
 
   desactivarChalet(id: string) {
+    this.isLoading = true;
     this.chaletsService.desactivarChalet(id).then(
       response => {
+        this.isLoading = false;
         console.log(id,234);
         this.openUpdateSuccessAlert2();
         console.log('Chalet desactivado:', response);
         this.chalets = this.chalets.filter(chalet => chalet.id !== id);
       },
       err => {
+        this.isLoading = false;
         console.error('Error desactivando el chalet:', err);
         this.openErrorAlert2();
       }

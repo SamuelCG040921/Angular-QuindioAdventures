@@ -16,6 +16,7 @@ export class FeatureLoginComponent implements OnInit {
   user:any
   isAlertOpen = false;
   isErrorAlertOpen = false;
+  isLoading: boolean = false;
 
   emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -32,6 +33,7 @@ export class FeatureLoginComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
+      this.isLoading = true;
       this.isSubmitting = true; // Deshabilitar el botón al enviar
 
       const authData = new Auth(
@@ -41,7 +43,7 @@ export class FeatureLoginComponent implements OnInit {
 
       this.authService.auth(authData).then(
         response => {
-          
+          this.isLoading = false;
           this.isSubmitting = false; // Habilitar el botón después de la respuesta
           console.log('Login exitoso:', response);
           // Manejar la respuesta exitosa aquí (p.ej., redirigir al usuario)
@@ -54,6 +56,7 @@ export class FeatureLoginComponent implements OnInit {
         
       ).catch(
         error => {
+          this.isLoading = false;
           this.isSubmitting = false; // Habilitar el botón después de un error
           console.error('Login error:', error);
           this.openErrorAlert();

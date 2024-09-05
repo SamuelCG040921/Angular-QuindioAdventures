@@ -14,6 +14,7 @@ export class LoginAdminComponent implements OnInit {
   isErrorAlertOpen = false;
   loginAdminForm!: FormGroup;
   isSubmitting: boolean = false;
+  isLoading: boolean = false;
 
   emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -29,6 +30,7 @@ export class LoginAdminComponent implements OnInit {
   onSubmit() {
     if (this.loginAdminForm.valid) {
       this.isSubmitting = true;
+      this.isLoading = true;
   
       const authData = new Auth(
         this.loginAdminForm.value.email,
@@ -37,6 +39,7 @@ export class LoginAdminComponent implements OnInit {
   
       this.authService.authAdmin(authData).then(
         response => {
+          this.isLoading = false
           this.isSubmitting = false;
           console.log('Login exitoso:', response);
 
@@ -51,6 +54,7 @@ export class LoginAdminComponent implements OnInit {
       ).catch(
         error => {
           // Mostrar el mensaje de error de inmediato
+          this.isLoading = false;
           this.isSubmitting = false;
           this.openErrorAlert(); // Abre la ventana de error de inmediato
           console.error('Login error:', error);
