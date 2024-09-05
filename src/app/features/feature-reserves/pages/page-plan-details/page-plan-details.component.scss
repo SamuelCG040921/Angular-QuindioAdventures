@@ -1,4 +1,6 @@
-
+*{
+    outline: 1px solid red;
+}
 
 .containerMiga{
     width: max-content;
@@ -304,3 +306,12 @@ justify-content: center;
     margin-top: 5px;
 }
 
+@media (min-width: 352px) and (max-width: 480px) {
+    .pricesTable{
+        flex-direction: column;
+    }
+    .table{
+        width: 100%;
+    }
+
+}

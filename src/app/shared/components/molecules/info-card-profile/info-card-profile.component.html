@@ -6,6 +6,9 @@
     <div class="separator"></div>
     <div class="part2">
         <button class="button1" routerLink="/edit-plan">Editar mi plan</button>
-        <button class="button2"  (click)="eliminarPlan(plans[0].id_plan)">Eliminar plan</button>
+        <button class="button2"  (click)="openWarningAlert(plans[0].id_plan)">Eliminar plan</button>
+        <app-messages-succesful title="El plan se elimino correctamente" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
+	    <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo eliminar el plan" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+		<app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de eliminar este plan?" *ngIf="isWarningAlertOpen" (confirm)="onConfirmModal()" (close)="closeWarningAlert()"></app-messages-warning>
     </div>
 </div>
