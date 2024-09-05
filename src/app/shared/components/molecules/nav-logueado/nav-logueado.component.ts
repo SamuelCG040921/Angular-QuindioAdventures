@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './nav-logueado.component.scss'
 })
 export class NavLogueadoComponent {
+  isMenuOpen = false;
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  disguiseMenu(){
+    this.isMenuOpen = false;
+  }
 }
