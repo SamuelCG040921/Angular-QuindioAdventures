@@ -150,6 +150,7 @@ export class PageChaletPaymentComponent implements OnInit, OnDestroy {
   onSubmit() {
     if (this.reservaForm.valid && this.tarifaSeleccionada) {
       this.isLoading = true;
+  
       const formData = {
         ...this.reservaForm.value,
         fecha_inicio: this.fecha_inicio,
@@ -157,20 +158,39 @@ export class PageChaletPaymentComponent implements OnInit, OnDestroy {
         tarifaSeleccionada: this.tarifaSeleccionada,
         precioTotal: this.precioTotal
       };
-
-      console.log(formData,2345);
-      
   
-      this.reservesService.enviarReserva(formData).subscribe(
-        response => {
-          this.isLoading = false;
-          console.log('Reserva creada exitosamente:', response);
-          // Aquí puedes redirigir al usuario a otra página o mostrar un mensaje de éxito
-          this.openAlert(); // Muestra la alerta de éxito
+      // Asegúrate de establecer el tipo de reserva aquí: 'chalet' o 'plan'
+      const tipoReserva = 'chalet'; // O 'plan' según el contexto
+  
+      this.reservesService.createOrder(formData.precioTotal, tipoReserva).subscribe(
+        (orderResponse) => {
+          console.log('Orden creada exitosamente:', orderResponse);
+  
+          const reservaData = {
+            ...formData,
+            orderId: orderResponse.id // Usa la ID de la orden generada
+          };
+
+          if (orderResponse.sandbox_init_point) {
+            window.location.href = orderResponse.sandbox_init_point;
+          }
+  
+          this.reservesService.enviarReserva(reservaData).subscribe(
+            response => {
+              this.isLoading = false;
+              console.log('Reserva creada exitosamente:', response);
+              this.openAlert(); // Muestra la alerta de éxito
+            },
+            error => {
+              this.isLoading = false;
+              console.error('Error al crear la reserva:', error);
+              this.openErrorAlert(); // Muestra la alerta de error
+            }
+          );
         },
-        error => {
-          this.isLoading = false
-          console.error('Error al crear la reserva:', error);
+        (error) => {
+          this.isLoading = false;
+          console.error('Error al crear la orden de pago:', error);
           this.openErrorAlert(); // Muestra la alerta de error
         }
       );
@@ -178,7 +198,8 @@ export class PageChaletPaymentComponent implements OnInit, OnDestroy {
       console.log('Formulario inválido o tarifa no seleccionada');
       this.openErrorAlert();
     }
-  }
+  }  
+
 
   ngOnDestroy(): void {
     if (this.totalPersonsSubscription) {
