@@ -9,6 +9,9 @@ import { AuthService } from '../../../feature-login/services/auth.service';
 import { UpdateService } from '../../services/update-profile.service';
 import { ChaletDTO } from '../../models/register-chalet';
 import { from } from 'rxjs';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ChaletsService } from '../../../feature-reserves/services/chalets.service';
+import { ChaletInfo } from '../../../feature-reserves/models/chaletsById';
 
 @Component({
   selector: 'app-chalet-edit-form',
@@ -33,13 +36,16 @@ export class ChaletEditFormComponent {
   archivos3: any[] = [];
   previsualizacion4: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s';
   archivos4: any[] = [];
+  chalet: ChaletInfo = new ChaletInfo(0, '', '', '', '', {}, [], []); 
+  firstImage: string | null = null; 
+  restOfImages: string[] = []; 
 
   archivoCapturado1: File | null = null;
   archivoCapturado2: File | null = null;
   archivoCapturado3: File | null = null;
   archivoCapturado4: File | null = null;
 
-  constructor(private fb: FormBuilder, private userService: UserService, private sanitizer: DomSanitizer, private chaletService: ChaletService, private authService: AuthService, private updateService: UpdateService) {
+  constructor(private fb: FormBuilder, private userService: UserService, private sanitizer: DomSanitizer, private chaletService: ChaletService, private authService: AuthService, private updateService: UpdateService, private chaletsService: ChaletsService, private route: ActivatedRoute, router: Router) {
   }
 
   ngOnInit(): void {
@@ -63,6 +69,13 @@ export class ChaletEditFormComponent {
     this.userService.getUserbyID().subscribe((data: any) => {
       this.user = data; // Almacenar el usuario activo
     });
+
+    this.loadChalet();
+
+  }
+
+  set tarifas(tarifas: FormArray){
+    tarifas = this.chalet.tarifas;
   }
 
   get tarifas() {
@@ -265,6 +278,34 @@ export class ChaletEditFormComponent {
       });
     } else {
       console.log('El formulario no es válido');
+    }
+  }
+
+  loadChalet():void {
+    const id = this.route.snapshot.paramMap.get('id');
+    if(id){
+      this.chaletsService.getChaletById(id)
+      .then(chalet => {
+        this.chalet = chalet;
+        this.serviciosSeleccionados = this.chalet.servicios;
+        console.log(this.serviciosSeleccionados);
+
+        const  imagenesKeys = Object.keys(this.chalet.imagenes);
+        if(imagenesKeys.length > 0){
+          this.firstImage = this.chalet.imagenes[imagenesKeys[0]];
+          this.restOfImages = imagenesKeys.slice(1).map(key => this.chalet.imagenes[key])
+        } else{
+          this.firstImage = null;
+          this.restOfImages = [];
+        }
+
+        if (this.chalet.ubicacion_chalet){
+          setTimeout(() => {
+            this.mapComponent.loadLocationFromBackend(this.chalet.ubicacion_chalet);
+          }, 0);
+        }
+
+      })
     }
   }
 }

@@ -19,6 +19,7 @@ export class VentajaServicioComponent {
   }
 
   get icono() {
+    
     return this.servicioActivo ? 'assets/icons/bote-de-basura.png' : 'assets/icons/mas.png';
   }
 }

@@ -35,7 +35,7 @@ const routes: Routes = [
   {path: 'paymentform/:id', component: PageChaletPaymentComponent },
   {path: 'paymentformplan/:id', component: PagePlanPaymentComponent },
   {path: 'loginadminSamuelManuelaSantiagoJuanBalsero1234241316&_', component: LoginAdminComponent},
-  {path: 'edit-chalet', component: ChaletEditFormComponent},
+  {path: 'edit-chalet/:id', component: ChaletEditFormComponent},
   {path: 'edit-plan', component: PlanEditFormComponent}
 ];
 
