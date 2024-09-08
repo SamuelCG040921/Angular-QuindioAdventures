@@ -10,8 +10,32 @@ export class ChatsComponent {
   @Input() width = '';
   @Input() height = '';
 
+  users = [
+    { nombres: 'Juan Pérez' },
+    { nombres: 'Ana López' },
+    { nombres: 'Carlos Martínez' },
+    { nombres: 'Carlos Martínez' },
+    { nombres: 'Carlos Martínez' },
+    { nombres: 'Juan Pérez' },
+    { nombres: 'Juan Pérez' },
+    { nombres: 'Juan Pérez' },
+    { nombres: 'Juan Pérez' },
+    { nombres: 'Juan Pérez' },
+  ];
   user:any
   location: any;
+
+  activeUserIndex: number | null = null; // Almacena el índice del contenedor activo
+
+  // Función para cambiar el contenedor activo
+  setActiveUser(index: number): void {
+    this.activeUserIndex = index;
+  }
+
+  // Verifica si un contenedor es el activo
+  isActive(index: number): boolean {
+    return this.activeUserIndex === index;
+  }
 
   constructor(private userService: UserService) {}
 
@@ -20,5 +44,5 @@ export class ChatsComponent {
     .subscribe((data: any) => {
       this.user = data; // Almacenar el usuario activo
     });
-}
+  }
 }
