@@ -1,0 +1,9 @@
+<div class="containerUsers">
+    <div class="headerUsers">
+        <p>Usuarios</p>
+        <img routerLink="/administration-usuarios" src="../../../assets/icons/next 1.png" alt="">
+    </div>
+    <div class="users">
+        <app-user-row *ngFor="let user of users;let i = index" [userInfo]="user"></app-user-row>
+    </div>
+</div>

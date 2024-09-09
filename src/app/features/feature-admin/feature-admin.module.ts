@@ -12,6 +12,7 @@ import { AdminHeaderComponent } from './components/admin-header/admin-header.com
 import { UserRowComponent } from './components/user-row/user-row.component';
 import { TableUsersComponent } from './components/table-users/table-users.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
+import { UsersHomeComponent } from './components/users-home/users-home.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     UserRowComponent,
     TableUsersComponent,
     UserCardComponent,
+    UsersHomeComponent,
   ],
   imports: [
     CommonModule,
