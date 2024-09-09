@@ -33,5 +33,32 @@
 .content .icon{
     width: 20%;
 }
+.deTres {
+    flex-direction: column; /* Cambiamos de fila a columna para que sea más legible en pantallas pequeñas */
+    align-items: center;
+    margin: 10px 0;
+}
 
+.content {
+    width: 90%; /* Ajustamos el ancho del contenido */
+    margin: 10px 0;
+}
 
+.content p {
+    width: 100%; /* Aseguramos que el texto ocupe el 100% del ancho disponible */
+    padding-left: 5px;
+}
+
+.content .icon {
+    width: 15%; /* Ajustamos el tamaño del icono en pantallas más pequeñas */
+}
+@media (min-width: 769px) and (max-width: 920px) {
+    .containerService{
+        flex-direction: row; 
+    }
+    }
+@media (min-width: 481px) and (max-width: 768px) {
+.containerService{
+    flex-direction: row; 
+}
+}
