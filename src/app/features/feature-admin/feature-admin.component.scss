@@ -290,6 +290,10 @@ nav a{
     border-radius: 5px;
     font-size: 16px;
 }
+
+.usersContenedor{
+    width: 100%;
+}
 @media (min-width: 769px) and (max-width: 920px) {
     aside {
         display: none; /* Hides the aside element */

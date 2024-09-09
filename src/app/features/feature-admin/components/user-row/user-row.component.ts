@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AuthService } from '../../../feature-login/services/auth.service';
 
 @Component({
@@ -7,6 +7,11 @@ import { AuthService } from '../../../feature-login/services/auth.service';
   styleUrl: './user-row.component.scss'
 })
 export class UserRowComponent {
+  @Input() userInfo ={
+    name: '',
+    image:'',
+    email:''
+  }
   user: any;
 
   constructor(public authService: AuthService) {}
