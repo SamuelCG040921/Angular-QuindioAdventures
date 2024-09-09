@@ -9,15 +9,12 @@ import { compileClassDebugInfo } from '@angular/compiler';
 })
 export class ModalComponent{
   @Input() reserve:any= {
-    userimg:'',
-    codigo: '',
-    checkin: '',
-    checkout: '',
-    correo: '',
+    id_reserva: '',
+    fechaInicio: '',
+    fechaFin: '',
+    email_usuario: '',
     telefono: '',
-    precio: 0,
-    paymentmethod:'',
-    paymentmethodimg:'',
+    precioFinal: 0,
   };
 
   constructor(private reservesService:ReservesService){}

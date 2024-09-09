@@ -1,16 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-scoped-client',
-  templateUrl: './scoped-client.component.html',
-  styleUrl: './scoped-client.component.scss'
+  selector: 'app-scoped-client-plan',
+  templateUrl: './scoped-client-plan.component.html',
+  styleUrl: './scoped-client-plan.component.scss'
 })
-export class ScopedClientComponent{
+export class ScopedClientPlanComponent {
   isModalOpen = false
   selectedReserve: any = null;
-@Input() reserve ={
+@Input() reservePlan ={
   id_reserva: 0,
-   id_chalet_usuario: 0,
+   id_planV_usuario: 0,
    email_usuario: '',
    documento: '',
    cantPersonas: 0,
@@ -19,9 +19,7 @@ export class ScopedClientComponent{
    telefono: '',
    direccion: '',
    precioFinal: 0,
-   estancia: '',
-   fechaInicio: '',
-   fechaFin: '',
+   fecha: '',
    fechaRegistro: '',
    estado: 0
 }

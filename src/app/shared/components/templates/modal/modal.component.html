@@ -1,18 +1,18 @@
 <div class="modal-overlay" (click)="closeModal()">
   <div class="modal-container" (click)="$event.stopPropagation()">
     <div class="modal-header">
-      <img class="profilepicture" src="{{reserve.userimg}}" alt="Profile Picture">
+      
       <h2>Detalles del Cliente</h2>
       <button (click)="closeModal()"><img class="iconClose" src="../../../../../assets/icons/x.svg" alt="Close"></button>
     </div>
     <div class="modal-content">
       <div class="profile-section">
         <div class="customer-info">
-          <p><strong>Check in:</strong> {{reserve.checkin}}</p>
-          <p><strong>Check Out:</strong> {{reserve.checkout}}</p>
+          <p><strong>Check in:</strong> {{reserve.fechaInicio}}</p>
+          <p><strong id="checkouttitle">Check Out:</strong> {{reserve.fechaFin}}</p>
           <p><strong>Teléfono:</strong> {{reserve.telefono}}</p>
-          <p><strong>Monto:</strong> {{reserve.precio}}</p>
-          <p><strong>Email:</strong> {{reserve.correo}}</p>
+          <p><strong>Monto:</strong> {{reserve.precioFinal}}</p>
+          <p><strong>Email:</strong> {{reserve.email_usuario}}</p>
         </div>
       </div>
       <div class="button-container">

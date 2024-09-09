@@ -19,6 +19,8 @@ import { ProgressComponent } from './components/progress/progress.component';
 import { FeatureProfileModule } from '../feature-profile/feature-profile.module';
 import { PagePlanDetailsComponent } from './pages/page-plan-details/page-plan-details.component';
 import { PagePlanPaymentComponent } from './pages/page-plan-payment/page-plan-payment.component';
+import { ScopedReservePlanComponent } from './components/scoped-reserve-plan/scoped-reserve-plan.component';
+import { ScopedClientPlanComponent } from './components/scoped-client-plan/scoped-client-plan.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { PagePlanPaymentComponent } from './pages/page-plan-payment/page-plan-pa
     ProgressComponent,
     PagePlanDetailsComponent,
     PagePlanPaymentComponent,
+    ScopedReservePlanComponent,
+    ScopedClientPlanComponent,
   ],
   imports: [
     CommonModule,

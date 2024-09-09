@@ -44,3 +44,23 @@
     font-size: 12px;
     padding-left: 10px;
 }
+@media (min-width: 352px) and (max-width: 480px) {
+    .encargadoinfo{
+        display: block;
+    }
+    .encargadoimagen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        margin: 0px;
+    }
+    .encargadoimagen p{
+        padding-top: 8px;
+    }
+    .encargadodatos {
+        padding-bottom: 20px;
+        margin-top: 12px;
+    }
+}

@@ -1,0 +1,122 @@
+.cardContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    place-items: center;
+    gap: 64px;
+    margin-bottom: 80px;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+.clientCard {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    min-width: 300px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    position: relative; /* Para posicionar el botón en la parte inferior */
+}
+
+.clientCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.clientCard .containerPrincipal {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.clientCard .containerEstado {
+    display: flex;
+    align-items: center;
+}
+
+.clientCard .containerEstado p {
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    width: fit-content;
+}
+
+.clientCard .containerBtnModal {
+    display: flex;
+    align-items: center;
+}
+
+.clientCard .containerBtnModal img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.clientCard .containerTipo,
+.clientCard .containerDireccion,
+.clientCard .containerTelefono,
+.clientCard .containerCheckin,
+.clientCard .containerCheckout,
+.clientCard .containerPrecio {
+    margin-bottom: 10px;
+}
+
+.clientCard p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.containerPrecio p {
+    font-weight: bold;
+    color: #418E6D;
+}
+/* Agrupa el `strong` y `p` en una fila en todos los contenedores excepto `containerDireccion` */
+.clientCard .containerTipo,
+.clientCard .containerTelefono,
+.clientCard .containerCheckin,
+.clientCard .containerCheckout,
+.clientCard .containerPrecio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.clientCard .containerTipo strong,
+.clientCard .containerTelefono strong,
+.clientCard .containerCheckin strong,
+.clientCard .containerCheckout strong,
+.clientCard .containerPrecio strong {
+    margin-right: 5px;
+}
+
+.clientCard .containerTipo p,
+.clientCard .containerTelefono p,
+.clientCard .containerCheckin p,
+.clientCard .containerCheckout p,
+.clientCard .containerPrecio p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.clientCard .containerDireccion {
+    display: block;
+}
+
+.clientCard .containerDireccion strong,
+.clientCard .containerDireccion p {
+    display: block;
+    margin: 0;
+    font-size: 14px;
+}
+
+.clientCard .containerDireccion strong {
+    margin-bottom: 5px;
+}

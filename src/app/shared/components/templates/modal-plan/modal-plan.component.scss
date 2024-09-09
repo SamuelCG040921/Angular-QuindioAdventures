@@ -1,0 +1,119 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto;
+    max-height: 90vh;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .modal-header button {
+    background: none;
+    margin: 0px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000;
+  }
+  
+  .modal-header .iconClose {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  
+  .modal-content {
+    padding-top: 20px;
+    text-align: center;
+  }
+  
+  .profile-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .profilepicture {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+  }
+  
+  .customer-info {
+    font-size: 16px;
+    color: #555;
+    text-align: left;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  
+  .customer-info p {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+  }
+  
+  .customer-info p strong {
+    color: #333;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .contact-button {
+    padding: 10px 20px;
+    background-color: #418E6D;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    background-color: #356a53;
+  }
+  
+  #checkouttitle{
+    margin-right: 10px;
+  }
+  

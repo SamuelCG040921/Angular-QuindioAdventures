@@ -1,16 +1,15 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ReservesService } from '../../../../features/feature-reserves/services/reserves.service';
 
 @Component({
-  selector: 'app-modal-reserves',
-  templateUrl: './modal-reserves.component.html',
-  styleUrl: './modal-reserves.component.scss'
+  selector: 'app-modal-reserves-plan',
+  templateUrl: './modal-reserves-plan.component.html',
+  styleUrl: './modal-reserves-plan.component.scss'
 })
-export class ModalReservesComponent{
+export class ModalReservesPlanComponent {
   @Input() reserve:any= {
     id_reserva: '',
-    fechaInicio: '',
-    fechaFin: '',
+    fecha: '',
     email_usuario: '',
     telefono: '',
     precioFinal: 0,

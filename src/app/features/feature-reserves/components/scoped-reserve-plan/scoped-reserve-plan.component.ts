@@ -1,19 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ReservesService } from '../../services/reserves.service';
 
 @Component({
-  selector: 'app-scoped-reserve',
-  templateUrl: './scoped-reserve.component.html',
-  styleUrls: ['./scoped-reserve.component.scss']
+  selector: 'app-scoped-reserve-plan',
+  templateUrl: './scoped-reserve-plan.component.html',
+  styleUrl: './scoped-reserve-plan.component.scss'
 })
-export class ScopedReserveComponent {
+export class ScopedReservePlanComponent {
 
   selectedReserve: any = null;
   isModalOpen = false;
 
-  @Input() reserve = {
+  @Input() reservePlan = {
    id_reserva: 0,
-   id_chalet_usuario: 0,
+   id_planV_usuario: 0,
    email_usuario: '',
    documento: '',
    cantPersonas: 0,
@@ -22,9 +22,8 @@ export class ScopedReserveComponent {
    telefono: '',
    direccion: '',
    precioFinal: 0,
-   estancia: '',
-   fechaInicio: '',
-   fechaFin: '',
+   fecha: '',
+   fechaRegistro: '',
    estado: 0
   }
 
