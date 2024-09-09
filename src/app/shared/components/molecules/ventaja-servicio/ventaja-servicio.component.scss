@@ -30,3 +30,8 @@
     width: 20px;
     height: 24px;
 }
+@media (min-width: 352px) and (max-width: 480px){
+    p{
+        font-size: 14px;
+    }
+}
