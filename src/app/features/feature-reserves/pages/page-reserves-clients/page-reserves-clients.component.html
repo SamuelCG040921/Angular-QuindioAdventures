@@ -1,10 +1,25 @@
 <app-header *ngIf="!authService.estaActivo()"></app-header>
 <app-header-logueado *ngIf="authService.estaActivo()"></app-header-logueado>
 <app-scoped-background-menu></app-scoped-background-menu>
-<section class="emptyState" *ngIf="reserves.length <= 0">
-    <p id="ono">¡Oh no!</p>
-    <img src="../../../../../assets/images/chaplanitoclientes.jpeg" alt="">
-    <p id="noTienesClientes">Aún no tienes clientes</p>
-</section>
+
 <section *ngIf="reserves.length > 0" class="background">
+    <div class="title"><figure class="linetitle"></figure><h2>Reservas de tus chalets</h2><figure class="linetitle"></figure></div>
+    <div class="containerReserves">
+        <app-scoped-client *ngFor="let reserve of reserves;let i = index" [reserve]="reserve"></app-scoped-client>
+        <section class="emptyState" *ngIf="reserves.length <= 0">
+            <p id="ono">¡Oh no!</p>
+            <img src="../../../../../assets/images/chaplanitoclientes.jpeg" alt="">
+            <p id="noTienesClientes">Aún no tienes clientes</p>
+        </section>
+    </div>
+    <div class="title" id="titleplanes"><figure class="linetitle"></figure><h2>Reservas de tus planes</h2><figure class="linetitle"></figure></div>
+    <div class="containerReserves">
+        <app-scoped-client-plan *ngFor="let reservePlan of reservesPlan;let i = index" [reservePlan]="reservePlan"></app-scoped-client-plan>
+        <section class="emptyState" *ngIf="reservesPlan.length <= 0">
+            <p id="ono">¡Oh no!</p>
+            <img src="../../../../../assets/images/chaplanitoclientes.jpeg" alt="">
+            <p id="noTienesClientes">Aún no tienes clientes</p>
+        </section>
+    </div>
+    
 </section>

@@ -1,0 +1,27 @@
+<div class="clientCard">
+    <div class="containerPrincipal">
+        <div class="containerEstado">
+            <p *ngIf="reservePlan.estado === 1" style="background-color: #afd6aa;" id="text1">Activa</p>
+            <p id="text1" *ngIf="reservePlan.estado === 0" style="background-color: rgb(240, 165, 165);">Cancelada</p>
+        </div>
+        <div class="containerBtnModal">
+            <img (click)="openModal(reservePlan)" src="../../../../../assets/icons/mas-opciones.png" alt="">
+        </div>
+    </div>
+    <div class="containerTipo">
+       <strong>Tipo:</strong><p id="text2">Plan vacacional</p>
+    </div>
+    <div class="containerDireccion">
+        <strong>Dirección:</strong> <p id="text3">{{reservePlan.direccion}}</p>
+    </div>
+    <div class="containerTelefono">
+        <strong>telefono:</strong><p id="text4">{{reservePlan.telefono}}</p>
+    </div>
+    <div class="containerCheckin">
+        <strong>Fecha:</strong> <p id="text5">{{reservePlan.fecha}}</p>
+    </div>
+    <div class="containerPrecio">
+        <strong>Precio:</strong><p id="text7">{{reservePlan.precioFinal}}</p>
+    </div>
+</div>
+<app-modal-reserves-plan *ngIf="isModalOpen" [reserve]="selectedReserve" (close)="closeModal()"></app-modal-reserves-plan>

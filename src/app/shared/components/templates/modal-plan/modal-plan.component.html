@@ -1,0 +1,24 @@
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-container" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        
+        <h2>Detalles del Cliente</h2>
+        <button (click)="closeModal()"><img class="iconClose" src="../../../../../assets/icons/x.svg" alt="Close"></button>
+      </div>
+      <div class="modal-content">
+        <div class="profile-section">
+          <div class="customer-info">
+            <p><strong>Fecha:</strong> {{reserve.fecha}}</p>
+            <p><strong>Teléfono:</strong> {{reserve.telefono}}</p>
+            <p><strong>Monto:</strong> {{reserve.precioFinal}}</p>
+            <p><strong>Email:</strong> {{reserve.email_usuario}}</p>
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="contact-button" (click)="contactCustomer()">Contactar cliente</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

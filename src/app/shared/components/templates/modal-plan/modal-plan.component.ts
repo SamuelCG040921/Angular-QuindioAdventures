@@ -1,24 +1,21 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ReservesService } from '../../../../features/feature-reserves/services/reserves.service';
 
 @Component({
-  selector: 'app-modal-reserves',
-  templateUrl: './modal-reserves.component.html',
-  styleUrl: './modal-reserves.component.scss'
+  selector: 'app-modal-plan',
+  templateUrl: './modal-plan.component.html',
+  styleUrl: './modal-plan.component.scss'
 })
-export class ModalReservesComponent{
+export class ModalPlanComponent {
   @Input() reserve:any= {
     id_reserva: '',
-    fechaInicio: '',
-    fechaFin: '',
+    fecha: '',
     email_usuario: '',
     telefono: '',
     precioFinal: 0,
   };
 
   constructor(private reservesService:ReservesService){}
-
-  isModalUpdateOpen = false;
 
   @Output() close = new EventEmitter<void>();
 
@@ -33,9 +30,5 @@ export class ModalReservesComponent{
 
   cancelarReserva(){
     
-  }
-
-  actualizarReserva(){
-    this.isModalUpdateOpen = true;
   }
 }

@@ -1,37 +1,75 @@
 <app-header *ngIf="!authService.estaActivo()"></app-header>
 <app-header-logueado *ngIf="authService.estaActivo()"></app-header-logueado>
 <app-scoped-background-menu></app-scoped-background-menu>
-<section class="emptyState" *ngIf="reserves.length <= 0">
-    <div class="containerChaplanito">
-        <p id="ono">¡Oh no!</p>
-        <img src="../../../../../assets/images/chaplanitoreservas.jpeg" alt="">
-        <div class="contenedorNoTienes">
-            <p id="noTienesClientes">No tienes reservas, te invitamos a hacer una.</p>
-        </div>
-    </div>
-    <div class="containerHacerReserva">
-        <div class="containerChalet">
-            <div class="containerImgChalet">
-                <img src="../../../../../assets/icons/image103.png" alt="">
-            </div>
-            <div class="containerTextChalet">
-                <p>Necesitas un chalet?</p>
-            </div>
-        </div>
-        <div class="containerPlan">
-            <div class="containerImgPlan">
-                <img src="../../../../../assets/icons/image101.png" alt="">
-            </div>
-            <div class="containerTextPlan">
-                <p>Necesitas un plan?</p>
-            </div>
-        </div>
-    </div>
-    <div class="containerLinks">
-        <p>Mira <a routerLink="/chalets">chalets</a> o <a routerLink="/planes-vacacionales">planes vacacionales</a> y realiza tu primera reserva</p>
-    </div>
-</section>
 <section *ngIf="reserves.length > 0" class="background">
-   
+    <div class="title"><figure class="linetitle"></figure><h2>Reservas para chalets</h2><figure class="linetitle"></figure></div>
+   <div class="reservesContainer">
+        <app-scoped-reserve  *ngFor="let reserve of reserves;let i = index"  [reserve]="reserve"></app-scoped-reserve>
+        <section class="emptyState" *ngIf="reserves.length <= 0">
+            <div class="containerChaplanito">
+                <p id="ono">¡Oh no!</p>
+                <img src="../../../../../assets/images/chaplanitoreservas.jpeg" alt="">
+                <div class="contenedorNoTienes">
+                    <p id="noTienesClientes">No tienes reservas para chalets, te invitamos a hacer una.</p>
+                </div>
+            </div>
+            <div class="containerHacerReserva">
+                <div class="containerChalet">
+                    <div class="containerImgChalet">
+                        <img src="../../../../../assets/icons/image103.png" alt="">
+                    </div>
+                    <div class="containerTextChalet">
+                        <p>Necesitas un chalet?</p>
+                    </div>
+                </div>
+                <div class="containerPlan">
+                    <div class="containerImgPlan">
+                        <img src="../../../../../assets/icons/image101.png" alt="">
+                    </div>
+                    <div class="containerTextPlan">
+                        <p>Necesitas un plan?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="containerLinks">
+                <p>Mira <a routerLink="/chalets">chalets</a> o <a routerLink="/planes-vacacionales">planes vacacionales</a> y realiza tu primera reserva</p>
+            </div>
+        </section>
+   </div>
+   <div class="title" id="titlePlan"><figure class="linetitle"></figure><h2>Reservas para planes vacacionales</h2><figure class="linetitle"></figure></div>
+   <div class="reservesPlanContainer">
+    <app-scoped-reserve-plan *ngFor="let reservePlan of reservesPlan;let i = index" [reservePlan]="reservePlan"></app-scoped-reserve-plan>
+    <section class="emptyState" *ngIf="reservesPlan.length <= 0">
+        <div class="containerChaplanito">
+            <p id="ono">¡Oh no!</p>
+            <img src="../../../../../assets/images/chaplanitoreservas.jpeg" alt="">
+            <div class="contenedorNoTienes">
+                <p id="noTienesClientes">No tienes reservas para planes, te invitamos a hacer una.</p>
+            </div>
+        </div>
+        <div class="containerHacerReserva">
+            <div class="containerChalet">
+                <div class="containerImgChalet">
+                    <img src="../../../../../assets/icons/image103.png" alt="">
+                </div>
+                <div class="containerTextChalet">
+                    <p>Necesitas un chalet?</p>
+                </div>
+            </div>
+            <div class="containerPlan">
+                <div class="containerImgPlan">
+                    <img src="../../../../../assets/icons/image101.png" alt="">
+                </div>
+                <div class="containerTextPlan">
+                    <p>Necesitas un plan?</p>
+                </div>
+            </div>
+        </div>
+        <div class="containerLinks">
+            <p>Mira <a routerLink="/chalets">chalets</a> o <a routerLink="/planes-vacacionales">planes vacacionales</a> y realiza tu primera reserva</p>
+        </div>
+    </section>
+    
+    
+   </div>
 </section>
-

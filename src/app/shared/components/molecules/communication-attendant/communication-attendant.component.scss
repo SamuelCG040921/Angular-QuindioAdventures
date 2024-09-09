@@ -34,3 +34,38 @@
     align-items: center;
     margin-top: 20px;
 }
+@media (min-width: 769px) and (max-width: 920px) {
+    .cuidado{
+        margin-top: 50px;
+        padding-bottom: 6px;
+        margin-left: 20px;
+    }
+    .cuidado img {
+        margin-top: 16px;
+    }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .cuidado{
+        margin-top: 16px;
+        padding-bottom: 6px;
+    }
+    .cuidado img {
+        margin-top: 16px;
+        margin-right: 16px;
+    }
+    .cuidado p{
+        font-size: 16px;
+    }
+}
+@media (min-width: 352px) and (max-width: 480px) {
+    .cuidado{
+        padding-bottom: 10px;
+    }
+    .cuidado img {
+        margin-top: 16px;
+        margin-right: 16px;
+    }
+    .cuidado p{
+        font-size: 14px;
+    }
+}

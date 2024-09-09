@@ -22,3 +22,13 @@
     left: 15px;
     z-index: 1;
 }
+@media (min-width: 921px) and (max-width: 1279px) {
+    .containerImgView{
+        width: 100%;
+    }
+    }
+@media (min-width: 352px) and (max-width: 480px) {
+.containerImgView{
+    width: 100%;
+}
+}

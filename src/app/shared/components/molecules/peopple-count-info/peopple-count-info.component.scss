@@ -4,12 +4,23 @@
     align-items: center;
 }
 
+.icontext{
+    display: flex;
+    width: 100%;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+}
+
 .client{
     display: flex;
     width: max-content;
 }
 
 .containerText{
+    display: flex;
     padding-left: 18px;
 }
 
@@ -22,7 +33,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 60px;
 }
 
 .buttonMinum{
@@ -51,4 +61,60 @@
 #imgIcon{
     width: 54px;
     height: 54px;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    #description{
+        width: 232px;
+        font-size: 14px;
+    }
+    .containerCountClient {
+        display: flex;
+        margin-right: 100px;
+    }
+    .containerText{
+        display: flex;
+        flex-direction: column;
+        padding-left: 18px;
+    }
+    .containerButtonsCount{
+
+        margin-right: 20px;
+    }
+    .icontext{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 352px) and (max-width: 480px) {
+    #description{
+        width: 232px;
+        font-size: 14px;
+    }
+    .containerButtonsCount {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 10px 0;
+    }
+    .containerCountClient {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+    }
+    .containerText{
+        display: flex;
+        flex-direction: column;
+        padding-left: 18px;
+    }
+    .containerButtonsCount{
+        display: flex;
+        justify-content: center;
+    }
+    .icontext{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

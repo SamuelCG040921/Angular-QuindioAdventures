@@ -49,3 +49,137 @@
     height: 100%;
     border-bottom-right-radius: 15px;
 }
+@media (min-width: 921px) and (max-width: 1279px) {
+    .containerCollage {
+        width: auto;
+        height: auto;
+        margin-top: 10px;
+    }
+    .containerImg1 {
+        width: 95%;
+    }
+    .containerImg1 #img1 {
+        width: 95%; /* Reducimos el ancho */
+        margin: 0 auto; /* Centramos la imagen */
+    }
+    .containerImg {
+        width: 92%;
+        gap: 10px; /* Espaciado entre imágenes */
+        height: auto;
+    }
+    
+    .containerImg2, .containerImg3 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px; /* Margen inferior entre imágenes */
+    }
+    .containerImg2 #img2, .containerImg3 #img3 {
+        width: 95%; /* Reducimos el ancho de las imágenes */
+        height: auto;
+        margin: 0 auto; /* Centramos las imágenes */
+    }
+}
+@media (min-width: 769px) and (max-width: 920px) {
+    .containerCollage {
+        width: 95%; /* Reducimos ligeramente el ancho general */
+        height: auto;
+        margin-left: auto;
+        margin-top: 10px;
+    }
+    .containerImg1 {
+        width: 100%;
+    }
+    .containerImg1 #img1 {
+        width: 95%; /* Reducimos el ancho */
+        margin: 0 auto; /* Centramos la imagen */
+    }
+    .containerImg {
+        width: 95%;
+        gap: 10px; /* Espaciado entre imágenes */
+        height: auto;
+    }
+    
+    .containerImg2, .containerImg3 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px; /* Margen inferior entre imágenes */
+    }
+    .containerImg2 #img2, .containerImg3 #img3 {
+        width: 95%; /* Reducimos el ancho de las imágenes */
+        height: auto;
+        margin: 0 auto; /* Centramos las imágenes */
+    }
+
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .containerCollage {
+        width: 95%; /* Reducimos ligeramente el ancho general */
+        height: auto;
+        margin-left: auto;
+        margin-top: 10px;
+    }
+    .containerImg1 {
+        width: 100%;
+    }
+    .containerImg1 #img1 {
+        width: 95%; /* Reducimos el ancho */
+        margin: 0 auto; /* Centramos la imagen */
+    }
+    .containerImg {
+        width: 95%;
+        gap: 10px; /* Espaciado entre imágenes */
+        height: auto;
+    }
+    
+    .containerImg2, .containerImg3 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px; /* Margen inferior entre imágenes */
+    }
+    .containerImg2 #img2, .containerImg3 #img3 {
+        width: 95%; /* Reducimos el ancho de las imágenes */
+        height: auto;
+        margin: 0 auto; /* Centramos las imágenes */
+    }
+
+}
+@media (min-width: 352px) and (max-width: 480px) {
+    .containerCollage {
+        width: 95%; /* Reducimos ligeramente el ancho general */
+        height: auto;
+        margin-left: auto;
+        margin-top: 10px;
+    }
+
+    .containerImg1 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px; /* Añadimos margen inferior */
+    }
+
+    .containerImg1 #img1 {
+        width: 95%; /* Reducimos el ancho */
+        height: auto;
+        margin: 0 auto; /* Centramos la imagen */
+        border-radius: 10px; /* Ajustamos los bordes redondeados */
+    }
+
+    .containerImg {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 10px; /* Espaciado entre imágenes */
+    }
+
+    .containerImg2, .containerImg3 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px; /* Margen inferior entre imágenes */
+    }
+
+    .containerImg2 #img2, .containerImg3 #img3 {
+        width: 95%; /* Reducimos el ancho de las imágenes */
+        height: auto;
+        margin: 0 auto; /* Centramos las imágenes */
+    }
+}
