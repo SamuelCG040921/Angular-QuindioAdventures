@@ -610,6 +610,7 @@
 
     .parte3{
         width: 100%;
+        align-items: center;
     }
 
     .image1{
@@ -695,8 +696,9 @@
 
     .parte3{
         width: 100%;
+        align-items: flex-start;
+        padding: 0px 10px
     }
-
     .ventajascontainer1{
         display: block;
     }
