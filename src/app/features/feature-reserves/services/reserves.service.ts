@@ -17,6 +17,10 @@ export class ReservesService {
   private apiUrl5 = 'http://localhost:10101/getReservasPlan';
   private apiUrl6 = 'http://localhost:10101/getRerservasMiChalet';
   private apiUrl7 = 'http://localhost:10101/getRerservasMiPlan'
+  private apiUrl8 = 'http://localhost:10101/cancelarReserva'
+  private apiUrl9 = 'http://localhost:10101/cancelarReservaPlan'
+  private apiUrl10 = 'http://localhost:10101/activarReserva'
+  private apiUrl11 = 'http://localhost:10101/activarReservaPlan'
 
   constructor(private http: HttpClient) {}
 
@@ -186,5 +190,53 @@ export class ReservesService {
     .catch(error => {
       throw error
     })
+  }
+
+  cancelarReserva(idReserva: number): Promise<any> {
+    return axios.put(`${this.apiUrl8}/${idReserva}`)
+      .then(response => {
+        console.log("Reserva cancelada con éxito", response.data);
+        return response.data;
+      })
+      .catch(error => {
+        console.error("Error al cancelar la reserva", error);
+        throw error;
+      });
+  }
+
+  cancelarReservaPlan(idReserva: number): Promise<any> {
+    return axios.put(`${this.apiUrl9}/${idReserva}`)
+      .then(response => {
+        console.log("Reserva cancelada con éxito", response.data);
+        return response.data;
+      })
+      .catch(error => {
+        console.error("Error al cancelar la reserva", error);
+        throw error;
+      });
+  }
+
+  activarReserva(idReserva: number): Promise<any> {
+    return axios.put(`${this.apiUrl10}/${idReserva}`)
+      .then(response => {
+        console.log("Reserva cancelada con éxito", response.data);
+        return response.data;
+      })
+      .catch(error => {
+        console.error("Error al cancelar la reserva", error);
+        throw error;
+      });
+  }
+
+  activarReservaPlan(idReserva: number): Promise<any> {
+    return axios.put(`${this.apiUrl11}/${idReserva}`)
+      .then(response => {
+        console.log("Reserva cancelada con éxito", response.data);
+        return response.data;
+      })
+      .catch(error => {
+        console.error("Error al cancelar la reserva", error);
+        throw error;
+      });
   }
 }

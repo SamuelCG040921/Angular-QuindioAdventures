@@ -18,7 +18,7 @@ constructor(public authService:AuthService, public reservesService:ReservesServi
 ngOnInit() {
    this.reservesService.getReservasByEmail().then(
     (data: ReservaEmail[]) => {
-      console.log('Datos de la reserva:', data);
+      console.log('Datos de la reserva Chalet:', data);
       this.reserves = data;
     },
     err => console.error(err)
@@ -26,7 +26,7 @@ ngOnInit() {
 
    this.reservesService.getReservasPlanByEmail().then(
     (data: ReservaPlanInfo[]) => {
-      console.log('Datos de la reserva:', data);
+      console.log('Datos de la reserva Plan:', data);
       this.reservesPlan = data
     },
     err => console.error(err)

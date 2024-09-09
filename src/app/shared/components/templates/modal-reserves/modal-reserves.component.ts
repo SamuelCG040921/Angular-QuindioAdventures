@@ -19,6 +19,14 @@ export class ModalReservesComponent{
   constructor(private reservesService:ReservesService){}
 
   isModalUpdateOpen = false;
+  isAlertOpen = false;
+  isAlertOpen2 = false;
+  isErrorAlertOpen = false;
+  isErrorAlertOpen2 = false;
+  isWarningAlertOpen = false;
+  isWarningAlertOpen2 = false;
+  isUpdateSuccessAlertOpen = false;
+  isUpdateSuccessAlertOpen2 = false;
 
   @Output() close = new EventEmitter<void>();
 
@@ -32,10 +40,114 @@ export class ModalReservesComponent{
   }
 
   cancelarReserva(){
+    const id = this.reserve.id_reserva;
+    this.reservesService.cancelarReserva(id).then(
+      response => {
+        console.log("exitoso",response);
+        this.openUpdateSuccessAlert();
+        setTimeout(() => {
+          window.location.reload();
+        }, 1300);
+      }
+    ).catch(
+      error => {
+        console.error('Error de cancelacion:', error);
+        this.openErrorAlert();
+      }
+    )
     
   }
+
+  activarReserva(){
+    const id = this.reserve.id_reserva;
+    this.reservesService.activarReserva(id).then(
+      response => {
+        console.log("exitoso",response);
+        this.openUpdateSuccessAlert2();
+        setTimeout(() => {
+          window.location.reload();
+        }, 1300);
+      }
+    ).catch(
+      error => {
+        console.error('Error de cancelacion:', error);
+        this.openErrorAlert2();
+      }
+    )
+  }
+
 
   actualizarReserva(){
     this.isModalUpdateOpen = true;
   }
+
+  openAlert(): void {
+    this.isAlertOpen = true;
+  }
+
+  openAlert2(): void {
+    this.isAlertOpen2 = true;
+  }
+
+  closeAlert2(): void {
+    this.isAlertOpen2 = false;
+  }
+
+  openErrorAlert(): void {
+    this.isErrorAlertOpen = true;
+  }
+
+  openErrorAlert2(): void {
+    this.isErrorAlertOpen2 = true;
+  }
+
+  closeErrorAlert(): void {
+    this.isErrorAlertOpen = false;
+  }
+
+  closeErrorAlert2(): void {
+    this.isErrorAlertOpen2 = false;
+  }
+
+  openWarningAlert(): void {
+    this.isWarningAlertOpen = true;
+  }
+
+  openWarningAlert2(): void {
+    this.isWarningAlertOpen2 = true;
+  }
+
+  closeWarningAlert(): void {
+    this.isWarningAlertOpen = false;
+  }
+
+  closeWarningAlert2(): void {
+    this.isWarningAlertOpen2 = false;
+  }
+
+  openUpdateSuccessAlert(): void {
+    this.isUpdateSuccessAlertOpen = true;
+  }
+
+  openUpdateSuccessAlert2(): void {
+    this.isUpdateSuccessAlertOpen2 = true;
+  }
+
+  closeUpdateSuccessAlert(): void {
+    this.isUpdateSuccessAlertOpen = false;
+  }
+
+  closeUpdateSuccessAlert2(): void {
+    this.isUpdateSuccessAlertOpen2 = false;
+  }
+
+  onConfirmModal() {
+    this.cancelarReserva();
+  }
+
+  onConfirmModal2() {
+    this.activarReserva();
+  }
+
+  
 }

@@ -381,6 +381,9 @@ justify-content: center;
     #precios {
         margin: 0 20px;
     }
+    #info {
+        width: 95%;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 920px) {
@@ -657,7 +660,7 @@ justify-content: center;
         width: 100%;
         font-size: 16px;
     }
-    .containerText[_ngcontent-ng-c4078246672] {
+    .containerText {
         margin-left: 10px;
         margin-top: 10px;
     }
