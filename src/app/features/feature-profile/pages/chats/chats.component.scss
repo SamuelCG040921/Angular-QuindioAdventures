@@ -1,41 +1,89 @@
-.chat-container {
+.containerChatHeader{
   display: flex;
-  height: 100vh;
-}
-.part1 {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  padding-top: 10px;
-}
-.sidebar {
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 10px;
+  height: 13vh;
+  background-color: #d5e7db;
 }
+
+.chat{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #d5e7db;
+  height: 87vh;
+}
+
+.chatContainer{
+  	display: flex;
+	justify-content: space-between;
+	width: 92vw;
+	height: 84vh;
+}
+
+.part1 {
+	display: flex;
+	flex-direction: column;
+	background-color: #275843;
+	border-radius: 15px;
+	width: 28%;
+}
+
 .search-bar {
   display: flex;
   align-items: center;
-
   width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .search-bar input {
   flex-grow: 1;
-  padding: 10px;
-  border: 2px solid #275843;
+  padding: 10px 10px 10px 20px;
+  border: 2px solid #2d6e54;
+  background-color: #2d6e54;
   border-radius: 15px;
-  margin: 0 10px;
-  text-align: center;
+  margin: 0 17.5px;
+  color: rgba(255, 255, 255, 0.774);
+  outline: none;
 }
+
+.search-bar input:focus{
+	border: 2px solid #43866c;
+}
+
+/* Prefijos para compatibilidad con navegadores antiguos */
+.search-bar input:-ms-input-placeholder { /* Para Internet Explorer 10-11 */
+	color: #d5e7db91;;
+}
+  
+.search-bar input::-ms-input-placeholder { /* Para Microsoft Edge */
+	color: #d5e7db91;;
+}
+  
+.search-bar input::-webkit-input-placeholder { /* Para Chrome, Safari, Opera */
+	color: #d5e7db91;;
+}
+  
+.search-bar input::-moz-placeholder { /* Para Firefox 19+ */
+	color: #d5e7db91;;
+}
+
 .profilepic {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
 }
+
+.profilePicHeader {
+	margin-left: 15px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	object-fit: cover;
+  }
+
 .form-header{
   display: flex;
   justify-content: flex-start;
@@ -47,51 +95,125 @@
   height: 35px;
   cursor: pointer;
 }
+
+/* Estilo general de la barra de desplazamiento en WebKit */
+.users::-webkit-scrollbar {
+	width: 5px; /* Ancho de la barra de desplazamiento vertical */
+	height: 50%; /* Alto de la barra de desplazamiento horizontal */
+}
+  
+.users::-webkit-scrollbar-thumb {
+	background-color: #888; /* Color del thumb */
+	border-radius: 10px; /* Radio del borde del thumb */
+}
+  
+.users::-webkit-scrollbar-track {
+	background-color: transparent; /* Color de la pista */
+	border-radius: 10px; /* Radio del borde de la pista */
+}
+
 .users {
-  background-color: #d9d9d939;
-  overflow-y: auto;
-  flex-grow: 1;
-  margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+  	overflow-y: auto;
 }
+
+.arrayContainer{
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+}
+
 .user {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid #ccc;
-  cursor: pointer;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 15px;
+	background-color: #2d6e54;
+	border-radius: 10px;
+	cursor: pointer;
+	color: #dbe6de;
 }
+
 .user:hover {
-  background-color: #D9D9D9;
+  	background-color: #43866c94;
 }
+
+.user:active {
+	background-color: #4b9679;
+}
+
+.user:last-child {
+	border-bottom: none;  /* Eliminar línea en el último contenedor */
+}
+
+hr {
+	border: none;
+	border-top: 1px solid #2d6e54;
+	margin: 10px 0;
+}  
+
+.user.active { 
+  background-color: #489276; /* Cambia el color cuando se selecciona */
+}
+
 .user-info {
-  flex-grow: 1;
+  width: 100%;
   padding-left: 10px;
+  margin-right: 10px;
 }
+
+.containerInfoMsg{
+	display: flex;
+	flex-direction: column;
+	padding-left: 12px;
+}
+
+.msgHour{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
 .username {
   font-weight: bold;
   display: block;
 }
 .message {
-  color: #555;
+  color: #d5e7dbd3;
+  margin-right: 10px;
 }
 .time {
-  white-space: nowrap;
-  font-size: 16px;
+  	white-space: nowrap;
+	color: #d5e7db;
+  	font-size: 14px;
 }
 .chat-window {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background-color: #275843;
+	border-radius: 15px;
+}
 
+.headerChatWindow{
+	display: flex;
+	justify-content: center;
+	width: 100%;
 }
+
 .header {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  background-color: #f5f5f5;
+	display: flex;
+	align-items: center;
+	padding: 10px 0px;
+	border-bottom: 1px solid #2d6e54;
+	background-color: #275843;
+	width: 95%;
 }
+
 .header img {
   width: 50px;
   height: 50px;
@@ -101,7 +223,9 @@
 .messages {
   flex: 1;
   padding: 10px;
-  background-color: #fff;
+  background-color: #275843;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   overflow-y: auto;
 }
 .user1, .user2 {
@@ -133,16 +257,75 @@
   flex: 1;
   padding: 10px;
   border-radius: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #d5e7db;
+  background-color: #d1e7dd;
   margin-right: 10px;
 }
 .input-bar button {
-  cursor: pointer;
-  border: none;
-  background-color: white;
-  margin: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border: none;
+	background-color: #275843;
+	margin: 10px;
 }
 .input-bar button img {
   width: 30px;
   height: 30px;
+}
+
+@media (max-width: 1279px) and (min-width: 921px) {
+	.part1{
+		width: 35%;
+		min-width: 300px;
+		margin-right: 25px;
+	}
+}
+
+@media (max-width: 920px) and (min-width: 769px){
+	.chatContainer{
+		width: 97%;
+	}
+	.part1{
+		width: 40%;
+		min-width: 258px;
+		margin-right: 10px;
+	}
+}
+
+@media (max-width: 768px) and (min-width: 481px){
+	.chatContainer{
+		width: 97%;
+	}
+	.part1{
+		width: 40%;
+		min-width: 190px;
+		margin-right: 10px;
+	}
+	.search-bar input{
+		width: 85%;
+	}
+	.time{
+		display: none;
+	}
+}
+
+@media (max-width: 480px) and (min-width: 352px){
+	.chatContainer{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 95%;	
+	}
+	.chat-window{
+		width: 95%;
+		height: 87vh;
+	}
+	.part1{
+		display: none;
+	}
+	.search-bar{
+		display: none;
+	}
 }

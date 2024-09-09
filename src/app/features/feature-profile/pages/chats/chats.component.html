@@ -1,56 +1,55 @@
-<app-nav></app-nav>
-<div class="chat-container">
-  <div class="part1">
-    <div class="sidebar">
-      <div class="search-bar">
-        <div class="form-header">
-          <img routerLink="/micuenta" src="../../../assets/icons/flechas-register-login-devolver.png" alt="">
-      </div>
-        <input type="text" placeholder="Buscar">
-        <img class="profilepic" [src]="user.image" alt="profile">
-      </div>
-    </div>
-    <div class="users">
-      <div class="user">
-        <img class="profilepic" [src]="user.image" alt="profile">
-        <div class="user-info">
-          <span class="username">{{user?.nombres}}</span>
-          <span class="message">El plan vacacional sería..</span>
-        </div>
-        <span class="time">9:20 a. m.</span>
-      </div>
-      <div class="user">
-        <img class="profilepic" [src]="user.image" alt="profile">
-        <div class="user-info">
-          <span class="username">{{user?.nombres}}</span>
-          <span class="message">Tú: Gracias por la información</span>
-        </div>
-        <span class="time">9:00 a. m.</span>
-      </div>
-    </div>
-  </div>
-  <div class="chat-window">
-    <div class="header">
-      <img class="profilepic" [src]="user.image" alt="profile">
-      {{user?.nombres}}
-    </div>
-    <div class="messages">
-      <div class="user1">
-        <p>
-          Hola, buenas tardes. El plan Vacacional solo seríamos tres personas
-        </p>
-      </div>
-      <div class="user2">
-        <p>
-          El plan Vacacional sería por los tres 160.000
-        </p>
-      </div>
-    </div>
-    <div class="input-bar">
-      <input type="text" placeholder="Escribe un mensaje...">
-      <button>
-        <img src="../../../../../assets/icons/sendChat.svg" alt="send">
-      </button>
-    </div>
-  </div>
+<div class="containerChatHeader">
+	<app-profile-header></app-profile-header>
+</div>
+<div class="chat">
+	<div class="chatContainer">
+		<div class="part1">
+			<div class="search-bar">
+				<input type="text" placeholder="Buscar">
+			</div>
+			<div class="users">
+				<div *ngFor="let user of users; let i = index" class="arrayContainer">
+					<div class="user" [class.active]="isActive(i)" (click)="setActiveUser(i)">
+						<img class="profilepic" src="assets/images/profile-default.webp" alt="profile">
+						<div class="containerInfoMsg">
+							<div class="userName">
+								<span class="username">{{ user.nombres }}</span>
+							</div>
+							<div class="msgHour">
+								<span class="message">El plan vacacional sería...</span>
+								<span class="time">9:20 a. m.</span>
+							</div>
+						</div>
+					</div>
+					<hr *ngIf="i < users.length - 1"> <!-- Línea divisoria excepto en el último chat -->
+				</div>				  
+			</div>
+		</div>
+		<div class="chat-window">
+			<div class="headerChatWindow">
+				<div class="header">
+					<img class="profilePicHeader" src="../../../../../assets/images/profile-default.webp" alt="profile">
+					{{user?.nombres}}
+				</div>
+			</div>
+			<div class="messages">
+			  <div class="user1">
+				<p>
+				  Hola, buenas tardes. El plan Vacacional solo seríamos tres personas
+				</p>
+			  </div>
+			  <div class="user2">
+				<p>
+				  El plan Vacacional sería por los tres 160.000
+				</p>
+			  </div>
+			</div>
+			<div class="input-bar">
+			  <input type="text" placeholder="Escribe un mensaje...">
+			  <button>
+				<img src="../../../../../assets/icons/sendChat.svg" alt="send">
+			  </button>
+			</div>
+		</div>
+	</div>
 </div>
