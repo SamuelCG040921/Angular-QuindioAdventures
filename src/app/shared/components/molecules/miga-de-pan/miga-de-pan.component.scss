@@ -17,3 +17,10 @@
 .miga #verdes{
     color: #418E6D;
 }
+
+@media (min-width: 352px) and (max-width: 480px) {
+    .containerMiga{
+        padding: 9px 0px 0px 13px;
+        font-size: 12px;
+    }
+}

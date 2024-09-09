@@ -30,30 +30,36 @@ tr:nth-child(even) {
     margin-top: 10px;
     padding-right: 12px;
 }
+@media (min-width: 921px) and (max-width: 1279px) {
+    .table {
+    width: 100%;
+}
+thead tr{
+    font-size: 18px;
+}
+tbody tr{
+    font-size: 16px;
+}
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .table {
+    width: 100%;
+}
+thead tr{
+    font-size: 14px;
+}
+tbody tr{
+    font-size: 16px;
+}
+}
 @media (min-width: 352px) and (max-width: 480px) {
     .table {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    table {
-        display: flex;
-        flex-direction: row;
-    }
-
-    thead th, tbody td {
-        display: block;
-        padding: 8px;
-        text-align: left;
-        border: 1px solid #ddd;
-        
-    }
-
-    thead th, tbody td {
-        width: 100%;
-        height: auto; /* Importante: dejar que el contenido determine la altura */
-    }
+    width: 100%;
 }
-
-
+thead tr{
+    font-size: 12px;
+}
+tbody tr{
+    font-size: 14px;
+}
+}

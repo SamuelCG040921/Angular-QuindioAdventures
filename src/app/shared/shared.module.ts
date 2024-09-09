@@ -85,6 +85,8 @@ import { LoaderComponent } from './components/organisms/loader/loader.component'
 import { InfoCardChaletProfileComponent } from './components/molecules/info-card-chalet-profile/info-card-chalet-profile.component';
 import { PlanViewImagesComponent } from './components/molecules/plan-view-images/plan-view-images.component';
 import { PricesTablePlanComponent } from './components/molecules/prices-table-plan/prices-table-plan.component';
+import { ModalPlanComponent } from './components/templates/modal-plan/modal-plan.component';
+import { ModalReservesPlanComponent } from './components/templates/modal-reserves-plan/modal-reserves-plan.component';
 
 @NgModule({
   declarations: [
@@ -171,7 +173,9 @@ import { PricesTablePlanComponent } from './components/molecules/prices-table-pl
     LoaderComponent,
     InfoCardChaletProfileComponent,
     PlanViewImagesComponent,
-    PricesTablePlanComponent
+    PricesTablePlanComponent,
+    ModalPlanComponent,
+    ModalReservesPlanComponent
   ],
 
   imports: [
@@ -266,7 +270,9 @@ import { PricesTablePlanComponent } from './components/molecules/prices-table-pl
     InfoCardChaletProfileComponent,
     NavLogueadoComponent,
     PlanViewImagesComponent,
-    PricesTablePlanComponent
+    PricesTablePlanComponent,
+    ModalReservesPlanComponent,
+    ModalPlanComponent
   ],
 })
 export class SharedModule { }

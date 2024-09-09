@@ -1,0 +1,25 @@
+<div class="client" >  
+    <div class="containerBtnModal">
+        <img (click)="openModal(reservePlan)" src="../../../../../assets/icons/mas-opciones.png" alt="">
+        <div class="containerEstado">
+            <p *ngIf="reservePlan.estado === 1" style="background-color: #afd6aa;" id="text1">Activa</p>
+            <p id="text1" *ngIf="reservePlan.estado === 0" style="background-color: rgb(240, 165, 165);">Cancelada</p>
+        </div>
+    </div>
+    <div class="containerNumber">
+        <strong>Numero:</strong><p id="text1">{{reservePlan.id_reserva}}</p>
+    </div>
+    <div class="containerNombre">
+        <strong>Nombre:</strong> <p id="text3">{{reservePlan.nombre}}</p>
+    </div>
+    <div class="containerFecha">
+        <strong id="title4">Fecha de registro:</strong><p id="text4">{{reservePlan.fechaRegistro}}</p>
+    </div>
+    <div class="containerTelefono">
+        <strong>Telefono:</strong><p id="text7">{{reservePlan.telefono}}</p>
+    </div>
+    <div class="containerPrecio">
+        <strong>Precio:</strong><p id="text8">{{reservePlan.precioFinal}}</p>
+    </div>
+</div>
+    <app-modal-plan *ngIf="isModalOpen" [reserve]="selectedReserve" (close)="closeModal()"></app-modal-plan>

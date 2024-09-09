@@ -33,7 +33,6 @@
     <div class="titleReserva"><figure class="linech"></figure><p class="section-title">Reserva e información</p><figure class="linech"></figure></div>
     <div class="contenido">
         <div class="containerPersona">
-
             <app-peopple-count-info 
                 imageUrl="../../../../../assets/icons/hombre 1.png" 
                 title="Adultos" 
@@ -41,7 +40,6 @@
                 id="persona" 
                 (countChange)="onAdultCountChange($event)">
             </app-peopple-count-info>
-
             <app-peopple-count-info 
                 imageUrl="../../../../../assets/icons/nino.png" 
                 title="Niños" 
@@ -51,7 +49,7 @@
             </app-peopple-count-info>
         </div>
         <div class="recuadroPrecio">
-            <app-button  class="button" label="Continuar con la reserva" color="#275843" [routerLink]="['/paymentformplan', plan.id_planV]"></app-button>
+            <app-button  class="button" label="Continuar con la reserva" color="#275843" [routerLink]="['/paymentform', plan.id_planV]"></app-button>
         </div>
     </div>
 </div>
@@ -67,17 +65,18 @@
 </div>
 
 <section class="comentarios">
-   <div class="titlecom"> <figure></figure><h2>Comentarios y calificaciones</h2><figure></figure></div>
+   <div class="titlecom"><figure></figure><h2>Comentarios y calificaciones</h2><figure></figure></div>
    <section class="containerform">
         <form action="" formGruoup="comment">
             <div class="commentheader">
-                <img class="profilecomment" src="../../../../../assets/images/erling-haaland 1.png" alt="">
-                <div>
-                    <p>Juan Bedoya</p>
+                <div class="profileCommentsHeader">
+                    <img class="profilecomment" src="../../../../../assets/images/erling-haaland 1.png" alt="">
+                    <div>
+                        <p>Juan Bedoya</p>
+                    </div>
+                    <div class="bordername"></div>
                 </div>
-                <div class="bordername"></div>
                 <input class="commentInput" type="text" id="comment" placeholder="Agrega un comentario..." (click)="mostrarBotones()" >
-                
             </div>
             
             <div class="calificacion">

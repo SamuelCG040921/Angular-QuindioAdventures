@@ -43,3 +43,30 @@
     width: 70%;
     height: 70%;
 }
+
+.containerReserves{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    place-items: center;
+    gap: 64px;
+}
+
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.linetitle{
+    width: 100px;
+    border: 1px solid #418e6d;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#titleplanes{
+    margin-top: 64px;
+}
