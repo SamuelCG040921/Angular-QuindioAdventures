@@ -16,4 +16,6 @@ export class ChaletIdService {
   getChaletId(): string | null {
     return this.chaletIdSubject.getValue();
   }
+
+  
 }
