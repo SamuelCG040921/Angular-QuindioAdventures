@@ -38,6 +38,7 @@ export class ChaletRegisterFormComponent implements OnInit {
   archivos3: any[] = [];
   previsualizacion4: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUt9Eal7bqRuP6zG7wmahoATbjN92Z3hajQ&s';
   archivos4: any[] = [];
+  isLoading: boolean = false;
 
   archivoCapturado1: File | null = null;
   archivoCapturado2: File | null = null;
@@ -256,12 +257,14 @@ export class ChaletRegisterFormComponent implements OnInit {
   
   onSubmit(): void {
     if (this.chaletForm.valid) {
+      this.isLoading = true;
       const chaletData: ChaletDTO = this.chaletForm.value;
       console.log(chaletData);
       
       
       this.chaletService.registrarChalet(chaletData).subscribe({
         next: (response) => {
+          this.isLoading = false;
           console.log('Chalet registrado exitosamente:', response);
           this.openUpdateSuccessAlert();
           setTimeout(() => {
@@ -269,6 +272,7 @@ export class ChaletRegisterFormComponent implements OnInit {
           }, 1300);
         },
         error: (error) => {
+          this.isLoading = false;
           console.error('Error al registrar chalet:', error);
           this.openErrorAlert();
         }

@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="container-img"> 
+    <div class="container-img" [routerLink]="['/plan-details', plan.id]"> 
         <img class="imgCard" src="{{plan.imgPrincipal}}">
     </div>
 <app-title-card [plan]="plan" class="title"></app-title-card>

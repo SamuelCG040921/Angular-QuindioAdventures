@@ -1,6 +1,6 @@
 <div class="card">
     <a class="card-iterator">
-        <div class="container-img" [routerLink]="openDetails(chalet)"> 
+        <div class="container-img" [routerLink]="['/chalet-details', chalet.id]"> 
             <img class="imgCard" src="{{chalet.imgPrincipal}}"> 
         </div>
     <app-title-card [chalet]="chalet" class="title"></app-title-card>
