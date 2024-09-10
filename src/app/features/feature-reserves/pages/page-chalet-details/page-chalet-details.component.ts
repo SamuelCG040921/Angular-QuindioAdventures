@@ -8,6 +8,7 @@ import { ChaletIdService } from '../../services/chalet-id.service';
 import { TarifaService } from '../../services/tarifa.service';
 import { CountPeopleService } from '../../services/count-people.service';
 import { Subscription } from 'rxjs';
+import { UserProfile } from '../../../feature-profile/models/user-profile';
 
 @Component({
   selector: 'app-page-chalet-details',
@@ -25,6 +26,7 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
   totalPersons: number = 0;
   adultCount: number = 0;
   childCount: number = 0;
+  user!: UserProfile;
 
   @ViewChild(MapComponent) mapComponent!: MapComponent;
   routerSubscription!: Subscription;
@@ -51,6 +53,16 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
         }
       }
     });
+
+    this.authService.getUserProfile().then(
+      (data: UserProfile) => {
+        console.log('Datos del usuario:', data);
+        this.user = data;
+        
+      },
+      err => console.error(err,2345)
+      
+    );
   }
 
   ngAfterViewInit(): void {

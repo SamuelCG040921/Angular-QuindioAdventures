@@ -77,9 +77,9 @@
    <section class="containerform">
         <form action="" formGruoup="comment">
             <div class="commentheader">
-                <img class="profilecomment" src="../../../../../assets/images/erling-haaland 1.png" alt="">
+                <img class="profilecomment" [src]="user.image" alt="">
                 <div>
-                    <p>Juan Bedoya</p>
+                    <p>{{user.name}} {{user.lastName}}</p>
                 </div>
                 <div class="bordername"></div>
                 <input class="commentInput" type="text" id="comment" placeholder="Agrega un comentario..." (click)="mostrarBotones()" >
