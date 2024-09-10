@@ -12,6 +12,7 @@ import { UserProfile } from '../../../feature-profile/models/user-profile';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommentService } from '../../services/comment.service';
 import { Chalet } from '../../models/chalet.model';
+import { CommentInfo } from '../../models/comment.model';
 
 @Component({
   selector: 'app-page-chalet-details',
@@ -33,6 +34,14 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
   commentForm!: FormGroup;
   id_chalet = this.route.snapshot.paramMap.get('id');
   selectedRating: number = 0;
+  isLoading: boolean = false;
+  isAlertOpen = false;
+  isErrorAlertOpen = false;
+  isErrorAlertOpen2 = false;
+  isWarningAlertOpen = false;
+  isUpdateSuccessAlertOpen = false;
+
+  
 
   @ViewChild(MapComponent) mapComponent!: MapComponent;
   routerSubscription!: Subscription;
@@ -50,6 +59,7 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
+    
     this.loadChalet();
     
     this.routerSubscription = this.router.events.subscribe(event => {
@@ -61,10 +71,6 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
         }
       }
 
-      this.commentForm = this.fb.group({
-        id_chalet: [this.id_chalet, Validators.required],
-        comment: ['', Validators.required]
-      })
     });
 
     this.authService.getUserProfile().then(
@@ -76,7 +82,27 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
       err => console.error(err,2345)
       
     );
+
+    this.commentForm = this.fb.group({
+      id_chalet: [this.id_chalet],
+      opinion: ['', Validators.required],
+      calificacion: [this.selectedRating]
+    });
   }
+
+  onRatingChange(rating: number) {
+    this.selectedRating = rating;
+    console.log('Calificación seleccionada:', this.selectedRating);
+  
+    if (this.commentForm) {  // Asegúrate de que el formulario esté inicializado
+      this.commentForm.patchValue({
+        calificacion: this.selectedRating
+      });
+    }
+
+  }
+
+  
 
   ngAfterViewInit(): void {
     if (this.chalet.ubicacion_chalet && this.chalet.municipio_chalet) {
@@ -122,11 +148,6 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
       this.error = 'ID del chalet no proporcionado';
       this.loading = false;
     }
-  }
-
-  onRatingChange(rating: number): void {
-    this.selectedRating = rating;
-    console.log('Calificación seleccionada:', this.selectedRating);
   }
 
   mostrarBotones() {
@@ -175,7 +196,76 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
     }
   }
 
+  openAlert(): void {
+    this.isAlertOpen = true;
+  }
+
+  closeAlert(): void {
+    this.isAlertOpen = false;
+  }
+
+  openErrorAlert(): void {
+    this.isErrorAlertOpen = true;
+  }
+
+  openErrorAlert2(): void {
+    this.isErrorAlertOpen2 = true;
+  }
+
+  closeErrorAlert(): void {
+    this.isErrorAlertOpen = false;
+  }
+
+  closeErrorAlert2(): void {
+    this.isErrorAlertOpen2 = false;
+  }
+
+  openWarningAlert(): void {
+    this.isWarningAlertOpen = true;
+  }
+
+  closeWarningAlert(): void {
+    this.isWarningAlertOpen = false;
+  }
+
+  openUpdateSuccessAlert(): void {
+    this.isUpdateSuccessAlertOpen = true;
+  }
+
+  closeUpdateSuccessAlert(): void {
+    this.isUpdateSuccessAlertOpen = false;
+  }
+
+  onConfirmModal() {
+    this.onSubmit();
+  }
+
   onSubmit(){
-    
+    if(this.commentForm.valid){
+      this.isLoading = true;
+      const commentData: CommentInfo = this.commentForm.value;
+      console.log(commentData);
+
+      this.commentService.createComment(commentData).subscribe({
+        next: (response) => {
+          this.isLoading = false;
+          console.log('Comentario registrado exitosamente:', response);
+          this.openUpdateSuccessAlert();
+          setTimeout(() => {
+            window.location.reload();
+          }, 1300);
+        },
+        error: (error) => {
+          this.isLoading = false;
+          console.error('Error al registrar comentario: ', error);
+          this.openErrorAlert();
+          
+        }
+      })
+      
+    }else{
+      console.log('El formulario no es válido');
+      this.openErrorAlert();
+    }
   }
 }
