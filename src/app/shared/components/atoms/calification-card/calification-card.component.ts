@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-calification-card',
@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class CalificationCardComponent {
   @Input() rating: number = 0;
   @Input() maxRating: number = 5;
+  @Output() ratingChange: EventEmitter<number> = new EventEmitter<number>(); // Agregamos el @Output
   circles: number[] = [];
 
   ngOnInit(): void {
@@ -16,5 +17,6 @@ export class CalificationCardComponent {
 
   setRating(rating: number): void {
     this.rating = rating;
+    this.ratingChange.emit(this.rating); // Emitir el valor de la calificación
   }
 }

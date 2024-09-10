@@ -75,19 +75,19 @@
 <section class="comentarios">
    <div class="titlecom"> <figure></figure><h2>Comentarios y calificaciones</h2><figure></figure></div>
    <section class="containerform">
-        <form action="" formGruoup="comment">
+        <form [formGruoup]="commentForm" (ngSubmit)="onSubmit()">
             <div class="commentheader">
                 <img class="profilecomment" [src]="user.image" alt="">
                 <div>
                     <p>{{user.name}} {{user.lastName}}</p>
                 </div>
                 <div class="bordername"></div>
-                <input class="commentInput" type="text" id="comment" placeholder="Agrega un comentario..." (click)="mostrarBotones()" >
-                
+                <input class="commentInput" type="text" id="comment" placeholder="Agrega un comentario..." (click)="mostrarBotones()" [formControlName]="'comment'" >
+
             </div>
             
             <div class="calificacion">
-                <app-calification-card *ngIf="botones === true"></app-calification-card>
+                <app-calification-card *ngIf="botones === true" (ratingChange)="onRatingChange($event)"></app-calification-card>
             </div>
             <div class="buttons">
                 <app-button id="publish" *ngIf="botones === true" label="Publicar"></app-button>

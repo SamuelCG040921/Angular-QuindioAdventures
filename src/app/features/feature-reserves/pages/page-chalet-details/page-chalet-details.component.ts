@@ -9,6 +9,9 @@ import { TarifaService } from '../../services/tarifa.service';
 import { CountPeopleService } from '../../services/count-people.service';
 import { Subscription } from 'rxjs';
 import { UserProfile } from '../../../feature-profile/models/user-profile';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommentService } from '../../services/comment.service';
+import { Chalet } from '../../models/chalet.model';
 
 @Component({
   selector: 'app-page-chalet-details',
@@ -27,6 +30,9 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
   adultCount: number = 0;
   childCount: number = 0;
   user!: UserProfile;
+  commentForm!: FormGroup;
+  id_chalet = this.route.snapshot.paramMap.get('id');
+  selectedRating: number = 0;
 
   @ViewChild(MapComponent) mapComponent!: MapComponent;
   routerSubscription!: Subscription;
@@ -38,7 +44,9 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
     public chaletIdService: ChaletIdService,
     public tarifaService: TarifaService,
     private personCountService: CountPeopleService,
-    private router: Router
+    private router: Router,
+    private fb: FormBuilder,
+    private commentService:CommentService
   ) {}
 
   ngOnInit(): void {
@@ -52,6 +60,11 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
           console.log('Variable miVariable eliminada del localStorage');
         }
       }
+
+      this.commentForm = this.fb.group({
+        id_chalet: [this.id_chalet, Validators.required],
+        comment: ['', Validators.required]
+      })
     });
 
     this.authService.getUserProfile().then(
@@ -111,6 +124,11 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
     }
   }
 
+  onRatingChange(rating: number): void {
+    this.selectedRating = rating;
+    console.log('Calificación seleccionada:', this.selectedRating);
+  }
+
   mostrarBotones() {
     this.botones = true;
   }
@@ -155,5 +173,9 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
     }
+  }
+
+  onSubmit(){
+    
   }
 }
