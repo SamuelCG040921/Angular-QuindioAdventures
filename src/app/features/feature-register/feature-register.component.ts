@@ -125,7 +125,7 @@ export class FeatureRegisterComponent implements OnInit {
 
           setTimeout(() => {
             this.router.navigate(['/login']); // Redirigir al home después de 2 segundos
-          }, 1000);
+          }, 2000);
           
           this.isLoading = false
         }

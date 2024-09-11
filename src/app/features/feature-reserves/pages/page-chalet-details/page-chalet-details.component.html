@@ -75,7 +75,7 @@
 <section class="comentarios">
    <div class="titlecom"> <figure></figure><h2>Comentarios y calificaciones</h2><figure></figure></div>
    <section class="containerform">
-        <form [formGruoup]="commentForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
             <div class="commentheader">
                 <img class="profilecomment" [src]="user.image" alt="">
                 <div>

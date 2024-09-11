@@ -100,7 +100,7 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
           this.openUpdateSuccessAlert();
           setTimeout(() => {
             window.location.reload();
-          }, 1300);
+          }, 2000);
         }
       ).catch(
         error => {
