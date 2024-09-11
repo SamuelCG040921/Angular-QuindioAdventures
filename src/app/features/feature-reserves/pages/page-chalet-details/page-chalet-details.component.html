@@ -82,7 +82,7 @@
                     <p>{{user.name}} {{user.lastName}}</p>
                 </div>
                 <div class="bordername"></div>
-                <input class="commentInput" type="text" id="comment" placeholder="Agrega un comentario..." (click)="mostrarBotones()" [formControlName]="'comment'" >
+                <input class="commentInput" type="text" id="comment" placeholder="Agrega un comentario..." (click)="mostrarBotones()" [formControlName]="'opinion'" >
 
             </div>
             
@@ -90,7 +90,7 @@
                 <app-calification-card *ngIf="botones === true" (ratingChange)="onRatingChange($event)"></app-calification-card>
             </div>
             <div class="buttons">
-                <app-button id="publish" *ngIf="botones === true" label="Publicar"></app-button>
+                <app-button id="publish" *ngIf="botones === true" label="Publicar" (click)="openWarningAlert()"></app-button>
                 <app-button *ngIf="botones === true" label="Cancelar" color="red" (click)="ocultarBotones()"></app-button>
             </div>
         </form>
@@ -102,9 +102,23 @@
                 <option value="value3">Comentarios negativos</option>
             </select>
         </div>
-        <div class="todoscomentarios">
-             <app-comment></app-comment>
+        <div class="emptyState" *ngIf="comments.length<=0">
+            <div class="containerChaplanito">
+                <p id="ono">¡Vaya!</p>
+                <img src="../../../../../assets/images/chaplanitoreservas.jpeg" alt="">
+                <div class="contenedorNoTienes">
+                    <p id="noTienesClientes">Aún no hay comentarios para este chalet</p>
+                </div>
+            </div>
         </div>
+        
+        <div class="todoscomentarios" *ngIf="comments.length>0">
+             <app-comment *ngFor="let comment of comments;let i = index" [comment]="comment"></app-comment>
+        </div>
+        <app-loader *ngIf="isLoading"></app-loader>
+        <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar el registro de tu comentario" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
+        <app-messages-warning title="¡No tan rápido!" paragraph="Revisa bien tu comentario antes de publicarlo, ¿Estás seguro de publicarlo"  *ngIf="isWarningAlertOpen" (confirm)="onConfirmModal()" (close)="closeWarningAlert()"></app-messages-warning>
+        <app-messages-succesful title="Su comentario se registro exitosamente" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
 </section>
 
 <app-footer></app-footer>

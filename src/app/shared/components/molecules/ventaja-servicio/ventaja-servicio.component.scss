@@ -4,6 +4,7 @@
     height: 34px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .icon{
@@ -30,8 +31,24 @@
     width: 20px;
     height: 24px;
 }
+
+@media (min-width: 769px) and (max-width: 920px){
+    .container{
+        width: max-content;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+    .container{
+        width: max-content;
+    }
+}
+
 @media (min-width: 352px) and (max-width: 480px){
     p{
         font-size: 14px;
+    }
+    .container{
+        width: max-content;
     }
 }

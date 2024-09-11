@@ -1,18 +1,18 @@
 <div class="comment">
     <div class="headercomment">
-        <img src="../../../../../assets/images/erling-haaland 1.png" alt="">
+        <img [src]="comment.image" alt="">
         <div>
-            <p class="name">Haaland Estrada</p>
+            <p class="name">{{comment.nombres}} {{comment.apellidos}}</p>
         </div>
         <figure></figure>
-        <p class="date">24/06/08</p>
+        <p class="date">{{comment.fechaCreacion}}</p>
     </div>
     <div class="commentbox">
-        <p>Excelentes habitaciones, servicios y comida deliciosa, recomanddado para psasr unas buenas vacaciones en familia</p>
+        <p>{{comment.opinion}}</p>
         <div class="bordercomment"></div>
         <div class="calification">
             <app-calification-card></app-calification-card>
-            <p>1:00 p.m</p>
+            <p>{{comment.hora}}</p>
         </div>
     </div>
 </div>
