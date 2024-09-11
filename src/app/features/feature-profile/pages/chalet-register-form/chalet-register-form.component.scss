@@ -78,14 +78,6 @@
     width: 665px;
 }
 
-.ventajascontainer1{
-    display: flex;
-}
-
-.ventaja{
-    margin-right: 40px;
-}
-
 .parte3{
     display: flex;
     align-items: center;
@@ -98,24 +90,48 @@
     flex-direction: column;
 }
 
-.ventajascontainer2{
-    margin-top: 20px;
+
+.ventajascontainer1{
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.ventajascontainer2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .ventajascontainer3{
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
     margin-bottom: 20px;
 }
 
 .ventajascontainer4{
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
     margin-bottom: 20px;
 }
 
 .ventajascontainer5{
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.ventajascontainer6{
+    display: none;
 }
 
 .profileAside{
@@ -531,17 +547,34 @@
     margin-bottom: 20px;
   }
 
-  @media (min-width: 769px) and (max-width: 1279px) {
+  @media (min-width: 921px) and (max-width: 1279px) {
+    .parte1{
+        display: flex;
+        justify-content: space-between;
+        width: 42rem;
+    }
+    .ventajascontainer3 #desactivarParqueadero{
+        display: none;
+    }
+    .ventajascontainer5 #desactivarFogata{
+        display: none;
+    }
+    .ventajascontainer6{
+        display: flex;
+        margin-top: 20px;
+        width: 100%;
+        justify-content: space-evenly;
+    }
     .field{
         width: 50%;
     }
 
     .parte3{
-        width: 92%;
+        width: 80%;
     }
 
     .image1{
-        width: 90%;
+        width: 100%;
     }
 
     .img1{
@@ -563,6 +596,28 @@
         width: auto;
     }
     
+}
+
+@media (min-width: 769px) and (max-width: 920px) {
+    .container{
+        width: max-content;
+        height: min-content;
+    }
+    .ventajascontainer3 #desactivarParqueadero{
+        display: none;
+    }
+    .ventajascontainer5 #desactivarFogata{
+        display: none;
+    }
+    .ventajascontainer6{
+        display: flex;
+        margin-top: 20px;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .parte3{
+        width: 90%;
+    }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -588,29 +643,49 @@
         width: 80%;
     }
 
+    .ventaja{
+        margin-bottom: 20px;
+    }
+
     .ventajascontainer1{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
     }
 
     .ventajascontainer2{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
     }
 
     .ventajascontainer3{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
     }
 
     .ventajascontainer4{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
     }
 
     .ventajascontainer5{
-        display: block;
+                display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
     }
 
     .parte3{
-        width: 100%;
+        display: flex;
         align-items: center;
+        width: 55%;
     }
 
     .image1{
@@ -623,37 +698,35 @@
         align-items: center;
         width: 100%;
     }
-
     .img2y3{
-        width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        width: 90%;
+    }
+    .img2{
+        width: 50%;
+    }
+    .img2 label{
+        position: absolute;
+        left: 16%;
+    }
+    .image2{
+        width: 100%;
+        margin: 0px;
+    }
+    .img3{
+        width: 48%;
+    }
+    .img3 label{
+        position: absolute;
+        left: 14%;
+    }
+    .image3{
+        width: 100%;
     }
     .parte4{
         width: 90%;
-    }
-
-    .image2{
-        width: 95%;
-    }
-
-    .image3{
-        width: 95%;
-    }
-
-    .img2{
-        width: auto;
-    }
-    .img2 input label{
-        margin-right: 40px;
-    }
-
-    .img3{
-        width: auto;
-    }
-    .uno{
-        margin-right: 1px;
     }
     .saveFee{
         display: flex;
@@ -666,13 +739,16 @@
     .field{
         width: auto;
     }
-
+    .uno{
+        margin: 0px;
+    }
     
 }
 
 @media (min-width: 352px) and (max-width: 480px){
     .parte1{
         flex-direction: column;
+        width: 90%;
     }
 
     .description{
@@ -694,41 +770,80 @@
         width: 80%;
     }
 
-    .parte3{
-        width: 100%;
-        align-items: flex-start;
-        padding: 0px 10px
-    }
     .ventajascontainer1{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        height: 8rem;
     }
 
     .ventajascontainer2{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        height: 5rem;
+        margin: 12px 0px;
     }
 
     .ventajascontainer3{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        height: 8rem;
+        margin: 0px;
     }
 
     .ventajascontainer4{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        height: 5rem;
+        margin: 12px 0px;
+    }
+    .uno{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 0px;
+    }
+    .uno input{
+        width: 18rem;
+    }
+    .ventajascontainer5{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        height: 8rem;
+        margin: 0px;
     }
 
-    .ventajascontainer5{
-        display: block;
+    .parte3{
+        display: flex;
+        align-items: center;
+        width: 80%;
     }
     .image1{
-        width: 90%;
+        width: 100%;
     }
 
     .img1{
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
     }
+    .img1 label{
+        top: 35%;
+        left: 27%;
+        position: absolute;
 
+    }
     .img2y3{
         width: 100%;
         display: flex;
@@ -747,22 +862,15 @@
     .img2{
         width: auto;
     }
-    .img2 input label{
-        margin-right: 40px;
+    .img2 label{
+        position: absolute;
+        top: 40%;
+        left: 5%;
     }
-
-    .img3{
-        width: auto;
-    }
-    .uno{
-        margin-right: 1px;
-    }
-    .uno label{
-        margin-left: 16px;
-    }
-    .uno input{
-        width: 280px;
-        margin-left: 16px;
+    .img3 label{
+        position: absolute;
+        top: 40%;
+        left: 10%;
     }
     .field{
         width: auto;

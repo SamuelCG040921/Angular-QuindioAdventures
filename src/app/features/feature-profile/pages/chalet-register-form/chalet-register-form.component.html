@@ -1,7 +1,7 @@
 <app-nav-logueado></app-nav-logueado>
 <app-profile-welcome></app-profile-welcome>
 <form class="formulario" [formGroup]="chaletForm" (ngSubmit)="onSubmit()">
-<div class="containerFormulario">
+  <div class="containerFormulario">
     <h2 class="title">Registrar chalet</h2>
     <div class="parte1">
         <div class="uno">
@@ -63,7 +63,7 @@
         <div class="ventajascontainer3">
             <app-ventaja-servicio class="ventaja" label="Paseos a caballo" imagen="../../../../../assets/icons/equitacion 2.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
             <app-ventaja-servicio class="ventaja" label="Puntos deportivos" imagen="../../../../../assets/icons/deportivos.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
-            <app-ventaja-servicio label="Parqueadero" imagen="../../../../../assets/icons/estacionamiento.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
+            <app-ventaja-servicio id="desactivarParqueadero" label="Parqueadero" imagen="../../../../../assets/icons/estacionamiento.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
         </div>
         <div class="ventajascontainer4">
             <app-ventaja-servicio class="ventaja" label="Servicios para bebé" imagen="../../../../../assets/icons/bebes.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
@@ -72,7 +72,11 @@
         <div class="ventajascontainer5">
             <app-ventaja-servicio class="ventaja" label="Acceso a conexión wi-fi" imagen="../../../../../assets/icons/wifi.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
             <app-ventaja-servicio class="ventaja" label="Espacios libres de humo" imagen="../../../../../assets/icons/no-fumar.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
-            <app-ventaja-servicio label="Fogata" imagen="../../../../../assets/icons/fogata.png" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
+            <app-ventaja-servicio id="desactivarFogata" label="Fogata" imagen="../../../../../assets/icons/fogata.png" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
+        </div>
+        <div class="ventajascontainer6">
+            <app-ventaja-servicio id="desactivarParqueadero" label="Parqueadero" imagen="../../../../../assets/icons/estacionamiento.svg" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
+			<app-ventaja-servicio id="desactivarFogata" label="Fogata" imagen="../../../../../assets/icons/fogata.png" (servicioSeleccionado)="actualizarServicio($event)"></app-ventaja-servicio>
         </div>
     </div>
     <figure class="borde1"></figure>
