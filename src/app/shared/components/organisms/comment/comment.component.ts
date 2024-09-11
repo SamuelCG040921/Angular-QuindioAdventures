@@ -9,7 +9,6 @@ export class CommentComponent {
   @Input() comment = {
     id_opinion: 0,
     email_usuario: '',
-    id_chalet_usuario: 0,
     opinion: '',
     fechaCreacion: '',
     hora: '',

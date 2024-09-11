@@ -75,25 +75,7 @@
 <section class="comentarios">
    <div class="titlecom"> <figure></figure><h2>Comentarios y calificaciones</h2><figure></figure></div>
    <section class="containerform">
-        <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
-            <div class="commentheader">
-                <img class="profilecomment" [src]="user.image" alt="">
-                <div>
-                    <p>{{user.name}} {{user.lastName}}</p>
-                </div>
-                <div class="bordername"></div>
-                <input class="commentInput" type="text" id="comment" placeholder="Agrega un comentario..." (click)="mostrarBotones()" [formControlName]="'opinion'" >
-
-            </div>
-            
-            <div class="calificacion">
-                <app-calification-card *ngIf="botones === true" (ratingChange)="onRatingChange($event)"></app-calification-card>
-            </div>
-            <div class="buttons">
-                <app-button id="publish" *ngIf="botones === true" label="Publicar" (click)="openWarningAlert()"></app-button>
-                <app-button *ngIf="botones === true" label="Cancelar" color="red" (click)="ocultarBotones()"></app-button>
-            </div>
-        </form>
+       <app-comment-form class="commentForm"></app-comment-form>
     </section>
         <div class="filter">
             <select name="filtrocomentarios" id="filtercomments">
@@ -117,7 +99,6 @@
         </div>
         <app-loader *ngIf="isLoading"></app-loader>
         <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar el registro de tu comentario" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
-        <app-messages-warning title="¡No tan rápido!" paragraph="Revisa bien tu comentario antes de publicarlo, ¿Estás seguro de publicarlo"  *ngIf="isWarningAlertOpen" (confirm)="onConfirmModal()" (close)="closeWarningAlert()"></app-messages-warning>
         <app-messages-succesful title="Su comentario se registro exitosamente" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
 </section>
 

@@ -31,17 +31,14 @@ export class PagePlanDetailsComponent {
   totalPersons: number = 0;
   adultCount: number = 0;
   childCount: number = 0;
-  user!: UserProfile;
-  commentForm!: FormGroup;
   id_plan = this.route.snapshot.paramMap.get('id');
-  selectedRating: number = 0;
   isLoading:boolean = false;
   isAlertOpen = false;
   isErrorAlertOpen = false;
   isErrorAlertOpen2 = false;
   isWarningAlertOpen = false;
   isUpdateSuccessAlertOpen = false;
-  comments: CommentDataPlan[] = []; // cambiar a como estaba comments!: CommentDataPlan[]; solo mientras pruebo el estado vacio
+  comments!: CommentDataPlan[]; 
 
   @ViewChild(MapComponent) mapComponent!: MapComponent;
   routerSubscription!: Subscription;
@@ -72,35 +69,17 @@ export class PagePlanDetailsComponent {
       }
     });
 
-    this.authService.getUserProfile().then(
-      (data:UserProfile) => {
-        console.log('Datos del usuario: ', data);
-        this.user = data
-      }, 
+    this.commentService.getPlansComments(this.id_plan).then(
+      (data: CommentDataPlan[]) => {
+        console.log('Datos del comentario: ',data);
+        this.comments = data
+      },
       err => console.error(err)
-      
-    );
-
-    this.commentForm = this.fb.group({
-      id_plan: [this.id_plan],
-      opinion: ['', Validators.required],
-      calificacion: [this.selectedRating]
-    })
-
+    )
 
   }
 
-  onRatingChange(rating: number) {
-    this.selectedRating = rating;
-    console.log('Calificación seleccionada:', this.selectedRating);
   
-    if (this.commentForm) {  // Asegúrate de que el formulario esté inicializado
-      this.commentForm.patchValue({
-        calificacion: this.selectedRating
-      });
-    }
-
-  }
 
 
   ngAfterViewInit(): void {
@@ -236,36 +215,7 @@ export class PagePlanDetailsComponent {
     this.isUpdateSuccessAlertOpen = false;
   }
 
-  onConfirmModal() {
-    this.onSubmit();
-  }
+  
 
-  onSubmit(){
-    if(this.commentForm.valid){
-      this.isLoading = true;
-      const commentDataPlan:CommentInfoPlan = this.commentForm.value;
-      console.log(commentDataPlan);
-
-      this.commentService.createCommentPlan(commentDataPlan).subscribe({
-        next: (response) => {
-          this.isLoading = false;
-          console.log('Comentario registrado exitosamente: ', response);
-          this.openUpdateSuccessAlert();
-          setTimeout(() =>{
-            window.location.reload()
-          }, 1300);
-        },
-        error: (error) =>{
-          this.isLoading = false;
-          console.error('Error al registrar el comentario: ', error);
-          this.openErrorAlert();
-        }
-      })
-
-      
-    }else{
-      console.log('El formulario no es válido');
-      this.openErrorAlert();
-    }
-  }
+  
 }

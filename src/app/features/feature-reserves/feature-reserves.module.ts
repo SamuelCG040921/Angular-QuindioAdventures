@@ -21,6 +21,8 @@ import { PagePlanDetailsComponent } from './pages/page-plan-details/page-plan-de
 import { PagePlanPaymentComponent } from './pages/page-plan-payment/page-plan-payment.component';
 import { ScopedReservePlanComponent } from './components/scoped-reserve-plan/scoped-reserve-plan.component';
 import { ScopedClientPlanComponent } from './components/scoped-client-plan/scoped-client-plan.component';
+import { CommentFormComponent } from './components/comment-form/comment-form.component';
+import { CommentFormPlanComponent } from './components/comment-form-plan/comment-form-plan.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { ScopedClientPlanComponent } from './components/scoped-client-plan/scope
     PagePlanPaymentComponent,
     ScopedReservePlanComponent,
     ScopedClientPlanComponent,
+    CommentFormComponent,
+    CommentFormPlanComponent,
   ],
   imports: [
     CommonModule,

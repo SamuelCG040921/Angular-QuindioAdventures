@@ -31,8 +31,6 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
   totalPersons: number = 0;
   adultCount: number = 0;
   childCount: number = 0;
-  user!: UserProfile;
-  commentForm!: FormGroup;
   id_chalet = this.route.snapshot.paramMap.get('id');
   selectedRating: number = 0;
   isLoading: boolean = false;
@@ -42,6 +40,7 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
   isWarningAlertOpen = false;
   isUpdateSuccessAlertOpen = false;
   comments!: CommentData[];
+  token: any = this.authService.getToken();
   
 
   @ViewChild(MapComponent) mapComponent!: MapComponent;
@@ -74,22 +73,6 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
 
     });
 
-    this.authService.getUserProfile().then(
-      (data: UserProfile) => {
-        console.log('Datos del usuario:', data);
-        this.user = data;
-        
-      },
-      err => console.error(err,2345)
-      
-    );
-
-    this.commentForm = this.fb.group({
-      id_chalet: [this.id_chalet],
-      opinion: ['', Validators.required],
-      calificacion: [this.selectedRating]
-    });
-
     this.commentService.getChaletsComments(this.id_chalet).then(
       (data: CommentData[]) => {
         console.log('Datos del comentario:', data);
@@ -99,17 +82,6 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
     )
   }
 
-  onRatingChange(rating: number) {
-    this.selectedRating = rating;
-    console.log('Calificación seleccionada:', this.selectedRating);
-  
-    if (this.commentForm) {  // Asegúrate de que el formulario esté inicializado
-      this.commentForm.patchValue({
-        calificacion: this.selectedRating
-      });
-    }
-
-  }
 
   
 
@@ -245,36 +217,7 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
     this.isUpdateSuccessAlertOpen = false;
   }
 
-  onConfirmModal() {
-    this.onSubmit();
-  }
+  
 
-  onSubmit(){
-    if(this.commentForm.valid){
-      this.isLoading = true;
-      const commentData: CommentInfo = this.commentForm.value;
-      console.log(commentData);
-
-      this.commentService.createComment(commentData).subscribe({
-        next: (response) => {
-          this.isLoading = false;
-          console.log('Comentario registrado exitosamente:', response);
-          this.openUpdateSuccessAlert();
-          setTimeout(() => {
-            window.location.reload();
-          }, 1300);
-        },
-        error: (error) => {
-          this.isLoading = false;
-          console.error('Error al registrar comentario: ', error);
-          this.openErrorAlert();
-          
-        }
-      })
-      
-    }else{
-      console.log('El formulario no es válido');
-      this.openErrorAlert();
-    }
-  }
+  
 }
