@@ -13,6 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommentService } from '../../services/comment.service';
 import { Chalet } from '../../models/chalet.model';
 import { CommentInfo } from '../../models/comment.model';
+import { CommentData } from '../../models/commentData.model';
 
 @Component({
   selector: 'app-page-chalet-details',
@@ -40,7 +41,7 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
   isErrorAlertOpen2 = false;
   isWarningAlertOpen = false;
   isUpdateSuccessAlertOpen = false;
-
+  comments!: CommentData[];
   
 
   @ViewChild(MapComponent) mapComponent!: MapComponent;
@@ -88,6 +89,14 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
       opinion: ['', Validators.required],
       calificacion: [this.selectedRating]
     });
+
+    this.commentService.getChaletsComments(this.id_chalet).then(
+      (data: CommentData[]) => {
+        console.log('Datos del comentario:', data);
+        this.comments = data;
+      },
+      err => console.error(err)
+    )
   }
 
   onRatingChange(rating: number) {

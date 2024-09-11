@@ -102,8 +102,18 @@
                 <option value="value3">Comentarios negativos</option>
             </select>
         </div>
-        <div class="todoscomentarios">
-             <app-comment></app-comment>
+        <div class="emptyState" *ngIf="comments.length<=0">
+            <div class="containerChaplanito">
+                <p id="ono">¡Vaya!</p>
+                <img src="../../../../../assets/images/chaplanitoreservas.jpeg" alt="">
+                <div class="contenedorNoTienes">
+                    <p id="noTienesClientes">Aún no hay comentarios para este chalet</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="todoscomentarios" *ngIf="comments.length>0">
+             <app-comment *ngFor="let comment of comments;let i = index" [comment]="comment"></app-comment>
         </div>
         <app-loader *ngIf="isLoading"></app-loader>
         <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar el registro de tu comentario" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
