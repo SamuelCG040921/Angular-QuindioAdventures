@@ -11,7 +11,7 @@
         <p>{{comment.opinion}}</p>
         <div class="bordercomment"></div>
         <div class="calification">
-            <app-calification-card></app-calification-card>
+            <app-calification-card [rating]="comment.calificacion"></app-calification-card>
             <p>{{comment.hora}}</p>
         </div>
     </div>
