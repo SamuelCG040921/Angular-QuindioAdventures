@@ -136,7 +136,7 @@ onSubmit(){
         this.openUpdateSuccessAlert();
         setTimeout(() => {
           window.location.reload();
-        }, 1300);
+        }, 2500);
       },
       error: (error) => {
         this.isLoading = false;

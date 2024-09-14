@@ -96,6 +96,13 @@ export class AuthService {
     });
   }
 
+  getUserEmail(): Promise<string | null> {
+    return this.getUserProfile()
+      .then(profile => profile.email)
+      .catch(() => null);
+  }
+
+
   getUsersConnection(): Promise<UserProfile[]>{
     return axios.get(this.apiUsers)
     .then(response => {

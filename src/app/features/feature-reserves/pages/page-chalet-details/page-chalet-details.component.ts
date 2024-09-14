@@ -8,11 +8,8 @@ import { ChaletIdService } from '../../services/chalet-id.service';
 import { TarifaService } from '../../services/tarifa.service';
 import { CountPeopleService } from '../../services/count-people.service';
 import { Subscription } from 'rxjs';
-import { UserProfile } from '../../../feature-profile/models/user-profile';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommentService } from '../../services/comment.service';
-import { Chalet } from '../../models/chalet.model';
-import { CommentInfo } from '../../models/comment.model';
 import { CommentData } from '../../models/commentData.model';
 
 @Component({
@@ -33,14 +30,19 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
   childCount: number = 0;
   id_chalet = this.route.snapshot.paramMap.get('id');
   selectedRating: number = 0;
-  isLoading: boolean = false;
+  isLoading: boolean = false
   isAlertOpen = false;
   isErrorAlertOpen = false;
-  isErrorAlertOpen2 = false;
   isWarningAlertOpen = false;
   isUpdateSuccessAlertOpen = false;
+  isAlertOpen2 = false;
+  isErrorAlertOpen2 = false;
+  isWarningAlertOpen2 = false;
+  isUpdateSuccessAlertOpen2 = false;
   comments!: CommentData[];
   token: any = this.authService.getToken();
+  userEmail: string | null = null;
+  idComentarioSeleccionado: number | null = null;
   
 
   @ViewChild(MapComponent) mapComponent!: MapComponent;
@@ -59,7 +61,10 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    
+    this.authService.getUserEmail().then(email => {
+      this.userEmail = email;
+
+    });
     this.loadChalet();
     
     this.routerSubscription = this.router.events.subscribe(event => {
@@ -82,7 +87,7 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
     )
   }
 
-
+  
   
 
   ngAfterViewInit(): void {
@@ -118,7 +123,6 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
 
           this.loading = false;
 
-          // Guarda el ID del chalet en el servicio
           this.chaletIdService.setChaletId(id);
         })
         .catch(error => {
@@ -160,14 +164,11 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
   }
 
   continuarReserva() {
-    // Lógica para continuar con la reserva aquí
-    
-    // Reiniciar los contadores
+
     this.adultCount = 0;
     this.childCount = 0;
     this.updateTotalPersons(); // Actualiza el servicio con el nuevo total de personas
 
-    // Mostrar en consola el total de personas después de reiniciar
     console.log('Total de personas después de reiniciar:', this.totalPersons);
   }
 
@@ -189,16 +190,8 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
     this.isErrorAlertOpen = true;
   }
 
-  openErrorAlert2(): void {
-    this.isErrorAlertOpen2 = true;
-  }
-
   closeErrorAlert(): void {
     this.isErrorAlertOpen = false;
-  }
-
-  closeErrorAlert2(): void {
-    this.isErrorAlertOpen2 = false;
   }
 
   openWarningAlert(): void {
@@ -218,6 +211,70 @@ export class PageChaletDetailsComponent implements OnInit, AfterViewInit {
   }
 
   
+  eliminarComentario(idComentario: number, tipoEntidad: string) {
+    if (tipoEntidad === 'chalet') {
+      this.eliminarComentarioChalet(idComentario);
+    }
+  }
 
-  
+  eliminarComentarioChalet(idComentario: number): void {
+    this.isLoading = true;
+    console.log('Eliminando comentario con ID:', idComentario);
+    this.commentService.deleteCommentChalet(idComentario).subscribe(
+      response => {
+        this.isLoading = false;
+        console.log('Comentario eliminado con éxito:', response);
+        this.openUpdateSuccessAlert2();
+        setTimeout(() => {
+          window.location.reload();
+        }, 2500);
+      },
+      error => {
+        this.isLoading = false;
+        console.error('Error al eliminar comentario:', error);
+        this.openErrorAlert2();
+      }
+    );
+  }
+
+  openAlert2(): void {
+    this.isAlertOpen2 = true;
+  }
+
+  closeAlert2(): void {
+    this.isAlertOpen2 = false;
+  }
+
+  openErrorAlert2(): void {
+    this.isErrorAlertOpen2 = true;
+  }
+
+  closeErrorAlert2(): void {
+    this.isErrorAlertOpen2 = false;
+  }
+
+  openWarningAlert2(idComentario: number): void {
+    this.idComentarioSeleccionado = idComentario; // Almacenar el ID del comentario
+    this.isWarningAlertOpen2 = true; // Abrir el modal de advertencia
+  }
+
+  closeWarningAlert2(): void {
+    this.isWarningAlertOpen2 = false;
+    this.idComentarioSeleccionado = null; // Limpiar el ID seleccionado al cerrar
+  }
+
+  openUpdateSuccessAlert2(): void {
+    this.isUpdateSuccessAlertOpen2 = true;
+  }
+
+  closeUpdateSuccessAlert2(): void {
+    this.isUpdateSuccessAlertOpen2 = false;
+  }
+
+  onConfirmModal2(): void {
+    if (this.idComentarioSeleccionado !== null) {
+      this.eliminarComentario(this.idComentarioSeleccionado, 'chalet');
+      this.closeWarningAlert2(); 
+    }
+  }
 }

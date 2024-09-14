@@ -1,18 +1,24 @@
 <div class="comment">
     <div class="headercomment">
-        <img [src]="comment.image" alt="">
-        <div>
-            <p class="name">{{comment.nombres}} {{comment.apellidos}}</p>
-        </div>
-        <figure></figure>
-        <p class="date">{{comment.fechaCreacion}}</p>
+      <img [src]="comment.image" alt="Avatar del usuario">
+      <div>
+        <p class="name">{{ comment.nombres }} {{ comment.apellidos }}</p>
+      </div>
+      <figure></figure>
+      <p class="date">{{ comment.fechaCreacion }}</p>
+  
+      <!-- Mostrar el botón para eliminar solo si el comentario es del usuario autenticado -->
+      <button *ngIf="userEmail === comment.email_usuario" class="delete-comment" (click)="eliminarComentario(comment.id_opinion)">
+        <img src="../../../../../assets/icons/bote-de-basura.png" alt="Eliminar" />
+      </button>
     </div>
     <div class="commentbox">
-        <p>{{comment.opinion}}</p>
-        <div class="bordercomment"></div>
-        <div class="calification">
-            <app-calification-card [rating]="comment.calificacion"></app-calification-card>
-            <p>{{comment.hora}}</p>
-        </div>
+      <p>{{ comment.opinion }}</p>
+      <div class="bordercomment"></div>
+      <div class="calification">
+        <app-calification-card [rating]="comment.calificacion"></app-calification-card>
+        <p>{{ comment.hora }}</p>
+      </div>
     </div>
-</div>
+  </div>
+  

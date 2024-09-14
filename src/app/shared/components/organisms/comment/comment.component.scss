@@ -12,6 +12,21 @@
     width: 90%;
 }
 
+.delete-comment {
+    background: none;
+    border: none; 
+    cursor: pointer; 
+    padding: 0; 
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.delete-comment img {
+    width: 20px; 
+    height: 20px;
+}
+
+
 .name{
     font-weight: normal;
     font-size: 16px;

@@ -14,6 +14,8 @@ export class CommentService {
   private apiUrl2 = 'http://localhost:10101/getOpinionChalet';
   private apiUrl3 = 'http://localhost:10101/crearOpinionPlan'
   private apiUrl4 = 'http://localhost:10101/getOpinionPlan';
+  private apiUrl5 = 'http://localhost:10101/eliminarOpinionChalet';
+  private apiUrl6 = 'http://localhost:10101/eliminarOpinionPlan';
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
@@ -79,5 +81,19 @@ export class CommentService {
     .catch(error => {
       throw error;
     })
+  }
+
+  deleteCommentChalet(idOpinion: number): Observable<any> {
+    const token = this.authService.getToken();
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+    return this.http.delete<any>(`${this.apiUrl5}/${idOpinion}`, { headers });
+  }
+
+  deleteCommentPlan(idOpinion: number): Observable<any> {
+    const token = this.authService.getToken();
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+    return this.http.delete<any>(`${this.apiUrl6}/${idOpinion}`, { headers });
   }
 }

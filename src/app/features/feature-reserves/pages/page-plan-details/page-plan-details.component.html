@@ -86,8 +86,12 @@
             </div>
         </div>
         <div class="todoscomentarios" *ngIf="comments.length>0">
-             <app-comment *ngFor="let comment of comments;let i = index" [comment]="comment"></app-comment>
+             <app-comment *ngFor="let comment of comments;let i = index" [userEmail]="userEmail" [comment]="comment" [tipoEntidad]="'plan'" (eliminarComentarioEvent)="openWarningAlert2(comment.id_opinion)"></app-comment>
         </div>
+        <app-messages-succesful title="Tu comentario se eliminó de manera correcta" *ngIf="isUpdateSuccessAlertOpen2" (close)="closeUpdateSuccessAlert2()"></app-messages-succesful>
+        <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo eliminar tu comentario" *ngIf="isErrorAlertOpen2" (close)="closeErrorAlert2()"></app-messages-error>
+        <app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de eliminar este comentario?" *ngIf="isWarningAlertOpen2" (confirm)="onConfirmModal2()" (close)="closeWarningAlert2()"></app-messages-warning>
+
         <app-loader *ngIf="isLoading"></app-loader>
         <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar el registro de tu comentario" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
         <app-messages-succesful title="Su comentario se registro exitosamente" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>

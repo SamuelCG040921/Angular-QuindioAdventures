@@ -8,11 +8,9 @@ import { CountPeopleService } from '../../services/count-people.service';
 import { PlanIdService } from '../../services/plan-id.service';
 import { PlansService } from '../../../feature-profile/services/plans.service';
 import { TarifaService } from '../../services/tarifa.service';
-import { UserProfile } from '../../../feature-profile/models/user-profile';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommentDataPlan } from '../../models/commentDataPlan.model';
 import { CommentService } from '../../services/comment.service';
-import { CommentInfoPlan } from '../../models/commentPlan.model';
 
 
 @Component({
@@ -35,10 +33,15 @@ export class PagePlanDetailsComponent {
   isLoading:boolean = false;
   isAlertOpen = false;
   isErrorAlertOpen = false;
-  isErrorAlertOpen2 = false;
   isWarningAlertOpen = false;
+  isAlertOpen2 = false;
+  isErrorAlertOpen2 = false;
+  isWarningAlertOpen2 = false;
+  isUpdateSuccessAlertOpen2 = false;
   isUpdateSuccessAlertOpen = false;
   comments!: CommentDataPlan[]; 
+  userEmail: string | null = null;
+  idComentarioSeleccionado: number | null = null;
 
   @ViewChild(MapComponent) mapComponent!: MapComponent;
   routerSubscription!: Subscription;
@@ -56,7 +59,10 @@ export class PagePlanDetailsComponent {
   ) {}
 
   ngOnInit(): void {
+    this.authService.getUserEmail().then(email => {
+      this.userEmail = email;
 
+    });
     this.loadChalet();
     
     this.routerSubscription = this.router.events.subscribe(event => {
@@ -187,16 +193,8 @@ export class PagePlanDetailsComponent {
     this.isErrorAlertOpen = true;
   }
 
-  openErrorAlert2(): void {
-    this.isErrorAlertOpen2 = true;
-  }
-
   closeErrorAlert(): void {
     this.isErrorAlertOpen = false;
-  }
-
-  closeErrorAlert2(): void {
-    this.isErrorAlertOpen2 = false;
   }
 
   openWarningAlert(): void {
@@ -215,7 +213,70 @@ export class PagePlanDetailsComponent {
     this.isUpdateSuccessAlertOpen = false;
   }
 
-  
+  eliminarComentario(idComentario: number, tipoEntidad: string) {
+    if (tipoEntidad === 'plan') {
+      this.eliminarComentarioPlan(idComentario);
+    }
+  }
 
-  
+  eliminarComentarioPlan(idComentario: number): void {
+    this.isLoading = true;
+    console.log('Eliminando comentario con ID:', idComentario);
+    this.commentService.deleteCommentPlan(idComentario).subscribe(
+      response => {
+        this.isLoading = false;
+        console.log('Comentario eliminado con éxito:', response);
+        this.openUpdateSuccessAlert2();
+        setTimeout(() => {
+          window.location.reload();
+        }, 2500);
+      },
+      error => {
+        this.isLoading = false;
+        console.error('Error al eliminar comentario:', error);
+        this.openErrorAlert2();
+      }
+    );
+  }
+
+  openAlert2(): void {
+    this.isAlertOpen2 = true;
+  }
+
+  closeAlert2(): void {
+    this.isAlertOpen2 = false;
+  }
+
+  openErrorAlert2(): void {
+    this.isErrorAlertOpen2 = true;
+  }
+
+  closeErrorAlert2(): void {
+    this.isErrorAlertOpen2 = false;
+  }
+
+  openWarningAlert2(idComentario: number): void {
+    this.idComentarioSeleccionado = idComentario; 
+    this.isWarningAlertOpen2 = true; 
+  }
+
+  closeWarningAlert2(): void {
+    this.isWarningAlertOpen2 = false;
+    this.idComentarioSeleccionado = null;
+  }
+
+  openUpdateSuccessAlert2(): void {
+    this.isUpdateSuccessAlertOpen2 = true;
+  }
+
+  closeUpdateSuccessAlert2(): void {
+    this.isUpdateSuccessAlertOpen2 = false;
+  }
+
+  onConfirmModal2(): void {
+    if (this.idComentarioSeleccionado !== null) {
+      this.eliminarComentario(this.idComentarioSeleccionado, 'plan');
+      this.closeWarningAlert2(); 
+    }
+  }
 }
