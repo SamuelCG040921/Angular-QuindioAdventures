@@ -15,8 +15,8 @@ export class ReservesService {
   private apiUrl3 = 'http://localhost:10101/api';
   private apiUrl4 = 'http://localhost:10101/getReservasChalet';
   private apiUrl5 = 'http://localhost:10101/getReservasPlan';
-  private apiUrl6 = 'http://localhost:10101/getRerservasMiChalet';
-  private apiUrl7 = 'http://localhost:10101/getRerservasMiPlan'
+  private apiUrl6 = 'http://localhost:10101/getReservasMiChalet';
+  private apiUrl7 = 'http://localhost:10101/getReservasMiPlan'
   private apiUrl8 = 'http://localhost:10101/cancelarReserva'
   private apiUrl9 = 'http://localhost:10101/cancelarReservaPlan'
   private apiUrl10 = 'http://localhost:10101/activarReserva'

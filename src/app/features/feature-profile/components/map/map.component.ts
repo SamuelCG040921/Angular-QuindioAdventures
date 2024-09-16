@@ -110,12 +110,18 @@ export class MapComponent implements OnInit {
           this.locationVerified.emit(true);
         } else {
           this.openErrorAlert();
+          setTimeout(() => {
+            this.closeErrorAlert();
+          }, 2300)
           this.locationVerified.emit(false);
         }
       })
       .catch((e: any) => {
         console.error('Error en la geocodificación:', e);
         this.openErrorAlert();
+        setTimeout(() => {
+          this.closeErrorAlert();
+        }, 2300)
         this.locationVerified.emit(false);
       });
   }

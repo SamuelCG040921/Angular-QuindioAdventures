@@ -50,6 +50,9 @@ export class ChatbotComponent implements OnInit {
           this.isLoading = false; // Ocultar el spinner en caso de error
           console.error('Error en el envio del mensaje:', error);
           this.openErrorAlert();
+          setTimeout(() => {
+            this.closeErrorAlert(); // Redirigir al home después de 2 segundos
+          }, 2000);
         }
       );
     } else {

@@ -303,7 +303,7 @@
 .headerfield{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 75%;
     margin-bottom: 20px;
 }
 
@@ -545,6 +545,10 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+  }
+
+  .inputPart1{
+    width: 75%;
   }
 
   @media (min-width: 921px) and (max-width: 1279px) {

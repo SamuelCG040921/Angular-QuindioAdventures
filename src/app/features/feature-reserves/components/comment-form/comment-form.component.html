@@ -27,5 +27,5 @@
     </div>
     <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar el registro de tu comentario" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
         <app-messages-warning title="¡No tan rápido!" paragraph="Revisa bien tu comentario antes de publicarlo, ¿Estás seguro de publicarlo"  *ngIf="isWarningAlertOpen" (confirm)="onConfirmModal()" (close)="closeWarningAlert()"></app-messages-warning>
-        <app-messages-succesful title="Su comentario se registro exitosamente" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
+        <app-messages-succesful title="Su comentario se registró exitosamente" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
 </form>

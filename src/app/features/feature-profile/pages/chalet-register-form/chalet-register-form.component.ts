@@ -8,6 +8,7 @@ import { MapComponent } from '../../components/map/map.component';
 import { AuthService } from '../../../feature-login/services/auth.service';
 import { UpdateService } from '../../services/update-profile.service';
 import { ChaletDTO } from '../../models/register-chalet';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chalet-register-form',
@@ -47,7 +48,7 @@ export class ChaletRegisterFormComponent implements OnInit {
 
   acceptedMunicipios = ['Armenia', 'Calarcá', 'La Tebaida', 'Montenegro', 'Quimbaya', 'Circasia', 'Salento', 'Córdoba', 'Buenavista', 'Génova', 'Pijao', 'Filandia'];
 
-  constructor(private fb: FormBuilder, private userService: UserService, private sanitizer: DomSanitizer, private chaletService: ChaletService, private authService: AuthService, private updateService: UpdateService) {
+  constructor(private fb: FormBuilder, private userService: UserService, private sanitizer: DomSanitizer, private chaletService: ChaletService, private authService: AuthService, private updateService: UpdateService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -268,18 +269,24 @@ export class ChaletRegisterFormComponent implements OnInit {
           console.log('Chalet registrado exitosamente:', response);
           this.openUpdateSuccessAlert();
           setTimeout(() => {
-            window.location.reload();
-          }, 1300);
+           this.router.navigate([''])
+          }, 2500);
         },
         error: (error) => {
           this.isLoading = false;
           console.error('Error al registrar chalet:', error);
           this.openErrorAlert();
+          setTimeout(() => {
+            this.closeErrorAlert();
+           }, 2000);
         }
       });
     } else {
       console.log('El formulario no es válido');
       this.openErrorAlert();
+      setTimeout(() => {
+          this.closeErrorAlert();
+       }, 2000);
     }
   }
 

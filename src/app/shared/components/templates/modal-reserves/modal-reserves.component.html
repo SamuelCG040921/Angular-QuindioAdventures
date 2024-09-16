@@ -38,9 +38,6 @@
 					<app-messages-error title="¡Hubo un problema!" paragraph="No se pudo cancelar la reserva" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
 					<app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de cancelar esta reserva?" *ngIf="isWarningAlertOpen" (confirm)="onConfirmModal()" (close)="closeWarningAlert()"></app-messages-warning>
       </div> 
-      <div class="update-button">
-            <app-button label="Actualizar reserva" (click)="actualizarReserva()" color="#0F32AC" textcolor="white"></app-button>
-        </div>
       </div>
   </div>
   <app-modal-update *ngIf="isModalUpdateOpen" (close)="closeModal()"></app-modal-update>

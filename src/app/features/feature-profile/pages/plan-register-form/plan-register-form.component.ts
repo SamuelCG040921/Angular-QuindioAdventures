@@ -8,6 +8,7 @@ import { MapComponent } from '../../components/map/map.component';
 import { AuthService } from '../../../feature-login/services/auth.service';
 import { UpdateService } from '../../services/update-profile.service';
 import { PlanDTO } from '../../models/register-plan';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-plan-register-form',
@@ -46,7 +47,7 @@ export class PlanRegisterFormComponent {
 
   acceptedMunicipios = ['Armenia', 'Calarcá', 'La Tebaida', 'Montenegro', 'Quimbaya', 'Circasia', 'Salento', 'Córdoba', 'Buenavista', 'Génova', 'Pijao', 'Filandia'];
 
-  constructor(private fb: FormBuilder, private userService: UserService, private sanitizer: DomSanitizer, private plansService: PlansService, private authService: AuthService, private updateService: UpdateService) {
+  constructor(private fb: FormBuilder, private userService: UserService, private sanitizer: DomSanitizer, private plansService: PlansService, private authService: AuthService, private updateService: UpdateService, private router:Router) {
   }
 
   ngOnInit(): void {
@@ -267,18 +268,24 @@ export class PlanRegisterFormComponent {
           console.log('Plan registrado exitosamente:', response);
           this.openUpdateSuccessAlert();
           setTimeout(() => {
-            window.location.reload();
-          }, 1300);
+           this.router.navigate(['']);
+          }, 2500);
         },
         error: (error) => {
           this.isLoading = false;
           console.error('Error al registrar plan:', error);
          this.openErrorAlert();
+         setTimeout(() => {
+          this.closeErrorAlert();
+         }, 2000);
         }
       });
     } else {
       console.log('El formulario no es válido');
       this.openErrorAlert();
+      setTimeout(() => {
+        this.closeErrorAlert();
+       }, 2000);
     }
   }
 

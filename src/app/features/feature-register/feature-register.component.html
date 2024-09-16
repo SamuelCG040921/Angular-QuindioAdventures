@@ -95,6 +95,17 @@
                         </div>
                     </div>
                     <div class="containerBtn">
+                        <div class="terms">
+                            <div class="check">
+                                <label class="custom-checkbox">
+                                    <input name="dummy" type="checkbox" formControlName="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="linkTerm">
+                                <p>Al registrarse, acepta las <a href="#">Condiciones de uso</a> y la <a href="#">Política de privacidad</a>.</p>
+                            </div>
+                        </div>
                         <app-button class="registerBtn" label="Registrarme" type="submit" [disabled]="isSubmitting"></app-button>
                         <app-messages-succesful title="Se ha registrado correctamente" *ngIf="isAlertOpen" (close)="closeAlert()"></app-messages-succesful>
                         <app-messages-error title="¡Hubo un problema!" paragraph="No se puedo registrar" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>

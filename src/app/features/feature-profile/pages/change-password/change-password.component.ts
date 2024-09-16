@@ -70,15 +70,24 @@ export class ChangePasswordComponent implements OnInit {
         const response = await this.changePasswordService.change(changeData, this.token);
         console.log('Cambio exitoso:', response);
         this.openAlert();
+        setTimeout(() => {
+          this.closeAlert();
+         }, 2000);
       } catch (error) {
         this.isLoading = false;
         console.error('Cambio fallido:', error);
         this.openErrorAlert();
+        setTimeout(() => {
+          this.closeErrorAlert();
+         }, 2000);
       }
     } else {
       console.error('Formulario no es válido');
       this.changeForm.markAllAsTouched();
       this.openErrorAlert();
+      setTimeout(() => {
+        this.closeErrorAlert();
+       }, 2000);
     }
   }
 

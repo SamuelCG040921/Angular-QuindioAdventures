@@ -63,7 +63,11 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
           image: this.user.image
         });
       },
-      err => this.openErrorAlert2()
+      err => {this.openErrorAlert2();
+        setTimeout(() => {
+          this.closeErrorAlert2();
+         }, 2000);
+      }
       
     );
   }
@@ -107,12 +111,18 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
           this.isLoading = false
           console.error('Error de actualización:', error);
           this.openErrorAlert();
+          setTimeout(() => {
+            this.closeErrorAlert();
+           }, 2000);
         }
       );
     } else {
       console.error('Formulario no es válido');
       this.openErrorAlert();
       this.updateForm.markAllAsTouched();
+      setTimeout(() => {
+        this.closeErrorAlert();
+       }, 2000);
     }
   }
 
@@ -167,6 +177,9 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
         console.log('Envío exitoso:', response);
         this.isSendingEmail = false;
         this.openAlert();
+        setTimeout(() => {
+          this.closeAlert();
+         }, 2000);
       }
     ).catch(
       error => {
@@ -174,6 +187,9 @@ export class FeatureProfileComponent implements OnInit, AfterViewInit {
         console.error('Error:', error);
         this.isSendingEmail = false;
         this.openErrorAlert();
+        setTimeout(() => {
+          this.closeErrorAlert();
+         }, 2000);
       }
     );
   }

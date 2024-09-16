@@ -38,7 +38,8 @@ export class FeatureRegisterComponent implements OnInit {
       lastName: ['', Validators.required],
       age: ['', [Validators.required, Validators.min(1)]],
       phoneNumber: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-      address: ['', Validators.required]
+      address: ['', Validators.required],
+      checkbox: ['', Validators.required]
     });
   }
 
@@ -121,7 +122,6 @@ export class FeatureRegisterComponent implements OnInit {
           this.isSubmitting = false; // Habilitar el botón después de la respuesta
           // Manejar la respuesta exitosa aquí
           this.openAlert();
-          console.log(response);
 
           setTimeout(() => {
             this.router.navigate(['/login']); // Redirigir al home después de 2 segundos
@@ -135,12 +135,18 @@ export class FeatureRegisterComponent implements OnInit {
           this.isLoading = false // Habilitar el botón después de un error
           console.error('Registration error:', error);
           this.openErrorAlert2();
+          setTimeout(() => {
+            this.closeErrorAlert2(); // Redirigir al home después de 2 segundos
+          }, 2000);
         }
       );
     } else {
       console.error('Form is not valid');
       this.registroForm.markAllAsTouched(); // Marcar todos los campos como tocados para mostrar errores
       this.openErrorAlert();
+      setTimeout(() => {
+       this.closeErrorAlert(); // Redirigir al home después de 2 segundos
+      }, 2000);
     }
   }
 

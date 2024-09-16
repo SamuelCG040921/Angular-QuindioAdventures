@@ -142,6 +142,9 @@ export class CommentFormPlanComponent implements OnInit{
           this.isLoading = false;
           console.error('Error al registrar el comentario: ', error);
           this.openErrorAlert();
+          setTimeout(() => {
+            this.closeErrorAlert(); // Redirigir al home después de 2 segundos
+          }, 2000);
         }
       })
 
@@ -149,6 +152,9 @@ export class CommentFormPlanComponent implements OnInit{
     }else{
       console.log('El formulario no es válido');
       this.openErrorAlert();
+      setTimeout(() => {
+        this.closeErrorAlert(); // Redirigir al home después de 2 segundos
+      }, 2000);
     }
   }
 

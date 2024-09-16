@@ -33,6 +33,9 @@ export class PlansProfileComponent {
       err => {
         console.error('Error en la solicitud:', err.response.data);
         this.openErrorAlert();
+        setTimeout(() => {
+          this.closeErrorAlert();
+         }, 2000);
       }
     );
   }

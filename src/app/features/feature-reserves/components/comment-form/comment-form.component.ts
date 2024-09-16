@@ -142,13 +142,18 @@ onSubmit(){
         this.isLoading = false;
         console.error('Error al registrar comentario: ', error);
         this.openErrorAlert();
-        
+        setTimeout(() => {
+          this.closeErrorAlert(); // Redirigir al home después de 2 segundos
+        }, 2000);
       }
     })
     
   }else{
     console.log('El formulario no es válido');
     this.openErrorAlert();
+    setTimeout(() => {
+      this.closeErrorAlert();// Redirigir al home después de 2 segundos
+    }, 2000);
   }
 }
 }

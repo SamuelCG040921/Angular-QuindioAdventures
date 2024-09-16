@@ -115,30 +115,32 @@
       <div class="headerfield">
         <h3 class="subtitle">Ingresa tus tarifas</h3>
       </div>
-      <div class="field">
-        <div class="inputContainer">
-          <label for="precio">Precio</label>
-          <input
-            placeholder="Ingresa el precio"
-            id="precio"
-            class="inputHab"
-            type="text"
-            formControlName="precio"
-          />
-        </div>
-        <div class="inputContainer">
-          <label for="temporada">Temporada</label>
-          <select
-            name="temporada"
-            class="inputHab"
-            id="temporada"
-            formControlName="temporada"
-          >
-            <option value="Selecciona la temporada" disabled selected hidden>Selecciona la temporada</option>
-            <option value="Alta">Alta</option>
-            <option value="Baja">Baja</option>
-          </select>
-        </div>
+      <div class="inputPart1">
+        <div class="field">
+          <div class="inputContainer">
+            <label for="precio">Precio</label>
+            <input
+              placeholder="Ingresa el precio"
+              id="precio"
+              class="inputHab"
+              type="text"
+              formControlName="precio"
+            />
+          </div>
+          <div class="inputContainer">
+            <label for="temporada">Temporada</label>
+            <select
+              name="temporada"
+              class="inputHab"
+              id="temporada"
+              formControlName="temporada"
+            >
+              <option value="Selecciona la temporada" disabled selected hidden>Selecciona la temporada</option>
+              <option value="Alta">Alta</option>
+              <option value="Baja">Baja</option>
+            </select>
+          </div>
+      </div>
         <div class="inputHabtype">
           <div class="inputContainer2">
             <label for="tipohab">Tipo</label>
@@ -173,7 +175,7 @@
       </div>
     </form>            
     <app-button class="button" label="Registrar" type="button" (click)="openWarningAlert()"></app-button>
-    <app-messages-succesful title="Su chalet se registro exitosamente, por favor espere confirmacion del administrador" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
+    <app-messages-succesful title="Su chalet se registró exitosamente, por favor espere confirmación del administrador" *ngIf="isUpdateSuccessAlertOpen" (close)="closeUpdateSuccessAlert()"></app-messages-succesful>
 					<app-messages-error title="¡Hubo un problema!" paragraph="No se pudo realizar el registro ni enviar los correos, verifique bien los datos" *ngIf="isErrorAlertOpen" (close)="closeErrorAlert()"></app-messages-error>
 					<app-messages-error title="¡Ooops!" paragraph="Parece que hubo un problema al cargar tus datos y enviar los correos" *ngIf="isErrorAlertOpen2" (close)="closeErrorAlert2()"></app-messages-error>
 					<app-messages-warning title="¡No tan rápido!" paragraph="¿Estás seguro de los datos que ingresaste?" *ngIf="isWarningAlertOpen" (confirm)="onConfirmModal()" (close)="closeWarningAlert()"></app-messages-warning>

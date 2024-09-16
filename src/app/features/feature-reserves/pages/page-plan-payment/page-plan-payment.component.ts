@@ -165,17 +165,26 @@ export class PagePlanPaymentComponent {
           this.isLoading = false;
           console.log('Reserva creada exitosamente:', response);
           // Aquí puedes redirigir al usuario a otra página o mostrar un mensaje de éxito
-          this.openAlert(); // Muestra la alerta de éxito
+          this.openAlert();
+          setTimeout(() => {
+            this.closeAlert(); // Redirigir al home después de 2 segundos
+          }, 2000); // Muestra la alerta de éxito
         },
         error => {
           this.isLoading = false;
           console.error('Error al crear la reserva:', error);
-          this.openErrorAlert(); // Muestra la alerta de error
+          this.openErrorAlert();
+          setTimeout(() => {
+            this.closeErrorAlert();// Redirigir al home después de 2 segundos
+          }, 2000); // Muestra la alerta de error
         }
       );
     } else {
       console.log('Formulario inválido o tarifa no seleccionada');
       this.openErrorAlert();
+      setTimeout(() => {
+        this.closeErrorAlert(); // Redirigir al home después de 2 segundos
+      }, 2000);
     }
   }
 

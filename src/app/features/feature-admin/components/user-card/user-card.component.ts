@@ -45,9 +45,15 @@ export class UserCardComponent {
       await this.adminService.activarUsuario(this.user.email);
       console.log('Usuario activado con éxito');
       this.openUpdateSuccessAlert()
+      setTimeout(() => {
+        this.closeUpdateSuccessAlert();
+      }, 2300)
     } catch (error) {
       console.error('Error al activar el usuario:', error);
       this.openErrorAlert()
+      setTimeout(() => {
+        this.closeErrorAlert();
+      }, 2300)
     }
   }
 
@@ -57,9 +63,15 @@ export class UserCardComponent {
       await this.adminService.desactivarUsuario(this.user.email);
       console.log('Usuario desactivado con éxito');
       this.openUpdateSuccessAlert2()
+      setTimeout(() => {
+        this.closeUpdateSuccessAlert2();
+      }, 2300)
     } catch (error) {
       console.error('Error al desactivar el usuario:', error);
       this.openErrorAlert()
+      setTimeout(() => {
+        this.closeErrorAlert();
+      }, 2300)
     }
   }
 

@@ -235,6 +235,9 @@ export class PagePlanDetailsComponent {
         this.isLoading = false;
         console.error('Error al eliminar comentario:', error);
         this.openErrorAlert2();
+        setTimeout(() => {
+          this.closeErrorAlert2(); // Redirigir al home después de 2 segundos
+        }, 2000);
       }
     );
   }
