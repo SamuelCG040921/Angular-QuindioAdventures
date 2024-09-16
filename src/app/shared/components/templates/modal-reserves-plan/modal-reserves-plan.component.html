@@ -26,7 +26,6 @@
         </div>
       </div>
       <div class="button-container">
-        <app-button label="Contactar vendedor" click="contactSeller()" class="buttonContact"></app-button> 
         <app-button *ngIf="reserve.estado === 0" label="Activar reserva" click="activarReserva()" color="green" (click)="openWarningAlert2()"></app-button>
         <app-messages-succesful title="Se reactivo de manera exitosa" *ngIf="isUpdateSuccessAlertOpen2" (close)="closeUpdateSuccessAlert2()"></app-messages-succesful>
         <app-messages-error title="¡Hubo un problema!" paragraph="No se pudo cancelar la reserva" *ngIf="isErrorAlertOpen2" (close)="closeErrorAlert2()"></app-messages-error>

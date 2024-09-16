@@ -1,4 +1,6 @@
+import { isNgTemplate } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { __classPrivateFieldSet } from 'tslib';
 import { AuthService } from '../../../feature-login/services/auth.service';
 
 @Component({
@@ -9,6 +11,7 @@ import { AuthService } from '../../../feature-login/services/auth.service';
 export class ProfileWelcomeComponent {
   user: any;
   isInputDisabled = true;
+
   
 
   habilitarInput() {
@@ -22,5 +25,9 @@ export class ProfileWelcomeComponent {
       data => this.user = data,
       err => console.error(err)
     );
+  }
+
+  setActiveRoute(){
+    
   }
 }
