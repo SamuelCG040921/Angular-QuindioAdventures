@@ -255,6 +255,14 @@ header{
         display: none;
     }
 
+    .containerLinks{
+        display: none;
+    }
+
+    app-search-bar{
+        width: 90%;
+    }
+
     .containerLogo{
         display: flex;
     }
@@ -329,5 +337,16 @@ header{
 
     .searchBar{
         padding-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    app-search-bar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
     }
 }

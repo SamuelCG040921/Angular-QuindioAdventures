@@ -3,7 +3,11 @@
 <app-scoped-background-menu></app-scoped-background-menu>
 
 <section class="background">
-    <div class="title"><figure class="linetitle"></figure><h2>Reservas de tus chalets</h2><figure class="linetitle"></figure></div>
+    <div class="title">
+        <figure class="linetitle"></figure>
+            <h2 id="titulo">Reservas de tus chalets</h2>
+        <figure class="linetitle"></figure>
+    </div>
     <section class="emptyState" *ngIf="reserves.length <= 0">
         <p id="ono">¡Oh no!</p>
         <img src="../../../../../assets/images/chaplanitoclientes.jpeg" alt="">
