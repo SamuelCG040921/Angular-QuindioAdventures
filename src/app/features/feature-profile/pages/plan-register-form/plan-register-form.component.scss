@@ -310,7 +310,6 @@
     align-items: center;
     margin-bottom: 40px;
     flex-wrap: wrap;
-    width: 80%;
 }
 
 .inputContainer{
@@ -368,7 +367,8 @@
     box-shadow: none;
     padding: 0;
     border: none;
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-right: 0px;
 }
 
 .columnaImagen{
@@ -495,6 +495,9 @@
     padding: 10px;
     cursor: pointer;
   }
+  .img2 br{
+    display: none;
+  }
 
   .containerButtonVerify{
     display: flex;
@@ -541,8 +544,19 @@
     margin-top: 5px;
   }
 @media (min-width: 769px) and (max-width: 1279px) {
+    .parte5{
+        width: 100%;
+    }
     .field{
-        width: 50%;
+        min-width: 650px;
+        width: 70%;
+        max-width: 750px;
+    }
+    .headerfield{
+        width: 70%;
+    }
+    .inputContainer{
+        margin: 0px;
     }
 }
 
@@ -596,7 +610,6 @@
     .parte4{
         width: 100%;
     }
-
     .image1{
         width: 90%;
     }
@@ -607,36 +620,50 @@
         align-items: center;
         width: 100%;
     }
-
     .img2y3{
-        width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-    }
-
-    .image2{
         width: 90%;
     }
-
+    .img2{
+        width: 50%;
+    }
+    .img2 label{
+        position: absolute;
+        left: 16%;
+    }
+    .image2{
+        width: 100%;
+        margin: 0px;
+    }
+    .img3{
+        width: 48%;
+    }
+    .img3 label{
+        position: absolute;
+        left: 14%;
+    }
     .image3{
         width: 100%;
-    }
-
-    .img2{
-        width: auto;
-    }
-    .img2 input label{
-        margin-right: 40px;
-    }
-
-    .img3{
-        width: auto;
     }
     .uno{
         margin-right: 1px;
     }
-    
+    .parte5{
+        width: 100%;
+    }
+    .field{
+        display: flex;
+        justify-content: center;
+        width: 400px;
+    }
+    .headerfield{
+        width: 400px;
+    }
+    .inputContainer{
+        margin-right: 0px;
+    }
 }
 
 @media (min-width: 352px) and (max-width: 480px){
@@ -692,25 +719,32 @@
     }
 
     .image1{
-        width: 90%;
+        width: 100%;
     }
 
     .img1{
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
+        width: 90%;
     }
+    .img1 label{
+        top: 35%;
+        left: 27%;
+        position: absolute;
 
+    }
     .img2y3{
-        width: 100%;
+        width: 90%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
     }
 
     .image2{
-        width: 90%;
+        width: 100%;
+        margin: 0px;
     }
 
     .image3{
@@ -718,14 +752,30 @@
     }
 
     .img2{
-        width: auto;
+        width: 45%;
     }
-    .img2 input label{
-        margin-right: 40px;
+    .img2 label{
+        position: absolute;
+        top: 35%;
+        left: 15%;
     }
-
+    .img2 br{
+        display: flex;
+    }
+    .img2 path{
+        display: none;
+    }
+    .img2 svg{
+        display: none;
+    }
     .img3{
-        width: auto;
+        width: 52%;
+    }
+    .img3 label{
+        position: absolute;
+        top: 40%;
+        left: 10%;
+        min-width: 145px;
     }
     .uno{
         margin-right: 1px;
@@ -738,8 +788,9 @@
         margin-left: 16px;
     }
     .field{
-        width: auto;
+        width: 300px;
     }
-    
-
+    .parte5{
+        width: 100%;
+    }
 }
