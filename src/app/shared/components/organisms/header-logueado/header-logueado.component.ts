@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header-logueado',
@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './header-logueado.component.scss'
 })
 export class HeaderLogueadoComponent {
+  @Output() searchEvent = new EventEmitter<string>();
   isMenuOpen = false;
+
+  onSearchEvent(term: string){
+    this.searchEvent.emit(term)
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
