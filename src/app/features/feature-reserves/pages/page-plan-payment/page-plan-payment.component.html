@@ -89,10 +89,17 @@
 
             <div class="field" id="fieldDate" [ngClass]="{'error': isFieldInvalid('checkin')}">
                 <label class="checkin">Fecha</label>
-                <input type="date" formControlName="checkin" class="checkin"
-                    placeholder="Ingresa la fecha de inicio" id="fechainicio">
-                <div *ngIf="isFieldInvalid('checkin')" class="error-message">La fecha de inicio es requerida</div>
+                <input type="date" formControlName="checkin" class="checkin" 
+                       placeholder="Ingresa la fecha de inicio" id="fechainicio" (change)="onCheckInDateChange()">
+                       <div class="error-message2" *ngIf="isDateOccupiedError()">
+                        La fecha seleccionada está ocupada. Por favor, elige otra.
+                    </div>
+                    
+                    <div class="error-message" *ngIf="!isDateOccupiedError() && isFieldInvalid('checkin')">
+                        La fecha es requerida y debe ser posterior a la fecha actual.
+                    </div>
             </div>
+
             <div *ngIf="tarifas && tarifas.length > 0" class="tarifasContainer">
                 <div *ngFor="let tarifa of tarifas" class="tarifaView">
                   <p><strong>Precio:</strong> {{ tarifa.precio | currency }}</p>

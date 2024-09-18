@@ -90,18 +90,35 @@
                 <div *ngIf="isFieldInvalid('direccion')" class="error-message">La dirección es requerida</div>
             </div>
 
-            <div class="field" [ngClass]="{'error': isFieldInvalid('checkin')}">
+            <div class="field" [ngClass]="{'error': isFieldInvalid('checkin') || checkInDateError}">
                 <label class="checkin">Fecha inicio</label>
-                <input type="date" formControlName="checkin" class="checkin"
-                    placeholder="Ingresa la fecha de inicio" id="fechainicio">
-                <div *ngIf="isFieldInvalid('checkin')" class="error-message">La fecha de inicio es requerida</div>
+                <input type="date" formControlName="checkin" class="checkin" placeholder="Ingresa la fecha de inicio" id="fechainicio">
+                <div *ngIf="isFieldInvalid('checkin') && reservaForm.get('checkin')?.errors?.['required']" class="error-message">
+                    La fecha inicio es requerida.
+                </div>
+                <div *ngIf="isFieldInvalid('checkin') && reservaForm.get('checkin')?.errors?.['dateInPastError']" class="error-message">
+                    La fecha de inicio no puede ser anterior a la fecha actual.
+                </div>
+                <div *ngIf="isFieldInvalid('checkin') && reservaForm.get('checkin')?.errors?.['dateOccupiedError']" class="error-message">
+                    La fecha de inicio está dentro de un rango ocupado.
+                </div>
             </div>
-            <div class="field" [ngClass]="{'error': isFieldInvalid('checkout') || checkoutDateError}">
+            
+            <!-- Fecha de fin -->
+            <div class="field" [ngClass]="{'error': isFieldInvalid('checkout') || checkoutDateError || dateRangeError}">
                 <label class="checkout">Fecha fin</label>
                 <input type="date" formControlName="checkout" class="checkout" placeholder="Ingresa la fecha fin" id="fechafin">
-                <div *ngIf="isFieldInvalid('checkout')" class="error-message">La fecha fin es requerida y debe ser porterior a la fecha de inicio</div>
-                
-              </div>
+                <div *ngIf="isFieldInvalid('checkout') && reservaForm.get('checkout')?.errors?.['required']" class="error-message">
+                    La fecha fin es requerida.
+                </div>
+                <div *ngIf="isFieldInvalid('checkout') && reservaForm.get('checkout')?.errors?.['dateInFutureError']" class="error-message">
+                    La fecha de fin debe ser posterior a la fecha de inicio.
+                </div>
+                <div *ngIf="isFieldInvalid('checkout') && reservaForm.get('checkout')?.errors?.['dateOccupiedError']" class="error-message">
+                    La fecha de fin está dentro de un rango ocupado.
+                </div>
+            </div>
+
             <div *ngIf="tarifas && tarifas.length > 0" class="tarifasContainer">
                 <div *ngFor="let tarifa of tarifas" class="tarifaView">
                   <p class="titleTarifa"><strong>Tipo de habitación:</strong> {{ tarifa.tipo_habitacion }}</p>

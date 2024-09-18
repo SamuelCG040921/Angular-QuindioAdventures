@@ -31,6 +31,11 @@ input{
     margin-top: 32px;
     margin-bottom: 32px;
 }
+#error-date{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .imgChalet{
     width: 132px;
     height: 108px;
@@ -154,8 +159,9 @@ input{
             font-size: 12px;
             position: absolute;
             top: 100%;
-            left: 0;
         }
+
+        
     }
 }
 .form-header{
@@ -178,7 +184,7 @@ input{
 }
 
 .tarifasContainer{
-    width: 80%;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,6 +200,8 @@ input{
     background-color: #90b4a0;
     border-radius: 15px;
     margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .tarifaView button{
@@ -203,6 +211,7 @@ input{
     border-radius: 10px;
     border: none;
     padding: 10px;
+    margin-top: 5px;
 }
 
 .titleTarifa{
@@ -215,6 +224,16 @@ input{
     align-items: center;
     justify-content: center;
 }
+
+.error-message2 {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    top: 100%;
+
+}
+
+
 
   @media (min-width: 921px) and (max-width: 1279px) {
     .line3{
