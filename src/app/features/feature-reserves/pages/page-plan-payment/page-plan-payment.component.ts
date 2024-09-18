@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 
@@ -9,6 +9,10 @@ import { Subscription } from 'rxjs';
 import { ReservesService } from '../../services/reserves.service';
 import { PlanInfo } from '../../models/plansById';
 import { PlansService } from '../../services/plans.service';
+
+interface OccupiedDate {
+  fecha: string; // Suponiendo que las fechas están en formato de cadena
+}
 
 @Component({
   selector: 'app-page-plan-payment',
@@ -33,6 +37,7 @@ export class PagePlanPaymentComponent {
   precioTotal: number | null = null; // Nueva variable para el precio total
   totalPersons: number | null = null;
   isLoading: boolean = false;
+  occupiedDates: (OccupiedDate | string | Date)[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -50,7 +55,7 @@ export class PagePlanPaymentComponent {
       apellido: ['', Validators.required],
       telefono: ['', Validators.required],
       direccion: ['', Validators.required],
-      checkin: ['', Validators.required],
+      checkin: ['', [Validators.required, this.checkInDateValidator.bind(this)]],
     });
 
     this.totalPersonsSubscription = this.personCountService.totalPersons$.subscribe((count: number) => {
@@ -71,6 +76,7 @@ export class PagePlanPaymentComponent {
       const id = params.get('id');
       if (id) {
         this.loadPlan(id);
+        this.fetchOccupiedDates(+id);
       } else {
         this.error = 'ID del plan no disponible';
         this.loading = false;
@@ -157,34 +163,46 @@ export class PagePlanPaymentComponent {
         precioTotal: this.precioTotal
       };
 
-      console.log(formData,2345);
-      
+      const tipoReserva = 'plan';
+
+      this.reservesService.createOrder(formData.precioTotal, tipoReserva).subscribe(
+        (orderResponse) => {
+          console.log('Orden creada exitosamente:', orderResponse);
   
-      this.reservesService.enviarReservaPlan(formData).subscribe(
-        response => {
-          this.isLoading = false;
-          console.log('Reserva creada exitosamente:', response);
-          // Aquí puedes redirigir al usuario a otra página o mostrar un mensaje de éxito
-          this.openAlert();
-          setTimeout(() => {
-            this.closeAlert(); // Redirigir al home después de 2 segundos
-          }, 2000); // Muestra la alerta de éxito
-        },
-        error => {
-          this.isLoading = false;
-          console.error('Error al crear la reserva:', error);
-          this.openErrorAlert();
-          setTimeout(() => {
-            this.closeErrorAlert();// Redirigir al home después de 2 segundos
-          }, 2000); // Muestra la alerta de error
+          const reservaData = {
+            ...formData,
+            orderId: orderResponse.id 
+          };
+
+          if (orderResponse.sandbox_init_point) {
+            window.location.href = orderResponse.sandbox_init_point;
+          }
+          this.reservesService.enviarReservaPlan(formData).subscribe(
+            response => {
+              this.isLoading = false;
+              console.log('Reserva creada exitosamente:', response);
+              this.openAlert();
+              setTimeout(() => {
+                this.closeAlert(); 
+              }, 2300); 
+            },
+            error => {
+              this.isLoading = false;
+              console.error('Error al crear la reserva:', error);
+              this.openErrorAlert();
+              setTimeout(() => {
+                this.closeErrorAlert();
+              }, 2300); 
+            }
+          );
         }
-      );
+      )
     } else {
       console.log('Formulario inválido o tarifa no seleccionada');
       this.openErrorAlert();
       setTimeout(() => {
-        this.closeErrorAlert(); // Redirigir al home después de 2 segundos
-      }, 2000);
+        this.closeErrorAlert();
+      }, 2300);
     }
   }
 
@@ -197,10 +215,26 @@ export class PagePlanPaymentComponent {
     }
   }
 
-  isFieldInvalid(field: string): boolean {
-    const control = this.reservaForm.get(field);
-    return control ? control.invalid && (control.dirty || control.touched) : false;
+  
+  isFieldInvalid(fieldName: string): boolean {
+    const control = this.reservaForm.get(fieldName);
+    const isRequiredError = control?.hasError('required');
+    const isInvalidDate = control?.value && new Date(control.value) <= new Date();
+    
+    // Si hay error de requerimiento o la fecha es inválida
+    return (isRequiredError || isInvalidDate) && (control?.touched || control?.dirty);
   }
+
+  isDateOccupiedError(): boolean {
+  const checkinControl = this.reservaForm.get('checkin');
+  
+  if (checkinControl) {
+      return checkinControl.hasError('dateOccupied') && (checkinControl.touched || checkinControl.dirty);
+  }
+
+  return false;
+  }
+
 
   selectTarifa(tarifa: any): void {
     this.tarifaSeleccionada = tarifa;
@@ -223,7 +257,64 @@ export class PagePlanPaymentComponent {
   }
 
   formatPrice(price: number): string {
-    // Formatea el precio a una cadena con separadores de miles y sin decimales
     return price.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 });
+  }
+
+  checkInDateValidator = (control: AbstractControl): ValidationErrors | null => {
+    const selectedDate = control.value;
+  
+    if (!selectedDate) {
+      return null;
+    }
+  
+    if (this.isDateOccupied(new Date(selectedDate))) {
+      return { dateOccupied: true };
+    }
+  
+    return null;
+  };
+
+  onCheckInDateChange() {
+    const checkinControl = this.reservaForm.get('checkin');
+    if (checkinControl) {
+      checkinControl.updateValueAndValidity();
+    }
+  }
+
+  fetchOccupiedDates(idPlan: number): void {
+    this.reservesService.getFechasOcupadasPlan(idPlan)
+      .then(dates => {
+        this.occupiedDates = dates;
+        console.log(this.occupiedDates);
+      })
+      .catch(error => {
+        console.error('Error al obtener fechas ocupadas', error);
+        this.error = 'Error al obtener fechas ocupadas';
+      });
+  }
+  
+  isDateOccupied(selectedDate: Date): boolean {
+    return this.occupiedDates.some((occupiedDate: OccupiedDate | string | Date) => {
+      let occupiedDateObj: Date;
+
+      if (typeof occupiedDate === 'object' && 'fecha' in occupiedDate) {
+        occupiedDateObj = new Date((occupiedDate as OccupiedDate).fecha);
+      } else if (typeof occupiedDate === 'string' || occupiedDate instanceof String) {
+        occupiedDateObj = new Date(occupiedDate);
+      } else if (occupiedDate instanceof Date) {
+        occupiedDateObj = occupiedDate;
+      } else {
+        console.error('El formato de la fecha ocupada es inválido:', occupiedDate);
+        return false;
+      }
+
+      if (isNaN(occupiedDateObj.getTime())) {
+        console.error('Fecha ocupada no válida:', occupiedDateObj);
+        return false;
+      }
+
+      // Comparar solo la parte de la fecha, ignorando la hora
+      return occupiedDateObj.toDateString() === selectedDate.toDateString();
+    });
   }
 }

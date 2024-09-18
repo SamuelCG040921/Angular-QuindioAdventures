@@ -21,26 +21,26 @@ export class ReservesService {
   private apiUrl9 = 'http://localhost:10101/cancelarReservaPlan'
   private apiUrl10 = 'http://localhost:10101/activarReserva'
   private apiUrl11 = 'http://localhost:10101/activarReservaPlan'
+  private apiUrl12 = 'http://localhost:10101/getFechasOcupadasChalet'
+  private apiUrl13 = 'http://localhost:10101/getFechasOcupadasPlan'
 
   constructor(private http: HttpClient) {}
 
-  // Método para enviar una reserva
   enviarReserva(data: any): Observable<any> {
-    const token = localStorage.getItem('token'); // Obtener el token del localStorage
+    const token = localStorage.getItem('token');
 
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}` // Incluir el token en los headers
+      'Authorization': `Bearer ${token}`
     });
 
     return this.http.post<any>(this.apiUrl, data, { headers });
   }
 
-  // Método para enviar una reserva de plan
   enviarReservaPlan(data: any): Observable<any> {
-    const token = localStorage.getItem('token'); // Obtener el token del localStorage
+    const token = localStorage.getItem('token'); 
 
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}` // Incluir el token en los headers
+      'Authorization': `Bearer ${token}`
     });
 
     return this.http.post<any>(this.apiUrl2, data, { headers });
@@ -52,12 +52,12 @@ export class ReservesService {
     return this.http.post<any>(`${this.apiUrl3}/create-order`, data);
   }
 
-  // Método para obtener reservas por email
+
   getReservasByEmail(): Promise<ReservaEmail[]> {
-    const token = localStorage.getItem('token'); // Obtener el token del localStorage
+    const token = localStorage.getItem('token'); 
 
     const headers = new AxiosHeaders({
-      'Authorization': `Bearer ${token}` // Incluir el token en los headers
+      'Authorization': `Bearer ${token}`
     });
 
     return axios.get(this.apiUrl4, {headers})
@@ -88,7 +88,6 @@ export class ReservesService {
       .catch(error => {
         throw error;
       });
-       // Enviar la solicitud con los headers
   }
 
   getReservasPlanByEmail(): Promise<ReservaPlanInfo[]>{
@@ -236,6 +235,24 @@ export class ReservesService {
       })
       .catch(error => {
         console.error("Error al cancelar la reserva", error);
+        throw error;
+      });
+  }
+
+  getFechasOcupadasChalet(idChalet: number): Promise<any> {
+    return axios.get(`${this.apiUrl12}/${idChalet}`)
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error al obtener fechas ocupadas', error);
+        throw error;
+      });
+  }
+
+  getFechasOcupadasPlan(idPlan: number): Promise<any> {
+    return axios.get(`${this.apiUrl13}/${idPlan}`)
+      .then(response => response.data)
+      .catch(error => {
+        console.error('Error al obtener fechas ocupadas', error);
         throw error;
       });
   }
