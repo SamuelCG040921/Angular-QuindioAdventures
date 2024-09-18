@@ -190,3 +190,133 @@
 #titlePlan{
     margin-top: 64px;
 }
+
+@media (min-width: 921px) and (max-width: 1279px) {
+    .reservesContainer{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .reservesPlanContainer{
+        grid-template-columns: 1fr 1fr;
+    }
+  }
+
+@media (max-width: 920px) and (min-width: 769px) {
+    #linksPlan{
+        margin-bottom: 0px;
+    }
+
+    .reservesPlanContainer{
+        grid-template-columns: 1fr;
+    }
+
+    .reservesContainer{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+    .reservesPlanContainer{
+        grid-template-columns: 1fr;
+    }
+
+    .reservesContainer{
+        grid-template-columns: 1fr;
+    }
+
+    #linksPlan{
+        margin-bottom: 0px;
+    }
+    .contenedorNoTienes #noTienesClientes{
+        font-size: 25px;
+        width: 80%;
+    }
+    .containerPlan{
+        margin-left: 10px;
+    }
+    .containerChalet{
+        margin-right: 10px;
+    }
+    .containerLinks{
+        display: flex;
+        justify-content: center;
+    }
+    .containerLinks p{
+        width: 80%;
+    }
+    .containerTitle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        text-align: center;
+    }
+    .containerTitle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) and (min-width: 352px) {
+    .reservesPlanContainer{
+        grid-template-columns: 1fr;
+    }
+
+    .reservesContainer{
+        grid-template-columns: 1fr;
+    }
+
+    .containerTitle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        text-align: center;
+    }
+    #titulo{
+        font-size: 22px;
+        text-align: center;
+        width: 85%;
+    }
+    .containerChaplanito {
+        #ono{
+            font-size: 60px;
+        }
+        img{
+            width: 250px;
+        }
+        #noTienesClientes{
+            font-size: 20px;
+            width: 80%;
+        }
+    }
+    .containerHacerReserva{
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+    }
+    .containerPlan{
+        margin: 0px;
+        margin-top: 15px;
+    }
+    .containerChalet{
+        margin: 0px;
+        margin-top: 20px;
+    }
+    .containerLinks{
+        display: flex;
+        justify-content: center;
+    }
+    .containerLinks p{
+        width: 80%;
+    }
+    #titlePlan{
+        margin: 0px;
+    }
+    #linksPlan{
+        margin-bottom: 0px;
+    }
+}

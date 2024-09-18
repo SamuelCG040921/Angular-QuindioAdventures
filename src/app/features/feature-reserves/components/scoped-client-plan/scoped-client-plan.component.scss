@@ -1,5 +1,6 @@
 .client {
-    width: 350px; /* Ancho de la tarjeta */
+    min-width: 300px;
+    max-width: 350px; /* Ancho de la tarjeta */
     padding: 20px; /* Espacio interno de la tarjeta */
     margin: 20px auto; /* Espaciado automático y centrado horizontal */
     background-color: #fff; /* Color de fondo blanco */
@@ -56,13 +57,13 @@
 }
 
 #text4{
-    width: 50%;
+    
     margin-left: 0px;
 }
 
 #title4{
-    width: 50%;
-    margin-right: 0px;
+    width: 27%;
+    
 }
 
 .client .containerBtnModal img {

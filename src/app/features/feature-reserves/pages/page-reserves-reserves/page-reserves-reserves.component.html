@@ -2,7 +2,13 @@
 <app-header-logueado *ngIf="authService.estaActivo()"></app-header-logueado>
 <app-scoped-background-menu></app-scoped-background-menu>
 <section class="background">
-    <div class="title"><figure class="linetitle"></figure><h2>Reservas para chalets</h2><figure class="linetitle"></figure></div>
+    <div class="title">
+        <figure class="linetitle"></figure>
+            <div class="containerTitle">
+                <h2 id="titulo">Reservas para chalets</h2>
+            </div>
+        <figure class="linetitle"></figure>
+    </div>
     <section class="emptyState" *ngIf="reserves.length <= 0">
         <div class="containerChaplanito">
             <p id="ono">¡Oh no!</p>
@@ -36,7 +42,13 @@
    <div class="reservesContainer">
         <app-scoped-reserve  *ngFor="let reserve of reserves;let i = index"  [reserve]="reserve"></app-scoped-reserve>
    </div>
-   <div class="title" id="titlePlan"><figure class="linetitle"></figure><h2>Reservas para planes vacacionales</h2><figure class="linetitle"></figure></div>
+   <div class="title">
+    <figure class="linetitle"></figure>
+        <div class="containerTitle">
+            <h2 id="titulo">Reservas para chalets</h2>
+        </div>
+    <figure class="linetitle"></figure>
+</div>
    <section class="emptyState" *ngIf="reservesPlan.length <= 0">
     <div class="containerChaplanito">
         <p id="ono">¡Oh no!</p>
@@ -63,14 +75,11 @@
             </div>
         </div>
     </div>
-    <div class="containerLinks">
+    <div id="linksPlan" class="containerLinks">
         <p>Mira <a routerLink="/chalets">chalets</a> o <a routerLink="/planes-vacacionales">planes vacacionales</a> y realiza tu primera reserva</p>
     </div>
 </section>
    <div class="reservesPlanContainer">
     <app-scoped-reserve-plan *ngFor="let reservePlan of reservesPlan;let i = index" [reservePlan]="reservePlan"></app-scoped-reserve-plan>
-    
-    
-    
    </div>
 </section>

@@ -1,5 +1,16 @@
 @media (min-width: 352px) and (max-width: 480px) {
     div{
-        padding-left: 30px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 }

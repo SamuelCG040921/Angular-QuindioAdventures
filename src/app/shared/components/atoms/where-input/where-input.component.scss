@@ -15,13 +15,14 @@
 
   @media (min-width: 481px) and (max-width: 768px) {
     .search-input-where{
-      width: auto;
+      width: 100%;
+      font-size: 12px;
     }
 }
 
 @media (min-width: 352px) and (max-width: 480px) {
   .search-input-where{
-    width: 30%;
+    width: 100%;
     font-size: 10px;
   }
 }
