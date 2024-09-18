@@ -1,5 +1,5 @@
-<app-header *ngIf="!authService.estaActivo()"></app-header>
-<app-header-logueado *ngIf="authService.estaActivo()"></app-header-logueado>
+<app-header *ngIf="!authService.estaActivo()" (searchEvent)="onSearch($event)"></app-header>
+<app-header-logueado *ngIf="authService.estaActivo()" (searchEvent)="onSearch($event)"></app-header-logueado>
 <div class="planContainer">
     <app-reservation-paintings-plans class="reservationPlan"></app-reservation-paintings-plans>
     <img src="../../../../../assets/images/background-plan.png" class="imgplan">
@@ -8,6 +8,6 @@
 <div class="title"><h2 class="section-title">Recomendados</h2><figure class="line2"></figure></div>
 <app-page-recommend></app-page-recommend>
 <div class="title2"><figure class="line3"></figure><h2 class="section-title2">Planes Vacacionales</h2><figure class="line3"></figure></div>
-<app-plan-cards></app-plan-cards>
+<app-plan-cards [planes]="planesPage"></app-plan-cards>
 <app-chatbot></app-chatbot>
 <app-footer></app-footer>

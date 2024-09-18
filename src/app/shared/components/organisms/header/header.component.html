@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="searchBar">
-        <app-search-bar></app-search-bar>
+        <app-search-bar (searchEvent)="onSearchEvent($event)"></app-search-bar>
     </div>
     <div class="nav">
         <app-nav class="nav1"></app-nav>

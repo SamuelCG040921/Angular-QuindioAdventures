@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  @Output() searchEvent = new EventEmitter<string>();
+
+  onSearchEvent(term: string){
+    this.searchEvent.emit(term)
+  }
   isMenuOpen = false;
 
   toggleMenu() {
