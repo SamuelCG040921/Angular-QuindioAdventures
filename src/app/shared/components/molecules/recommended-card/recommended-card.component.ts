@@ -6,9 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrl: './recommended-card.component.scss'
 })
 export class RecommendedCardComponent {
-@Input() chalet ={
-  nombre: '',
-  imgPrincipal: ''
-}
+  @Input()recommended={
+    nombre:"",
+    ubicacion:"",
+    imgPrincipal:"",
+    municipio: "",
+   }
 
 }

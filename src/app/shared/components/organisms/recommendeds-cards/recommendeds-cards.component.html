@@ -1,4 +1,4 @@
-<div class="emptyState" *ngIf="recommended.length<=0">
+<div class="emptyState" *ngIf="recommendeds.length<=0">
     <div class="containerChaplanito">
         <p id="ono">Ooops!</p>
         <img src="../../../../../assets/images/chaplanitoreservas.jpeg" alt="">
@@ -7,6 +7,6 @@
         </div>
     </div>
 </div>
-<div class="recommended-container" *ngIf="recommended.length>0">
-    <app-recommended-card></app-recommended-card>
+<div class="recommended-container" *ngIf="recommendeds.length>0">
+    <app-recommended-card *ngFor="let recommended of recommendeds;let i = index" [recommended]="recommended"></app-recommended-card>
 </div>

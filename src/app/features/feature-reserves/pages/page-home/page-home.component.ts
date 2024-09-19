@@ -7,6 +7,7 @@ import { ChaletDetails } from '../../models/chalets.model';
 import { PlansDetails } from '../../models/plans.model';
 import { ChaletsService } from '../../services/chalets.service';
 import { SearchService } from '../../services/search.service';
+import { RecommendedService } from '../../services/recommended.service';
 
 @Component({
   selector: 'app-page-home',
@@ -17,6 +18,7 @@ export class PageHomeComponent implements OnInit{
   isMenuOpen = false;
   chalets! : ChaletDetails[];
   planes! : PlansDetails[];
+  recommended! : ChaletDetails[];
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -25,7 +27,8 @@ export class PageHomeComponent implements OnInit{
   disguiseMenu(){
     this.isMenuOpen = false;
   }
-constructor(private router: Router,public authService:AuthService, private chaletsService:ChaletsService, private searchService: SearchService, private plansService: PlansService){
+constructor(private router: Router,public authService:AuthService, private chaletsService:ChaletsService, private searchService: SearchService,
+   private plansService: PlansService, private recommendedService: RecommendedService){
   
 }
 
@@ -51,9 +54,20 @@ loadAllChalets(){
   );
 }
 
+loadRecommended(){
+  this.recommendedService.getRecommendedConnection().then(
+    (data: ChaletDetails[]) =>{
+      console.log('Datos de los recomendados:', data);
+      this.recommended = data
+    },
+    err => console.error(err)
+  )
+}
+
 ngOnInit(){  
     this.loadAllChalets();
     this.loadAllPlans();
+    this.loadRecommended();
 }
 
 onSearch(term: string){
