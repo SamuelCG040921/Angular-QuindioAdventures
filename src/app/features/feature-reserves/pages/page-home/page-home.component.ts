@@ -72,4 +72,20 @@ onSearch(term: string){
   }
 }
 
+onSearch2(term: string){
+  console.log('hola municipio', term);
+  
+  if(term.trim() == ''){
+    this.loadAllChalets();
+    this.loadAllPlans();
+  } else{
+    this.searchService.getSearchResultsMunicipio(term).then(results => {
+      console.log(results.data.chalets);
+      
+        this.chalets = results.data.chalets
+        this.planes = results.data.plans
+    })
+  }
+}
+
 }

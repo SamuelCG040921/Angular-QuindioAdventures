@@ -7,10 +7,16 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderLogueadoComponent {
   @Output() searchEvent = new EventEmitter<string>();
+  @Output() searchEvent2 = new EventEmitter<string>();
+
   isMenuOpen = false;
 
   onSearchEvent(term: string){
     this.searchEvent.emit(term)
+  }
+
+  onSearchEvent2(term: string){
+    this.searchEvent2.emit(term)
   }
 
   toggleMenu() {

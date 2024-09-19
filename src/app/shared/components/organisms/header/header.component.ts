@@ -7,10 +7,17 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   @Output() searchEvent = new EventEmitter<string>();
+  @Output() searchEvent2 = new EventEmitter<string>();
+
 
   onSearchEvent(term: string){
     this.searchEvent.emit(term)
   }
+
+  onSearchEvent2(term: string){
+    this.searchEvent2.emit(term)
+  }
+
   isMenuOpen = false;
 
   toggleMenu() {
