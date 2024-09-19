@@ -270,7 +270,7 @@ export class ChaletRegisterFormComponent implements OnInit {
           this.openUpdateSuccessAlert();
           setTimeout(() => {
            this.router.navigate([''])
-          }, 2500);
+          }, 3000);
         },
         error: (error) => {
           this.isLoading = false;

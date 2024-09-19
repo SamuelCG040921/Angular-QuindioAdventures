@@ -13,4 +13,8 @@ export class RecommendedCardComponent {
     municipio: "",
    }
 
+   openDetails(recommended:any){
+    return ['/chalet-details', recommended.id];
+ }
+
 }

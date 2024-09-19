@@ -1,5 +1,4 @@
 <div class="recommended-card">
-    <img class="imgRecommended" src="{{recommended.imgPrincipal}}" alt="">
+    <img class="imgRecommended" src="{{recommended.imgPrincipal}}" alt="" [routerLink]="openDetails(recommended)">
     <h2  class="title">{{recommended.nombre}}</h2>
-    <app-favorite-icon class="icon"></app-favorite-icon>
 </div>

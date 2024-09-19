@@ -1,8 +1,7 @@
 <div class="card">
-    <a class="card-iterator" [routerLink]="openDetails(chalet)">
+    <a class="card-iterator">
         <div class="container-img"> 
-            <img class="imgCard" src="{{chalet.imgPrincipal}}"> 
-            <app-favorite-icon class="icon"></app-favorite-icon>
+            <img class="imgCard" src="{{chalet.imgPrincipal}}" [routerLink]="openDetails(chalet)"> 
         </div>
     <app-title-card [chalet]="chalet" class="title"></app-title-card>
     <div class="info">

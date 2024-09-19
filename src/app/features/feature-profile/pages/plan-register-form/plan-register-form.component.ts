@@ -269,23 +269,17 @@ export class PlanRegisterFormComponent {
           this.openUpdateSuccessAlert();
           setTimeout(() => {
            this.router.navigate(['']);
-          }, 2500);
+          }, 3000);
         },
         error: (error) => {
           this.isLoading = false;
           console.error('Error al registrar plan:', error);
          this.openErrorAlert();
-         setTimeout(() => {
-          this.closeErrorAlert();
-         }, 2000);
         }
       });
     } else {
       console.log('El formulario no es válido');
       this.openErrorAlert();
-      setTimeout(() => {
-        this.closeErrorAlert();
-       }, 2000);
     }
   }
 

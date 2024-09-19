@@ -1,7 +1,6 @@
 <div class="card">
-    <div class="container-img" [routerLink]="openDetails(plan)"> 
-        <img class="imgCard" src="{{plan.imgPrincipal}}">
-        <app-favorite-icon class="icon"></app-favorite-icon>
+    <div class="container-img"> 
+        <img class="imgCard" src="{{plan.imgPrincipal}}" [routerLink]="openDetails(plan)">
     </div>
 <app-title-card [plan]="plan" class="title"></app-title-card>
 <div class="info">
