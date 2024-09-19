@@ -1,6 +1,6 @@
 
-<app-header *ngIf="!authService.estaActivo()" (searchEvent)="onSearch($event)"></app-header>
-<app-header-logueado *ngIf="authService.estaActivo()" (searchEvent)="onSearch($event)"></app-header-logueado>
+<app-header *ngIf="!authService.estaActivo()" (searchEvent)="onSearch($event)" (searchEvent2)="onSearch2($event)"></app-header>
+<app-header-logueado *ngIf="authService.estaActivo()" (searchEvent)="onSearch($event)" (searchEvent2)="onSearch2($event)"></app-header-logueado>
 <app-slider></app-slider>
 <div class="title"><figure class="line1"></figure><h2 class="section-title">Mejores recomendaciones del mes</h2><figure class="line2"></figure></div>
 <app-recommendeds-cards [recommendeds]="recommended"></app-recommendeds-cards>
