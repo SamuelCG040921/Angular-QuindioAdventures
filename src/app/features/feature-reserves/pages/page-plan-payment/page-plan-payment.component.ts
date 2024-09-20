@@ -181,7 +181,6 @@ export class PagePlanPaymentComponent {
             response => {
               this.isLoading = false;
               console.log('Reserva creada exitosamente:', response);
-              this.openAlert();
               setTimeout(() => {
                 this.closeAlert(); 
               }, 2300); 

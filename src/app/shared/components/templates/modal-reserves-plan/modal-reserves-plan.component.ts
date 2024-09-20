@@ -46,7 +46,7 @@ export class ModalReservesPlanComponent {
         this.openUpdateSuccessAlert();
         setTimeout(() => {
           window.location.reload();
-        }, 1300);
+        }, 2500);
       }
     ).catch(
       error => {
@@ -64,7 +64,7 @@ export class ModalReservesPlanComponent {
         this.openUpdateSuccessAlert2();
         setTimeout(() => {
           window.location.reload();
-        }, 1300);
+        }, 2500);
       }
     ).catch(
       error => {
